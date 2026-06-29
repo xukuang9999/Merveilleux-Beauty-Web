@@ -1,0 +1,119 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { Button, Container, SectionHeading } from "@/components/ui";
+import { products } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Products",
+  description:
+    "Explore the Merveilleux Beauty collection — OEM French-formulated serum, moisturiser, cleanser and essence.",
+};
+
+export default function ProductsPage() {
+  return (
+    <>
+      <section className="border-b border-line bg-white/60 py-16 sm:py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="The Collection"
+            title="OEM French formulas, made to perform"
+            description="Every product is developed to French cosmetic standards using clean, effective actives — a complete routine your skin will thank you for."
+          />
+        </Container>
+      </section>
+
+      <Container className="py-16">
+        <div className="space-y-20">
+          {products.map((p, i) => (
+            <article
+              key={p.slug}
+              id={p.slug}
+              className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-2"
+            >
+              <div
+                className={`relative mx-auto w-full max-w-sm ${
+                  i % 2 === 1 ? "lg:order-2" : ""
+                }`}
+              >
+                <div className="overflow-hidden rounded-3xl border border-line bg-gradient-to-b from-cream to-rose-light/30">
+                  <Image
+                    src={p.graphic}
+                    alt={p.name}
+                    width={300}
+                    height={360}
+                    className="h-auto w-full"
+                  />
+                </div>
+              </div>
+
+              <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
+                  {p.type}
+                </p>
+                <h2 className="mt-2 font-serif text-4xl font-medium text-charcoal">
+                  {p.name}
+                </h2>
+                <p className="mt-1 text-lg italic text-rose-deep">{p.tagline}</p>
+                <p className="mt-5 text-base leading-relaxed text-mid">
+                  {p.description}
+                </p>
+
+                <div className="mt-7 grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <h3 className="eyebrow mb-3">Key Ingredients</h3>
+                    <ul className="space-y-1.5">
+                      {p.keyIngredients.map((ing) => (
+                        <li key={ing} className="text-sm text-charcoal">
+                          {ing}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="eyebrow mb-3">Benefits</h3>
+                    <ul className="space-y-1.5">
+                      {p.benefits.map((b) => (
+                        <li
+                          key={b}
+                          className="flex items-start gap-2 text-sm text-charcoal"
+                        >
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <Button href="/contact" variant="outline">
+                    Enquire about {p.name}
+                  </Button>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Container>
+
+      <section className="pb-24">
+        <Container>
+          <div className="rounded-3xl bg-gradient-to-br from-charcoal to-plum p-10 text-center text-cream sm:p-14">
+            <h2 className="font-serif text-3xl font-light sm:text-4xl">
+              Want the full product deck &amp; pricing?
+            </h2>
+            <p className="mx-auto mt-3 max-w-md text-cream/70">
+              Distributors get detailed formulation sheets, pricing and
+              marketing assets. Reach out to get started.
+            </p>
+            <div className="mt-7 flex justify-center">
+              <Button href="/contact" variant="gold">
+                Get in touch
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}

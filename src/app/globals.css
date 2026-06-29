@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Merveilleux Beauty — Design System
+   Palette & type lifted from the brand planning document.
+   ============================================================ */
+
+@theme {
+  /* Brand colors */
+  --color-rose-deep: #c5778a;
+  --color-rose-light: #f2d9de;
+  --color-gold: #bfa76f;
+  --color-gold-light: #f5efe0;
+  --color-charcoal: #2c2c2c;
+  --color-plum: #4a3040;
+  --color-mid: #6b6b6b;
+  --color-cream: #fdfaf7;
+  --color-line: #e8ddd5;
+
+  /* Accent set */
+  --color-green: #5a8a6e;
+  --color-green-light: #e8f3ed;
+  --color-amber: #c08a3a;
+  --color-amber-light: #fdf3e3;
+  --color-blue: #4a6f8a;
+  --color-blue-light: #e3edf5;
+  --color-purple: #7a5a8a;
+  --color-purple-light: #f0ebf5;
+
+  /* Fonts (wired to next/font variables in layout.tsx) */
+  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-charcoal);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-rose-light);
+  color: var(--color-plum);
+}
+
+/* Utility composites */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* Subtle entrance animation */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-2 {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.rise-3 {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .rise-2,
+  .rise-3 {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

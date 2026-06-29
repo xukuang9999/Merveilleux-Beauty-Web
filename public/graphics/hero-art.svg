@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Merveilleux abstract botanical hero art</title>
+  <desc id="desc">A soft rose and plum abstract form with thin gold circles and delicate botanical line accents.</desc>
+  <defs>
+    <radialGradient id="rosePlum" cx="42%" cy="35%" r="65%">
+      <stop offset="0" stop-color="#F2D9DE" stop-opacity=".95"/>
+      <stop offset=".55" stop-color="#C5778A" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#4A3040" stop-opacity=".16"/>
+    </radialGradient>
+    <linearGradient id="petalWash" x1="130" x2="470" y1="110" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDFAF7" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#F2D9DE" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#rosePlum)" d="M336 71c71 17 130 75 154 145 27 78 12 173-37 238-48 63-129 96-210 84-76-11-138-64-169-131-32-69-34-154 4-219 40-69 131-136 258-117z"/>
+  <path fill="url(#petalWash)" d="M302 113c61 7 113 55 132 113 18 56 9 124-29 169-39 46-106 65-166 52-55-11-98-53-117-104-21-55-15-122 24-166 37-43 93-71 156-64z"/>
+  <g fill="none" stroke="#BFA76F" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="305" cy="305" r="205" stroke-width="1.15" opacity=".62"/>
+    <circle cx="305" cy="305" r="165" stroke-width=".95" opacity=".48"/>
+    <circle cx="305" cy="305" r="118" stroke-width=".85" opacity=".38"/>
+    <path d="M110 422c55-51 95-111 121-181" stroke-width="1.25" opacity=".72"/>
+    <path d="M159 360c-25-4-43-18-55-42 28 1 49 13 62 36" stroke-width="1.15" opacity=".72"/>
+    <path d="M194 299c-22-12-34-32-36-58 26 10 42 28 47 53" stroke-width="1.15" opacity=".7"/>
+    <path d="M222 239c-11-22-10-45 3-68 17 22 20 45 8 69" stroke-width="1.15" opacity=".68"/>
+    <path d="M151 367c8 24 4 47-13 68-12-24-9-47 8-68" stroke-width="1.1" opacity=".64"/>
+    <path d="M455 169c-28 57-42 118-39 184" stroke-width="1.25" opacity=".7"/>
+    <path d="M424 237c24-9 47-6 68 10-25 14-49 12-69-4" stroke-width="1.1" opacity=".68"/>
+    <path d="M416 296c22 4 39 18 51 41-26-1-46-12-58-33" stroke-width="1.1" opacity=".66"/>
+    <path d="M420 183c16-18 37-26 63-22-16 22-37 31-62 26" stroke-width="1.1" opacity=".66"/>
+    <path d="M292 514c9-38 28-70 58-96" stroke-width=".95" opacity=".42"/>
+    <path d="M326 456c19 0 35 9 48 26-21 4-39-3-52-20" stroke-width=".9" opacity=".42"/>
+  </g>
+  <g fill="#BFA76F" opacity=".55">
+    <circle cx="106" cy="421" r="2"/>
+    <circle cx="455" cy="169" r="2"/>
+    <circle cx="292" cy="514" r="1.5"/>
+  </g>
+</svg>

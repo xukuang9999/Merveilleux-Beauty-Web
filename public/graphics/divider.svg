@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 24" role="img" aria-labelledby="title desc">
+  <title id="title">Decorative gold divider</title>
+  <desc id="desc">A slim gold line with a small centered diamond and floral motif.</desc>
+  <g fill="none" stroke="#BFA76F" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 12h72" stroke-width="1"/>
+    <path d="M118 12h72" stroke-width="1"/>
+    <path d="M100 5l7 7-7 7-7-7z" stroke-width="1.1"/>
+    <path d="M100 8c-3 1-5 2-7 4 2 2 4 3 7 4 3-1 5-2 7-4-2-2-4-3-7-4z" stroke-width=".85" opacity=".72"/>
+    <path d="M86 12c3-3 6-3 9 0" stroke-width=".85" opacity=".68"/>
+    <path d="M105 12c3-3 6-3 9 0" stroke-width=".85" opacity=".68"/>
+  </g>
+</svg>

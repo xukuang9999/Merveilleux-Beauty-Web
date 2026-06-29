@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" role="img" aria-labelledby="title desc">
+  <title id="title">Essence toner bottle illustration</title>
+  <desc id="desc">Elegant gold line art of a tall essence bottle on a soft cream card.</desc>
+  <defs>
+    <linearGradient id="cardTint" x1="38" x2="262" y1="28" y2="332" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDFAF7"/>
+      <stop offset=".62" stop-color="#FDFAF7"/>
+      <stop offset="1" stop-color="#F2D9DE" stop-opacity=".78"/>
+    </linearGradient>
+  </defs>
+  <rect x="20" y="20" width="260" height="320" rx="30" fill="url(#cardTint)" stroke="#E8DDD5" stroke-width="1"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#F5EFE0" stroke-width="1.1" d="M62 296h176"/>
+    <path stroke="#BFA76F" stroke-width="1.35" d="M129 91h42"/>
+    <path stroke="#BFA76F" stroke-width="1.35" d="M132 91h36v44h-36z"/>
+    <path stroke="#BFA76F" stroke-width="1.15" d="M127 135h46"/>
+    <path stroke="#BFA76F" stroke-width="1.35" d="M109 158c0-13 11-23 24-23h34c13 0 24 10 24 23v105c0 16-13 29-29 29h-24c-16 0-29-13-29-29z"/>
+    <path stroke="#BFA76F" stroke-width="1.1" d="M110 182h80"/>
+    <path stroke="#BFA76F" stroke-width="1.1" d="M110 258h80"/>
+    <path stroke="#C5778A" stroke-width=".95" opacity=".68" d="M129 221c13-19 29-19 42 0-12 18-30 18-42 0z"/>
+    <path stroke="#BFA76F" stroke-width=".9" opacity=".72" d="M150 197v49"/>
+    <path stroke="#2C2C2C" stroke-width=".75" opacity=".55" d="M131 238h38"/>
+    <path stroke="#BFA76F" stroke-width=".9" opacity=".42" d="M100 306c33 9 67 9 100 0"/>
+  </g>
+</svg>
