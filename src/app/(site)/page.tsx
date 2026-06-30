@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { Button, Container, SectionHeading, Stars, Divider } from "@/components/ui";
 import ProductCard from "@/components/ProductCard";
-import { products, testimonials, trainingModules } from "@/lib/data";
+import HeroAvatar from "@/components/HeroAvatar";
+import { getProducts, getTestimonials } from "@/lib/content";
+import { seedModules } from "@/lib/seed-data";
 
 const valueProps = [
   {
@@ -17,11 +19,17 @@ const valueProps = [
   {
     icon: "🤝",
     title: "A network that grows",
-    body: "A trained 经销商 community with the tools, training and support to build a real business.",
+    body: "A trained 经销商 community with the tools, training and AI support to build a real business.",
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const [products, testimonials] = await Promise.all([
+    getProducts(),
+    getTestimonials(),
+  ]);
+  const featured = products.slice(0, 4);
+
   return (
     <>
       {/* HERO */}
@@ -43,7 +51,8 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-mid">
               French-grade formulas, honestly priced — and a 经销商 network
-              built on real training and trust. This is beauty done beautifully.
+              built on real training and trust. Meet Margaux, our AI beauty
+              advisor, ready to help you any time.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/products">Explore the range</Button>
@@ -59,15 +68,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rise-2 relative mx-auto w-full max-w-md lg:max-w-none">
-            <Image
-              src="/graphics/hero-art.svg"
-              alt="Merveilleux Beauty — elegant skincare illustration"
-              width={600}
-              height={600}
-              priority
-              className="h-auto w-full"
-            />
+          <div className="rise-2">
+            <HeroAvatar />
           </div>
         </Container>
       </section>
@@ -92,14 +94,14 @@ export default function Home() {
             <SectionHeading
               eyebrow="The Collection"
               title="A complete routine, beautifully made"
-              description="Four essentials that work together — cleanse, prep, treat and nourish."
+              description="Cleanse, prep, treat, protect — French-grade essentials tuned for tropical skin."
             />
             <Button href="/products" variant="outline" className="shrink-0">
-              View all products
+              View all {products.length} products
             </Button>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
-            {products.map((p) => (
+            {featured.map((p) => (
               <ProductCard key={p.slug} product={p} />
             ))}
           </div>
@@ -167,21 +169,21 @@ export default function Home() {
                 </h2>
                 <p className="mt-4 max-w-lg text-base leading-relaxed text-mid">
                   Every Merveilleux distributor is set up to succeed with a
-                  structured training programme — {trainingModules.length}+
-                  modules covering brand, products, policy and SOP — plus ongoing
-                  support.
+                  structured training programme — {seedModules.length} modules
+                  covering brand, products, policy and SOP — a skincare knowledge
+                  base, and an AI training coach in your pocket.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <Button href="/contact">Apply to join</Button>
+                  <Button href="/register?as=distributor">Apply to join</Button>
                   <Button href="/training" variant="outline">
                     See the training
                   </Button>
                 </div>
               </div>
               <ul className="space-y-3">
-                {trainingModules.slice(0, 4).map((m) => (
+                {seedModules.slice(0, 4).map((m) => (
                   <li
-                    key={m.id}
+                    key={m.ord}
                     className="flex items-center gap-3 rounded-xl border border-white/60 bg-white/70 px-4 py-3"
                   >
                     <span className="text-xl">{m.icon}</span>

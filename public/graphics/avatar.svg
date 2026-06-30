@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" role="img" aria-labelledby="title desc">
+  <title id="title">Merveilleux Beauty advisor avatar</title>
+  <desc id="desc">A refined stylized beauty advisor avatar in soft rose and gold line art with a warm expression.</desc>
+  <defs>
+    <linearGradient id="hairWash" x1="58" x2="184" y1="34" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A3040" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#C5778A" stop-opacity=".34"/>
+    </linearGradient>
+    <linearGradient id="roseWash" x1="54" x2="190" y1="148" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDFAF7"/>
+      <stop offset="1" stop-color="#F2D9DE" stop-opacity=".82"/>
+    </linearGradient>
+  </defs>
+  <g id="advisor" stroke-linecap="round" stroke-linejoin="round">
+    <path id="shoulders" fill="url(#roseWash)" stroke="#BFA76F" stroke-width="1.25" d="M51 267c5-41 32-68 69-68s64 27 69 68H51z"/>
+    <path fill="#FDFAF7" stroke="#BFA76F" stroke-width="1.2" d="M100 181v29c0 10 9 18 20 18s20-8 20-18v-29"/>
+    <path id="hair" fill="url(#hairWash)" stroke="#BFA76F" stroke-width="1.25" d="M68 112c0-48 30-81 73-77 27 3 51 24 55 57 4 35-10 71-36 88-19 12-54 13-77-5-11-9-15-36-15-63z"/>
+    <path fill="#FDFAF7" stroke="#BFA76F" stroke-width="1.25" d="M83 115c0-34 19-58 48-58s48 24 48 58v30c0 31-21 55-48 55s-48-24-48-55v-30z"/>
+    <path fill="none" stroke="#BFA76F" stroke-width="1.1" d="M86 118c28-8 49-27 63-54 5 22 16 38 31 48"/>
+    <path fill="none" stroke="#BFA76F" stroke-width=".95" opacity=".78" d="M98 130c6-4 14-4 20 0M144 130c6-4 14-4 20 0"/>
+    <path fill="none" stroke="#2C2C2C" stroke-width="1.1" opacity=".7" d="M103 142c4 3 9 3 13 0M147 142c4 3 9 3 13 0"/>
+    <path fill="none" stroke="#BFA76F" stroke-width=".9" opacity=".62" d="M132 139c-3 10-2 18 3 24"/>
+    <path fill="none" stroke="#C5778A" stroke-width="1.15" opacity=".78" d="M112 171c10 8 26 8 36 0"/>
+    <path fill="none" stroke="#C5778A" stroke-width=".9" opacity=".44" d="M96 156c5-3 11-3 16 0M150 156c5-3 11-3 16 0"/>
+    <circle cx="78" cy="151" r="3.2" fill="#BFA76F" opacity=".78"/>
+    <circle cx="184" cy="151" r="3.2" fill="#BFA76F" opacity=".78"/>
+    <path fill="none" stroke="#BFA76F" stroke-width="1.1" d="M91 203c15 21 43 28 65 0"/>
+    <path fill="none" stroke="#4A3040" stroke-width="1" opacity=".55" d="M82 231h76M170 231h-18"/>
+    <path fill="none" stroke="#BFA76F" stroke-width=".95" opacity=".58" d="M66 268c12-30 31-45 54-45s42 15 54 45"/>
+  </g>
+</svg>

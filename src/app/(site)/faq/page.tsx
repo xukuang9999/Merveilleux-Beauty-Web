@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Button, Container, SectionHeading } from "@/components/ui";
-import { faqs, type Faq } from "@/lib/data";
+import { getFaqs } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Q&A",
@@ -8,9 +8,10 @@ export const metadata: Metadata = {
     "Answers to common questions about Merveilleux Beauty products, skincare routines and becoming a 经销商.",
 };
 
-const categories: Faq["category"][] = ["Products", "Skincare", "Distributor"];
+export default async function FaqPage() {
+  const faqs = await getFaqs();
+  const categories = [...new Set(faqs.map((f) => f.category))];
 
-export default function FaqPage() {
   return (
     <>
       <section className="border-b border-line bg-white/60 py-16 sm:py-20">
@@ -18,7 +19,7 @@ export default function FaqPage() {
           <SectionHeading
             eyebrow="Q&A · FAQ"
             title="Questions, answered"
-            description="Everything you might want to know about our products, skincare routines and the 经销商 opportunity."
+            description="Everything you might want to know about our products, skincare routines and the 经销商 opportunity. Still stuck? Ask Margaux, our AI advisor."
           />
         </Container>
       </section>
@@ -32,9 +33,9 @@ export default function FaqPage() {
                 {faqs
                   .filter((f) => f.category === cat)
                   .map((f) => (
-                    <details key={f.q} className="group px-6 py-5">
+                    <details key={f.question} className="group px-6 py-5">
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-charcoal marker:hidden">
-                        {f.q}
+                        {f.question}
                         <svg
                           width="18"
                           height="18"
@@ -48,7 +49,7 @@ export default function FaqPage() {
                         </svg>
                       </summary>
                       <p className="mt-3 text-sm leading-relaxed text-mid">
-                        {f.a}
+                        {f.answer}
                       </p>
                     </details>
                   ))}
@@ -62,7 +63,8 @@ export default function FaqPage() {
             Still have a question?
           </h2>
           <p className="mx-auto mt-3 max-w-md text-cream/70">
-            Our team is happy to help — reach out and we&apos;ll get back to you.
+            Ask Margaux any time, or reach our team directly — we&apos;re happy
+            to help.
           </p>
           <div className="mt-7 flex justify-center">
             <Button href="/contact" variant="gold">

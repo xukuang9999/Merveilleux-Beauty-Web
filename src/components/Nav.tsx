@@ -6,7 +6,20 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navLinks, site } from "@/lib/data";
 
-export default function Nav() {
+type NavUser = { name: string; role: "customer" | "distributor" | "admin" };
+
+const roleHome: Record<NavUser["role"], string> = {
+  customer: "/account",
+  distributor: "/portal",
+  admin: "/admin",
+};
+const roleLabel: Record<NavUser["role"], string> = {
+  customer: "My Account",
+  distributor: "My Portal",
+  admin: "Admin",
+};
+
+export default function Nav({ user }: { user: NavUser | null }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -51,12 +64,32 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="ml-2 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
-          >
-            Join as 经销商
-          </Link>
+          {user ? (
+            <Link
+              href={roleHome[user.role]}
+              className="ml-2 flex items-center gap-2 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
+            >
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/30 text-[10px] uppercase">
+                {user.name.charAt(0)}
+              </span>
+              {roleLabel[user.role]}
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="px-3 py-2 text-[13px] font-medium text-mid transition-colors hover:text-charcoal"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/register?as=distributor"
+                className="ml-1 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
+              >
+                Join as 经销商
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -91,10 +124,33 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={`mailto:${site.email}`}
-            className="mt-3 block text-sm text-mid"
-          >
+          {user ? (
+            <Link
+              href={roleHome[user.role]}
+              onClick={() => setOpen(false)}
+              className="mt-3 block text-sm font-medium text-rose-deep"
+            >
+              {roleLabel[user.role]} →
+            </Link>
+          ) : (
+            <div className="mt-3 flex gap-3">
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                className="text-sm font-medium text-charcoal"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/register?as=distributor"
+                onClick={() => setOpen(false)}
+                className="text-sm font-medium text-rose-deep"
+              >
+                Join as 经销商
+              </Link>
+            </div>
+          )}
+          <a href={`mailto:${site.email}`} className="mt-3 block text-sm text-mid">
             {site.email}
           </a>
         </div>

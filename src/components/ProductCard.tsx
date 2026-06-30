@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Product } from "@/lib/data";
+import type { ProductView } from "@/lib/content";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product }: { product: ProductView }) {
   return (
     <Link
       href={`/products#${product.slug}`}

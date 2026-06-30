@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" role="img" aria-labelledby="title desc">
+  <title id="title">Eye Revive cream mini tube illustration</title>
+  <desc id="desc">Elegant gold line art of a small eye cream tube on a soft cream card.</desc>
+  <defs>
+    <linearGradient id="cardTint" x1="38" x2="262" y1="28" y2="332" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDFAF7"/>
+      <stop offset=".62" stop-color="#FDFAF7"/>
+      <stop offset="1" stop-color="#F2D9DE" stop-opacity=".78"/>
+    </linearGradient>
+  </defs>
+  <rect x="20" y="20" width="260" height="320" rx="30" fill="url(#cardTint)" stroke="#E8DDD5" stroke-width="1"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#F5EFE0" stroke-width="1.1" d="M78 296h144"/>
+    <path stroke="#BFA76F" stroke-width="1.35" d="M126 137c8-6 40-6 48 0l8 111c1 13-9 24-22 24h-20c-13 0-23-11-22-24l8-111z"/>
+    <path stroke="#BFA76F" stroke-width="1.1" d="M126 155c12 6 36 6 48 0"/>
+    <path stroke="#BFA76F" stroke-width="1.1" d="M122 239c11 6 45 6 56 0"/>
+    <path stroke="#BFA76F" stroke-width="1.35" d="M125 272h50"/>
+    <path stroke="#BFA76F" stroke-width="1.2" d="M130 272v15c0 6 5 10 11 10h18c6 0 11-4 11-10v-15"/>
+    <path stroke="#C5778A" stroke-width=".9" opacity=".66" d="M134 203c7-12 25-12 32 0-8 12-24 12-32 0z"/>
+    <path stroke="#BFA76F" stroke-width=".8" opacity=".72" d="M150 186v32"/>
+    <path stroke="#BFA76F" stroke-width=".75" opacity=".54" d="M142 197c-7-5-9-12-6-20 8 4 11 11 7 19"/>
+    <path stroke="#BFA76F" stroke-width=".75" opacity=".54" d="M158 197c7-5 9-12 6-20-8 4-11 11-7 19"/>
+    <path stroke="#2C2C2C" stroke-width=".75" opacity=".55" d="M137 222h26"/>
+    <path stroke="#BFA76F" stroke-width=".9" opacity=".42" d="M116 307c22 6 46 6 68 0"/>
+  </g>
+</svg>

@@ -1,76 +1,94 @@
-# Merveilleux Beauty — Website + 经销商 Training (MVP)
+# Merveilleux Beauty — Full digital ecosystem
 
-The corporate website and distributor (经销商) training shell for **Merveilleux Beauty**,
-an OEM French beauty house. This is the MVP for **Workstream B (Website)** plus a preview
-of **Workstream A (Training LMS)** from the [system planning document](docs/system-planning.html).
+The website, distributor (经销商) training LMS, knowledge base, AI advisor and admin
+console for **Merveilleux Beauty**, an OEM French beauty house. This implements all five
+workstreams from the [system planning document](docs/system-planning.html):
 
-> Built with Next.js + Tailwind, deployed on Vercel. Brand graphics were generated with the
-> Codex CLI and live in [`public/graphics/`](public/graphics).
+- **B · Website** — marketing site with an 8-product catalogue and a hero AI advisor
+- **A · Training LMS** — login-gated modules, quizzes (70% pass) and saved progress
+- **C · 知识库** — searchable skincare knowledge base with AI Q&A
+- **D · AI agents** — customer-service chat + a distributor training coach / consultant
+- **E · Virtual advisor** — "Margaux", a stylized AI avatar in the hero (consent-safe;
+  swappable for a real video clip later)
 
-## What's inside
+> Built with Next.js 16 + Tailwind v4 + SQLite (libSQL/Turso) + Claude. Brand graphics
+> generated with the Codex CLI. Deployed on Vercel.
 
-| Route | Page |
+## Routes
+
+| Area | Routes |
 | --- | --- |
-| `/` | Home — hero, value props, product collection, brand statement, testimonials, join CTA |
-| `/products` | The 4-product OEM range with ingredients & benefits |
-| `/testimonials` | Customer & 经销商 stories |
-| `/faq` | Q&A grouped by Products / Skincare / Distributor |
-| `/contact` | 经销商 enquiry form (hands off to WhatsApp) + contact channels |
-| `/training` | **LMS shell** — module cards, progress tracker, interactive demo quiz (70% pass mark) |
-
-Plus `sitemap.xml`, `robots.txt`, OpenGraph metadata, and a branded 404.
+| Public | `/`, `/products`, `/testimonials`, `/faq`, `/contact`, `/training` |
+| Auth | `/login`, `/register` |
+| Customer | `/account`, `/account/consult` (AI skincare consult) |
+| 经销商 | `/portal`, `/portal/training`, `/portal/knowledge`, `/portal/assistant` |
+| Admin | `/admin` (+ products, kb, progress, users, enquiries) |
+| API | `/api/chat` (streaming Claude) |
 
 ## Tech stack
 
-- **Next.js 16** (App Router) + **React 19** + **TypeScript**
-- **Tailwind CSS v4** — design tokens (rose / gold / charcoal palette, Cormorant Garamond + DM Sans) in [`src/app/globals.css`](src/app/globals.css)
-- **next/font** for self-hosted Google Fonts
-- Static-rendered (every route prerenders) — fast and cheap on Vercel
-- Brand SVG assets generated via **Codex CLI**
+- **Next.js 16** (App Router) + **React 19** + **TypeScript**, **Tailwind CSS v4**
+- **Database:** SQLite via **Drizzle ORM** + **libSQL** — local file in dev, **Turso** in prod
+- **Auth:** dependency-free email/password with scrypt hashing + DB-backed sessions
+  (Lucia-style), three roles: `customer`, `distributor`, `admin`
+- **AI:** **Claude** (`@anthropic-ai/sdk`) streaming chat with RAG context (products + FAQ + KB)
+- Brand SVGs generated via **Codex CLI** ([`public/graphics/`](public/graphics))
 
 ## Project structure
 
 ```
 src/
-  app/            # routes (App Router)
-  components/     # Nav, Footer, ui primitives, ProductCard, EnquiryForm, TrainingShell
-  lib/data.ts     # all site content (products, testimonials, FAQs, training modules)
-public/graphics/  # Codex-generated brand SVGs (logo, monogram, hero, products, etc.)
-docs/             # original system-planning document
+  app/
+    (site)/        # public marketing pages + chat widget
+    (auth)/        # login / register
+    (app)/         # authenticated dashboards (account / portal / admin)
+    api/chat/      # streaming Claude endpoint
+  components/      # Nav, HeroAvatar, ChatPanel/Widget, PortalTraining, DashboardShell, …
+  db/             # Drizzle schema, client, seed
+  lib/            # auth, ai, content, kb, training, server actions
+public/graphics/   # Codex-generated brand SVGs
+docs/              # original system-planning document
 ```
 
-All copy and content lives in [`src/lib/data.ts`](src/lib/data.ts) so it can later be swapped
-for a headless CMS (Sanity/Contentful) without touching the UI.
-
-## Develop
+## Local development
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build    # production build
-npm run start    # serve the production build
+npm run db:reset   # create local.db schema + seed content & demo users
+npm run dev        # http://localhost:3000
 ```
 
-## Configuration to finish before launch
+**Demo accounts** (from the seed):
 
-Update the placeholders in [`src/lib/data.ts`](src/lib/data.ts) → the `site` object:
+| Role | Email | Password |
+| --- | --- | --- |
+| Admin | admin@merveilleux.test | admin1234 |
+| 经销商 | distributor@merveilleux.test | dist1234 |
+| Customer | customer@merveilleux.test | cust1234 |
 
-- `whatsapp` — real WhatsApp Business number (digits only, with country code)
-- `email` — real contact inbox
-- `instagram` — real handle
-- product copy, ingredients and testimonials → replace with approved brand content
+## Production setup (Vercel)
 
-## Roadmap (from the planning doc)
+The public site works immediately (it falls back to seeded content). To enable
+accounts, training, the knowledge base and the AI advisor, set three env vars:
 
-This MVP delivers Workstream B and an A preview. Next, per the master roadmap:
+1. **Database — Turso (libSQL):**
+   ```bash
+   turso auth login
+   turso db create merveilleux
+   turso db show merveilleux --url           # → TURSO_DATABASE_URL
+   turso db tokens create merveilleux        # → TURSO_AUTH_TOKEN
+   # then push schema + seed against it:
+   TURSO_DATABASE_URL=... TURSO_AUTH_TOKEN=... npm run db:reset
+   ```
+2. **AI — Anthropic:** create a key at <https://console.anthropic.com> → `ANTHROPIC_API_KEY`
+3. Add all three to **Vercel → Project → Settings → Environment Variables**, then redeploy.
 
-1. **A · Training LMS** — secure 经销商 login, full 20-question banks, video lessons,
-   saved progress, PIC completion notifications, in-person booking calendar
-2. **C · 知识库** — searchable skincare knowledge base with AI Q&A (RAG)
-3. **D · Multi-Agent AI** — branding / design / sales / promotions agents
-4. **E · Virtual Grace** — AI avatar (pending confirmation)
+See [`.env.example`](.env.example). Every push to `main` auto-deploys.
 
-## Deployment
+## Notes
 
-Hosted on **Vercel**, connected to this GitHub repository — every push to `main`
-triggers a production deployment.
+- The hero "digital human" is a **stylized brand avatar**, not a real person — no likeness
+  consent issues. Swap `public/graphics/avatar.svg` (or wire a `<video>`) for a real clip later.
+- ⚠️ **Trademark:** research found a pre-existing Malaysian skincare line "Merveilleux –
+  France HQ" plus other "Merveilleux" entities. Consider a trademark/name check before launch.
+- Update brand contact details (WhatsApp, email, Instagram) in [`src/lib/data.ts`](src/lib/data.ts).

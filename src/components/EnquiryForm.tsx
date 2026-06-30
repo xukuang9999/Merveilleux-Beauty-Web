@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { site, whatsappLink } from "@/lib/data";
+import { submitEnquiry } from "@/lib/enquiry-actions";
 
 type Interest = "Become a 经销商" | "Product enquiry" | "Wholesale / B2B" | "Other";
 
@@ -37,7 +38,17 @@ export default function EnquiryForm() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const text = compose(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    // Persist the lead (best-effort) and hand off to WhatsApp.
+    void submitEnquiry({
+      name: (data.get("name") as string) || "",
+      email: (data.get("email") as string) || "",
+      phone: (data.get("phone") as string) || "",
+      interest,
+      message: (data.get("message") as string) || "",
+    });
+    const text = compose(form);
     window.open(whatsappLink(text), "_blank", "noopener,noreferrer");
     setSent(true);
   }

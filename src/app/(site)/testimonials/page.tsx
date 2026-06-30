@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Button, Container, SectionHeading, Stars } from "@/components/ui";
-import { testimonials } from "@/lib/data";
+import { getTestimonials } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -8,7 +8,9 @@ export const metadata: Metadata = {
     "Real stories from Merveilleux Beauty customers and 经销商 across Malaysia.",
 };
 
-export default function TestimonialsPage() {
+export default async function TestimonialsPage() {
+  const testimonials = await getTestimonials();
+
   return (
     <>
       <section className="border-b border-line bg-white/60 py-16 sm:py-20">

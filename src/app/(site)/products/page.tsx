@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Button, Container, SectionHeading } from "@/components/ui";
-import { products } from "@/lib/data";
+import { getProducts } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore the Merveilleux Beauty collection — OEM French-formulated serum, moisturiser, cleanser and essence.",
+    "Explore the Merveilleux Beauty collection — OEM French-formulated serums, moisturiser, cleanser, essence, sunscreen, eye cream and masks.",
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await getProducts();
+
   return (
     <>
       <section className="border-b border-line bg-white/60 py-16 sm:py-20">
@@ -17,7 +19,7 @@ export default function ProductsPage() {
           <SectionHeading
             eyebrow="The Collection"
             title="OEM French formulas, made to perform"
-            description="Every product is developed to French cosmetic standards using clean, effective actives — a complete routine your skin will thank you for."
+            description="Every product is developed to French cosmetic standards using clean, effective actives — a complete routine tuned for a tropical climate."
           />
         </Container>
       </section>
@@ -47,9 +49,14 @@ export default function ProductsPage() {
               </div>
 
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
-                  {p.type}
-                </p>
+                <div className="flex items-center gap-3">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
+                    {p.type}
+                  </p>
+                  <span className="rounded-full bg-gold-light px-2.5 py-0.5 text-xs font-medium text-amber">
+                    {p.priceRM}
+                  </span>
+                </div>
                 <h2 className="mt-2 font-serif text-4xl font-medium text-charcoal">
                   {p.name}
                 </h2>
