@@ -23,7 +23,7 @@ export default async function RegisterPage({
       </h1>
       <p className="mb-6 mt-1 text-sm text-mid">
         {asDistributor
-          ? "Register to access training, the knowledge base and your AI coach."
+          ? "Submit your 经销商 application. Once an admin approves it, your portal — training, knowledge base and AI coach — unlocks."
           : "Create an account for personalised skincare guidance."}
       </p>
       <AuthForm

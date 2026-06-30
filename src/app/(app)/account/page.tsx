@@ -16,6 +16,16 @@ export default async function AccountPage() {
         subtitle="Your personal beauty space — get tailored skincare advice from Margaux any time."
       />
 
+      {user.status === "pending" && (
+        <div className="mb-5 rounded-2xl border border-amber/30 bg-amber-light/50 p-4 text-sm text-charcoal">
+          <span className="font-medium text-amber">
+            经销商 application received.
+          </span>{" "}
+          An admin will review and activate your distributor portal soon — you&apos;ll
+          get full training, knowledge base and AI coach access once approved.
+        </div>
+      )}
+
       <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
         <Panel className="bg-gradient-to-br from-rose-light/40 to-gold-light/40">
           <p className="eyebrow mb-2">AI Skincare Consultation</p>

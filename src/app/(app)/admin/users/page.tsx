@@ -31,6 +31,11 @@ export default async function AdminUsersPage() {
                   {u.id === me.id && (
                     <span className="text-xs text-mid">(you)</span>
                   )}
+                  {u.status === "pending" && (
+                    <span className="ml-2 rounded-full bg-amber-light px-2 py-0.5 text-[10px] font-semibold text-amber">
+                      经销商 applied
+                    </span>
+                  )}
                 </p>
                 <p className="text-xs text-mid">{u.email}</p>
               </div>

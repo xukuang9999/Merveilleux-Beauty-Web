@@ -2,12 +2,12 @@
 
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { requireRole } from "./auth";
+import { requireRole, deleteUserSessions, type Role } from "./auth";
 import { db } from "@/db";
 import { products, users, kbArticles } from "@/db/schema";
 
 async function ensureAdmin() {
-  await requireRole(["admin"]);
+  return requireRole(["admin"]);
 }
 
 function toList(v: FormDataEntryValue | null): string[] {
@@ -56,16 +56,38 @@ export async function deleteProduct(formData: FormData) {
 }
 
 export async function setUserRole(formData: FormData) {
-  await ensureAdmin();
+  const me = await ensureAdmin();
   const id = String(formData.get("id"));
   const role = String(formData.get("role"));
-  if (["customer", "distributor", "admin"].includes(role)) {
-    await db
-      .update(users)
-      .set({ role: role as "customer" | "distributor" | "admin" })
-      .where(eq(users.id, id));
-    revalidatePath("/admin/users");
+  if (!["customer", "distributor", "admin"].includes(role)) return;
+
+  const [target] = await db.select().from(users).where(eq(users.id, id)).limit(1);
+  if (!target) return;
+
+  // Guard against admin lockout: can't demote yourself or the last admin.
+  if (target.role === "admin" && role !== "admin") {
+    if (target.id === me.id) return;
+    const admins = await db
+      .select()
+      .from(users)
+      .where(eq(users.role, "admin"));
+    if (admins.length <= 1) return;
   }
+
+  await db
+    .update(users)
+    .set({
+      role: role as Role,
+      // Promotion clears any pending application.
+      status: role === "customer" ? target.status : "active",
+    })
+    .where(eq(users.id, id));
+
+  // A role change invalidates the user's existing sessions (forces re-login
+  // so their new permissions take effect immediately).
+  if (target.role !== role) await deleteUserSessions(id);
+
+  revalidatePath("/admin/users");
 }
 
 export async function toggleKbPublished(formData: FormData) {

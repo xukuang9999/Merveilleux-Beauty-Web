@@ -11,19 +11,27 @@ export type EnquiryInput = {
   message: string;
 };
 
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const INTERESTS = [
+  "Become a 经销商",
+  "Product enquiry",
+  "Wholesale / B2B",
+  "Other",
+];
+
 export async function submitEnquiry(
   input: EnquiryInput,
 ): Promise<{ ok: boolean }> {
-  // Basic validation
-  if (!input.name?.trim() || !input.email?.trim() || !input.message?.trim()) {
-    return { ok: false };
-  }
+  // Validation
+  if (!input.name?.trim() || !input.message?.trim()) return { ok: false };
+  if (!EMAIL_RE.test(input.email?.trim() || "")) return { ok: false };
+  const interest = INTERESTS.includes(input.interest) ? input.interest : "Other";
   try {
     await db.insert(enquiries).values({
       name: input.name.trim().slice(0, 200),
       email: input.email.trim().slice(0, 200),
       phone: input.phone?.trim().slice(0, 60) || null,
-      interest: input.interest.slice(0, 80),
+      interest,
       message: input.message.trim().slice(0, 4000),
     });
     return { ok: true };

@@ -11,7 +11,14 @@ function resolveUrl(): string {
   if (process.env.TURSO_DATABASE_URL) return process.env.TURSO_DATABASE_URL;
   // On Vercel's read-only serverless filesystem a file DB crashes; use
   // in-memory so the app stays up (content falls back to curated seed).
-  if (process.env.VERCEL) return ":memory:";
+  // Accounts / training / admin stay inert until Turso is configured.
+  if (process.env.VERCEL) {
+    console.warn(
+      "[merveilleux] No TURSO_DATABASE_URL set — using in-memory DB. " +
+        "Public pages use seed fallback; accounts/training/admin are disabled until Turso is configured.",
+    );
+    return ":memory:";
+  }
   return "file:./local.db";
 }
 

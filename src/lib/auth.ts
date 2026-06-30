@@ -22,11 +22,16 @@ export { hashPassword, verifyPassword };
 
 // ---- Users ------------------------------------------------------
 
+// A fixed valid hash to compare against when an account doesn't exist, so login
+// takes ~constant time regardless of whether the email is registered.
+export const DUMMY_PASSWORD_HASH = hashPassword("merveilleux-dummy-password");
+
 export async function createUser(input: {
   email: string;
   name: string;
   password: string;
   role?: Role;
+  status?: "active" | "pending";
 }): Promise<User> {
   const [user] = await db
     .insert(users)
@@ -36,9 +41,15 @@ export async function createUser(input: {
       name: input.name.trim(),
       passwordHash: hashPassword(input.password),
       role: input.role ?? "customer",
+      status: input.status ?? "active",
     })
     .returning();
   return user;
+}
+
+/** Revoke all sessions for a user (e.g. on role change). */
+export async function deleteUserSessions(userId: string): Promise<void> {
+  await db.delete(sessions).where(eq(sessions.userId, userId));
 }
 
 export async function findUserByEmail(email: string): Promise<User | null> {

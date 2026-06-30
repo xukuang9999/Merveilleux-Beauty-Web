@@ -9,6 +9,23 @@ type IncomingMessage = { role: "user" | "assistant"; content: string };
 
 const MODES: ChatMode[] = ["customer", "consult", "training"];
 
+// Best-effort in-memory rate limit (per serverless instance). For durable,
+// cross-instance limiting use @upstash/ratelimit in production.
+const WINDOW_MS = 60_000;
+const MAX_PER_WINDOW = 15;
+const hits = new Map<string, { count: number; resetAt: number }>();
+
+function rateLimited(key: string): boolean {
+  const now = Date.now();
+  const entry = hits.get(key);
+  if (!entry || now > entry.resetAt) {
+    hits.set(key, { count: 1, resetAt: now + WINDOW_MS });
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > MAX_PER_WINDOW;
+}
+
 export async function POST(req: NextRequest) {
   let body: { mode?: string; messages?: IncomingMessage[] };
   try {
@@ -21,12 +38,26 @@ export async function POST(req: NextRequest) {
     ? (body.mode as ChatMode)
     : "customer";
 
-  // Training coach is for distributors/admin only.
-  if (mode === "training") {
+  // Consultation and training require a signed-in user; training is
+  // distributor/admin only.
+  if (mode === "consult" || mode === "training") {
     const user = await getCurrentUser();
-    if (!user || (user.role !== "distributor" && user.role !== "admin")) {
+    if (!user) return new Response("Unauthorized", { status: 401 });
+    if (
+      mode === "training" &&
+      user.role !== "distributor" &&
+      user.role !== "admin"
+    ) {
       return new Response("Unauthorized", { status: 401 });
     }
+  }
+
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (rateLimited(`${ip}:${mode}`)) {
+    return new Response("Too many requests — please slow down.", {
+      status: 429,
+    });
   }
 
   const messages = (Array.isArray(body.messages) ? body.messages : [])

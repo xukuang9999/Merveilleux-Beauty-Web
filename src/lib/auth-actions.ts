@@ -8,6 +8,7 @@ import {
   verifyPassword,
   destroySession,
   roleHome,
+  DUMMY_PASSWORD_HASH,
 } from "./auth";
 
 export type AuthState = { error?: string } | undefined;
@@ -23,8 +24,10 @@ export async function registerAction(
     .trim()
     .toLowerCase();
   const password = String(formData.get("password") || "");
-  const asRole = String(formData.get("role") || "customer");
-  const role = asRole === "distributor" ? "distributor" : "customer";
+  // SECURITY: never trust a client-supplied role. Self-registration always
+  // creates a `customer`. A "Join as 经销商" intent is recorded as a pending
+  // application that an admin promotes via the Users screen.
+  const wantsDistributor = String(formData.get("role") || "") === "distributor";
 
   if (name.length < 2) return { error: "Please enter your name." };
   if (!EMAIL_RE.test(email))
@@ -45,7 +48,13 @@ export async function registerAction(
 
   let home: string;
   try {
-    const user = await createUser({ name, email, password, role });
+    const user = await createUser({
+      name,
+      email,
+      password,
+      role: "customer",
+      status: wantsDistributor ? "pending" : "active",
+    });
     await createSession(user.id);
     home = roleHome[user.role];
   } catch {
@@ -71,7 +80,15 @@ export async function loginAction(
       error: "Sign-in is unavailable — the database isn't configured yet.",
     };
   }
-  if (!user || !verifyPassword(password, user.passwordHash)) {
+  // Constant-time-ish: always run a verification even when the user is absent,
+  // so response latency doesn't reveal whether an email is registered.
+  let ok = false;
+  if (user) {
+    ok = verifyPassword(password, user.passwordHash);
+  } else {
+    verifyPassword(password, DUMMY_PASSWORD_HASH); // decoy work
+  }
+  if (!user || !ok) {
     return { error: "Invalid email or password." };
   }
   await createSession(user.id);
