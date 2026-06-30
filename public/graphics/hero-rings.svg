@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Animated gold portrait halo rings</title>
+  <desc id="desc">Thin concentric gold rings with small orbiting dots that rotate slowly and pulse softly.</desc>
+  <style>
+    .rings { transform-box: view-box; transform-origin: center; animation: rings-rotate 60s linear infinite; }
+    .ring-a { animation: rings-pulse 5.6s ease-in-out infinite; }
+    .ring-b { animation: rings-pulse 4.8s ease-in-out infinite; animation-delay: -1.4s; }
+    .ring-c { animation: rings-pulse 6s ease-in-out infinite; animation-delay: -2.2s; }
+    .ring-d { animation: rings-pulse 5.2s ease-in-out infinite; animation-delay: -3s; }
+    .dot { transform-box: fill-box; transform-origin: center; animation: dot-breathe 5s ease-in-out infinite; }
+    .dot-alt { animation-delay: -2s; }
+    @keyframes rings-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes rings-pulse {
+      0%, 100% { opacity: .34; }
+      50% { opacity: .72; }
+    }
+    @keyframes dot-breathe {
+      0%, 100% { opacity: .42; transform: scale(.88); }
+      50% { opacity: .86; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g class="rings" fill="none" stroke="#BFA76F" stroke-linecap="round" stroke-linejoin="round">
+    <circle class="ring-a" cx="300" cy="300" r="235" stroke-width="1.05"/>
+    <circle class="ring-b" cx="300" cy="300" r="198" stroke-width=".9"/>
+    <circle class="ring-c" cx="300" cy="300" r="158" stroke-width=".8"/>
+    <circle class="ring-d" cx="300" cy="300" r="118" stroke-width=".7"/>
+    <path class="ring-b" d="M300 65a235 235 0 0 1 166 69" stroke-width="1.15" opacity=".48"/>
+    <path class="ring-c" d="M142 300a158 158 0 0 1 45-111" stroke-width=".9" opacity=".5"/>
+    <g fill="#BFA76F" stroke="none">
+      <circle class="dot" cx="300" cy="65" r="3"/>
+      <circle class="dot dot-alt" cx="487" cy="235" r="2.3"/>
+      <circle class="dot" cx="201" cy="423" r="1.9"/>
+    </g>
+  </g>
+</svg>

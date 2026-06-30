@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Button, Container, SectionHeading } from "@/components/ui";
+import Reveal from "@/components/Reveal";
 import { getProducts } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -27,8 +28,8 @@ export default async function ProductsPage() {
       <Container className="py-16">
         <div className="space-y-20">
           {products.map((p, i) => (
+            <Reveal key={p.slug} variant={i % 2 === 1 ? "right" : "left"}>
             <article
-              key={p.slug}
               id={p.slug}
               className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-2"
             >
@@ -99,6 +100,7 @@ export default async function ProductsPage() {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </Container>

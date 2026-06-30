@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" role="img" aria-labelledby="title desc">
+  <title id="title">Animated gold radiant burst</title>
+  <desc id="desc">A refined decorative burst of thin gold rays that rotates slowly and pulses.</desc>
+  <style>
+    .burst { transform-box: view-box; transform-origin: center; animation: burst-rotate 20s linear infinite, burst-pulse 4s ease-in-out infinite; }
+    .ray-soft { animation: ray-fade 4s ease-in-out infinite; animation-delay: -1.8s; }
+    @keyframes burst-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes burst-pulse {
+      0%, 100% { opacity: .54; }
+      50% { opacity: .96; }
+    }
+    @keyframes ray-fade {
+      0%, 100% { opacity: .36; }
+      50% { opacity: .78; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g class="burst" fill="none" stroke="#BFA76F" stroke-linecap="round">
+    <path d="M30 6v13M30 41v13M6 30h13M41 30h13" stroke-width="1.1"/>
+    <path class="ray-soft" d="M13 13l9 9M38 38l9 9M47 13l-9 9M22 38l-9 9" stroke-width=".9"/>
+    <path class="ray-soft" d="M30 2v3M30 55v3M2 30h3M55 30h3M10 10l2 2M48 48l2 2M50 10l-2 2M12 48l-2 2" stroke-width=".8" opacity=".62"/>
+    <circle cx="30" cy="30" r="2.2" fill="#BFA76F" stroke="none"/>
+    <circle cx="30" cy="30" r="8.5" stroke-width=".7" opacity=".38"/>
+  </g>
+</svg>

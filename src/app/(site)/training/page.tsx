@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Button, Container, SectionHeading, Divider } from "@/components/ui";
+import Reveal from "@/components/Reveal";
+import Counter from "@/components/Counter";
 import { seedModules, PASS_MARK } from "@/lib/seed-data";
 import { getCurrentUser } from "@/lib/auth";
 
@@ -9,11 +11,11 @@ export const metadata: Metadata = {
     "The Merveilleux Beauty distributor training programme — structured modules on brand, products, policy and SOP, each ending with a quiz, plus an AI training coach.",
 };
 
-const stats = [
-  { value: `${seedModules.length}`, label: "Training modules" },
-  { value: `${PASS_MARK}`, label: "Pass mark per quiz" },
-  { value: "2 wks", label: "Completion window" },
-  { value: "AI", label: "Training coach" },
+const stats: { num?: number; text?: string; label: string }[] = [
+  { num: seedModules.length, label: "Training modules" },
+  { num: PASS_MARK, text: "%", label: "Pass mark per quiz" },
+  { text: "2 wks", label: "Completion window" },
+  { text: "AI", label: "Training coach" },
 ];
 
 export default async function TrainingPage() {
@@ -31,16 +33,24 @@ export default async function TrainingPage() {
             description="Every distributor completes a structured, self-paced programme — with progress tracking, quizzes and an AI coach — before their in-person session."
           />
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {stats.map((s) => (
-              <div
+            {stats.map((s, i) => (
+              <Reveal
                 key={s.label}
-                className="rounded-2xl border border-line bg-white/70 px-5 py-6 text-center"
+                variant="up"
+                delay={i * 100}
+                className="rounded-2xl border border-line bg-white/70 px-5 py-6 text-center transition-transform duration-300 hover:-translate-y-1"
               >
-                <p className="font-serif text-4xl text-rose-deep">{s.value}</p>
+                <p className="font-serif text-4xl text-rose-deep">
+                  {s.num != null ? (
+                    <Counter value={s.num} suffix={s.text ?? ""} />
+                  ) : (
+                    s.text
+                  )}
+                </p>
                 <p className="mt-1 text-xs uppercase tracking-wide text-mid">
                   {s.label}
                 </p>
-              </div>
+              </Reveal>
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -69,10 +79,12 @@ export default async function TrainingPage() {
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">
-          {seedModules.map((m) => (
-            <div
+          {seedModules.map((m, i) => (
+            <Reveal
               key={m.ord}
-              className="rounded-2xl border border-line bg-white p-6"
+              variant={i % 2 === 0 ? "left" : "right"}
+              delay={(i % 2) * 80}
+              className="rounded-2xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-rose-light hover:shadow-[0_18px_40px_-24px_rgba(74,48,64,0.4)]"
             >
               <div className="flex items-start justify-between">
                 <span className="text-3xl">{m.icon}</span>
@@ -102,7 +114,7 @@ export default async function TrainingPage() {
                 ~{m.durationMins} min · {m.quiz.length}-question quiz preview
                 (full bank in portal)
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title id="title">Animated soft gold cream blob</title>
+  <desc id="desc">A soft gold and cream organic gradient blob that drifts independently.</desc>
+  <style>
+    .blob { transform-box: view-box; transform-origin: center; animation: gold-drift 16s ease-in-out infinite; }
+    .wash { animation: gold-pulse 8s ease-in-out infinite; }
+    @keyframes gold-drift {
+      0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      35% { transform: translate(-6px, 8px) scale(1.03) rotate(-3deg); }
+      70% { transform: translate(7px, -5px) scale(.99) rotate(2deg); }
+    }
+    @keyframes gold-pulse {
+      0%, 100% { opacity: .62; }
+      50% { opacity: .82; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <radialGradient id="goldBlob" cx="38%" cy="36%" r="72%">
+      <stop offset="0" stop-color="#FDFAF7" stop-opacity=".92"/>
+      <stop offset=".52" stop-color="#F5EFE0" stop-opacity=".64"/>
+      <stop offset="1" stop-color="#BFA76F" stop-opacity=".18"/>
+    </radialGradient>
+    <filter id="softBlur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <g class="blob" filter="url(#softBlur)">
+    <path class="wash" d="M194 35c65-1 126 34 154 91 31 62 23 141-22 194-42 50-111 72-177 57-61-14-110-62-128-120C1 194 22 123 74 83c34-26 75-47 120-48z" fill="url(#goldBlob)"/>
+    <path d="M189 82c50 0 94 28 115 72 22 46 16 103-18 142-31 36-83 52-132 40-45-11-82-46-96-90-14-46 2-98 40-127 25-20 57-36 91-37z" fill="#FDFAF7" opacity=".32"/>
+  </g>
+</svg>

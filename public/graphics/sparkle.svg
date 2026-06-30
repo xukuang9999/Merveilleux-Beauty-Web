@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-labelledby="title desc">
+  <title id="title">Animated gold sparkle</title>
+  <desc id="desc">A delicate four-point gold sparkle that twinkles with a soft glow.</desc>
+  <style>
+    .sparkle { transform-box: view-box; transform-origin: center; animation: twinkle 3s ease-in-out infinite; }
+    .glow { animation: glow-pulse 3s ease-in-out infinite; }
+    @keyframes twinkle {
+      0%, 100% { opacity: .3; transform: scale(.6) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1) rotate(2deg); }
+    }
+    @keyframes glow-pulse {
+      0%, 100% { opacity: .16; }
+      50% { opacity: .5; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+  </defs>
+  <g class="sparkle">
+    <path class="glow" d="M20 4c2.5 8.5 7.5 13.5 16 16-8.5 2.5-13.5 7.5-16 16-2.5-8.5-7.5-13.5-16-16 8.5-2.5 13.5-7.5 16-16z" fill="#F5EFE0" filter="url(#softGlow)"/>
+    <path d="M20 4c2.5 8.5 7.5 13.5 16 16-8.5 2.5-13.5 7.5-16 16-2.5-8.5-7.5-13.5-16-16 8.5-2.5 13.5-7.5 16-16z" fill="none" stroke="#BFA76F" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M20 10v20M10 20h20" fill="none" stroke="#BFA76F" stroke-width=".75" stroke-linecap="round" opacity=".72"/>
+  </g>
+</svg>

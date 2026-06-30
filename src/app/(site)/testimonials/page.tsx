@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Button, Container, SectionHeading, Stars } from "@/components/ui";
+import Reveal from "@/components/Reveal";
 import { getTestimonials } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -25,10 +26,14 @@ export default async function TestimonialsPage() {
 
       <Container className="py-16">
         <div className="columns-1 gap-5 md:columns-2 [&>*]:mb-5">
-          {testimonials.map((t) => (
-            <figure
+          {testimonials.map((t, i) => (
+            <Reveal
               key={t.name}
-              className="break-inside-avoid rounded-2xl border border-line bg-white p-7"
+              delay={(i % 2) * 100}
+              className="mb-5 break-inside-avoid"
+            >
+            <figure
+              className="rounded-2xl border border-line bg-white p-7 transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(74,48,64,0.4)]"
             >
               <Stars count={t.rating} />
               <blockquote className="mt-4 font-serif text-xl leading-snug text-charcoal">
@@ -46,6 +51,7 @@ export default async function TestimonialsPage() {
                 </span>
               </figcaption>
             </figure>
+            </Reveal>
           ))}
         </div>
 

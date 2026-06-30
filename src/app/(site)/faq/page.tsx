@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Button, Container, SectionHeading } from "@/components/ui";
+import Reveal from "@/components/Reveal";
 import { getFaqs } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -26,8 +27,8 @@ export default async function FaqPage() {
 
       <Container className="py-16">
         <div className="mx-auto max-w-3xl space-y-12">
-          {categories.map((cat) => (
-            <div key={cat}>
+          {categories.map((cat, ci) => (
+            <Reveal key={cat} delay={ci * 100}>
               <h2 className="mb-4 font-serif text-2xl text-charcoal">{cat}</h2>
               <div className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-white">
                 {faqs
@@ -54,7 +55,7 @@ export default async function FaqPage() {
                     </details>
                   ))}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

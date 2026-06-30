@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 export function Container({
@@ -63,7 +64,7 @@ export function Button({
       "border border-charcoal/25 text-charcoal hover:border-rose-deep hover:text-rose-deep",
   }[variant];
 
-  const cls = `${base} ${styles} ${className}`;
+  const cls = `${base} ${styles} ${variant !== "outline" ? "shine" : ""} ${className}`;
 
   if (external) {
     return (
@@ -93,12 +94,15 @@ export function Stars({ count = 5 }: { count?: number }) {
 
 export function Divider() {
   return (
-    <div className="flex items-center justify-center gap-3 py-2 text-gold/70">
-      <span className="h-px w-12 bg-gold/40" />
-      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
-        <path d="M5 0l1.5 3.5L10 5 6.5 6.5 5 10 3.5 6.5 0 5l3.5-1.5z" />
-      </svg>
-      <span className="h-px w-12 bg-gold/40" />
+    <div className="flex justify-center py-2">
+      <Image
+        src="/graphics/divider-bloom.svg"
+        alt=""
+        aria-hidden
+        width={240}
+        height={32}
+        className="h-8 w-auto"
+      />
     </div>
   );
 }
