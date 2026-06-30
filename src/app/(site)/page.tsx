@@ -1,31 +1,16 @@
-import Image from "next/image";
 import { Button, Container, SectionHeading, Stars, Divider } from "@/components/ui";
 import ProductCard from "@/components/ProductCard";
 import HeroAvatar from "@/components/HeroAvatar";
 import Reveal from "@/components/Reveal";
 import Petals from "@/components/Petals";
 import Marquee from "@/components/Marquee";
+import Image from "next/image";
 import { getProducts, getTestimonials } from "@/lib/content";
 import { seedModules } from "@/lib/seed-data";
+import { getLocale, getDict, fmt } from "@/i18n/server";
+import { localizeModule } from "@/i18n/content";
 
-const valueProps = [
-  {
-    icon: "🌿",
-    title: "Clean OEM formulas",
-    body: "Developed to French cosmetic standards with proven, skin-loving actives — no luxury markup.",
-  },
-  {
-    icon: "🔬",
-    title: "Results you can see",
-    body: "Brightening, hydration and barrier repair backed by ingredients that actually perform.",
-  },
-  {
-    icon: "🤝",
-    title: "A network that grows",
-    body: "A trained 经销商 community with the tools, training and AI support to build a real business.",
-  },
-];
-
+const valuePropIcons = ["🌿", "🔬", "🤝"];
 const ingredients = [
   "Vitamin C",
   "Hyaluronic Acid",
@@ -39,11 +24,17 @@ const ingredients = [
 ];
 
 export default async function Home() {
-  const [products, testimonials] = await Promise.all([
+  const [products, testimonials, locale, dict] = await Promise.all([
     getProducts(),
     getTestimonials(),
+    getLocale(),
+    getDict(),
   ]);
+  const d = dict.home;
   const featured = products.slice(0, 4);
+  const modules = seedModules
+    .slice(0, 4)
+    .map((m) => localizeModule(m, locale));
 
   return (
     <>
@@ -60,36 +51,32 @@ export default async function Home() {
         />
         <Container className="grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-2 lg:gap-8">
           <div className="rise">
-            <p className="eyebrow mb-5">OEM French Beauty · Made for modern skin</p>
+            <p className="eyebrow mb-5">{d.heroEyebrow}</p>
             <h1 className="font-serif text-5xl font-light leading-[1.05] text-charcoal sm:text-6xl">
-              Skincare that feels{" "}
-              <span className="gradient-text italic">merveilleux</span>.
+              {d.heroTitleBefore}
+              <span className="gradient-text italic">{d.heroTitleHighlight}</span>
+              .
             </h1>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-mid">
-              French-grade formulas, honestly priced — and a 经销商 network
-              built on real training and trust. Meet Margaux, our AI beauty
-              advisor, ready to help you any time.
+              {d.heroBody}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/products">Explore the range</Button>
+              <Button href="/products">{d.exploreRange}</Button>
               <Button href="/contact" variant="outline">
-                Become a 经销商
+                {d.becomeDistributor}
               </Button>
             </div>
             <div className="mt-10 flex items-center gap-4">
               <Stars />
-              <p className="text-sm text-mid">
-                Loved by customers &amp; distributors across Malaysia
-              </p>
+              <p className="text-sm text-mid">{d.lovedBy}</p>
             </div>
           </div>
 
           <div className="rise-2">
-            <HeroAvatar />
+            <HeroAvatar dict={dict.chat} />
           </div>
         </Container>
 
-        {/* scroll cue */}
         <div className="pointer-events-none flex justify-center pb-6">
           <Image
             src="/graphics/scroll-cue.svg"
@@ -110,13 +97,9 @@ export default async function Home() {
       {/* VALUE PROPS */}
       <section className="border-b border-line bg-white/60">
         <Container className="grid gap-8 py-14 sm:grid-cols-3">
-          {valueProps.map((v, i) => (
-            <Reveal
-              key={v.title}
-              delay={i * 120}
-              className="text-center sm:text-left"
-            >
-              <span className="text-2xl">{v.icon}</span>
+          {d.valueProps.map((v, i) => (
+            <Reveal key={i} delay={i * 120} className="text-center sm:text-left">
+              <span className="text-2xl">{valuePropIcons[i]}</span>
               <h3 className="mt-3 font-serif text-xl text-charcoal">{v.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-mid">{v.body}</p>
             </Reveal>
@@ -129,18 +112,18 @@ export default async function Home() {
         <Container>
           <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeading
-              eyebrow="The Collection"
-              title="A complete routine, beautifully made"
-              description="Cleanse, prep, treat, protect — French-grade essentials tuned for tropical skin."
+              eyebrow={d.collectionEyebrow}
+              title={d.collectionTitle}
+              description={d.collectionDesc}
             />
             <Button href="/products" variant="outline" className="shrink-0">
-              View all {products.length} products
+              {fmt(d.viewAllProducts, { n: products.length })}
             </Button>
           </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
             {featured.map((p, i) => (
               <Reveal key={p.slug} variant="up" delay={i * 90}>
-                <ProductCard product={p} />
+                <ProductCard product={p} discoverLabel={dict.common.explore} />
               </Reveal>
             ))}
           </div>
@@ -153,13 +136,12 @@ export default async function Home() {
           <Divider />
           <Reveal variant="fade">
             <p className="mx-auto mt-6 max-w-3xl font-serif text-3xl font-light leading-snug sm:text-4xl">
-              “Merveilleux means{" "}
-              <span className="italic text-gold">marvellous</span> — and that is
-              the standard we hold every formula, every partner, and every
-              customer experience to.”
+              {d.brandQuoteBefore}
+              <span className="italic text-gold">{d.brandQuoteHighlight}</span>
+              {d.brandQuoteAfter}
             </p>
             <p className="mt-8 text-sm uppercase tracking-[0.2em] text-cream/50">
-              The Merveilleux Promise
+              {d.brandPromise}
             </p>
           </Reveal>
         </Container>
@@ -171,8 +153,8 @@ export default async function Home() {
           <Reveal>
             <SectionHeading
               center
-              eyebrow="Loved & trusted"
-              title="What our community says"
+              eyebrow={d.testimonialsEyebrow}
+              title={d.testimonialsTitle}
             />
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -193,7 +175,7 @@ export default async function Home() {
           </div>
           <div className="mt-8 text-center">
             <Button href="/testimonials" variant="outline">
-              Read more stories
+              {d.readMoreStories}
             </Button>
           </div>
         </Container>
@@ -207,29 +189,25 @@ export default async function Home() {
               <Petals count={6} />
               <div className="relative grid items-center gap-8 lg:grid-cols-[1.3fr_1fr]">
                 <div>
-                  <p className="eyebrow mb-3">Become a 经销商</p>
+                  <p className="eyebrow mb-3">{d.ctaEyebrow}</p>
                   <h2 className="font-serif text-3xl font-medium leading-tight text-charcoal sm:text-4xl">
-                    Build a beauty business, the right way
+                    {d.ctaTitle}
                   </h2>
                   <p className="mt-4 max-w-lg text-base leading-relaxed text-mid">
-                    Every Merveilleux distributor is set up to succeed with a
-                    structured training programme — {seedModules.length} modules
-                    covering brand, products, policy and SOP — a skincare
-                    knowledge base, and an AI training coach in your pocket.
+                    {fmt(d.ctaBody, { n: seedModules.length })}
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
-                    <Button href="/register?as=distributor">Apply to join</Button>
+                    <Button href="/register?as=distributor">{d.applyToJoin}</Button>
                     <Button href="/training" variant="outline">
-                      See the training
+                      {d.seeTraining}
                     </Button>
                   </div>
                 </div>
                 <ul className="space-y-3">
-                  {seedModules.slice(0, 4).map((m, i) => (
+                  {modules.map((m) => (
                     <li
                       key={m.ord}
                       className="flex items-center gap-3 rounded-xl border border-white/60 bg-white/70 px-4 py-3 transition-transform duration-300 hover:translate-x-1"
-                      style={{ ["--reveal-delay" as string]: `${i * 80}ms` }}
                     >
                       <span className="text-xl">{m.icon}</span>
                       <div>

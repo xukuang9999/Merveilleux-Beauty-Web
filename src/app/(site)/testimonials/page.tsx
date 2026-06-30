@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button, Container, SectionHeading, Stars } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getTestimonials } from "@/lib/content";
+import { getDict } from "@/i18n/server";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -10,17 +11,14 @@ export const metadata: Metadata = {
 };
 
 export default async function TestimonialsPage() {
-  const testimonials = await getTestimonials();
+  const [testimonials, dict] = await Promise.all([getTestimonials(), getDict()]);
+  const d = dict.testimonials;
 
   return (
     <>
       <section className="border-b border-line bg-white/60 py-16 sm:py-20">
         <Container>
-          <SectionHeading
-            eyebrow="Loved & trusted"
-            title="Stories from our community"
-            description="From glowing skin to growing businesses — here's what customers and distributors say about Merveilleux Beauty."
-          />
+          <SectionHeading eyebrow={d.eyebrow} title={d.title} description={d.desc} />
         </Container>
       </section>
 
@@ -57,14 +55,11 @@ export default async function TestimonialsPage() {
 
         <div className="mt-16 rounded-3xl border border-rose-light bg-gradient-to-br from-rose-light/40 to-gold-light/40 p-10 text-center sm:p-14">
           <h2 className="font-serif text-3xl font-medium text-charcoal sm:text-4xl">
-            Have a Merveilleux story?
+            {d.haveStoryTitle}
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-mid">
-            We love hearing how our products and partnership have made a
-            difference. Share yours with us.
-          </p>
+          <p className="mx-auto mt-3 max-w-md text-mid">{d.haveStoryBody}</p>
           <div className="mt-7 flex justify-center">
-            <Button href="/contact">Share your story</Button>
+            <Button href="/contact">{d.shareStory}</Button>
           </div>
         </div>
       </Container>

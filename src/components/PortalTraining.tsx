@@ -3,7 +3,10 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { submitQuiz } from "@/lib/training-actions";
+import { fmt } from "@/i18n/format";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
+type T = Dictionary["portalTraining"];
 type Question = { id: number; question: string; options: string[] };
 type Module = {
   id: number;
@@ -18,14 +21,14 @@ type Module = {
 };
 type Progress = { moduleId: number; completed: boolean; score: number };
 
-const PASS_MARK = 70;
-
 export default function PortalTraining({
   modules,
   progress,
+  dict,
 }: {
   modules: Module[];
   progress: Progress[];
+  dict: T;
 }) {
   const [active, setActive] = useState<Module | null>(null);
   const progressMap = useMemo(() => {
@@ -50,15 +53,15 @@ export default function PortalTraining({
               <span className="text-3xl">{m.icon}</span>
               {done ? (
                 <span className="rounded-full bg-green-light px-3 py-1 text-[11px] font-semibold text-green">
-                  ✓ Completed · {p?.score}%
+                  ✓ {dict.completed} · {p?.score}%
                 </span>
               ) : p ? (
                 <span className="rounded-full bg-amber-light px-3 py-1 text-[11px] font-semibold text-amber">
-                  Best {p.score}%
+                  {dict.best} {p.score}%
                 </span>
               ) : (
                 <span className="rounded-full bg-gold-light px-3 py-1 text-[11px] font-semibold text-amber">
-                  Module {m.ord}
+                  {fmt(dict.module, { n: m.ord })}
                 </span>
               )}
             </div>
@@ -78,7 +81,7 @@ export default function PortalTraining({
             </ul>
             <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
               <span className="text-xs text-mid">
-                ~{m.durationMins} min · {m.quiz.length}-question quiz
+                {fmt(dict.minQuiz, { min: m.durationMins, q: m.quiz.length })}
               </span>
               <button
                 onClick={() => setActive(m)}
@@ -88,7 +91,7 @@ export default function PortalTraining({
                     : "bg-charcoal text-cream hover:bg-plum"
                 }`}
               >
-                {done ? "Retake quiz" : "Start quiz"}
+                {done ? dict.retakeQuiz : dict.startQuiz}
               </button>
             </div>
           </div>
@@ -96,7 +99,7 @@ export default function PortalTraining({
       })}
 
       {active && (
-        <QuizModal module={active} onClose={() => setActive(null)} />
+        <QuizModal module={active} dict={dict} onClose={() => setActive(null)} />
       )}
     </div>
   );
@@ -104,9 +107,11 @@ export default function PortalTraining({
 
 function QuizModal({
   module,
+  dict,
   onClose,
 }: {
   module: Module;
+  dict: T;
   onClose: () => void;
 }) {
   const router = useRouter();
@@ -143,14 +148,16 @@ function QuizModal({
       >
         <div className="flex items-start justify-between">
           <div>
-            <p className="eyebrow">Module {module.ord} · Quiz</p>
+            <p className="eyebrow">
+              {fmt(dict.module, { n: module.ord })} · {dict.quizTitle}
+            </p>
             <h3 className="mt-1 font-serif text-2xl text-charcoal">
               {module.title}
             </h3>
           </div>
           <button
             onClick={onClose}
-            aria-label="Close"
+            aria-label={dict.close}
             className="text-mid hover:text-charcoal"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -199,8 +206,11 @@ function QuizModal({
               className="mt-7 w-full rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-plum disabled:cursor-not-allowed disabled:opacity-40"
             >
               {submitting
-                ? "Marking…"
-                : `Submit quiz (${Object.keys(answers).length}/${module.quiz.length})`}
+                ? dict.marking
+                : fmt(dict.submit, {
+                    a: Object.keys(answers).length,
+                    q: module.quiz.length,
+                  })}
             </button>
           </>
         ) : (
@@ -218,9 +228,7 @@ function QuizModal({
               {result.score}%
             </h4>
             <p className="mt-1 text-sm text-mid">
-              {result.passed
-                ? `You passed! (${PASS_MARK} needed) — progress saved.`
-                : `${PASS_MARK} needed to pass — give it another try.`}
+              {result.passed ? dict.passed : dict.failed}
             </p>
             <div className="mt-6 flex justify-center gap-3">
               {result.passed ? (
@@ -228,7 +236,7 @@ function QuizModal({
                   onClick={onClose}
                   className="rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream hover:bg-plum"
                 >
-                  Done
+                  {dict.markComplete}
                 </button>
               ) : (
                 <button
@@ -238,14 +246,14 @@ function QuizModal({
                   }}
                   className="rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream hover:bg-plum"
                 >
-                  Retake quiz
+                  {dict.retake}
                 </button>
               )}
               <button
                 onClick={onClose}
                 className="rounded-full border border-line px-6 py-3 text-sm font-medium text-charcoal hover:border-rose-deep"
               >
-                Close
+                {dict.close}
               </button>
             </div>
           </div>

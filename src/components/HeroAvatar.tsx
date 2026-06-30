@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
-export default function HeroAvatar() {
+export default function HeroAvatar({ dict }: { dict: Dictionary["chat"] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
@@ -113,13 +114,13 @@ export default function HeroAvatar() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-green" />
           </span>
-          AI Beauty Advisor
+          {dict.bubbleEyebrow}
         </span>
         <span className="mt-1 block font-serif text-base leading-snug text-charcoal">
-          Bonjour! I&apos;m Margaux. Need help choosing? ✨
+          {dict.bubbleGreeting}
         </span>
         <span className="mt-1 block text-xs font-medium text-rose-deep">
-          Tap to chat →
+          {dict.tapToChat}
         </span>
       </button>
     </div>

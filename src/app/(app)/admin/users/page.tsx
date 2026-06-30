@@ -4,19 +4,24 @@ import { db } from "@/db";
 import { users } from "@/db/schema";
 import { setUserRole } from "@/lib/admin-actions";
 import { DashHeading, Panel } from "@/components/dash";
+import { getDict } from "@/i18n/server";
 
 const ROLES = ["customer", "distributor", "admin"] as const;
 
 export default async function AdminUsersPage() {
   const me = await requireRole(["admin"]);
-  const rows = await db.select().from(users).orderBy(desc(users.createdAt));
+  const [rows, dict] = await Promise.all([
+    db.select().from(users).orderBy(desc(users.createdAt)),
+    getDict(),
+  ]);
+  const d = dict.admin;
 
   return (
     <>
       <DashHeading
-        eyebrow="Admin · People"
-        title="Users & roles"
-        subtitle="Promote customers to 经销商, or grant admin access."
+        eyebrow={d.usersEyebrow}
+        title={d.usersTitle}
+        subtitle={d.usersSub}
       />
       <Panel>
         <div className="divide-y divide-line">
@@ -29,11 +34,11 @@ export default async function AdminUsersPage() {
                 <p className="text-sm font-medium text-charcoal">
                   {u.name}{" "}
                   {u.id === me.id && (
-                    <span className="text-xs text-mid">(you)</span>
+                    <span className="text-xs text-mid">{d.you}</span>
                   )}
                   {u.status === "pending" && (
                     <span className="ml-2 rounded-full bg-amber-light px-2 py-0.5 text-[10px] font-semibold text-amber">
-                      经销商 applied
+                      {d.applied}
                     </span>
                   )}
                 </p>
@@ -53,7 +58,7 @@ export default async function AdminUsersPage() {
                   ))}
                 </select>
                 <button className="rounded-full bg-charcoal px-4 py-1.5 text-xs font-medium text-cream hover:bg-plum">
-                  Update
+                  {d.update}
                 </button>
               </form>
             </div>

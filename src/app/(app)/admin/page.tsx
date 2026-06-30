@@ -4,46 +4,47 @@ import { requireRole } from "@/lib/auth";
 import { db } from "@/db";
 import { products, users, enquiries, kbArticles } from "@/db/schema";
 import { DashHeading, StatCard, Panel } from "@/components/dash";
+import { getDict, fmt } from "@/i18n/server";
 
 export default async function AdminPage() {
   await requireRole(["admin"]);
-  const [prod, usr, enq, kb] = await Promise.all([
+  const [prod, usr, enq, kb, dict] = await Promise.all([
     db.select().from(products),
     db.select().from(users),
     db.select().from(enquiries).orderBy(desc(enquiries.createdAt)),
     db.select().from(kbArticles),
+    getDict(),
   ]);
+  const d = dict.admin;
   const distributors = usr.filter((u) => u.role === "distributor").length;
 
   return (
     <>
       <DashHeading
-        eyebrow="Admin"
-        title="Control centre"
-        subtitle="Manage products, content, distributors and enquiries."
+        eyebrow={d.eyebrowDashboard}
+        title={d.dashboardTitle}
+        subtitle={d.dashboardSub}
       />
 
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-        <StatCard value={prod.length} label="Products" />
-        <StatCard value={usr.length} label="Users" />
-        <StatCard value={distributors} label="经销商" />
-        <StatCard value={enq.length} label="Enquiries" />
+        <StatCard value={prod.length} label={d.statProducts} />
+        <StatCard value={usr.length} label={d.statUsers} />
+        <StatCard value={distributors} label={d.statDistributors} />
+        <StatCard value={enq.length} label={d.statEnquiries} />
       </div>
 
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <AdminLink href="/admin/products" icon="💄" label="Products" />
-        <AdminLink href="/admin/kb" icon="📚" label="Knowledge Base" />
-        <AdminLink href="/admin/progress" icon="📈" label="Training Progress" />
-        <AdminLink href="/admin/users" icon="👤" label="Users & Roles" />
-        <AdminLink href="/admin/enquiries" icon="✉️" label="Enquiries" />
-        <AdminLink href="/" icon="🌐" label="View live site" />
+        <AdminLink href="/admin/products" icon="💄" label={d.linkProducts} />
+        <AdminLink href="/admin/kb" icon="📚" label={d.linkKb} />
+        <AdminLink href="/admin/progress" icon="📈" label={d.linkProgress} />
+        <AdminLink href="/admin/users" icon="👤" label={d.linkUsers} />
+        <AdminLink href="/admin/enquiries" icon="✉️" label={d.linkEnquiries} />
+        <AdminLink href="/" icon="🌐" label={d.viewLiveSite} />
       </div>
 
-      <Panel title="Recent enquiries" className="mt-5">
+      <Panel title={d.recentEnquiries} className="mt-5">
         {enq.length === 0 ? (
-          <p className="text-sm text-mid">
-            No enquiries yet. New contact-form submissions appear here.
-          </p>
+          <p className="text-sm text-mid">{d.noEnquiries}</p>
         ) : (
           <ul className="divide-y divide-line">
             {enq.slice(0, 5).map((e) => (
@@ -69,13 +70,15 @@ export default async function AdminPage() {
           href="/admin/enquiries"
           className="mt-4 inline-block text-sm font-medium text-rose-deep underline"
         >
-          View all enquiries →
+          {d.viewAllEnquiries}
         </Link>
       </Panel>
 
       <p className="mt-6 text-xs text-mid">
-        Knowledge base: {kb.length} articles ·{" "}
-        {kb.filter((k) => k.published).length} published.
+        {fmt(d.kbSummary, {
+          total: kb.length,
+          published: kb.filter((k) => k.published).length,
+        })}
       </p>
     </>
   );

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getProducts } from "@/lib/content";
+import { getDict, fmt } from "@/i18n/server";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -11,17 +12,14 @@ export const metadata: Metadata = {
 };
 
 export default async function ProductsPage() {
-  const products = await getProducts();
+  const [products, dict] = await Promise.all([getProducts(), getDict()]);
+  const d = dict.products;
 
   return (
     <>
       <section className="border-b border-line bg-white/60 py-16 sm:py-20">
         <Container>
-          <SectionHeading
-            eyebrow="The Collection"
-            title="OEM French formulas, made to perform"
-            description="Every product is developed to French cosmetic standards using clean, effective actives — a complete routine tuned for a tropical climate."
-          />
+          <SectionHeading eyebrow={d.eyebrow} title={d.title} description={d.desc} />
         </Container>
       </section>
 
@@ -68,7 +66,7 @@ export default async function ProductsPage() {
 
                 <div className="mt-7 grid gap-6 sm:grid-cols-2">
                   <div>
-                    <h3 className="eyebrow mb-3">Key Ingredients</h3>
+                    <h3 className="eyebrow mb-3">{d.keyIngredients}</h3>
                     <ul className="space-y-1.5">
                       {p.keyIngredients.map((ing) => (
                         <li key={ing} className="text-sm text-charcoal">
@@ -78,7 +76,7 @@ export default async function ProductsPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="eyebrow mb-3">Benefits</h3>
+                    <h3 className="eyebrow mb-3">{d.benefits}</h3>
                     <ul className="space-y-1.5">
                       {p.benefits.map((b) => (
                         <li
@@ -95,7 +93,7 @@ export default async function ProductsPage() {
 
                 <div className="mt-8">
                   <Button href="/contact" variant="outline">
-                    Enquire about {p.name}
+                    {fmt(d.enquireAbout, { name: p.name })}
                   </Button>
                 </div>
               </div>
@@ -109,15 +107,12 @@ export default async function ProductsPage() {
         <Container>
           <div className="rounded-3xl bg-gradient-to-br from-charcoal to-plum p-10 text-center text-cream sm:p-14">
             <h2 className="font-serif text-3xl font-light sm:text-4xl">
-              Want the full product deck &amp; pricing?
+              {d.deckTitle}
             </h2>
-            <p className="mx-auto mt-3 max-w-md text-cream/70">
-              Distributors get detailed formulation sheets, pricing and
-              marketing assets. Reach out to get started.
-            </p>
+            <p className="mx-auto mt-3 max-w-md text-cream/70">{d.deckBody}</p>
             <div className="mt-7 flex justify-center">
               <Button href="/contact" variant="gold">
-                Get in touch
+                {dict.common.getInTouch}
               </Button>
             </div>
           </div>

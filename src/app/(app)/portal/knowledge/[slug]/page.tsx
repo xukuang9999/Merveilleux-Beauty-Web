@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { requireRole } from "@/lib/auth";
 import { getKbArticle } from "@/lib/kb";
 import Markdown from "@/components/Markdown";
+import { getDict } from "@/i18n/server";
 
 export default async function KbArticlePage({
   params,
@@ -11,7 +12,7 @@ export default async function KbArticlePage({
 }) {
   await requireRole(["distributor", "admin"]);
   const { slug } = await params;
-  const article = await getKbArticle(slug);
+  const [article, dict] = await Promise.all([getKbArticle(slug), getDict()]);
   if (!article) notFound();
 
   return (
@@ -20,7 +21,7 @@ export default async function KbArticlePage({
         href="/portal/knowledge"
         className="text-sm text-mid hover:text-charcoal"
       >
-        ← Back to knowledge base
+        {dict.knowledge.backToKb}
       </Link>
       <p className="eyebrow mt-4">{article.category}</p>
       <h1 className="mt-2 font-serif text-3xl font-medium text-charcoal sm:text-4xl">

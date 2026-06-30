@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui";
 import EnquiryForm from "@/components/EnquiryForm";
 import { site, whatsappLink } from "@/lib/data";
+import { getDict } from "@/i18n/server";
 
 export const metadata: Metadata = {
   title: "Contact & Join",
@@ -9,20 +10,21 @@ export const metadata: Metadata = {
     "Get in touch with Merveilleux Beauty — product enquiries, wholesale, or apply to become a 经销商.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const dict = await getDict();
+  const d = dict.contact;
+
   return (
     <section className="py-16 sm:py-20">
       <Container className="grid gap-14 lg:grid-cols-[1fr_1.1fr]">
         <div>
-          <p className="eyebrow mb-3">Contact &amp; Join</p>
+          <p className="eyebrow mb-3">{d.eyebrow}</p>
           <h1 className="font-serif text-4xl font-medium leading-tight text-charcoal sm:text-5xl">
-            Let&apos;s create something{" "}
-            <span className="italic text-rose-deep">merveilleux</span>
+            {d.titleBefore}
+            <span className="italic text-rose-deep">{d.titleHighlight}</span>
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-mid">
-            Whether you&apos;re curious about our products, exploring wholesale,
-            or ready to build your own beauty business as a 经销商 — we&apos;d
-            love to hear from you.
+            {d.body}
           </p>
 
           <div className="mt-10 space-y-4">
@@ -38,8 +40,8 @@ export default function ContactPage() {
                 </svg>
               </span>
               <div>
-                <p className="text-sm font-medium text-charcoal">WhatsApp</p>
-                <p className="text-sm text-mid">Fastest way to reach us</p>
+                <p className="text-sm font-medium text-charcoal">{d.whatsapp}</p>
+                <p className="text-sm text-mid">{d.whatsappSub}</p>
               </div>
             </a>
             <a
@@ -53,27 +55,21 @@ export default function ContactPage() {
                 </svg>
               </span>
               <div>
-                <p className="text-sm font-medium text-charcoal">Email</p>
+                <p className="text-sm font-medium text-charcoal">{d.email}</p>
                 <p className="text-sm text-mid">{site.email}</p>
               </div>
             </a>
           </div>
 
           <div className="mt-8 rounded-2xl border border-gold/30 bg-gold-light/40 p-5">
-            <p className="text-sm text-charcoal">
-              <span className="font-medium">New 经销商?</span> After your
-              enquiry, you&apos;ll be guided through our online training programme
-              before your in-person onboarding session.
-            </p>
+            <p className="text-sm text-charcoal">{d.newDistributorNote}</p>
           </div>
         </div>
 
         <div className="rounded-3xl border border-line bg-white/70 p-7 sm:p-9">
-          <h2 className="font-serif text-2xl text-charcoal">Send an enquiry</h2>
-          <p className="mt-1 mb-6 text-sm text-mid">
-            Fill this in and we&apos;ll continue the conversation on WhatsApp.
-          </p>
-          <EnquiryForm />
+          <h2 className="font-serif text-2xl text-charcoal">{d.sendEnquiry}</h2>
+          <p className="mt-1 mb-6 text-sm text-mid">{d.sendEnquirySub}</p>
+          <EnquiryForm dict={d} />
         </div>
       </Container>
     </section>

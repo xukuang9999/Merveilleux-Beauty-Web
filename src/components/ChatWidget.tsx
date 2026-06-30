@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import ChatPanel from "./ChatPanel";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
-export default function ChatWidget() {
+export default function ChatWidget({ dict }: { dict: Dictionary["chat"] }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -27,9 +28,7 @@ export default function ChatWidget() {
             />
             <div className="flex-1">
               <p className="text-sm font-medium">Margaux</p>
-              <p className="text-[11px] text-cream/60">
-                Merveilleux AI Beauty Advisor
-              </p>
+              <p className="text-[11px] text-cream/60">{dict.advisorRole}</p>
             </div>
             <button
               onClick={() => setOpen(false)}
@@ -45,12 +44,9 @@ export default function ChatWidget() {
             <ChatPanel
               mode="customer"
               heightClass="h-[400px]"
-              greeting="Bonjour! 👋 I'm Margaux, your Merveilleux Beauty advisor. Ask me about our products, building a routine, or becoming a 经销商. How can I help?"
-              suggestions={[
-                "Help me build a routine",
-                "Which serum is best for dark spots?",
-                "How do I become a 经销商?",
-              ]}
+              greeting={dict.customerGreeting}
+              suggestions={dict.customerSuggestions}
+              placeholder={dict.placeholder}
             />
           </div>
         </div>
@@ -71,7 +67,7 @@ export default function ChatWidget() {
           )}
         </span>
         <span className="text-sm font-medium">
-          {open ? "Close" : "Ask Margaux"}
+          {open ? dict.close : dict.askMargaux}
         </span>
       </button>
     </>

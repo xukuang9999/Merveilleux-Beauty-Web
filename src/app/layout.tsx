@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/data";
+import { getLocale } from "@/i18n/server";
+import { localeHtmlLang } from "@/i18n/config";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -45,14 +47,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   return (
     <html
-      lang="en"
+      lang={localeHtmlLang[locale]}
       className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-cream">{children}</body>

@@ -5,20 +5,22 @@ import { db } from "@/db";
 import { kbArticles } from "@/db/schema";
 import { toggleKbPublished } from "@/lib/admin-actions";
 import { DashHeading, Panel } from "@/components/dash";
+import { getDict } from "@/i18n/server";
 
 export default async function AdminKbPage() {
   await requireRole(["admin"]);
-  const rows = await db
-    .select()
-    .from(kbArticles)
-    .orderBy(asc(kbArticles.sortOrder));
+  const [rows, dict] = await Promise.all([
+    db.select().from(kbArticles).orderBy(asc(kbArticles.sortOrder)),
+    getDict(),
+  ]);
+  const d = dict.admin;
 
   return (
     <>
       <DashHeading
-        eyebrow="Admin · 知识库"
-        title="Knowledge base"
-        subtitle="The skincare knowledge base powering the 经销商 portal and the AI assistant."
+        eyebrow={d.kbEyebrow}
+        title={d.kbTitle}
+        subtitle={d.kbSub}
       />
       <Panel>
         <div className="divide-y divide-line">
@@ -36,7 +38,7 @@ export default async function AdminKbPage() {
                   href={`/portal/knowledge/${a.slug}`}
                   className="text-xs font-medium text-rose-deep hover:underline"
                 >
-                  View
+                  {d.view}
                 </Link>
                 <form action={toggleKbPublished}>
                   <input type="hidden" name="id" value={a.id} />
@@ -52,17 +54,14 @@ export default async function AdminKbPage() {
                         : "bg-cream text-mid"
                     }`}
                   >
-                    {a.published ? "Published" : "Hidden"}
+                    {a.published ? d.published : d.hidden}
                   </button>
                 </form>
               </div>
             </div>
           ))}
         </div>
-        <p className="mt-4 text-xs text-mid">
-          Tip: KB content is seeded from the curated library. Click a status to
-          show/hide an article.
-        </p>
+        <p className="mt-4 text-xs text-mid">{d.kbTip}</p>
       </Panel>
     </>
   );

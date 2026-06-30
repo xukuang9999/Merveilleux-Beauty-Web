@@ -1,8 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { navLinks, site, whatsappLink } from "@/lib/data";
+import { site, whatsappLink } from "@/lib/data";
+import { getDict } from "@/i18n/server";
 
-export default function Footer() {
+export default async function Footer() {
+  const dict = await getDict();
+  const links = [
+    { href: "/", label: dict.nav.home },
+    { href: "/products", label: dict.nav.products },
+    { href: "/testimonials", label: dict.nav.testimonials },
+    { href: "/faq", label: dict.nav.faq },
+    { href: "/training", label: dict.nav.training },
+    { href: "/contact", label: dict.nav.contact },
+  ];
+
   return (
     <footer className="mt-24 bg-charcoal text-cream/70">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
@@ -29,9 +40,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="eyebrow mb-4">Explore</h4>
+            <h4 className="eyebrow mb-4">{dict.footer.explore}</h4>
             <ul className="space-y-2.5 text-sm">
-              {navLinks.map((l) => (
+              {links.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
@@ -45,7 +56,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="eyebrow mb-4">Connect</h4>
+            <h4 className="eyebrow mb-4">{dict.footer.connect}</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a
@@ -62,7 +73,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-cream/70 transition-colors hover:text-gold"
                 >
-                  WhatsApp us
+                  {dict.footer.whatsapp}
                 </a>
               </li>
               <li>
@@ -72,7 +83,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-cream/70 transition-colors hover:text-gold"
                 >
-                  Instagram
+                  {dict.footer.instagram}
                 </a>
               </li>
             </ul>
@@ -81,10 +92,10 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-cream/10 pt-6 text-xs text-cream/40 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {site.name} · OEM French Beauty Products
+            © {new Date().getFullYear()} {site.name} · {dict.footer.rights}
           </p>
           <p>
-            Crafted with care · <span className="text-gold">Merveilleux</span>
+            {dict.footer.crafted} · <span className="text-gold">Merveilleux</span>
           </p>
         </div>
       </div>

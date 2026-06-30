@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ProductView } from "@/lib/content";
 
-export default function ProductCard({ product }: { product: ProductView }) {
+export default function ProductCard({
+  product,
+  discoverLabel = "Discover",
+}: {
+  product: ProductView;
+  discoverLabel?: string;
+}) {
   return (
     <Link
       href={`/products#${product.slug}`}
@@ -26,7 +32,7 @@ export default function ProductCard({ product }: { product: ProductView }) {
         </h3>
         <p className="mt-1 text-sm italic text-mid">{product.tagline}</p>
         <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-medium text-rose-deep">
-          Discover
+          {discoverLabel}
           <svg
             width="14"
             height="14"

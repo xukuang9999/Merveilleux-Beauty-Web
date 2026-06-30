@@ -2,13 +2,16 @@ import { requireRole } from "@/lib/auth";
 import { getModulesWithQuiz, getUserProgress } from "@/lib/training";
 import { DashHeading } from "@/components/dash";
 import PortalTraining from "@/components/PortalTraining";
+import { getDict, fmt } from "@/i18n/server";
 
 export default async function PortalTrainingPage() {
   const user = await requireRole(["distributor", "admin"]);
-  const [modules, progress] = await Promise.all([
+  const [modules, progress, dict] = await Promise.all([
     getModulesWithQuiz(),
     getUserProgress(user.id),
+    getDict(),
   ]);
+  const d = dict.portalTraining;
 
   // Never send the correct answers to the client — scoring is server-side.
   const clientModules = modules.map((m) => ({
@@ -37,11 +40,15 @@ export default async function PortalTrainingPage() {
   return (
     <>
       <DashHeading
-        eyebrow="经销商 Training"
-        title="Your training programme"
-        subtitle={`Complete each module and pass its quiz (70% to pass). ${completed}/${modules.length} done.`}
+        eyebrow={d.eyebrow}
+        title={d.title}
+        subtitle={fmt(d.sub, { done: completed, total: modules.length })}
       />
-      <PortalTraining modules={clientModules} progress={clientProgress} />
+      <PortalTraining
+        modules={clientModules}
+        progress={clientProgress}
+        dict={d}
+      />
     </>
   );
 }

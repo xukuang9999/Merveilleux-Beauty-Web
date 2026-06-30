@@ -4,6 +4,7 @@ import { db } from "@/db";
 import { products, type Product } from "@/db/schema";
 import { saveProduct, deleteProduct } from "@/lib/admin-actions";
 import { DashHeading } from "@/components/dash";
+import { getDict } from "@/i18n/server";
 
 const input =
   "w-full rounded-lg border border-line bg-white px-3 py-2 text-sm outline-none focus:border-rose-deep";
@@ -11,22 +12,26 @@ const label = "mb-1 block text-[11px] font-semibold uppercase tracking-wide text
 
 export default async function AdminProductsPage() {
   await requireRole(["admin"]);
-  const rows = await db.select().from(products).orderBy(asc(products.sortOrder));
+  const [rows, dict] = await Promise.all([
+    db.select().from(products).orderBy(asc(products.sortOrder)),
+    getDict(),
+  ]);
+  const d = dict.admin;
 
   return (
     <>
       <DashHeading
-        eyebrow="Admin · Catalogue"
-        title="Products"
-        subtitle="Edit the catalogue shown on the public site. Changes publish instantly."
+        eyebrow={d.productsEyebrow}
+        title={d.productsTitle}
+        subtitle={d.productsSub}
       />
 
       <details className="mb-6 rounded-2xl border border-rose-light bg-rose-light/20 p-5">
         <summary className="cursor-pointer text-sm font-semibold text-rose-deep">
-          + Add a new product
+          {d.addProduct}
         </summary>
         <div className="mt-4">
-          <ProductForm />
+          <ProductForm saveLabel={d.createProduct} />
         </div>
       </details>
 
@@ -44,16 +49,16 @@ export default async function AdminProductsPage() {
                       : "bg-cream text-mid"
                   }`}
                 >
-                  {p.published ? "Published" : "Hidden"}
+                  {p.published ? d.published : d.hidden}
                 </span>
               </span>
             </summary>
             <div className="mt-4">
-              <ProductForm product={p} />
+              <ProductForm product={p} saveLabel={d.saveChanges} />
               <form action={deleteProduct} className="mt-3">
                 <input type="hidden" name="id" value={p.id} />
                 <button className="text-xs font-medium text-rose-deep hover:underline">
-                  Delete product
+                  {d.deleteProduct}
                 </button>
               </form>
             </div>
@@ -64,7 +69,13 @@ export default async function AdminProductsPage() {
   );
 }
 
-function ProductForm({ product }: { product?: Product }) {
+function ProductForm({
+  product,
+  saveLabel,
+}: {
+  product?: Product;
+  saveLabel: string;
+}) {
   return (
     <form action={saveProduct} className="space-y-3">
       {product && <input type="hidden" name="id" value={product.id} />}
@@ -146,7 +157,7 @@ function ProductForm({ product }: { product?: Product }) {
         </div>
       </div>
       <button className="rounded-full bg-charcoal px-5 py-2.5 text-sm font-medium text-cream hover:bg-plum">
-        {product ? "Save changes" : "Create product"}
+        {saveLabel}
       </button>
     </form>
   );

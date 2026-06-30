@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
 type Article = {
   slug: string;
@@ -11,19 +12,26 @@ type Article = {
   tags: string[];
 };
 
-export default function KbBrowser({ articles }: { articles: Article[] }) {
+export default function KbBrowser({
+  articles,
+  dict,
+}: {
+  articles: Article[];
+  dict: Dictionary["knowledge"];
+}) {
+  const ALL = dict.all;
   const [query, setQuery] = useState("");
-  const [cat, setCat] = useState<string>("All");
+  const [cat, setCat] = useState<string>(ALL);
 
   const categories = useMemo(
-    () => ["All", ...new Set(articles.map((a) => a.category))],
-    [articles],
+    () => [ALL, ...new Set(articles.map((a) => a.category))],
+    [articles, ALL],
   );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return articles.filter((a) => {
-      const inCat = cat === "All" || a.category === cat;
+      const inCat = cat === ALL || a.category === cat;
       const inQ =
         !q ||
         a.title.toLowerCase().includes(q) ||
@@ -31,7 +39,7 @@ export default function KbBrowser({ articles }: { articles: Article[] }) {
         a.tags.some((t) => t.toLowerCase().includes(q));
       return inCat && inQ;
     });
-  }, [articles, query, cat]);
+  }, [articles, query, cat, ALL]);
 
   return (
     <div>
@@ -39,7 +47,7 @@ export default function KbBrowser({ articles }: { articles: Article[] }) {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search cases, ingredients, tips…"
+          placeholder={dict.searchPlaceholder}
           className="w-full rounded-full border border-line bg-white px-4 py-2.5 text-sm text-charcoal outline-none focus:border-rose-deep sm:max-w-xs"
         />
         <div className="flex flex-wrap gap-2">
@@ -61,7 +69,7 @@ export default function KbBrowser({ articles }: { articles: Article[] }) {
 
       {filtered.length === 0 ? (
         <p className="rounded-2xl border border-line bg-white p-8 text-center text-sm text-mid">
-          No articles match your search.
+          {dict.noResults}
         </p>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
@@ -79,7 +87,7 @@ export default function KbBrowser({ articles }: { articles: Article[] }) {
               </h3>
               <p className="mt-2 text-sm text-mid">{a.excerpt}</p>
               <span className="mt-3 inline-block text-sm font-medium text-rose-deep">
-                Read →
+                {dict.read}
               </span>
             </Link>
           ))}

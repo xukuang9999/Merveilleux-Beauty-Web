@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getFaqs } from "@/lib/content";
+import { getDict } from "@/i18n/server";
 
 export const metadata: Metadata = {
   title: "Q&A",
@@ -10,18 +11,15 @@ export const metadata: Metadata = {
 };
 
 export default async function FaqPage() {
-  const faqs = await getFaqs();
+  const [faqs, dict] = await Promise.all([getFaqs(), getDict()]);
+  const d = dict.faq;
   const categories = [...new Set(faqs.map((f) => f.category))];
 
   return (
     <>
       <section className="border-b border-line bg-white/60 py-16 sm:py-20">
         <Container>
-          <SectionHeading
-            eyebrow="Q&A · FAQ"
-            title="Questions, answered"
-            description="Everything you might want to know about our products, skincare routines and the 经销商 opportunity. Still stuck? Ask Margaux, our AI advisor."
-          />
+          <SectionHeading eyebrow={d.eyebrow} title={d.title} description={d.desc} />
         </Container>
       </section>
 
@@ -61,15 +59,12 @@ export default async function FaqPage() {
 
         <div className="mx-auto mt-16 max-w-3xl rounded-3xl bg-gradient-to-br from-charcoal to-plum p-10 text-center text-cream sm:p-12">
           <h2 className="font-serif text-2xl font-light sm:text-3xl">
-            Still have a question?
+            {d.stillTitle}
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-cream/70">
-            Ask Margaux any time, or reach our team directly — we&apos;re happy
-            to help.
-          </p>
+          <p className="mx-auto mt-3 max-w-md text-cream/70">{d.stillBody}</p>
           <div className="mt-7 flex justify-center">
             <Button href="/contact" variant="gold">
-              Contact us
+              {dict.common.contactUs}
             </Button>
           </div>
         </div>

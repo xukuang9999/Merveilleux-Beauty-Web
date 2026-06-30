@@ -7,11 +7,24 @@ import {
   type TrainingModule,
   type QuizQuestion,
 } from "@/db/schema";
+import { getLocale } from "@/i18n/server";
+import { contentPack } from "@/i18n/content";
 
 export type ModuleWithQuiz = TrainingModule & { quiz: QuizQuestion[] };
 
 export async function getModules(): Promise<TrainingModule[]> {
-  return db.select().from(trainingModules).orderBy(asc(trainingModules.ord));
+  const rows = await db
+    .select()
+    .from(trainingModules)
+    .orderBy(asc(trainingModules.ord));
+  const pack = contentPack(await getLocale());
+  if (!pack) return rows;
+  return rows.map((m) => {
+    const t = pack.modules[m.ord];
+    return t
+      ? { ...m, title: t.title, summary: t.summary, lessons: t.lessons }
+      : m;
+  });
 }
 
 export async function getModulesWithQuiz(): Promise<ModuleWithQuiz[]> {

@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import Link from "next/link";
 import { loginAction, registerAction, type AuthState } from "@/lib/auth-actions";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
 const field =
   "w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-charcoal outline-none transition-colors placeholder:text-mid/60 focus:border-rose-deep";
@@ -12,9 +13,11 @@ const label =
 export default function AuthForm({
   mode,
   defaultRole = "customer",
+  dict,
 }: {
   mode: "login" | "register";
   defaultRole?: "customer" | "distributor";
+  dict: Dictionary["auth"];
 }) {
   const action = mode === "login" ? loginAction : registerAction;
   const [state, formAction, pending] = useActionState<AuthState, FormData>(
@@ -30,16 +33,16 @@ export default function AuthForm({
           <input type="hidden" name="role" defaultValue={defaultRole} />
           <div>
             <label htmlFor="name" className={label}>
-              Full name
+              {dict.fullName}
             </label>
-            <input id="name" name="name" required placeholder="Your name" className={field} />
+            <input id="name" name="name" required placeholder={dict.yourName} className={field} />
           </div>
         </>
       )}
 
       <div>
         <label htmlFor="email" className={label}>
-          Email
+          {dict.email}
         </label>
         <input
           id="email"
@@ -53,7 +56,7 @@ export default function AuthForm({
 
       <div>
         <label htmlFor="password" className={label}>
-          Password
+          {dict.password}
         </label>
         <input
           id="password"
@@ -61,7 +64,7 @@ export default function AuthForm({
           type="password"
           required
           minLength={8}
-          placeholder={isRegister ? "At least 8 characters" : "Your password"}
+          placeholder={isRegister ? dict.pwHintRegister : dict.pwHintLogin}
           className={field}
         />
       </div>
@@ -78,28 +81,27 @@ export default function AuthForm({
         className="w-full rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-plum disabled:opacity-50"
       >
         {pending
-          ? "Please wait…"
+          ? isRegister
+            ? dict.creating
+            : dict.signingIn
           : isRegister
-            ? "Create account"
-            : "Sign in"}
+            ? dict.createAccount
+            : dict.signIn}
       </button>
 
       <p className="pt-1 text-center text-sm text-mid">
         {isRegister ? (
           <>
-            Already have an account?{" "}
+            {dict.haveAccount}{" "}
             <Link href="/login" className="font-medium text-rose-deep underline">
-              Sign in
+              {dict.signIn}
             </Link>
           </>
         ) : (
           <>
-            New here?{" "}
-            <Link
-              href="/register"
-              className="font-medium text-rose-deep underline"
-            >
-              Create an account
+            {dict.newHere}{" "}
+            <Link href="/register" className="font-medium text-rose-deep underline">
+              {dict.createOne}
             </Link>
           </>
         )}

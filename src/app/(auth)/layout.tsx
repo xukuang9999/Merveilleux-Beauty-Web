@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getDict } from "@/i18n/server";
 
-export default function AuthLayout({
+export default async function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const dict = await getDict();
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center px-5 py-12">
       <Image
@@ -29,7 +31,7 @@ export default function AuthLayout({
         {children}
       </div>
       <Link href="/" className="mt-6 text-sm text-mid hover:text-charcoal">
-        ← Back to site
+        {dict.auth.backToSite}
       </Link>
     </div>
   );

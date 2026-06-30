@@ -4,7 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navLinks, site } from "@/lib/data";
+import { site } from "@/lib/data";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
 type NavUser = { name: string; role: "customer" | "distributor" | "admin" };
 
@@ -13,15 +16,33 @@ const roleHome: Record<NavUser["role"], string> = {
   distributor: "/portal",
   admin: "/admin",
 };
-const roleLabel: Record<NavUser["role"], string> = {
-  customer: "My Account",
-  distributor: "My Portal",
-  admin: "Admin",
-};
 
-export default function Nav({ user }: { user: NavUser | null }) {
+export default function Nav({
+  user,
+  locale,
+  dict,
+}: {
+  user: NavUser | null;
+  locale: Locale;
+  dict: Dictionary["nav"];
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  const roleLabel: Record<NavUser["role"], string> = {
+    customer: dict.myAccount,
+    distributor: dict.myPortal,
+    admin: dict.admin,
+  };
+
+  const links = [
+    { href: "/", label: dict.home },
+    { href: "/products", label: dict.products },
+    { href: "/testimonials", label: dict.testimonials },
+    { href: "/faq", label: dict.faq },
+    { href: "/training", label: dict.training },
+    { href: "/contact", label: dict.contact },
+  ];
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -34,13 +55,7 @@ export default function Nav({ user }: { user: NavUser | null }) {
           className="flex items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          <Image
-            src="/graphics/monogram.svg"
-            alt=""
-            width={34}
-            height={34}
-            priority
-          />
+          <Image src="/graphics/monogram.svg" alt="" width={34} height={34} priority />
           <span className="font-serif text-xl leading-none tracking-wide text-charcoal">
             Merveilleux
             <span className="ml-1.5 align-middle text-[9px] font-medium uppercase tracking-[0.25em] text-gold">
@@ -51,19 +66,18 @@ export default function Nav({ user }: { user: NavUser | null }) {
 
         {/* Desktop links */}
         <div className="hidden items-center gap-1 lg:flex">
-          {navLinks.slice(1, -1).map((l) => (
+          {links.slice(1, -1).map((l) => (
             <Link
               key={l.href}
               href={l.href}
               className={`px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
-                isActive(l.href)
-                  ? "text-rose-deep"
-                  : "text-mid hover:text-charcoal"
+                isActive(l.href) ? "text-rose-deep" : "text-mid hover:text-charcoal"
               }`}
             >
               {l.label}
             </Link>
           ))}
+          <LanguageSwitcher current={locale} className="ml-2" />
           {user ? (
             <Link
               href={roleHome[user.role]}
@@ -78,41 +92,44 @@ export default function Nav({ user }: { user: NavUser | null }) {
             <>
               <Link
                 href="/login"
-                className="px-3 py-2 text-[13px] font-medium text-mid transition-colors hover:text-charcoal"
+                className="ml-1 px-3 py-2 text-[13px] font-medium text-mid transition-colors hover:text-charcoal"
               >
-                Log in
+                {dict.login}
               </Link>
               <Link
                 href="/register?as=distributor"
-                className="ml-1 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
+                className="rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
               >
-                Join as 经销商
+                {dict.join}
               </Link>
             </>
           )}
         </div>
 
         {/* Mobile toggle */}
-        <button
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center rounded-md text-charcoal lg:hidden"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-            )}
-          </svg>
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <LanguageSwitcher current={locale} />
+          <button
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-9 w-9 items-center justify-center rounded-md text-charcoal"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+              {open ? (
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
       {open && (
         <div className="border-t border-line bg-cream px-5 pb-5 pt-2 lg:hidden">
-          {navLinks.map((l) => (
+          {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -139,14 +156,14 @@ export default function Nav({ user }: { user: NavUser | null }) {
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-charcoal"
               >
-                Log in
+                {dict.login}
               </Link>
               <Link
                 href="/register?as=distributor"
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-rose-deep"
               >
-                Join as 经销商
+                {dict.join}
               </Link>
             </div>
           )}

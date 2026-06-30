@@ -2,14 +2,17 @@ import { requireRole } from "@/lib/auth";
 import { db } from "@/db";
 import { users, trainingProgress, trainingModules } from "@/db/schema";
 import { DashHeading, Panel } from "@/components/dash";
+import { getDict } from "@/i18n/server";
 
 export default async function AdminProgressPage() {
   await requireRole(["admin"]);
-  const [allUsers, progress, modules] = await Promise.all([
+  const [allUsers, progress, modules, dict] = await Promise.all([
     db.select().from(users),
     db.select().from(trainingProgress),
     db.select().from(trainingModules),
+    getDict(),
   ]);
+  const d = dict.admin;
   const total = modules.length;
   const distributors = allUsers.filter(
     (u) => u.role === "distributor" || u.role === "admin",
@@ -18,13 +21,13 @@ export default async function AdminProgressPage() {
   return (
     <>
       <DashHeading
-        eyebrow="Admin · Training"
-        title="Training progress"
-        subtitle="Track how each 经销商 is progressing through the programme."
+        eyebrow={d.progressEyebrow}
+        title={d.progressTitle}
+        subtitle={d.progressSub}
       />
       <Panel>
         {distributors.length === 0 ? (
-          <p className="text-sm text-mid">No distributors yet.</p>
+          <p className="text-sm text-mid">{d.noDistributors}</p>
         ) : (
           <div className="space-y-4">
             {distributors.map((u) => {
@@ -42,7 +45,7 @@ export default async function AdminProgressPage() {
                       {done}/{total} ·{" "}
                       {done === total && total > 0 ? (
                         <span className="font-semibold text-green">
-                          Certified ✓
+                          {d.certified}
                         </span>
                       ) : (
                         `${pct}%`

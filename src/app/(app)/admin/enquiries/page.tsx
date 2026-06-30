@@ -3,26 +3,26 @@ import { requireRole } from "@/lib/auth";
 import { db } from "@/db";
 import { enquiries } from "@/db/schema";
 import { DashHeading, Panel } from "@/components/dash";
+import { getDict } from "@/i18n/server";
 
 export default async function AdminEnquiriesPage() {
   await requireRole(["admin"]);
-  const rows = await db
-    .select()
-    .from(enquiries)
-    .orderBy(desc(enquiries.createdAt));
+  const [rows, dict] = await Promise.all([
+    db.select().from(enquiries).orderBy(desc(enquiries.createdAt)),
+    getDict(),
+  ]);
+  const d = dict.admin;
 
   return (
     <>
       <DashHeading
-        eyebrow="Admin · Leads"
-        title="Enquiries"
-        subtitle="Contact-form submissions from the website."
+        eyebrow={d.enquiriesEyebrow}
+        title={d.enquiriesTitle}
+        subtitle={d.enquiriesSub}
       />
       <Panel>
         {rows.length === 0 ? (
-          <p className="text-sm text-mid">
-            No enquiries yet. Submissions from the Contact page appear here.
-          </p>
+          <p className="text-sm text-mid">{d.enquiriesNone}</p>
         ) : (
           <div className="divide-y divide-line">
             {rows.map((e) => (

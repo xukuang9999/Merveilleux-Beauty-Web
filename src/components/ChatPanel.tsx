@@ -10,11 +10,13 @@ export default function ChatPanel({
   greeting,
   suggestions = [],
   heightClass = "h-[440px]",
+  placeholder = "Type your message…",
 }: {
   mode: Mode;
   greeting: string;
   suggestions?: string[];
   heightClass?: string;
+  placeholder?: string;
 }) {
   const [messages, setMessages] = useState<Msg[]>([
     { role: "assistant", content: greeting },
@@ -128,7 +130,7 @@ export default function ChatPanel({
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your message…"
+          placeholder={placeholder}
           className="flex-1 rounded-full border border-line bg-cream px-4 py-2.5 text-sm text-charcoal outline-none focus:border-rose-deep"
         />
         <button
