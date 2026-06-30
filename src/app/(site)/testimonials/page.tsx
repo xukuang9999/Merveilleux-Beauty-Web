@@ -7,7 +7,7 @@ import { getDict } from "@/i18n/server";
 export const metadata: Metadata = {
   title: "Testimonials",
   description:
-    "Real stories from Merveilleux Beauty customers and 经销商 across Malaysia.",
+    "Real stories from Merveilleux Beauty customers and distributors across Malaysia.",
 };
 
 export default async function TestimonialsPage() {

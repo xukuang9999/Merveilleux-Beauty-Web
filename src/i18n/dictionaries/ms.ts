@@ -227,7 +227,7 @@ const ms: Dictionary = {
     "close": "Tutup"
   },
   "knowledge": {
-    "eyebrow": "知识库 · Pangkalan Pengetahuan",
+    "eyebrow": "Pangkalan Pengetahuan",
     "title": "Pangkalan pengetahuan penjagaan kulit",
     "sub": "Kajian kes, panduan bahan dan tip penggunaan untuk membantu anda menasihati pelanggan dengan yakin.",
     "tip": "Tip: perlukan jawapan pantas? Tanya Jurulatih AI — ia dilatih berdasarkan pangkalan pengetahuan ini.",
@@ -304,7 +304,7 @@ const ms: Dictionary = {
     "enquiriesTitle": "Pertanyaan",
     "enquiriesSub": "Penyerahan borang hubungi daripada laman web.",
     "enquiriesNone": "Belum ada pertanyaan lagi. Penyerahan daripada halaman Hubungi akan dipaparkan di sini.",
-    "kbEyebrow": "Admin · 知识库",
+    "kbEyebrow": "Admin · Pangkalan Pengetahuan",
     "kbTitle": "Pangkalan pengetahuan",
     "kbSub": "Pangkalan pengetahuan penjagaan kulit yang menggerakkan portal Pengedar dan pembantu AI.",
     "view": "Lihat",

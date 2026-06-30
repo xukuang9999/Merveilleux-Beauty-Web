@@ -27,6 +27,6 @@ export const navLinks: NavLink[] = [
   { href: "/products", label: "Products" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/faq", label: "Q&A" },
-  { href: "/training", label: "经销商 Training" },
+  { href: "/training", label: "Distributor Training" },
   { href: "/contact", label: "Contact" },
 ];

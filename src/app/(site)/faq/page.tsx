@@ -7,7 +7,7 @@ import { getDict } from "@/i18n/server";
 export const metadata: Metadata = {
   title: "Q&A",
   description:
-    "Answers to common questions about Merveilleux Beauty products, skincare routines and becoming a 经销商.",
+    "Answers to common questions about Merveilleux Beauty products, skincare routines and becoming a distributor.",
 };
 
 export default async function FaqPage() {

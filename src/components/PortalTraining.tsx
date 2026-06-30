@@ -66,7 +66,6 @@ export default function PortalTraining({
               )}
             </div>
             <h3 className="mt-4 font-serif text-2xl text-charcoal">{m.title}</h3>
-            <p className="text-sm text-mid">{m.cnTitle}</p>
             <p className="mt-3 text-sm leading-relaxed text-mid">{m.summary}</p>
             <ul className="mt-4 space-y-1.5">
               {m.lessons.map((l) => (

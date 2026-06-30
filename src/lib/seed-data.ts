@@ -220,7 +220,7 @@ export const seedTestimonials: SeedTestimonial[] = [
     quote:
       "My skin has never looked this even. Three weeks with the Radiance Serum and my dark spots are visibly lighter. Customers ask me what I'm using every week.",
     name: "Aisyah R.",
-    role: "经销商 · Kuala Lumpur",
+    role: "Distributor · Kuala Lumpur",
     rating: 5,
     sortOrder: 1,
   },
@@ -236,7 +236,7 @@ export const seedTestimonials: SeedTestimonial[] = [
     quote:
       "As a distributor, the brand trust this website builds makes selling effortless. Clients see the products are real, French-grade, and beautifully made.",
     name: "Nurul H.",
-    role: "经销商 · Johor Bahru",
+    role: "Distributor · Johor Bahru",
     rating: 5,
     sortOrder: 3,
   },
@@ -252,7 +252,7 @@ export const seedTestimonials: SeedTestimonial[] = [
     quote:
       "Sun Shield is the only SPF50 my customers with deeper skin tones will wear daily — truly no white cast. It sells itself once they try a sample.",
     name: "Farah K.",
-    role: "经销商 · Shah Alam",
+    role: "Distributor · Shah Alam",
     rating: 5,
     sortOrder: 5,
   },
@@ -296,7 +296,7 @@ export const seedFaqs: SeedFaq[] = [
   },
   {
     category: "Distributor",
-    question: "How do I become a Merveilleux 经销商?",
+    question: "How do I become a Merveilleux distributor?",
     answer:
       "Register an account and send us an enquiry, or message us on WhatsApp. Approved distributors complete our online training programme (6 modules) and an in-person session before they begin selling.",
     sortOrder: 5,
@@ -305,7 +305,7 @@ export const seedFaqs: SeedFaq[] = [
     category: "Distributor",
     question: "Is there training and support for distributors?",
     answer:
-      "Absolutely. Every 经销商 gets access to our structured training portal, an ongoing skincare knowledge base, and an AI assistant for product guidance and skincare consultations — plus human team support.",
+      "Absolutely. Every distributor gets access to our structured training portal, an ongoing skincare knowledge base, and an AI assistant for product guidance and skincare consultations — plus human team support.",
     sortOrder: 6,
   },
 ];
@@ -385,7 +385,7 @@ export const seedModules: SeedModule[] = [
   {
     ord: 2,
     icon: "📜",
-    title: "经销商 Policy",
+    title: "Distributor Policy",
     cnTitle: "经销商政策",
     summary: "Terms & conditions, commission structure and conduct rules.",
     lessons: [
@@ -396,7 +396,7 @@ export const seedModules: SeedModule[] = [
     durationMins: 30,
     quiz: [
       {
-        question: "Before selling, a new 经销商 must…",
+        question: "Before selling, a new distributor must…",
         options: [
           "Start immediately, no steps",
           "Complete online training + in-person onboarding",

@@ -13,7 +13,7 @@ export type EnquiryInput = {
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const INTERESTS = [
-  "Become a 经销商",
+  "Become a Distributor",
   "Product enquiry",
   "Wholesale / B2B",
   "Other",

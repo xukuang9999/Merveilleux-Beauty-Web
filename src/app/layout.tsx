@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Merveilleux Beauty",
     "OEM French beauty",
     "skincare Malaysia",
-    "经销商",
+    "distributor",
     "serum",
     "moisturiser",
   ],

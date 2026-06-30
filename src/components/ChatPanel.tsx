@@ -48,7 +48,7 @@ export default function ChatPanel({
       if (!res.ok || !res.body) {
         const t =
           res.status === 401
-            ? "Please log in as a 经销商 to use the training coach."
+            ? "Please log in as a distributor to use the training coach."
             : "Sorry, something went wrong. Please try again.";
         setMessages((m) => replaceLast(m, t));
         setLoading(false);

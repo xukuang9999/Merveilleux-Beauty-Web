@@ -13,7 +13,7 @@ const labelCls =
 export default function EnquiryForm({ dict }: { dict: Dictionary["contact"] }) {
   // value stays canonical (English, matches server allowlist); label localized
   const interests = [
-    { value: "Become a 经销商", label: dict.interests.distributor },
+    { value: "Become a Distributor", label: dict.interests.distributor },
     { value: "Product enquiry", label: dict.interests.product },
     { value: "Wholesale / B2B", label: dict.interests.wholesale },
     { value: "Other", label: dict.interests.other },

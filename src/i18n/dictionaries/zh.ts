@@ -227,7 +227,7 @@ const zh: Dictionary = {
     "close": "关闭"
   },
   "knowledge": {
-    "eyebrow": "知识库 · Knowledge Base",
+    "eyebrow": "知识库",
     "title": "护肤知识库",
     "sub": "案例研究、成分指南与使用贴士，助您自信地为顾客提供建议。",
     "tip": "贴士：想要快速解答？问问 AI 教练 —— 它经此知识库训练而成。",

@@ -19,10 +19,10 @@ const en = {
     products: "Products",
     testimonials: "Testimonials",
     faq: "Q&A",
-    training: "经销商 Training",
+    training: "Distributor Training",
     contact: "Contact",
     login: "Log in",
-    join: "Join as 经销商",
+    join: "Join as Distributor",
     myAccount: "My Account",
     myPortal: "My Portal",
     admin: "Admin",
@@ -40,9 +40,9 @@ const en = {
     heroTitleBefore: "Skincare that feels ",
     heroTitleHighlight: "merveilleux",
     heroBody:
-      "French-grade formulas, honestly priced — and a 经销商 network built on real training and trust. Meet Margaux, our AI beauty advisor, ready to help you any time.",
+      "French-grade formulas, honestly priced — and a distributor network built on real training and trust. Meet Margaux, our AI beauty advisor, ready to help you any time.",
     exploreRange: "Explore the range",
-    becomeDistributor: "Become a 经销商",
+    becomeDistributor: "Become a Distributor",
     lovedBy: "Loved by customers & distributors across Malaysia",
     valueProps: [
       {
@@ -55,7 +55,7 @@ const en = {
       },
       {
         title: "A network that grows",
-        body: "A trained 经销商 community with the tools, training and AI support to build a real business.",
+        body: "A trained distributor community with the tools, training and AI support to build a real business.",
       },
     ],
     collectionEyebrow: "The Collection",
@@ -71,7 +71,7 @@ const en = {
     testimonialsEyebrow: "Loved & trusted",
     testimonialsTitle: "What our community says",
     readMoreStories: "Read more stories",
-    ctaEyebrow: "Become a 经销商",
+    ctaEyebrow: "Become a Distributor",
     ctaTitle: "Build a beauty business, the right way",
     ctaBody:
       "Every Merveilleux distributor is set up to succeed with a structured training programme — {n} modules covering brand, products, policy and SOP — a skincare knowledge base, and an AI training coach in your pocket.",
@@ -101,7 +101,7 @@ const en = {
   faq: {
     eyebrow: "Q&A · FAQ",
     title: "Questions, answered",
-    desc: "Everything you might want to know about our products, skincare routines and the 经销商 opportunity. Still stuck? Ask Margaux, our AI advisor.",
+    desc: "Everything you might want to know about our products, skincare routines and the distributor opportunity. Still stuck? Ask Margaux, our AI advisor.",
     stillTitle: "Still have a question?",
     stillBody:
       "Ask Margaux any time, or reach our team directly — we're happy to help.",
@@ -110,18 +110,18 @@ const en = {
     eyebrow: "Contact & Join",
     titleBefore: "Let's create something ",
     titleHighlight: "merveilleux",
-    body: "Whether you're curious about our products, exploring wholesale, or ready to build your own beauty business as a 经销商 — we'd love to hear from you.",
+    body: "Whether you're curious about our products, exploring wholesale, or ready to build your own beauty business as a distributor — we'd love to hear from you.",
     whatsapp: "WhatsApp",
     whatsappSub: "Fastest way to reach us",
     email: "Email",
     newDistributorNote:
-      "New 经销商? After your enquiry, you'll be guided through our online training programme before your in-person onboarding session.",
+      "New distributor? After your enquiry, you'll be guided through our online training programme before your in-person onboarding session.",
     sendEnquiry: "Send an enquiry",
     sendEnquirySub:
       "Fill this in and we'll continue the conversation on WhatsApp.",
     interestedIn: "I'm interested in",
     interests: {
-      distributor: "Become a 经销商",
+      distributor: "Become a Distributor",
       product: "Product enquiry",
       wholesale: "Wholesale / B2B",
       other: "Other",
@@ -140,7 +140,7 @@ const en = {
     sendAnother: "Send another enquiry",
   },
   training: {
-    eyebrow: "Workstream A · 经销商 Onboarding",
+    eyebrow: "Workstream A · Distributor Onboarding",
     title: "The Merveilleux Training Portal",
     desc: "Every distributor completes a structured, self-paced programme — with progress tracking, quizzes and an AI coach — before their in-person session.",
     statModules: "Training modules",
@@ -149,11 +149,11 @@ const en = {
     statWindowValue: "2 wks",
     statCoach: "Training coach",
     goToTraining: "Go to your training →",
-    registerAs: "Register as 经销商",
+    registerAs: "Register as Distributor",
     loginToStart: "Log in to start",
     loginRequired: "Login required.",
     loginRequiredBody:
-      "The interactive training — video lessons, 20-question quizzes, saved progress, certificates and your AI training coach — lives inside the secure 经销商 portal. Here's what you'll cover:",
+      "The interactive training — video lessons, 20-question quizzes, saved progress, certificates and your AI training coach — lives inside the secure distributor portal. Here's what you'll cover:",
     moduleN: "Module {n}",
     quizPreview: "~{min} min · {q}-question quiz preview (full bank in portal)",
     completionNote:
@@ -170,9 +170,9 @@ const en = {
     createOne: "Create an account",
     haveAccount: "Already have an account?",
     demoAccounts: "Demo accounts",
-    joinTitle: "Join as a 经销商",
+    joinTitle: "Join as a Distributor",
     createTitle: "Create your account",
-    joinSub: "Submit your 经销商 application. Once an admin approves it, your portal — training, knowledge base and AI coach — unlocks.",
+    joinSub: "Submit your distributor application. Once an admin approves it, your portal — training, knowledge base and AI coach — unlocks.",
     createSub: "Create an account for personalised skincare guidance.",
     fullName: "Full name",
     yourName: "Your name",
@@ -186,13 +186,13 @@ const en = {
     greeting: "Bonjour, {name}",
     sub: "Your personal beauty space — get tailored skincare advice from Margaux any time.",
     pendingNote:
-      "经销商 application received. An admin will review and activate your distributor portal soon — you'll get full training, knowledge base and AI coach access once approved.",
+      "Distributor application received. An admin will review and activate your distributor portal soon — you'll get full training, knowledge base and AI coach access once approved.",
     consultEyebrow: "AI Skincare Consultation",
     consultTitle: "Not sure where to start?",
     consultBody:
       "Tell Margaux your skin type and concerns and get a tailored Merveilleux routine — step by step, with the why behind each product.",
     startConsult: "Start a consultation →",
-    becomeDistTitle: "Become a 经销商?",
+    becomeDistTitle: "Become a Distributor?",
     becomeDistBody:
       "Love the products? Turn your passion into a business with full training, a knowledge base and AI support.",
     enquireJoin: "Enquire about joining",
@@ -203,7 +203,7 @@ const en = {
       "Describe your skin and goals — Margaux will recommend a tailored Merveilleux routine.",
   },
   portal: {
-    eyebrow: "经销商 Portal",
+    eyebrow: "Distributor Portal",
     welcome: "Welcome, {name}",
     sub: "Everything you need to learn the brand, sell with confidence, and serve customers brilliantly.",
     statModulesDone: "Modules done",
@@ -225,7 +225,7 @@ const en = {
     open: "Open →",
   },
   portalTraining: {
-    eyebrow: "经销商 Training",
+    eyebrow: "Distributor Training",
     title: "Your training programme",
     sub: "Complete each module and pass its quiz (70% to pass). {done}/{total} done.",
     startQuiz: "Start quiz",
@@ -244,7 +244,7 @@ const en = {
     close: "Close",
   },
   knowledge: {
-    eyebrow: "知识库 · Knowledge Base",
+    eyebrow: "Knowledge Base",
     title: "Skincare knowledge base",
     sub: "Case studies, ingredient guides and usage tips to help you advise customers with confidence.",
     tip: "Tip: need a quick answer? Ask the AI Coach — it's trained on this knowledge base.",
@@ -278,7 +278,7 @@ const en = {
     enquiries: "Enquiries",
     signOut: "Sign out",
     roleCustomer: "Customer",
-    roleDistributor: "经销商",
+    roleDistributor: "Distributor",
     roleAdmin: "Admin",
   },
   admin: {
@@ -287,7 +287,7 @@ const en = {
     dashboardSub: "Manage products, content, distributors and enquiries.",
     statProducts: "Products",
     statUsers: "Users",
-    statDistributors: "经销商",
+    statDistributors: "Distributors",
     statEnquiries: "Enquiries",
     linkProducts: "Products",
     linkKb: "Knowledge Base",
@@ -311,13 +311,13 @@ const en = {
     hidden: "Hidden",
     usersEyebrow: "Admin · People",
     usersTitle: "Users & roles",
-    usersSub: "Promote customers to 经销商, or grant admin access.",
+    usersSub: "Promote customers to distributor, or grant admin access.",
     you: "(you)",
-    applied: "经销商 applied",
+    applied: "Distributor applied",
     update: "Update",
     progressEyebrow: "Admin · Training",
     progressTitle: "Training progress",
-    progressSub: "Track how each 经销商 is progressing through the programme.",
+    progressSub: "Track how each distributor is progressing through the programme.",
     certified: "Certified ✓",
     noDistributors: "No distributors yet.",
     enquiriesEyebrow: "Admin · Leads",
@@ -325,9 +325,9 @@ const en = {
     enquiriesSub: "Contact-form submissions from the website.",
     enquiriesNone:
       "No enquiries yet. Submissions from the Contact page appear here.",
-    kbEyebrow: "Admin · 知识库",
+    kbEyebrow: "Admin · Knowledge Base",
     kbTitle: "Knowledge base",
-    kbSub: "The skincare knowledge base powering the 经销商 portal and the AI assistant.",
+    kbSub: "The skincare knowledge base powering the distributor portal and the AI assistant.",
     view: "View",
     kbTip: "Tip: KB content is seeded from the curated library. Click a status to show/hide an article.",
   },
@@ -340,11 +340,11 @@ const en = {
     tapToChat: "Tap to chat →",
     placeholder: "Type your message…",
     customerGreeting:
-      "Bonjour! 👋 I'm Margaux, your Merveilleux Beauty advisor. Ask me about our products, building a routine, or becoming a 经销商. How can I help?",
+      "Bonjour! 👋 I'm Margaux, your Merveilleux Beauty advisor. Ask me about our products, building a routine, or becoming a distributor. How can I help?",
     customerSuggestions: [
       "Help me build a routine",
       "Which serum is best for dark spots?",
-      "How do I become a 经销商?",
+      "How do I become a distributor?",
     ],
     consultGreeting:
       "Hi! I'm Margaux 🌸 To recommend the right routine, tell me: your skin type (oily / dry / combination / sensitive), your main concern (e.g. dullness, dark spots, dehydration, breakouts), and whether you prefer a simple or full routine.",

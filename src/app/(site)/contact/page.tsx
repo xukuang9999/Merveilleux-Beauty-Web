@@ -7,7 +7,7 @@ import { getDict } from "@/i18n/server";
 export const metadata: Metadata = {
   title: "Contact & Join",
   description:
-    "Get in touch with Merveilleux Beauty — product enquiries, wholesale, or apply to become a 经销商.",
+    "Get in touch with Merveilleux Beauty — product enquiries, wholesale, or apply to become a distributor.",
 };
 
 export default async function ContactPage() {

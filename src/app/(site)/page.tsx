@@ -214,7 +214,6 @@ export default async function Home() {
                         <p className="text-sm font-medium text-charcoal">
                           {m.title}
                         </p>
-                        <p className="text-xs text-mid">{m.cnTitle}</p>
                       </div>
                     </li>
                   ))}

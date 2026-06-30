@@ -8,7 +8,7 @@ import { getLocale, getDict, fmt } from "@/i18n/server";
 import { localizeModule } from "@/i18n/content";
 
 export const metadata: Metadata = {
-  title: "经销商 Training Programme",
+  title: "Distributor Training Programme",
   description:
     "The Merveilleux Beauty distributor training programme — structured modules on brand, products, policy and SOP, each ending with a quiz, plus an AI training coach.",
 };
@@ -93,7 +93,6 @@ export default async function TrainingPage() {
                 </span>
               </div>
               <h3 className="mt-4 font-serif text-2xl text-charcoal">{m.title}</h3>
-              <p className="text-sm text-mid">{m.cnTitle}</p>
               <p className="mt-3 text-sm leading-relaxed text-mid">{m.summary}</p>
               <ul className="mt-4 space-y-1.5">
                 {m.lessons.map((l) => (
