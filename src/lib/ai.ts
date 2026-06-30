@@ -4,8 +4,8 @@ import { getKbArticles } from "./kb";
 
 export type ChatMode = "customer" | "consult" | "training";
 
-// Fast, cost-effective model for support/coaching chat.
-export const MODEL = "claude-haiku-4-5-20251001";
+// Model used for all AI calls (customer service, consult, training coach).
+export const MODEL = "claude-sonnet-4-6";
 
 export function getAnthropic(): Anthropic | null {
   const key = process.env.ANTHROPIC_API_KEY;
