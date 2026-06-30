@@ -1,21 +1,38 @@
 import { drizzle } from "drizzle-orm/libsql";
-import { createClient } from "@libsql/client";
+import { createClient, type Client } from "@libsql/client";
 import * as schema from "./schema";
 
-const url = process.env.TURSO_DATABASE_URL || "file:./local.db";
+// Resolve the DB URL:
+// - TURSO_DATABASE_URL when configured (dev or prod)
+// - a local file in dev (writable)
+// - in-memory in prod when no Turso is set, so the serverless runtime never
+//   crashes on the read-only filesystem (content falls back to curated seed)
+function resolveUrl(): string {
+  if (process.env.TURSO_DATABASE_URL) return process.env.TURSO_DATABASE_URL;
+  // On Vercel's read-only serverless filesystem a file DB crashes; use
+  // in-memory so the app stays up (content falls back to curated seed).
+  if (process.env.VERCEL) return ":memory:";
+  return "file:./local.db";
+}
+
 const authToken = process.env.TURSO_AUTH_TOKEN;
 
-// One client across hot-reloads in dev.
-const globalForDb = globalThis as unknown as {
-  __libsql?: ReturnType<typeof createClient>;
-};
+const globalForDb = globalThis as unknown as { __libsql?: Client };
 
-const client =
-  globalForDb.__libsql ?? createClient({ url, authToken });
+function makeClient(): Client {
+  try {
+    return createClient({ url: resolveUrl(), authToken });
+  } catch {
+    // Last-resort fallback so the app never hard-crashes at startup.
+    return createClient({ url: ":memory:" });
+  }
+}
+
+const client = globalForDb.__libsql ?? makeClient();
 if (process.env.NODE_ENV !== "production") globalForDb.__libsql = client;
 
 export const db = drizzle(client, { schema });
 export { schema };
 
-/** True when a real Turso connection is configured (vs local file). */
+/** True when a real Turso connection is configured (vs local/in-memory). */
 export const hasRemoteDb = Boolean(process.env.TURSO_DATABASE_URL);
