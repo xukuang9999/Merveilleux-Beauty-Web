@@ -782,3 +782,246 @@ export const seedKbArticles: SeedKbArticle[] = [
 ];
 
 export const PASS_MARK = 70;
+
+// ============================================================
+// Product-detail enrichment — extra fields for the per-product pages
+// requested in the web brief (category, size, suitable skin types,
+// how-to-use). Kept OUT of `seedProducts` so DB seeding (which inserts
+// seedProducts directly) stays untouched. Merged onto products by slug.
+// `category` → dict.products.categories key. `skinTypes` → skinTypeLabels
+// keys. `howToUse` is localised inline (en/zh/ms), one language per locale.
+// ============================================================
+
+export type ProductDetail = {
+  category: string;
+  size: string;
+  skinTypes: string[];
+  howToUse: { en: string[]; zh: string[]; ms: string[] };
+};
+
+export const productDetails: Record<string, ProductDetail> = {
+  "radiance-serum": {
+    category: "serums",
+    size: "30 ml",
+    skinTypes: ["all", "combination", "normal"],
+    howToUse: {
+      en: [
+        "Each morning, after cleansing and toner, apply 3–4 drops to clean, dry skin.",
+        "Pat gently until absorbed, then follow with moisturiser.",
+        "Always finish your morning routine with Sun Shield SPF50+.",
+      ],
+      zh: [
+        "每天早上洁面与化妆水后，取 3–4 滴涂于洁净干爽的肌肤。",
+        "轻拍至吸收，随后使用面霜。",
+        "早晨护理请务必以 Sun Shield SPF50+ 作结。",
+      ],
+      ms: [
+        "Setiap pagi selepas membersih dan toner, sapu 3–4 titis pada kulit yang bersih dan kering.",
+        "Tepuk perlahan sehingga meresap, kemudian ikuti dengan pelembap.",
+        "Sentiasa akhiri rutin pagi anda dengan Sun Shield SPF50+.",
+      ],
+    },
+  },
+  "hydra-essence-serum": {
+    category: "serums",
+    size: "30 ml",
+    skinTypes: ["all", "dry", "combination"],
+    howToUse: {
+      en: [
+        "Apply 3–4 drops to damp skin morning and night, after toner.",
+        "Press into the skin, then seal with Velvet Cream.",
+        "Layer on more during dry spells or after air travel.",
+      ],
+      zh: [
+        "早晚于化妆水后，取 3–4 滴涂于微湿的肌肤。",
+        "按压吸收，再以 Velvet Cream 锁住水分。",
+        "干燥的日子或长途飞行后可多叠加一层。",
+      ],
+      ms: [
+        "Sapu 3–4 titis pada kulit lembap pagi dan malam, selepas toner.",
+        "Tekan lembut ke dalam kulit, kemudian kunci dengan Velvet Cream.",
+        "Sapu lebih banyak pada hari kering atau selepas penerbangan.",
+      ],
+    },
+  },
+  "velvet-cream": {
+    category: "moisturisers",
+    size: "50 ml",
+    skinTypes: ["dry", "sensitive", "normal"],
+    howToUse: {
+      en: [
+        "Warm a pea-sized amount between your fingertips.",
+        "Massage over face and neck as the last step of your routine (before SPF in the morning).",
+        "Use morning and night.",
+      ],
+      zh: [
+        "取豌豆大小的用量于指尖温热。",
+        "作为护理的最后一步，按摩于脸部与颈部（早晨在防晒之前）。",
+        "早晚使用。",
+      ],
+      ms: [
+        "Panaskan jumlah sebesar kacang di hujung jari.",
+        "Urut ke seluruh muka dan leher sebagai langkah terakhir rutin (sebelum SPF pada waktu pagi).",
+        "Gunakan pagi dan malam.",
+      ],
+    },
+  },
+  "pure-cleanser": {
+    category: "cleansers",
+    size: "120 ml",
+    skinTypes: ["all", "sensitive", "combination"],
+    howToUse: {
+      en: [
+        "Dispense a small amount onto damp hands and lather.",
+        "Massage over a wet face for 30–60 seconds, avoiding the eyes.",
+        "Rinse with lukewarm water. Use morning and night.",
+      ],
+      zh: [
+        "取少量于微湿的双手搓出泡沫。",
+        "于湿润的脸部按摩 30–60 秒，避开眼周。",
+        "以温水冲洗。早晚使用。",
+      ],
+      ms: [
+        "Tuang sedikit ke tangan yang lembap dan buihkan.",
+        "Urut pada muka yang basah selama 30–60 saat, elak kawasan mata.",
+        "Bilas dengan air suam. Gunakan pagi dan malam.",
+      ],
+    },
+  },
+  "essence-toner": {
+    category: "toners",
+    size: "150 ml",
+    skinTypes: ["all", "oily", "combination"],
+    howToUse: {
+      en: [
+        "After cleansing, pour a few drops into your palm or onto a cotton pad.",
+        "Press gently over the face to hydrate and prep.",
+        "Follow immediately with serum while skin is still damp.",
+      ],
+      zh: [
+        "洁面后，取数滴于掌心或化妆棉。",
+        "轻拍于脸部，补水并打底。",
+        "趁肌肤微湿时立即接续精华。",
+      ],
+      ms: [
+        "Selepas membersih, tuang beberapa titis ke tapak tangan atau kapas.",
+        "Tepuk lembut pada muka untuk melembap dan menyediakan kulit.",
+        "Ikuti segera dengan serum semasa kulit masih lembap.",
+      ],
+    },
+  },
+  "sun-shield-spf50": {
+    category: "sun",
+    size: "40 ml",
+    skinTypes: ["all"],
+    howToUse: {
+      en: [
+        "As the final morning step, apply two finger-lengths to face and neck.",
+        "Wait a moment before applying makeup.",
+        "Reapply every 2–3 hours when outdoors.",
+      ],
+      zh: [
+        "作为早晨最后一步，取两指节长度涂于脸部与颈部。",
+        "稍候片刻再上妆。",
+        "户外时每 2–3 小时补涂一次。",
+      ],
+      ms: [
+        "Sebagai langkah pagi terakhir, sapu sepanjang dua jari pada muka dan leher.",
+        "Tunggu seketika sebelum solekan.",
+        "Sapu semula setiap 2–3 jam apabila berada di luar.",
+      ],
+    },
+  },
+  "eye-revive-cream": {
+    category: "eye",
+    size: "15 ml",
+    skinTypes: ["all"],
+    howToUse: {
+      en: [
+        "Dot a rice-grain amount under and around each eye.",
+        "Tap gently with your ring finger until absorbed.",
+        "Use morning and night, before moisturiser.",
+      ],
+      zh: [
+        "取米粒大小分点于双眼下方及周围。",
+        "以无名指轻弹至吸收。",
+        "早晚使用，于面霜之前。",
+      ],
+      ms: [
+        "Titiskan jumlah sebesar sebutir beras di bawah dan sekeliling setiap mata.",
+        "Tepuk perlahan dengan jari manis sehingga meresap.",
+        "Gunakan pagi dan malam, sebelum pelembap.",
+      ],
+    },
+  },
+  "hydra-bomb-mask": {
+    category: "masks",
+    size: "5 × 25 ml",
+    skinTypes: ["all", "dry"],
+    howToUse: {
+      en: [
+        "After toner, unfold the mask and smooth it over cleansed skin.",
+        "Relax for 15–20 minutes.",
+        "Remove and pat in the remaining essence. Use 1–2× a week.",
+      ],
+      zh: [
+        "于化妆水后，展开面膜并服帖敷于洁净肌肤。",
+        "放松敷 15–20 分钟。",
+        "取下后轻拍剩余精华至吸收。每周使用 1–2 次。",
+      ],
+      ms: [
+        "Selepas toner, buka mask dan lekapkan pada kulit yang bersih.",
+        "Rehat selama 15–20 minit.",
+        "Tanggalkan dan tepuk baki esen ke dalam kulit. Guna 1–2 kali seminggu.",
+      ],
+    },
+  },
+};
+
+// ============================================================
+// Promotions / bundles — used by the /promotions page. Prices in RM.
+// Localised copy (title / desc / tag) lives in the dictionaries under
+// `promotions.bundles`, index-matched to this array.
+// ============================================================
+
+export type SeedBundle = {
+  slug: string;
+  productSlugs: string[];
+  priceRM: string;
+  wasRM: string;
+  saveRM: string;
+  graphic: string;
+};
+
+export const seedBundles: SeedBundle[] = [
+  {
+    slug: "radiance-ritual",
+    productSlugs: ["radiance-serum", "essence-toner", "sun-shield-spf50"],
+    priceRM: "RM329",
+    wasRM: "RM384",
+    saveRM: "RM55",
+    graphic: "/graphics/product-radiance-serum.svg",
+  },
+  {
+    slug: "hydration-ritual",
+    productSlugs: ["hydra-essence-serum", "velvet-cream", "hydra-bomb-mask"],
+    priceRM: "RM339",
+    wasRM: "RM404",
+    saveRM: "RM65",
+    graphic: "/graphics/product-hydra-essence-serum.svg",
+  },
+  {
+    slug: "complete-routine",
+    productSlugs: [
+      "pure-cleanser",
+      "essence-toner",
+      "radiance-serum",
+      "velvet-cream",
+      "sun-shield-spf50",
+    ],
+    priceRM: "RM569",
+    wasRM: "RM631",
+    saveRM: "RM62",
+    graphic: "/graphics/product-velvet-cream.svg",
+  },
+];

@@ -8,12 +8,21 @@ import {
   seedProducts,
   seedTestimonials,
   seedFaqs,
+  seedKbArticles,
   type SeedProduct,
 } from "./seed-data";
 import { getLocale } from "@/i18n/server";
 import { contentPack } from "@/i18n/content";
 
 export type ProductView = Omit<SeedProduct, "sortOrder">;
+export type ArticleView = {
+  slug: string;
+  title: string;
+  category: string;
+  excerpt: string;
+  body: string;
+  tags: string[];
+};
 export type TestimonialView = {
   quote: string;
   name: string;
@@ -65,6 +74,35 @@ export async function getTestimonials(): Promise<TestimonialView[]> {
     const tr = pack.testimonials[t.name];
     return tr ? { ...t, quote: tr.quote, role: tr.role } : t;
   });
+}
+
+// Public skincare-tips blog — sourced from the curated KB library and
+// overlaid with the active locale's translation (kept in sync with the
+// distributor knowledge base, but surfaced publicly as "Skincare Tips").
+export async function getArticles(): Promise<ArticleView[]> {
+  const pack = contentPack(await getLocale());
+  const base: ArticleView[] = [...seedKbArticles]
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .map((a) => ({
+      slug: a.slug,
+      title: a.title,
+      category: a.category,
+      excerpt: a.excerpt,
+      body: a.body,
+      tags: a.tags,
+    }));
+  if (!pack) return base;
+  return base.map((a) => {
+    const t = pack.kb[a.slug];
+    return t
+      ? { ...a, title: t.title, category: t.category, excerpt: t.excerpt, body: t.body }
+      : a;
+  });
+}
+
+export async function getArticle(slug: string): Promise<ArticleView | null> {
+  const all = await getArticles();
+  return all.find((a) => a.slug === slug) ?? null;
 }
 
 export async function getFaqs(): Promise<FaqView[]> {

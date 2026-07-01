@@ -62,7 +62,7 @@ export default async function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/products">{d.exploreRange}</Button>
-              <Button href="/contact" variant="outline">
+              <Button href="/join" variant="outline">
                 {d.becomeDistributor}
               </Button>
             </div>
@@ -197,7 +197,7 @@ export default async function Home() {
                     {fmt(d.ctaBody, { n: seedModules.length })}
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
-                    <Button href="/register?as=distributor">{d.applyToJoin}</Button>
+                    <Button href="/join">{d.applyToJoin}</Button>
                     <Button href="/training" variant="outline">
                       {d.seeTraining}
                     </Button>

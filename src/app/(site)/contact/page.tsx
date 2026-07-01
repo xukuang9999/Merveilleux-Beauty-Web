@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
 import EnquiryForm from "@/components/EnquiryForm";
-import { site, whatsappLink } from "@/lib/data";
+import MapEmbed from "@/components/MapEmbed";
+import { site, whatsappLink, mapsLink } from "@/lib/data";
 import { getDict } from "@/i18n/server";
 
 export const metadata: Metadata = {
@@ -59,9 +60,61 @@ export default async function ContactPage() {
                 <p className="text-sm text-mid">{site.email}</p>
               </div>
             </a>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <a
+                href={`tel:${site.phone.replace(/\s|-/g, "")}`}
+                className="flex items-center gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-rose-light"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-light text-blue">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-charcoal">{d.phone}</p>
+                  <p className="text-sm text-mid">{site.phone}</p>
+                </div>
+              </a>
+              <div className="flex items-center gap-4 rounded-2xl border border-line bg-white p-5">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-green-light text-green">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 3C4.6 3 1 6 1 9.7c0 2.1 1.2 4 3 5.2l-.7 2.4 2.7-1.4c.9.2 1.8.4 2.7.4h.5a6 6 0 0 1-.2-1.6c0-3.4 3.3-6.1 7.3-6.1h.6C16.3 5.2 13 3 9 3Z" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-charcoal">WeChat</p>
+                  <p className="text-sm text-mid">{site.wechat}</p>
+                </div>
+              </div>
+            </div>
+            <a
+              href={mapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-rose-light"
+            >
+              <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-light text-amber">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-sm font-medium text-charcoal">
+                  {dict.footer.visitUs}
+                </p>
+                <p className="text-sm leading-relaxed text-mid">
+                  {site.address.full}
+                </p>
+              </div>
+            </a>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-gold/30 bg-gold-light/40 p-5">
+          <div className="mt-6 h-56 overflow-hidden rounded-2xl border border-line">
+            <MapEmbed title={site.name} />
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-gold/30 bg-gold-light/40 p-5">
             <p className="text-sm text-charcoal">{d.newDistributorNote}</p>
           </div>
         </div>

@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import ScrollProgress from "@/components/ScrollProgress";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { getCurrentUser } from "@/lib/auth";
 import { getLocale, getDict } from "@/i18n/server";
 
@@ -25,6 +26,7 @@ export default async function SiteLayout({
       />
       <main className="flex-1">{children}</main>
       <Footer />
+      <WhatsAppButton label={dict.footer.whatsapp} />
       <ChatWidget dict={dict.chat} />
     </>
   );

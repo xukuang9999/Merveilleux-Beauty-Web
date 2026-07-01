@@ -16,11 +16,16 @@ const zh: Dictionary = {
   },
   "nav": {
     "home": "首页",
+    "about": "关于我们",
     "products": "产品",
+    "promotions": "优惠套装",
+    "blog": "护肤贴士",
+    "gallery": "图库",
     "testimonials": "客户见证",
     "faq": "问答",
     "training": "经销商培训",
     "contact": "联系",
+    "joinUs": "加入我们",
     "login": "登录",
     "join": "成为经销商",
     "myAccount": "我的账户",
@@ -32,8 +37,19 @@ const zh: Dictionary = {
     "connect": "关注我们",
     "whatsapp": "WhatsApp 联系我们",
     "instagram": "Instagram",
+    "facebook": "Facebook",
+    "xiaohongshu": "小红书",
     "rights": "OEM 法式美妆产品",
-    "crafted": "用心精制"
+    "crafted": "用心精制",
+    "newsletterTitle": "订阅美肌资讯",
+    "newsletterSub": "护肤贴士、新品上市与经销商动态 —— 绝不发送垃圾邮件。",
+    "newsletterPlaceholder": "您的电邮地址",
+    "subscribe": "订阅",
+    "subscribed": "谢谢您 —— 您已成功订阅！",
+    "subscribeError": "请输入有效的电邮地址。",
+    "follow": "关注",
+    "visitUs": "到访我们",
+    "companyLine": "{legal} · 注册号 {reg}"
   },
   "home": {
     "heroEyebrow": "OEM 法式美妆 · 为现代肌肤而生",
@@ -82,7 +98,158 @@ const zh: Dictionary = {
     "benefits": "功效",
     "enquireAbout": "咨询 {name}",
     "deckTitle": "想要完整的产品手册与价格？",
-    "deckBody": "经销商可获得详细的配方说明、价格与营销素材。立即联系我们开始吧。"
+    "deckBody": "经销商可获得详细的配方说明、价格与营销素材。立即联系我们开始吧。",
+    "viewDetails": "查看详情",
+    "backToProducts": "← 所有产品",
+    "overview": "产品概览",
+    "size": "容量",
+    "suitableFor": "适合肤质",
+    "howToUse": "使用方法",
+    "reviewsTitle": "使用者评价",
+    "relatedTitle": "完善您的护肤流程",
+    "enquireNow": "通过 WhatsApp 咨询",
+    "priceLabel": "零售价",
+    "resultsTitle": "使用前后对比",
+    "resultsNote": "本产品的使用前后临床对比图收录于经销商资料包中 —— 欢迎向我们索取完整成效手册。",
+    "categories": {
+      "cleansers": "洁面",
+      "toners": "化妆水与精华水",
+      "serums": "精华与护理",
+      "moisturisers": "面霜保湿",
+      "sun": "防晒",
+      "eye": "眼部护理",
+      "masks": "面膜"
+    },
+    "skinTypeLabels": {
+      "all": "所有肤质",
+      "oily": "油性",
+      "dry": "干性",
+      "combination": "混合性",
+      "sensitive": "敏感性",
+      "normal": "中性"
+    }
+  },
+  "about": {
+    "eyebrow": "品牌故事",
+    "title": "法式灵感护肤，为真实肌肤而生",
+    "intro": "Merveilleux 是 Bellesenze Group Sdn Bhd 旗下的美妆品牌 —— 一个于 2014 年在马来西亚创立、依循法国标准的 OEM 护肤系列，为现代肌肤的真实生活方式而设。",
+    "storyTitle": "我们存在的理由",
+    "story": [
+      "Merveilleux 在法语中意为“美妙” —— 这个词也定义了我们对每一道配方的标准。我们与成熟的法国标准 OEM 实验室合作，研发纯净有效的护肤品，再以实在的价格推出，没有奢侈品牌的溢价。",
+      "品牌于 2014 年创立，总部位于雪兰莪蒲种（Batu Caves），我们服务全马来西亚的美容沙龙、医美诊所与注重护肤的消费者 —— 以及一个不断成长、与我们同样相信优质护肤应当可靠、有效且触手可及的经销商网络。"
+    ],
+    "valuesTitle": "我们的坚持",
+    "values": [
+      {
+        "title": "法国标准配方",
+        "body": "依照法国化妆品标准研发，采用经实证、呵护肌肤的活性成分 —— 品质，感受得到。"
+      },
+      {
+        "title": "诚实透明的定价",
+        "body": "奢华级的成效，却没有奢侈品的溢价。您付出的是配方的价值，而非标签。"
+      },
+      {
+        "title": "以信任为本的网络",
+        "body": "受过培训的经销商、真实的支持与共享的成功 —— 一个让人引以为荣去代表的品牌。"
+      }
+    ],
+    "statsTitle": "Merveilleux 一览",
+    "stats": [
+      { "value": "2014", "label": "创立年份" },
+      { "value": "OEM", "label": "法国标准" },
+      { "value": "45+", "label": "产品数量" },
+      { "value": "10", "label": "产品类别" }
+    ],
+    "ctaTitle": "把 Merveilleux 带给您的顾客",
+    "ctaBody": "无论是沙龙、诊所还是有志的经销商 —— 让我们聊聊如何引入这个系列。",
+    "ctaButton": "成为合作伙伴"
+  },
+  "join": {
+    "eyebrow": "经销商 · 加入我们",
+    "title": "与 Merveilleux 携手合作",
+    "intro": "成为 Merveilleux 经销商，在一个深受信赖的品牌上打造您的美妆事业 —— 配备完整培训、营销支持，以及一位随身的 AI 教练。",
+    "doTitle": "作为合作伙伴，您可以",
+    "actions": [
+      {
+        "title": "提交咨询",
+        "body": "告诉我们您的情况与市场，我们将于一个工作日内回复。"
+      },
+      {
+        "title": "索取产品目录",
+        "body": "索取完整产品手册，包含配方、容量与批发详情。"
+      },
+      {
+        "title": "预约洽谈通话",
+        "body": "轻松聊聊合作机会、利润空间与入职流程。"
+      },
+      {
+        "title": "直接 WhatsApp 联系",
+        "body": "更喜欢发消息？立即在 WhatsApp 上联系团队。"
+      }
+    ],
+    "whyTitle": "为何选择与我们合作",
+    "why": [
+      "法国标准 OEM 产品，试过即会自己卖出去",
+      "开始前提供结构化线上培训与认证",
+      "现成的营销素材、产品手册与价格表",
+      "持续更新的知识库以及 AI 销售与护肤指导"
+    ],
+    "downloadBrochure": "索取产品目录",
+    "bookCall": "预约洽谈通话",
+    "whatsappUs": "WhatsApp 联系我们",
+    "formTitle": "开始您的合作咨询",
+    "formSub": "填写以下内容，我们将在 WhatsApp 上继续交流。",
+    "stepsTitle": "入职流程",
+    "steps": [
+      { "title": "咨询", "body": "发送咨询，或在 WhatsApp 上联系我们。" },
+      { "title": "洽谈通话", "body": "我们一同厘清您的市场、目标与产品系列。" },
+      { "title": "培训与认证", "body": "完成线上培训课程与测验。" },
+      { "title": "启动", "body": "获取素材、价格与首批订单 —— 开始销售。" }
+    ]
+  },
+  "promotions": {
+    "eyebrow": "优惠与套装",
+    "title": "精选套装，搭配更出色",
+    "intro": "搭配完整护肤流程，即可享有优惠。我们的套装将相得益彰的产品组合在一起 —— 无论是送礼、试用，还是为新顾客开启正确的第一步，都是理想之选。",
+    "bundles": [
+      {
+        "title": "焕采仪式套装",
+        "desc": "提亮并均匀肤色 —— Radiance Serum、Essence Toner 与 Sun Shield SPF50+。",
+        "tag": "畅销"
+      },
+      {
+        "title": "水润仪式套装",
+        "desc": "丰盈玻璃肌补水 —— Hydra Essence Serum、Velvet Cream 与一片 Hydra Bomb Mask。",
+        "tag": "玻璃肌"
+      },
+      {
+        "title": "完整护肤套装",
+        "desc": "由早到晚的完整流程 —— 洁面、化妆水、精华、面霜与防晒。",
+        "tag": "超值之选"
+      }
+    ],
+    "includes": "套装包含",
+    "save": "省 {amount}",
+    "wasLabel": "原价 {price}",
+    "enquire": "咨询此套装",
+    "noteTitle": "正在筹备促销活动？",
+    "noteBody": "经销商可享季节性套装价格与活动素材。欢迎向我们了解当前优惠。"
+  },
+  "gallery": {
+    "eyebrow": "图库",
+    "title": "尽览 Merveilleux 系列",
+    "intro": "一窥整个系列 —— 纯净的配方与用心的设计，让它在任何货架上都优雅出众。",
+    "viewProduct": "查看产品 →"
+  },
+  "blog": {
+    "eyebrow": "护肤贴士",
+    "title": "护肤贴士与专业知识",
+    "intro": "来自 Merveilleux 团队实用、不含糊的护肤指导 —— 护肤流程、成分解析与真实的肌肤困扰案例。",
+    "readArticle": "阅读贴士 →",
+    "backToBlog": "← 所有护肤贴士",
+    "relatedTitle": "更多贴士",
+    "ctaTitle": "有肌肤困扰吗？",
+    "ctaBody": "随时向我们的 AI 美容顾问 Margaux 提问 —— 或直接联系我们的团队。"
   },
   "testimonials": {
     "eyebrow": "深受喜爱与信赖",

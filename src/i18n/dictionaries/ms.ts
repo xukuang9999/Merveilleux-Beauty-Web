@@ -16,11 +16,16 @@ const ms: Dictionary = {
   },
   "nav": {
     "home": "Laman Utama",
+    "about": "Tentang Kami",
     "products": "Produk",
+    "promotions": "Promosi",
+    "blog": "Tip Penjagaan Kulit",
+    "gallery": "Galeri",
     "testimonials": "Testimoni",
     "faq": "Soal Jawab",
     "training": "Latihan Pengedar",
     "contact": "Hubungi",
+    "joinUs": "Sertai Kami",
     "login": "Log masuk",
     "join": "Sertai sebagai Pengedar",
     "myAccount": "Akaun Saya",
@@ -32,8 +37,19 @@ const ms: Dictionary = {
     "connect": "Berhubung",
     "whatsapp": "WhatsApp kami",
     "instagram": "Instagram",
+    "facebook": "Facebook",
+    "xiaohongshu": "Xiaohongshu (小红书)",
     "rights": "Produk Kecantikan Perancis OEM",
-    "crafted": "Diilhamkan dengan penuh teliti"
+    "crafted": "Diilhamkan dengan penuh teliti",
+    "newsletterTitle": "Kekal berseri",
+    "newsletterSub": "Tip penjagaan kulit, pelancaran baharu dan berita rakan kongsi — tanpa spam.",
+    "newsletterPlaceholder": "Alamat e-mel anda",
+    "subscribe": "Langgan",
+    "subscribed": "Terima kasih — anda telah disenaraikan!",
+    "subscribeError": "Sila masukkan alamat e-mel yang sah.",
+    "follow": "Ikuti",
+    "visitUs": "Kunjungi kami",
+    "companyLine": "{legal} · Pendaftaran {reg}"
   },
   "home": {
     "heroEyebrow": "Kecantikan Perancis OEM · Dicipta untuk kulit moden",
@@ -82,7 +98,158 @@ const ms: Dictionary = {
     "benefits": "Manfaat",
     "enquireAbout": "Tanya tentang {name}",
     "deckTitle": "Mahukan deck produk & harga yang lengkap?",
-    "deckBody": "Pengedar memperoleh helaian formulasi terperinci, harga dan aset pemasaran. Hubungi kami untuk bermula."
+    "deckBody": "Pengedar memperoleh helaian formulasi terperinci, harga dan aset pemasaran. Hubungi kami untuk bermula.",
+    "viewDetails": "Lihat butiran",
+    "backToProducts": "← Semua produk",
+    "overview": "Gambaran keseluruhan",
+    "size": "Saiz",
+    "suitableFor": "Sesuai untuk",
+    "howToUse": "Cara guna",
+    "reviewsTitle": "Apa kata mereka",
+    "relatedTitle": "Lengkapkan rutin anda",
+    "enquireNow": "Tanya di WhatsApp",
+    "priceLabel": "Harga runcit",
+    "resultsTitle": "Sebelum & selepas",
+    "resultsNote": "Imej klinikal sebelum-dan-selepas untuk produk ini dikongsi dalam kit Pengedar — tanya kami untuk deck hasil yang penuh.",
+    "categories": {
+      "cleansers": "Pencuci",
+      "toners": "Toner & Esens",
+      "serums": "Serum & Rawatan",
+      "moisturisers": "Pelembap",
+      "sun": "Perlindungan Matahari",
+      "eye": "Penjagaan Mata",
+      "masks": "Topeng"
+    },
+    "skinTypeLabels": {
+      "all": "Semua jenis kulit",
+      "oily": "Berminyak",
+      "dry": "Kering",
+      "combination": "Kombinasi",
+      "sensitive": "Sensitif",
+      "normal": "Normal"
+    }
+  },
+  "about": {
+    "eyebrow": "Kisah Kami",
+    "title": "Penjagaan kulit berinspirasi Perancis, untuk kulit sebenar",
+    "intro": "Merveilleux ialah jenama kecantikan Bellesenze Group Sdn Bhd — rangkaian penjagaan kulit OEM bertaraf Perancis, dicipta di Malaysia pada 2014 untuk cara kulit moden benar-benar hidup.",
+    "storyTitle": "Mengapa kami wujud",
+    "story": [
+      "Merveilleux bermaksud “menakjubkan” dalam bahasa Perancis — dan perkataan itu menetapkan piawaian yang kami pegang untuk setiap formula. Kami bekerjasama dengan makmal OEM bertaraf Perancis yang mantap untuk membangunkan penjagaan kulit yang tulen dan berkesan, kemudian mengeluarkannya pada harga yang jujur, tanpa harga premium jenama mewah.",
+      "Diasaskan pada 2014 dan berpangkalan di Batu Caves, Selangor, kami melayani salon kecantikan, klinik estetik dan pengguna yang mementingkan kulit di seluruh Malaysia — bersama rangkaian pengedar yang semakin berkembang, yang berkongsi keyakinan kami bahawa penjagaan kulit yang hebat seharusnya boleh dipercayai, berkesan dan mampu dimiliki."
+    ],
+    "valuesTitle": "Apa yang kami perjuangkan",
+    "values": [
+      {
+        "title": "Formulasi bertaraf Perancis",
+        "body": "Dibangunkan mengikut piawaian kosmetik Perancis dengan bahan aktif teruji yang menyayangi kulit — kualiti yang anda dapat rasa."
+      },
+      {
+        "title": "Harga yang jujur dan telus",
+        "body": "Hasil bergred mewah tanpa harga melampau. Apa yang anda bayar ialah formulanya, bukan labelnya."
+      },
+      {
+        "title": "Rangkaian yang dibina atas kepercayaan",
+        "body": "Pengedar terlatih, sokongan sebenar dan kejayaan bersama — jenama yang orang bangga mewakilinya."
+      }
+    ],
+    "statsTitle": "Merveilleux sepintas lalu",
+    "stats": [
+      { "value": "2014", "label": "Ditubuhkan" },
+      { "value": "OEM", "label": "Taraf Perancis" },
+      { "value": "45+", "label": "Produk" },
+      { "value": "10", "label": "Kategori" }
+    ],
+    "ctaTitle": "Bawa Merveilleux kepada pelanggan anda",
+    "ctaBody": "Salon, klinik atau bakal pengedar — mari kita bincang tentang membawa rangkaian ini.",
+    "ctaButton": "Bekerjasama dengan kami"
+  },
+  "join": {
+    "eyebrow": "Pengedar · Sertai Kami",
+    "title": "Bekerjasama dengan Merveilleux",
+    "intro": "Jadilah pengedar Merveilleux dan bina perniagaan kecantikan atas jenama yang dipercayai orang — dengan latihan penuh, sokongan pemasaran dan jurulatih AI dalam genggaman anda.",
+    "doTitle": "Apa yang anda boleh lakukan sebagai rakan kongsi",
+    "actions": [
+      {
+        "title": "Hantar pertanyaan",
+        "body": "Beritahu kami tentang anda dan pasaran anda. Kami akan membalas dalam satu hari bekerja."
+      },
+      {
+        "title": "Dapatkan katalog produk",
+        "body": "Minta deck produk penuh dengan formulasi, saiz dan butiran borong."
+      },
+      {
+        "title": "Tempah panggilan discovery",
+        "body": "Perbualan santai tentang peluang, margin dan cara onboarding berfungsi."
+      },
+      {
+        "title": "WhatsApp kami terus",
+        "body": "Lebih suka menghantar mesej? Hubungi pasukan serta-merta di WhatsApp."
+      }
+    ],
+    "whyTitle": "Mengapa bekerjasama dengan kami",
+    "why": [
+      "Produk OEM bertaraf Perancis yang menjual dirinya sendiri sebaik dicuba",
+      "Latihan dalam talian tersusun dan pensijilan sebelum anda bermula",
+      "Aset pemasaran sedia guna, deck produk dan harga",
+      "Pangkalan pengetahuan berterusan serta bimbingan jualan & penjagaan kulit AI"
+    ],
+    "downloadBrochure": "Minta katalog",
+    "bookCall": "Tempah panggilan discovery",
+    "whatsappUs": "WhatsApp kami",
+    "formTitle": "Mulakan pertanyaan rakan kongsi anda",
+    "formSub": "Isikan ini dan kami akan menyambung di WhatsApp.",
+    "stepsTitle": "Cara onboarding berfungsi",
+    "steps": [
+      { "title": "Bertanya", "body": "Hantar pertanyaan anda atau hubungi kami di WhatsApp." },
+      { "title": "Panggilan discovery", "body": "Kami selaraskan pasaran, sasaran dan rangkaian anda." },
+      { "title": "Latih & sijil", "body": "Lengkapkan program latihan dalam talian dan kuiz." },
+      { "title": "Lancar", "body": "Dapatkan aset, harga dan pesanan pertama anda — dan mula menjual." }
+    ]
+  },
+  "promotions": {
+    "eyebrow": "Promosi & Set",
+    "title": "Set terkurasi, lebih baik bersama",
+    "intro": "Jimat apabila anda membina rutin lengkap. Set kami menggandingkan produk yang paling berkesan bersebelahan — sesuai untuk hadiah, mencuba, atau memulakan pelanggan baharu dengan betul.",
+    "bundles": [
+      {
+        "title": "The Radiance Ritual",
+        "desc": "Cerahkan dan seragamkan warna kulit — Radiance Serum, Essence Toner dan Sun Shield SPF50+.",
+        "tag": "Paling laris"
+      },
+      {
+        "title": "The Hydration Ritual",
+        "desc": "Hidrasi kulit kaca yang montok — Hydra Essence Serum, Velvet Cream dan sekeping Hydra Bomb Mask.",
+        "tag": "Kulit kaca"
+      },
+      {
+        "title": "The Complete Routine",
+        "desc": "Regimen penuh pagi ke malam — pencuci, toner, serum, pelembap dan SPF.",
+        "tag": "Nilai terbaik"
+      }
+    ],
+    "includes": "Termasuk",
+    "save": "Jimat {amount}",
+    "wasLabel": "Biasanya {price}",
+    "enquire": "Tanya tentang set ini",
+    "noteTitle": "Menjalankan promosi?",
+    "noteBody": "Pengedar mendapat harga set bermusim dan aset kempen. Tanya kami tentang tawaran semasa."
+  },
+  "gallery": {
+    "eyebrow": "Galeri",
+    "title": "Koleksi Merveilleux, dalam pandangan",
+    "intro": "Lihat rangkaian ini — formula yang tulen dan reka bentuk yang teliti, dicipta untuk kelihatan indah di mana-mana rak.",
+    "viewProduct": "Lihat produk →"
+  },
+  "blog": {
+    "eyebrow": "Tip Penjagaan Kulit",
+    "title": "Tip & pengetahuan penjagaan kulit",
+    "intro": "Panduan penjagaan kulit yang praktikal dan tulus daripada pasukan Merveilleux — rutin, penerangan bahan dan kes kebimbangan kulit yang sebenar.",
+    "readArticle": "Baca tip →",
+    "backToBlog": "← Semua tip penjagaan kulit",
+    "relatedTitle": "Lebih banyak tip",
+    "ctaTitle": "Ada kebimbangan kulit?",
+    "ctaBody": "Tanya Margaux, penasihat kecantikan AI kami, pada bila-bila masa — atau hubungi pasukan kami terus."
   },
   "testimonials": {
     "eyebrow": "Disayangi & dipercayai",

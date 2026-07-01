@@ -91,7 +91,8 @@ export default async function ProductsPage() {
                   </div>
                 </div>
 
-                <div className="mt-8">
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Button href={`/products/${p.slug}`}>{d.viewDetails}</Button>
                   <Button href="/contact" variant="outline">
                     {fmt(d.enquireAbout, { name: p.name })}
                   </Button>

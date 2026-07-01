@@ -1,23 +1,35 @@
 import Link from "next/link";
 import Image from "next/image";
-import { site, whatsappLink } from "@/lib/data";
-import { getDict } from "@/i18n/server";
+import { site, whatsappLink, mapsLink } from "@/lib/data";
+import { getDict, getLocale, fmt } from "@/i18n/server";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export default async function Footer() {
-  const dict = await getDict();
+  const [dict, locale] = await Promise.all([getDict(), getLocale()]);
+  const f = dict.footer;
   const links = [
-    { href: "/", label: dict.nav.home },
+    { href: "/about", label: dict.nav.about },
     { href: "/products", label: dict.nav.products },
+    { href: "/promotions", label: dict.nav.promotions },
+    { href: "/blog", label: dict.nav.blog },
+    { href: "/gallery", label: dict.nav.gallery },
     { href: "/testimonials", label: dict.nav.testimonials },
     { href: "/faq", label: dict.nav.faq },
     { href: "/training", label: dict.nav.training },
+    { href: "/join", label: dict.nav.joinUs },
     { href: "/contact", label: dict.nav.contact },
+  ];
+  const socials = [
+    { href: site.instagram, label: f.instagram },
+    { href: site.facebook, label: f.facebook },
+    { href: site.xiaohongshu, label: f.xiaohongshu },
   ];
 
   return (
     <footer className="mt-24 bg-charcoal text-cream/70">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr]">
+          {/* Brand + newsletter */}
           <div>
             <div className="flex items-center gap-2.5">
               <Image
@@ -37,11 +49,19 @@ export default async function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/60">
               {site.description}
             </p>
+            <div className="mt-6 max-w-sm">
+              <h4 className="eyebrow mb-2">{f.newsletterTitle}</h4>
+              <p className="mb-3 text-xs leading-relaxed text-cream/50">
+                {f.newsletterSub}
+              </p>
+              <NewsletterSignup dict={f} locale={locale} />
+            </div>
           </div>
 
+          {/* Explore */}
           <div>
-            <h4 className="eyebrow mb-4">{dict.footer.explore}</h4>
-            <ul className="space-y-2.5 text-sm">
+            <h4 className="eyebrow mb-4">{f.explore}</h4>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm">
               {links.map((l) => (
                 <li key={l.href}>
                   <Link
@@ -55,8 +75,9 @@ export default async function Footer() {
             </ul>
           </div>
 
+          {/* Connect */}
           <div>
-            <h4 className="eyebrow mb-4">{dict.footer.connect}</h4>
+            <h4 className="eyebrow mb-4">{f.connect}</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a
@@ -73,30 +94,44 @@ export default async function Footer() {
                   rel="noopener noreferrer"
                   className="text-cream/70 transition-colors hover:text-gold"
                 >
-                  {dict.footer.whatsapp}
+                  {f.whatsapp} · {site.phone}
                 </a>
               </li>
-              <li>
+              <li className="text-cream/60">WeChat: {site.wechat}</li>
+            </ul>
+
+            <h4 className="eyebrow mb-3 mt-6">{f.follow}</h4>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              {socials.map((s) => (
                 <a
-                  href={site.instagram}
+                  key={s.label}
+                  href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-cream/70 transition-colors hover:text-gold"
                 >
-                  {dict.footer.instagram}
+                  {s.label}
                 </a>
-              </li>
-            </ul>
+              ))}
+            </div>
+
+            <h4 className="eyebrow mb-2 mt-6">{f.visitUs}</h4>
+            <a
+              href={mapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm leading-relaxed text-cream/60 transition-colors hover:text-gold"
+            >
+              {site.address.full}
+            </a>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-cream/10 pt-6 text-xs text-cream/40 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {site.name} · {dict.footer.rights}
+            © {new Date().getFullYear()} {site.name} · {f.rights}
           </p>
-          <p>
-            {dict.footer.crafted} · <span className="text-gold">Merveilleux</span>
-          </p>
+          <p>{fmt(f.companyLine, { legal: site.legalName, reg: site.regNo })}</p>
         </div>
       </div>
     </footer>

@@ -37,10 +37,11 @@ export default function Nav({
 
   const links = [
     { href: "/", label: dict.home },
+    { href: "/about", label: dict.about },
     { href: "/products", label: dict.products },
+    { href: "/promotions", label: dict.promotions },
+    { href: "/blog", label: dict.blog },
     { href: "/testimonials", label: dict.testimonials },
-    { href: "/faq", label: dict.faq },
-    { href: "/training", label: dict.training },
     { href: "/contact", label: dict.contact },
   ];
 
@@ -97,7 +98,7 @@ export default function Nav({
                 {dict.login}
               </Link>
               <Link
-                href="/register?as=distributor"
+                href="/join"
                 className="rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
               >
                 {dict.join}
@@ -159,7 +160,7 @@ export default function Nav({
                 {dict.login}
               </Link>
               <Link
-                href="/register?as=distributor"
+                href="/join"
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-rose-deep"
               >

@@ -16,11 +16,16 @@ const en = {
   },
   nav: {
     home: "Home",
+    about: "About",
     products: "Products",
+    promotions: "Promotions",
+    blog: "Skincare Tips",
+    gallery: "Gallery",
     testimonials: "Testimonials",
     faq: "Q&A",
     training: "Distributor Training",
     contact: "Contact",
+    joinUs: "Join Us",
     login: "Log in",
     join: "Join as Distributor",
     myAccount: "My Account",
@@ -32,8 +37,19 @@ const en = {
     connect: "Connect",
     whatsapp: "WhatsApp us",
     instagram: "Instagram",
+    facebook: "Facebook",
+    xiaohongshu: "Xiaohongshu (小红书)",
     rights: "OEM French Beauty Products",
     crafted: "Crafted with care",
+    newsletterTitle: "Stay in the glow",
+    newsletterSub: "Skincare tips, new launches and partner news — no spam.",
+    newsletterPlaceholder: "Your email address",
+    subscribe: "Subscribe",
+    subscribed: "Thank you — you're on the list!",
+    subscribeError: "Please enter a valid email address.",
+    follow: "Follow",
+    visitUs: "Visit us",
+    companyLine: "{legal} · Reg. {reg}",
   },
   home: {
     heroEyebrow: "OEM French Beauty · Made for modern skin",
@@ -88,6 +104,166 @@ const en = {
     deckTitle: "Want the full product deck & pricing?",
     deckBody:
       "Distributors get detailed formulation sheets, pricing and marketing assets. Reach out to get started.",
+    viewDetails: "View details",
+    backToProducts: "← All products",
+    overview: "Overview",
+    size: "Size",
+    suitableFor: "Suitable for",
+    howToUse: "How to use",
+    reviewsTitle: "What people say",
+    relatedTitle: "Complete the routine",
+    enquireNow: "Enquire on WhatsApp",
+    priceLabel: "Retail price",
+    resultsTitle: "Before & after",
+    resultsNote:
+      "Clinical before-and-after imagery for this product is shared in the distributor kit — ask us for the full results deck.",
+    categories: {
+      cleansers: "Cleansers",
+      toners: "Toners & Essences",
+      serums: "Serums & Treatments",
+      moisturisers: "Moisturisers",
+      sun: "Sun Protection",
+      eye: "Eye Care",
+      masks: "Masks",
+    },
+    skinTypeLabels: {
+      all: "All skin types",
+      oily: "Oily",
+      dry: "Dry",
+      combination: "Combination",
+      sensitive: "Sensitive",
+      normal: "Normal",
+    },
+  },
+  about: {
+    eyebrow: "Our Story",
+    title: "French-inspired skincare, made for real skin",
+    intro:
+      "Merveilleux is the beauty house of Bellesenze Group Sdn Bhd — an OEM French-standard skincare line, created in Malaysia in 2014 for the way modern skin really lives.",
+    storyTitle: "Why we exist",
+    story: [
+      "Merveilleux means “marvellous” in French — and that word sets the standard we hold every formula to. We partner with established French-standard OEM laboratories to develop clean, effective skincare, then release it honestly priced, without the luxury-brand markup.",
+      "Founded in 2014 and based in Batu Caves, Selangor, we serve beauty salons, aesthetic clinics and skin-conscious consumers across Malaysia — together with a growing network of distributors who share our belief that great skincare should be trustworthy, effective and within reach.",
+    ],
+    valuesTitle: "What we stand for",
+    values: [
+      {
+        title: "French-standard formulation",
+        body: "Developed to French cosmetic standards with proven, skin-loving actives — quality you can feel.",
+      },
+      {
+        title: "Honest, transparent pricing",
+        body: "Luxury-grade results without the luxury markup. What you pay for is the formula, not the label.",
+      },
+      {
+        title: "A network built on trust",
+        body: "Trained distributors, real support and shared success — a brand people are proud to represent.",
+      },
+    ],
+    statsTitle: "Merveilleux at a glance",
+    stats: [
+      { value: "2014", label: "Established" },
+      { value: "OEM", label: "French-standard" },
+      { value: "45+", label: "Products" },
+      { value: "10", label: "Categories" },
+    ],
+    ctaTitle: "Bring Merveilleux to your customers",
+    ctaBody:
+      "Salon, clinic or aspiring distributor — let's talk about carrying the range.",
+    ctaButton: "Partner with us",
+  },
+  join: {
+    eyebrow: "Distributor · Join Us",
+    title: "Partner with Merveilleux",
+    intro:
+      "Become a Merveilleux distributor and build a beauty business on a brand people trust — with full training, marketing support and an AI coach in your pocket.",
+    doTitle: "What you can do as a partner",
+    actions: [
+      {
+        title: "Submit an enquiry",
+        body: "Tell us about you and your market. We'll get back within one working day.",
+      },
+      {
+        title: "Get the product catalogue",
+        body: "Request the full product deck with formulations, sizes and wholesale details.",
+      },
+      {
+        title: "Book a discovery call",
+        body: "A relaxed chat about the opportunity, margins and how onboarding works.",
+      },
+      {
+        title: "WhatsApp us directly",
+        body: "Prefer to message? Reach the team instantly on WhatsApp.",
+      },
+    ],
+    whyTitle: "Why partner with us",
+    why: [
+      "French-standard OEM products that sell themselves once tried",
+      "Structured online training and certification before you start",
+      "Ready-made marketing assets, product decks and pricing",
+      "An ongoing knowledge base and AI sales & skincare coaching",
+    ],
+    downloadBrochure: "Request the catalogue",
+    bookCall: "Book a discovery call",
+    whatsappUs: "WhatsApp us",
+    formTitle: "Start your partner enquiry",
+    formSub: "Fill this in and we'll continue on WhatsApp.",
+    stepsTitle: "How onboarding works",
+    steps: [
+      { title: "Enquire", body: "Send your enquiry or message us on WhatsApp." },
+      { title: "Discovery call", body: "We align on your market, targets and the range." },
+      { title: "Train & certify", body: "Complete the online training programme and quizzes." },
+      { title: "Launch", body: "Get your assets, pricing and first order — and start selling." },
+    ],
+  },
+  promotions: {
+    eyebrow: "Promotions & Bundles",
+    title: "Curated sets, better together",
+    intro:
+      "Save when you build a complete routine. Our bundles pair the products that work best side by side — ideal for gifting, sampling, or starting a new customer off right.",
+    bundles: [
+      {
+        title: "The Radiance Ritual",
+        desc: "Brighten and even tone — Radiance Serum, Essence Toner and Sun Shield SPF50+.",
+        tag: "Bestseller",
+      },
+      {
+        title: "The Hydration Ritual",
+        desc: "Plump, glass-skin hydration — Hydra Essence Serum, Velvet Cream and a Hydra Bomb Mask.",
+        tag: "Glass skin",
+      },
+      {
+        title: "The Complete Routine",
+        desc: "A full AM-to-PM regimen — cleanser, toner, serum, moisturiser and SPF.",
+        tag: "Best value",
+      },
+    ],
+    includes: "Includes",
+    save: "Save {amount}",
+    wasLabel: "Usually {price}",
+    enquire: "Enquire about this set",
+    noteTitle: "Running a promotion?",
+    noteBody:
+      "Distributors get seasonal bundle pricing and campaign assets. Ask us about the current offers.",
+  },
+  gallery: {
+    eyebrow: "Gallery",
+    title: "The Merveilleux collection, in view",
+    intro:
+      "A look at the range — clean formulas and considered design, made to sit beautifully on any shelf.",
+    viewProduct: "View product →",
+  },
+  blog: {
+    eyebrow: "Skincare Tips",
+    title: "Skincare tips & know-how",
+    intro:
+      "Practical, no-nonsense skincare guidance from the Merveilleux team — routines, ingredient explainers and real skin-concern cases.",
+    readArticle: "Read tip →",
+    backToBlog: "← All skincare tips",
+    relatedTitle: "More tips",
+    ctaTitle: "Have a skin concern?",
+    ctaBody:
+      "Ask Margaux, our AI beauty advisor, any time — or message our team directly.",
   },
   testimonials: {
     eyebrow: "Loved & trusted",
