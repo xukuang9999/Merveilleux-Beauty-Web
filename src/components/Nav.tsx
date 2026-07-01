@@ -50,10 +50,10 @@ export default function Nav({
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-cream/85 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2.5"
+          className="flex shrink-0 items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
           <Image src="/graphics/monogram.svg" alt="" width={34} height={34} priority />
@@ -66,12 +66,12 @@ export default function Nav({
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {links.slice(1, -1).map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
+              className={`whitespace-nowrap px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
                 isActive(l.href) ? "text-rose-deep" : "text-mid hover:text-charcoal"
               }`}
             >
@@ -82,7 +82,7 @@ export default function Nav({
           {user ? (
             <Link
               href={roleHome[user.role]}
-              className="ml-2 flex items-center gap-2 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
+              className="ml-2 flex items-center gap-2 whitespace-nowrap rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
             >
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/30 text-[10px] uppercase">
                 {user.name.charAt(0)}
@@ -93,13 +93,13 @@ export default function Nav({
             <>
               <Link
                 href="/login"
-                className="ml-1 px-3 py-2 text-[13px] font-medium text-mid transition-colors hover:text-charcoal"
+                className="ml-1 whitespace-nowrap px-3 py-2 text-[13px] font-medium text-mid transition-colors hover:text-charcoal"
               >
                 {dict.login}
               </Link>
               <Link
                 href="/join"
-                className="rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
+                className="whitespace-nowrap rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
               >
                 {dict.join}
               </Link>
@@ -108,7 +108,7 @@ export default function Nav({
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <LanguageSwitcher current={locale} />
           <button
             aria-label="Toggle menu"
@@ -129,7 +129,7 @@ export default function Nav({
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-line bg-cream px-5 pb-5 pt-2 lg:hidden">
+        <div className="border-t border-line bg-cream px-5 pb-5 pt-2 xl:hidden">
           {links.map((l) => (
             <Link
               key={l.href}
