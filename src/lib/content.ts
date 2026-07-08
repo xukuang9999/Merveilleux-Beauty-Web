@@ -34,17 +34,41 @@ export type FaqView = { category: string; question: string; answer: string };
 
 export async function getProducts(): Promise<ProductView[]> {
   const pack = contentPack(await getLocale());
-  let rows: ProductView[];
+
+  // The curated catalogue in seed-data.ts is the canonical source of truth for
+  // the public storefront — it guarantees every product has a valid image under
+  // /products/*.jpg. The database is treated as an OPTIONAL overlay keyed by
+  // slug: an admin edit to a matching product wins, unpublishing it hides it,
+  // and orphaned legacy rows (old SKUs whose graphics were deleted) are simply
+  // ignored so they can never blank out the storefront again.
+  const base = [...seedProducts].sort((a, b) => a.sortOrder - b.sortOrder);
+
+  const edits = new Map<string, typeof products.$inferSelect>();
   try {
-    const db_rows = await db
-      .select()
-      .from(products)
-      .where(eq(products.published, true))
-      .orderBy(asc(products.sortOrder));
-    rows = db_rows.length ? db_rows : seedProducts;
+    const db_rows = await db.select().from(products);
+    for (const r of db_rows) edits.set(r.slug, r);
   } catch {
-    rows = seedProducts;
+    // DB unreachable — render the curated catalogue as-is.
   }
+
+  const rows: ProductView[] = [];
+  for (const p of base) {
+    const edit = edits.get(p.slug);
+    if (edit && !edit.published) continue; // admin hid this product
+    const src = edit ?? p;
+    rows.push({
+      slug: p.slug,
+      name: src.name,
+      type: src.type,
+      tagline: src.tagline,
+      description: src.description,
+      keyIngredients: src.keyIngredients,
+      benefits: src.benefits,
+      priceRM: src.priceRM,
+      graphic: src.graphic,
+    });
+  }
+
   if (!pack) return rows;
   return rows.map((p) => {
     const t = pack.products[p.slug];
