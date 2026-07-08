@@ -2,16 +2,12 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import type { Dictionary } from "@/i18n/dictionaries/en";
 
 // Hero visual: flagship renders from the Bellesenze design proposal,
-// framed in the facade's arch motif, with a parallax tilt and the
-// Margaux chat entry bubble.
-export default function HeroAvatar({ dict }: { dict: Dictionary["chat"] }) {
+// framed in the facade's arch motif, with a subtle parallax tilt.
+export default function HeroAvatar() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
-
-  const openChat = () => window.dispatchEvent(new Event("open-mb-chat"));
 
   function onMove(e: React.MouseEvent<HTMLDivElement>) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -70,26 +66,6 @@ export default function HeroAvatar({ dict }: { dict: Dictionary["chat"] }) {
           style={{ animationDelay: "-9s" }}
         />
       </div>
-
-      {/* speech bubble — Margaux chat entry */}
-      <button
-        onClick={openChat}
-        className="pop absolute right-0 top-4 max-w-[210px] cursor-pointer rounded-[2px] rounded-br-none border border-line bg-porcelain/95 px-4 py-3 text-left shadow-[0_12px_30px_-12px_rgba(69,61,49,0.35)] backdrop-blur"
-      >
-        <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-gold">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green" />
-          </span>
-          {dict.bubbleEyebrow}
-        </span>
-        <span className="mt-1 block font-serif text-base leading-snug text-charcoal">
-          {dict.bubbleGreeting}
-        </span>
-        <span className="mt-1 block text-xs font-medium text-bronze">
-          {dict.tapToChat}
-        </span>
-      </button>
     </div>
   );
 }

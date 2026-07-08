@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
+import Petals from "@/components/Petals";
 import EnquiryForm from "@/components/EnquiryForm";
 import { whatsappLink } from "@/lib/data";
-import { getDict } from "@/i18n/server";
+import { seedModules } from "@/lib/seed-data";
+import { getDict, getLocale, fmt } from "@/i18n/server";
+import { localizeModule } from "@/i18n/content";
 
 export const metadata: Metadata = {
   title: "Join Us — Become a Distributor",
@@ -15,8 +18,10 @@ export const metadata: Metadata = {
 const actionIcons = ["✉️", "📖", "📞", "💬"];
 
 export default async function JoinPage() {
-  const dict = await getDict();
+  const [dict, locale] = await Promise.all([getDict(), getLocale()]);
   const j = dict.join;
+  const d = dict.home;
+  const modules = seedModules.map((m) => localizeModule(m, locale));
 
   const links = [
     whatsappLink("Hi Merveilleux Beauty, I'm interested in becoming a distributor."),
@@ -87,8 +92,60 @@ export default async function JoinPage() {
         </div>
       </Container>
 
+      {/* TRAINING PROGRAMME — the structured distributor curriculum */}
+      <section className="pb-16">
+        <Container>
+          <Reveal variant="zoom">
+            <div className="relative overflow-hidden rounded-[2px] border border-gold/30 p-10 sm:p-14">
+              <Image
+                src="/renders/theatre-wide.jpg"
+                alt=""
+                aria-hidden
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+              <div aria-hidden className="absolute inset-0 bg-porcelain/85" />
+              <Petals count={6} />
+              <div className="relative grid items-center gap-8 lg:grid-cols-[1.3fr_1fr]">
+                <div>
+                  <p className="eyebrow mb-3">{d.ctaEyebrow}</p>
+                  <h2 className="font-serif text-3xl font-light leading-tight text-charcoal sm:text-4xl">
+                    {d.ctaTitle}
+                  </h2>
+                  <p className="mt-4 max-w-lg text-base leading-relaxed text-mid">
+                    {fmt(d.ctaBody, { n: seedModules.length })}
+                  </p>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <Button href="#enquiry">{d.applyToJoin}</Button>
+                    <Button href="/training" variant="outline">
+                      {d.seeTraining}
+                    </Button>
+                  </div>
+                </div>
+                <ul className="space-y-3">
+                  {modules.map((m) => (
+                    <li
+                      key={m.ord}
+                      className="flex items-center gap-3 rounded-[2px] border border-line bg-porcelain/80 px-4 py-3 transition-transform duration-300 hover:translate-x-1"
+                    >
+                      <span className="text-xl">{m.icon}</span>
+                      <div>
+                        <p className="text-sm font-medium text-charcoal">
+                          {m.title}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       {/* WHY + STEPS + FORM */}
-      <section className="border-y border-line bg-porcelain/60 py-16">
+      <section id="enquiry" className="scroll-mt-24 border-y border-line bg-porcelain/60 py-16">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.05fr]">
           <div>
             <Reveal>
