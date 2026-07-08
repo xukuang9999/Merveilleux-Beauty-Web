@@ -67,7 +67,7 @@ export default function Nav({
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-0.5 lg:flex">
+        <div className="hidden items-center gap-0.5 xl:flex">
           {links.slice(1, -1).map((l) => (
             <Link
               key={l.href}
@@ -111,7 +111,7 @@ export default function Nav({
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <LanguageSwitcher current={locale} />
           <button
             aria-label="Toggle menu"
@@ -132,7 +132,7 @@ export default function Nav({
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-line bg-cream px-5 pb-5 pt-2 lg:hidden">
+        <div className="border-t border-line bg-cream px-5 pb-5 pt-2 xl:hidden">
           {links.map((l) => (
             <Link
               key={l.href}
