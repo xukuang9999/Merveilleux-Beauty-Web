@@ -57,7 +57,7 @@ export default async function BlogArticlePage({
             </span>
           ))}
         </div>
-        <div className="mt-6 rounded-2xl border border-line bg-white p-6 sm:p-8">
+        <div className="mt-6 rounded-[2px] border border-line bg-porcelain p-6 sm:p-8">
           <Markdown content={article.body} />
         </div>
       </article>
@@ -70,13 +70,13 @@ export default async function BlogArticlePage({
               <Reveal key={art.slug} variant="up" delay={i * 80}>
                 <Link
                   href={`/blog/${art.slug}`}
-                  className="flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-rose-light"
+                  className="flex h-full flex-col rounded-[2px] border border-line bg-porcelain p-5 transition-all duration-300 hover:-translate-y-1 hover:border-champagne"
                 >
                   <p className="eyebrow">{art.category}</p>
                   <h3 className="mt-2 font-serif text-lg leading-snug text-charcoal">
                     {art.title}
                   </h3>
-                  <span className="mt-3 text-[13px] font-medium text-rose-deep">
+                  <span className="mt-3 text-[13px] font-medium text-bronze">
                     {b.readArticle}
                   </span>
                 </Link>

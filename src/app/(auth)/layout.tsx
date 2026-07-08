@@ -9,25 +9,27 @@ export default async function AuthLayout({
 }) {
   const dict = await getDict();
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center px-5 py-12">
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 py-12">
+      {/* flagship corridor render as a soft backdrop */}
       <Image
-        src="/graphics/pattern.svg"
+        src="/renders/corridor.jpg"
         alt=""
-        width={400}
-        height={400}
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[600px] -translate-x-1/2 opacity-30"
+        fill
+        sizes="100vw"
+        className="-z-20 object-cover"
       />
-      <Link href="/" className="mb-8 flex items-center gap-2.5">
+      <div aria-hidden className="absolute inset-0 -z-10 bg-cream/88" />
+      <Link href="/" className="mb-8 flex items-center gap-3">
         <Image src="/graphics/monogram.svg" alt="" width={40} height={40} />
-        <span className="font-serif text-2xl tracking-wide text-charcoal">
-          Merveilleux
-          <span className="ml-1.5 align-middle text-[10px] font-medium uppercase tracking-[0.25em] text-gold">
-            Beauty
+        <span className="flex flex-col leading-none">
+          <span className="wordmark text-lg text-charcoal">Mérvéilléux</span>
+          <span className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.5em] text-gold">
+            Premium
           </span>
         </span>
       </Link>
-      <div className="w-full max-w-md rounded-3xl border border-line bg-white/80 p-8 shadow-[0_24px_60px_-30px_rgba(74,48,64,0.4)] backdrop-blur">
+      <div className="w-full max-w-md rounded-[2px] border border-line bg-porcelain/85 p-8 shadow-[0_24px_60px_-30px_rgba(69,61,49,0.4)] backdrop-blur">
         {children}
       </div>
       <Link href="/" className="mt-6 text-sm text-mid hover:text-charcoal">

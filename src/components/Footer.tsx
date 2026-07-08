@@ -11,6 +11,7 @@ export default async function Footer() {
     { href: "/about", label: dict.nav.about },
     { href: "/products", label: dict.nav.products },
     { href: "/promotions", label: dict.nav.promotions },
+    { href: "/news", label: dict.nav.news },
     { href: "/blog", label: dict.nav.blog },
     { href: "/gallery", label: dict.nav.gallery },
     { href: "/testimonials", label: dict.nav.testimonials },
@@ -26,23 +27,26 @@ export default async function Footer() {
   ];
 
   return (
-    <footer className="mt-24 bg-charcoal text-cream/70">
+    <footer className="mt-24 bg-umber text-cream/70">
+      <div aria-hidden className="h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr]">
           {/* Brand + newsletter */}
           <div>
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-3">
               <Image
                 src="/graphics/monogram.svg"
                 alt=""
                 width={36}
                 height={36}
-                className="brightness-0 invert-[0.85] sepia saturate-150 hue-rotate-[5deg]"
+                className="brightness-[1.7] saturate-[0.75]"
               />
-              <span className="font-serif text-2xl text-cream">
-                Merveilleux{" "}
-                <span className="text-[10px] uppercase tracking-[0.25em] text-gold">
-                  Beauty
+              <span className="flex flex-col leading-none">
+                <span className="wordmark text-lg text-cream">
+                  Mérvéilléux
+                </span>
+                <span className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.5em] text-gold">
+                  Premium
                 </span>
               </span>
             </div>

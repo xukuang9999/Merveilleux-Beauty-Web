@@ -6,7 +6,7 @@ import { submitEnquiry } from "@/lib/enquiry-actions";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
 const field =
-  "w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-charcoal outline-none transition-colors placeholder:text-mid/60 focus:border-rose-deep";
+  "w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-charcoal outline-none transition-colors placeholder:text-mid/60 focus:border-bronze";
 const labelCls =
   "mb-2 block text-[11px] font-semibold uppercase tracking-[0.12em] text-mid";
 
@@ -61,14 +61,14 @@ export default function EnquiryForm({ dict }: { dict: Dictionary["contact"] }) {
         </h3>
         <p className="mx-auto mt-2 max-w-sm text-sm text-mid">
           {dict.sentBody}{" "}
-          <a className="text-rose-deep underline" href={`mailto:${site.email}`}>
+          <a className="text-bronze underline" href={`mailto:${site.email}`}>
             {site.email}
           </a>
           .
         </p>
         <button
           onClick={() => setSent(false)}
-          className="mt-5 text-sm font-medium text-rose-deep underline"
+          className="mt-5 text-sm font-medium text-bronze underline"
         >
           {dict.sendAnother}
         </button>
@@ -88,8 +88,8 @@ export default function EnquiryForm({ dict }: { dict: Dictionary["contact"] }) {
               onClick={() => setInterest(opt.value)}
               className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-colors ${
                 interest === opt.value
-                  ? "border-rose-deep bg-rose-light/60 text-rose-deep"
-                  : "border-line bg-white text-mid hover:border-rose-light"
+                  ? "border-bronze bg-champagne/60 text-bronze"
+                  : "border-line bg-white text-mid hover:border-champagne"
               }`}
             >
               {opt.label}
@@ -136,7 +136,7 @@ export default function EnquiryForm({ dict }: { dict: Dictionary["contact"] }) {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-charcoal px-7 py-3.5 text-sm font-medium text-cream transition-all duration-200 hover:-translate-y-0.5 hover:bg-plum sm:w-auto"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-charcoal px-7 py-3.5 text-sm font-medium text-cream transition-all duration-200 hover:-translate-y-0.5 hover:bg-umber sm:w-auto"
       >
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
           <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.25.69-1.45 1.32-1.99 1.36-.53.04-.53.42-3.34-.7-2.82-1.11-4.6-3.97-4.74-4.16-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.97-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.83 2.06.9 2.21.07.14.12.31.02.5-.09.18-.14.3-.28.46-.14.16-.29.36-.42.49-.14.14-.28.28-.12.55.16.28.71 1.18 1.53 1.91 1.06.95 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.18-.21.69-.8.87-1.08.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.65-.18 1.34Z" />
@@ -145,7 +145,7 @@ export default function EnquiryForm({ dict }: { dict: Dictionary["contact"] }) {
       </button>
       <p className="text-xs text-mid">
         {dict.preferEmail}{" "}
-        <a className="text-rose-deep underline" href={`mailto:${site.email}`}>
+        <a className="text-bronze underline" href={`mailto:${site.email}`}>
           {site.email}
         </a>
         .

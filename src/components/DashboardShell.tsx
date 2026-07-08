@@ -66,7 +66,7 @@ export default function DashboardShell({
             </span>
           </Link>
           <div className="flex items-center gap-2 lg:mt-3 lg:flex-col lg:items-start">
-            <span className="rounded-full bg-rose-light/60 px-3 py-1 text-[11px] font-semibold text-rose-deep">
+            <span className="rounded-full bg-champagne/60 px-3 py-1 text-[11px] font-semibold text-bronze">
               {roleBadge[user.role]}
             </span>
             <LanguageSwitcher current={locale} />
@@ -106,7 +106,7 @@ export default function DashboardShell({
         <div className="flex items-center justify-between border-b border-line bg-white/70 px-5 py-3 lg:hidden">
           <span className="text-sm font-medium text-charcoal">{user.name}</span>
           <form action={logoutAction}>
-            <button className="text-sm font-medium text-rose-deep">
+            <button className="text-sm font-medium text-bronze">
               {dict.signOut}
             </button>
           </form>

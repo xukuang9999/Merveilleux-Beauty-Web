@@ -7,7 +7,7 @@ import { DashHeading } from "@/components/dash";
 import { getDict } from "@/i18n/server";
 
 const input =
-  "w-full rounded-lg border border-line bg-white px-3 py-2 text-sm outline-none focus:border-rose-deep";
+  "w-full rounded-lg border border-line bg-white px-3 py-2 text-sm outline-none focus:border-bronze";
 const label = "mb-1 block text-[11px] font-semibold uppercase tracking-wide text-mid";
 
 export default async function AdminProductsPage() {
@@ -26,8 +26,8 @@ export default async function AdminProductsPage() {
         subtitle={d.productsSub}
       />
 
-      <details className="mb-6 rounded-2xl border border-rose-light bg-rose-light/20 p-5">
-        <summary className="cursor-pointer text-sm font-semibold text-rose-deep">
+      <details className="mb-6 rounded-2xl border border-champagne bg-champagne/20 p-5">
+        <summary className="cursor-pointer text-sm font-semibold text-bronze">
           {d.addProduct}
         </summary>
         <div className="mt-4">
@@ -57,7 +57,7 @@ export default async function AdminProductsPage() {
               <ProductForm product={p} saveLabel={d.saveChanges} />
               <form action={deleteProduct} className="mt-3">
                 <input type="hidden" name="id" value={p.id} />
-                <button className="text-xs font-medium text-rose-deep hover:underline">
+                <button className="text-xs font-medium text-bronze hover:underline">
                   {d.deleteProduct}
                 </button>
               </form>
@@ -104,7 +104,7 @@ function ProductForm({
           <label className={label}>Graphic path</label>
           <input
             name="graphic"
-            defaultValue={product?.graphic ?? "/graphics/product-radiance-serum.svg"}
+            defaultValue={product?.graphic ?? "/products/oxy-bright-serum.jpg"}
             className={input}
           />
         </div>
@@ -122,7 +122,7 @@ function ProductForm({
             type="checkbox"
             name="published"
             defaultChecked={product?.published ?? true}
-            className="accent-rose-deep"
+            className="accent-bronze"
           />
           Published
         </label>
@@ -156,7 +156,7 @@ function ProductForm({
           />
         </div>
       </div>
-      <button className="rounded-full bg-charcoal px-5 py-2.5 text-sm font-medium text-cream hover:bg-plum">
+      <button className="rounded-full bg-charcoal px-5 py-2.5 text-sm font-medium text-cream hover:bg-umber">
         {saveLabel}
       </button>
     </form>

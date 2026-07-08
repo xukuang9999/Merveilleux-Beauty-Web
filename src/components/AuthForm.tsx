@@ -6,7 +6,7 @@ import { loginAction, registerAction, type AuthState } from "@/lib/auth-actions"
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
 const field =
-  "w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-charcoal outline-none transition-colors placeholder:text-mid/60 focus:border-rose-deep";
+  "w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-charcoal outline-none transition-colors placeholder:text-mid/60 focus:border-bronze";
 const label =
   "mb-2 block text-[11px] font-semibold uppercase tracking-[0.12em] text-mid";
 
@@ -70,7 +70,7 @@ export default function AuthForm({
       </div>
 
       {state?.error && (
-        <p className="rounded-lg bg-rose-light/60 px-3 py-2 text-sm text-rose-deep">
+        <p className="rounded-lg bg-champagne/60 px-3 py-2 text-sm text-bronze">
           {state.error}
         </p>
       )}
@@ -78,7 +78,7 @@ export default function AuthForm({
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-plum disabled:opacity-50"
+        className="w-full rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-umber disabled:opacity-50"
       >
         {pending
           ? isRegister
@@ -93,14 +93,14 @@ export default function AuthForm({
         {isRegister ? (
           <>
             {dict.haveAccount}{" "}
-            <Link href="/login" className="font-medium text-rose-deep underline">
+            <Link href="/login" className="font-medium text-bronze underline">
               {dict.signIn}
             </Link>
           </>
         ) : (
           <>
             {dict.newHere}{" "}
-            <Link href="/register" className="font-medium text-rose-deep underline">
+            <Link href="/register" className="font-medium text-bronze underline">
               {dict.createOne}
             </Link>
           </>

@@ -53,7 +53,7 @@ export default async function AdminPage() {
                   <span className="text-sm font-medium text-charcoal">
                     {e.name}
                   </span>
-                  <span className="rounded-full bg-rose-light/50 px-2.5 py-0.5 text-[11px] font-medium text-rose-deep">
+                  <span className="rounded-full bg-champagne/50 px-2.5 py-0.5 text-[11px] font-medium text-bronze">
                     {e.interest}
                   </span>
                 </div>
@@ -68,7 +68,7 @@ export default async function AdminPage() {
         )}
         <Link
           href="/admin/enquiries"
-          className="mt-4 inline-block text-sm font-medium text-rose-deep underline"
+          className="mt-4 inline-block text-sm font-medium text-bronze underline"
         >
           {d.viewAllEnquiries}
         </Link>
@@ -96,7 +96,7 @@ function AdminLink({
   return (
     <Link
       href={href}
-      className="flex items-center gap-3 rounded-2xl border border-line bg-white p-4 text-sm font-medium text-charcoal transition-all hover:-translate-y-0.5 hover:border-rose-light"
+      className="flex items-center gap-3 rounded-2xl border border-line bg-white p-4 text-sm font-medium text-charcoal transition-all hover:-translate-y-0.5 hover:border-champagne"
     >
       <span className="text-xl">{icon}</span>
       {label}

@@ -17,7 +17,7 @@ export default async function FaqPage() {
 
   return (
     <>
-      <section className="border-b border-line bg-white/60 py-16 sm:py-20">
+      <section className="border-b border-line bg-porcelain/60 py-16 sm:py-20">
         <Container>
           <SectionHeading eyebrow={d.eyebrow} title={d.title} description={d.desc} />
         </Container>
@@ -28,7 +28,7 @@ export default async function FaqPage() {
           {categories.map((cat, ci) => (
             <Reveal key={cat} delay={ci * 100}>
               <h2 className="mb-4 font-serif text-2xl text-charcoal">{cat}</h2>
-              <div className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-white">
+              <div className="divide-y divide-line overflow-hidden rounded-[2px] border border-line bg-porcelain">
                 {faqs
                   .filter((f) => f.category === cat)
                   .map((f) => (
@@ -42,7 +42,7 @@ export default async function FaqPage() {
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="1.6"
-                          className="shrink-0 text-rose-deep transition-transform duration-300 group-open:rotate-45"
+                          className="shrink-0 text-bronze transition-transform duration-300 group-open:rotate-45"
                         >
                           <path d="M12 5v14M5 12h14" strokeLinecap="round" />
                         </svg>
@@ -57,7 +57,7 @@ export default async function FaqPage() {
           ))}
         </div>
 
-        <div className="mx-auto mt-16 max-w-3xl rounded-3xl bg-gradient-to-br from-charcoal to-plum p-10 text-center text-cream sm:p-12">
+        <div className="mx-auto mt-16 max-w-3xl rounded-[2px] water-wall relative overflow-hidden p-10 text-center text-cream sm:p-12">
           <h2 className="font-serif text-2xl font-light sm:text-3xl">
             {d.stillTitle}
           </h2>

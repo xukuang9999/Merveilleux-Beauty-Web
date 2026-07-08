@@ -19,6 +19,7 @@ const ms: Dictionary = {
     "about": "Tentang Kami",
     "products": "Produk",
     "promotions": "Promosi",
+    "news": "Berita",
     "blog": "Tip Penjagaan Kulit",
     "gallery": "Galeri",
     "testimonials": "Testimoni",
@@ -39,7 +40,7 @@ const ms: Dictionary = {
     "instagram": "Instagram",
     "facebook": "Facebook",
     "xiaohongshu": "Xiaohongshu (小红书)",
-    "rights": "Produk Kecantikan Perancis OEM",
+    "rights": "Seni Kecantikan Perancis",
     "crafted": "Diilhamkan dengan penuh teliti",
     "newsletterTitle": "Kekal berseri",
     "newsletterSub": "Tip penjagaan kulit, pelancaran baharu dan berita rakan kongsi — tanpa spam.",
@@ -52,13 +53,36 @@ const ms: Dictionary = {
     "companyLine": "{legal} · Pendaftaran {reg}"
   },
   "home": {
-    "heroEyebrow": "Kecantikan Perancis OEM · Dicipta untuk kulit moden",
+    "heroEyebrow": "Seni Kecantikan Perancis",
     "heroTitleBefore": "Penjagaan kulit yang terasa ",
     "heroTitleHighlight": "merveilleux",
-    "heroBody": "Formula bertaraf Perancis, berharga jujur — serta rangkaian Pengedar yang dibina atas latihan dan kepercayaan sebenar. Temui Margaux, penasihat kecantikan AI kami, sentiasa bersedia membantu anda pada bila-bila masa.",
+    "heroBody": "Formula bertaraf Perancis daripada sebuah jenama yang dibina atas ketenangan, ketukangan dan kepercayaan — bersama Margaux, penasihat kecantikan AI kami, sentiasa di sisi anda. Selamat datang ke Mérvéilléux Premium.",
     "exploreRange": "Terokai koleksi",
     "becomeDistributor": "Jadi seorang Pengedar",
     "lovedBy": "Disayangi pelanggan & pengedar di seluruh Malaysia",
+    "statsYears": "Tahun ketukangan",
+    "statsFormulas": "Formula istimewa",
+    "statsModules": "Modul latihan",
+    "statsLanguages": "Bahasa perkhidmatan",
+    "flagshipEyebrow": "Pengalaman Flagship",
+    "flagshipTitle": "Bellesenze @ Dataran Sunway",
+    "flagshipBody": "Langkah ke pusat pengalaman flagship kami di Petaling Jaya — suite rawatan privasi berbalut gading hangat dan marmar berurat, atelier produk bersinar di bawah cahaya halo, serta teater latihan tempat komuniti kami berkembang.",
+    "flagshipCta": "Rancang lawatan anda",
+    "flagshipLocation": "Dataran Sunway · Kota Damansara · Petaling Jaya",
+    "flagshipPoints": [
+      {
+        "title": "Suite rawatan privasi",
+        "body": "Kabin berlangsir linen greige dan marmar, direka untuk ritual yang tenang."
+      },
+      {
+        "title": "Atelier produk",
+        "body": "Koleksi penuh di rak bercahaya — cuba, rasai dan jatuh cinta pada setiap formula."
+      },
+      {
+        "title": "Teater latihan",
+        "body": "Pentas khas tempat pengedar dilatih, diperakui dan diraikan."
+      }
+    ],
     "valueProps": [
       {
         "title": "Formula OEM yang tulen",
@@ -89,6 +113,21 @@ const ms: Dictionary = {
     "ctaBody": "Setiap pengedar Merveilleux disediakan untuk berjaya dengan program latihan tersusun — {n} modul merangkumi jenama, produk, polisi dan SOP — sebuah pangkalan pengetahuan penjagaan kulit, serta jurulatih latihan AI dalam genggaman anda.",
     "applyToJoin": "Mohon untuk menyertai",
     "seeTraining": "Lihat latihan"
+  },
+  "news": {
+    "eyebrow": "Jurnal",
+    "title": "Terkini dari Mérvéilléux",
+    "intro": "Sains kulit, pelancaran baharu dan hasil sebenar — terus dari Instagram kami.",
+    "homeTitle": "Berita & jurnal",
+    "homeIntro": "Yang terkini dari studio dan komuniti kami.",
+    "viewPost": "Lihat di Instagram",
+    "readMore": "Baca di Instagram",
+    "followUs": "Ikuti @merveilleuxskincare_sbn",
+    "followCta": "Ikuti kami di Instagram",
+    "allUpdates": "Semua kemas kini",
+    "latestLabel": "Pos terkini",
+    "handle": "@merveilleuxskincare_sbn",
+    "empty": "Kisah baharu akan menyusul — ikuti kami di Instagram sementara itu."
   },
   "products": {
     "eyebrow": "Koleksi",
@@ -213,19 +252,19 @@ const ms: Dictionary = {
     "intro": "Jimat apabila anda membina rutin lengkap. Set kami menggandingkan produk yang paling berkesan bersebelahan — sesuai untuk hadiah, mencuba, atau memulakan pelanggan baharu dengan betul.",
     "bundles": [
       {
-        "title": "The Radiance Ritual",
-        "desc": "Cerahkan dan seragamkan warna kulit — Radiance Serum, Essence Toner dan Sun Shield SPF50+.",
+        "title": "The Brightening Ritual",
+        "desc": "Cerahkan dan seragamkan warna kulit — Oxy-Bright Serum, Youth-HA Moisturiser dan Refined HA UV Shield SPF35.",
         "tag": "Paling laris"
       },
       {
         "title": "The Hydration Ritual",
-        "desc": "Hidrasi kulit kaca yang montok — Hydra Essence Serum, Velvet Cream dan sekeping Hydra Bomb Mask.",
+        "desc": "Hidrasi kulit kaca yang montok — Hydro-Moist Serum, Hyaluronate Moisturiser dan sekeping Aqua-Concentrate Mask.",
         "tag": "Kulit kaca"
       },
       {
-        "title": "The Complete Routine",
-        "desc": "Regimen penuh pagi ke malam — pencuci, toner, serum, pelembap dan SPF.",
-        "tag": "Nilai terbaik"
+        "title": "The Anti-Aging Ritual",
+        "desc": "Kukuhkan dan lindungi — Revitalise Anti-Oxidant Serum, Anti-Oxidant Cream dan Intense Lift Eye Treatment Crème.",
+        "tag": "Anti-penuaan"
       }
     ],
     "includes": "Termasuk",
@@ -237,6 +276,24 @@ const ms: Dictionary = {
   },
   "gallery": {
     "eyebrow": "Galeri",
+    "flagshipTitle": "Dalam flagship",
+    "flagshipIntro": "Paparan reka bentuk Bellesenze @ Dataran Sunway — setiap ruang direka dengan gading hangat, marmar berurat dan cahaya gangsa.",
+    "rooms": {
+      "facade": "Fasad kedai",
+      "reception": "Kaunter sambutan",
+      "lounge": "Ruang menunggu",
+      "waterWall": "Dinding air",
+      "corridor": "Koridor rawatan",
+      "suites": "Suite rawatan privasi",
+      "vanity": "Ruang solek",
+      "staircase": "Tangga marmar",
+      "counter": "Kaunter sambutan",
+      "atelier": "Atelier produk",
+      "theatre": "Teater latihan",
+      "portraits": "Ruang latihan",
+      "nook": "Sudut fitting",
+      "marbleSign": "Lobi marmar"
+    },
     "title": "Koleksi Merveilleux, dalam pandangan",
     "intro": "Lihat rangkaian ini — formula yang tulen dan reka bentuk yang teliti, dicipta untuk kelihatan indah di mana-mana rak.",
     "viewProduct": "Lihat produk →"

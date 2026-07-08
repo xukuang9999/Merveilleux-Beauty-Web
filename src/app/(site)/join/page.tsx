@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import EnquiryForm from "@/components/EnquiryForm";
@@ -26,9 +27,18 @@ export default async function JoinPage() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="border-b border-line bg-white/60 py-16 sm:py-20">
-        <Container>
+      {/* HERO — over the training theatre render */}
+      <section className="relative overflow-hidden border-b border-line py-16 sm:py-20">
+        <Image
+          src="/renders/theatre.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="ken-burns object-cover"
+        />
+        <div aria-hidden className="absolute inset-0 bg-cream/85" />
+        <Container className="relative">
           <Reveal>
             <p className="eyebrow mb-3">{j.eyebrow}</p>
             <h1 className="max-w-3xl font-serif text-4xl font-medium leading-tight text-charcoal sm:text-5xl">
@@ -64,7 +74,7 @@ export default async function JoinPage() {
                 href={links[i]}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-rose-light hover:shadow-[0_18px_40px_-24px_rgba(74,48,64,0.4)]"
+                className="flex h-full flex-col rounded-[2px] border border-line bg-porcelain p-6 transition-all duration-300 hover:-translate-y-1 hover:border-champagne hover:shadow-[0_18px_40px_-24px_rgba(69,61,49,0.4)]"
               >
                 <span className="text-2xl">{actionIcons[i]}</span>
                 <h3 className="mt-3 font-serif text-xl text-charcoal">
@@ -78,7 +88,7 @@ export default async function JoinPage() {
       </Container>
 
       {/* WHY + STEPS + FORM */}
-      <section className="border-y border-line bg-white/60 py-16">
+      <section className="border-y border-line bg-porcelain/60 py-16">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.05fr]">
           <div>
             <Reveal>
@@ -100,7 +110,7 @@ export default async function JoinPage() {
               <ol className="space-y-4">
                 {j.steps.map((s, i) => (
                   <li key={i} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-light/60 font-serif text-sm text-rose-deep">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-champagne/60 font-serif text-sm text-bronze">
                       {i + 1}
                     </span>
                     <div className="pt-0.5">
@@ -114,7 +124,7 @@ export default async function JoinPage() {
           </div>
 
           <Reveal variant="right">
-            <div className="rounded-3xl border border-line bg-white p-7 sm:p-9">
+            <div className="rounded-[2px] border border-line bg-porcelain p-7 sm:p-9">
               <h2 className="font-serif text-2xl text-charcoal">{j.formTitle}</h2>
               <p className="mb-6 mt-1 text-sm text-mid">{j.formSub}</p>
               <EnquiryForm dict={dict.contact} />

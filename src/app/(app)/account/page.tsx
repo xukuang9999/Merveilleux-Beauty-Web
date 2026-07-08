@@ -28,13 +28,13 @@ export default async function AccountPage() {
       )}
 
       <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
-        <Panel className="bg-gradient-to-br from-rose-light/40 to-gold-light/40">
+        <Panel className="bg-gradient-to-br from-champagne/40 to-gold-light/40">
           <p className="eyebrow mb-2">{d.consultEyebrow}</p>
           <h2 className="font-serif text-2xl text-charcoal">{d.consultTitle}</h2>
           <p className="mt-2 text-sm text-mid">{d.consultBody}</p>
           <Link
             href="/account/consult"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-plum"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-umber"
           >
             {d.startConsult}
           </Link>
@@ -44,7 +44,7 @@ export default async function AccountPage() {
           <p className="text-sm text-mid">{d.becomeDistBody}</p>
           <Link
             href="/contact"
-            className="mt-4 inline-block text-sm font-medium text-rose-deep underline"
+            className="mt-4 inline-block text-sm font-medium text-bronze underline"
           >
             {d.enquireJoin}
           </Link>
@@ -57,9 +57,9 @@ export default async function AccountPage() {
             <Link
               key={p.slug}
               href={`/products#${p.slug}`}
-              className="group rounded-xl border border-line p-3 transition-colors hover:border-rose-light"
+              className="group rounded-xl border border-line p-3 transition-colors hover:border-champagne"
             >
-              <div className="overflow-hidden rounded-lg bg-gradient-to-b from-cream to-rose-light/30">
+              <div className="overflow-hidden rounded-lg bg-gradient-to-b from-cream to-champagne/30">
                 <Image
                   src={p.graphic}
                   alt={p.name}

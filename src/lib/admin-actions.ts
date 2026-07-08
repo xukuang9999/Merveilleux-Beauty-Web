@@ -32,7 +32,7 @@ export async function saveProduct(formData: FormData) {
     priceRM: String(formData.get("priceRM") || "").trim(),
     graphic:
       String(formData.get("graphic") || "").trim() ||
-      "/graphics/product-radiance-serum.svg",
+      "/products/oxy-bright-serum.jpg",
     sortOrder: Number(formData.get("sortOrder") || 0),
     published: formData.get("published") === "on",
   };

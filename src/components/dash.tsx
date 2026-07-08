@@ -29,7 +29,7 @@ export function StatCard({
 }) {
   return (
     <div className="rounded-2xl border border-line bg-white px-5 py-5">
-      <p className="font-serif text-3xl text-rose-deep">{value}</p>
+      <p className="font-serif text-3xl text-bronze">{value}</p>
       <p className="mt-1 text-xs uppercase tracking-wide text-mid">{label}</p>
     </div>
   );

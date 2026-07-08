@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
+// Hero visual: flagship renders from the Bellesenze design proposal,
+// framed in the facade's arch motif, with a parallax tilt and the
+// Margaux chat entry bubble.
 export default function HeroAvatar({ dict }: { dict: Dictionary["chat"] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -26,88 +29,52 @@ export default function HeroAvatar({ dict }: { dict: Dictionary["chat"] }) {
       ref={wrapRef}
       onMouseMove={onMove}
       onMouseLeave={reset}
-      className="relative mx-auto aspect-square w-full max-w-md"
+      className="relative mx-auto aspect-[5/6] w-full max-w-md"
     >
-      {/* rotating gold rings */}
-      <Image
-        src="/graphics/hero-rings.svg"
-        alt=""
-        aria-hidden
-        width={600}
-        height={600}
-        priority
-        className="absolute inset-0 h-full w-full select-none"
+      {/* main arch — reception with the backlit MÉRVÉILLÉUX wall */}
+      <div
+        className="arch-frame absolute inset-x-6 inset-y-0 overflow-hidden border border-gold/40 shadow-[0_40px_80px_-40px_rgba(69,61,49,0.55)]"
         style={{
-          transform: `translate(${tilt.x * -16}px, ${tilt.y * -16}px)`,
+          transform: `translate(${tilt.x * -10}px, ${tilt.y * -10}px)`,
           transition: "transform 0.3s ease-out",
         }}
-      />
+      >
+        <Image
+          src="/renders/reception.jpg"
+          alt="Mérvéilléux Premium flagship reception"
+          fill
+          priority
+          sizes="(max-width: 1024px) 90vw, 40vw"
+          className="ken-burns object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-umber/25 via-transparent to-transparent"
+        />
+      </div>
 
-      {/* soft brand backdrop blob */}
-      <Image
-        src="/graphics/hero-art.svg"
-        alt=""
-        aria-hidden
-        width={600}
-        height={600}
-        priority
-        className="absolute inset-[8%] h-[84%] w-[84%] select-none"
+      {/* offset arch — the bronze water feature wall */}
+      <div
+        className="arch-frame-tight absolute -left-2 bottom-6 hidden h-52 w-36 overflow-hidden border-2 border-cream shadow-[0_28px_50px_-24px_rgba(69,61,49,0.6)] sm:block"
         style={{
-          transform: `translate(${tilt.x * 10}px, ${tilt.y * 10}px)`,
-          transition: "transform 0.3s ease-out",
-        }}
-      />
-
-      {/* twinkling sparkles */}
-      <Image
-        src="/graphics/sparkle.svg"
-        alt=""
-        aria-hidden
-        width={34}
-        height={34}
-        className="absolute left-[6%] top-[20%] w-8"
-      />
-      <Image
-        src="/graphics/sparkle-gold-burst.svg"
-        alt=""
-        aria-hidden
-        width={46}
-        height={46}
-        className="absolute right-[8%] top-[12%] w-11"
-      />
-      <Image
-        src="/graphics/sparkle.svg"
-        alt=""
-        aria-hidden
-        width={26}
-        height={26}
-        className="absolute bottom-[18%] right-[14%] w-6"
-      />
-
-      {/* avatar */}
-      <button
-        onClick={openChat}
-        aria-label="Chat with Margaux, our AI beauty advisor"
-        className="group absolute inset-0 flex items-end justify-center focus:outline-none"
-        style={{
-          transform: `translate(${tilt.x * 22}px, ${tilt.y * 22}px)`,
+          transform: `translate(${tilt.x * 18}px, ${tilt.y * 18}px)`,
           transition: "transform 0.25s ease-out",
         }}
       >
         <Image
-          src="/graphics/avatar.svg"
-          alt="Margaux — Merveilleux AI Beauty Advisor"
-          width={300}
-          height={350}
-          priority
-          className="float h-auto w-[60%] drop-shadow-[0_18px_30px_rgba(74,48,64,0.18)] transition-transform duration-300 group-hover:scale-[1.03]"
+          src="/renders/water-wall.jpg"
+          alt="Bronze water feature wall"
+          fill
+          sizes="144px"
+          className="ken-burns object-cover object-[62%_center]"
+          style={{ animationDelay: "-9s" }}
         />
-      </button>
+      </div>
 
-      {/* speech bubble */}
+      {/* speech bubble — Margaux chat entry */}
       <button
         onClick={openChat}
-        className="pop absolute right-0 top-4 max-w-[210px] cursor-pointer rounded-2xl rounded-br-sm border border-line bg-white/95 px-4 py-3 text-left shadow-[0_12px_30px_-12px_rgba(74,48,64,0.35)] backdrop-blur sm:right-2"
+        className="pop absolute right-0 top-4 max-w-[210px] cursor-pointer rounded-[2px] rounded-br-none border border-line bg-porcelain/95 px-4 py-3 text-left shadow-[0_12px_30px_-12px_rgba(69,61,49,0.35)] backdrop-blur"
       >
         <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-gold">
           <span className="relative flex h-2 w-2">
@@ -119,7 +86,7 @@ export default function HeroAvatar({ dict }: { dict: Dictionary["chat"] }) {
         <span className="mt-1 block font-serif text-base leading-snug text-charcoal">
           {dict.bubbleGreeting}
         </span>
-        <span className="mt-1 block text-xs font-medium text-rose-deep">
+        <span className="mt-1 block text-xs font-medium text-bronze">
           {dict.tapToChat}
         </span>
       </button>

@@ -21,7 +21,7 @@ export default async function PromotionsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-line bg-white/60 py-16 sm:py-20">
+      <section className="border-b border-line bg-porcelain/60 py-16 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading eyebrow={p.eyebrow} title={p.title} description={p.intro} />
@@ -37,14 +37,14 @@ export default async function PromotionsPage() {
             const items = b.productSlugs.map((s) => nameBySlug.get(s) ?? s);
             return (
               <Reveal key={b.slug} variant="up" delay={i * 100}>
-                <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-b from-cream to-rose-light/30">
+                <div className="flex h-full flex-col overflow-hidden rounded-[2px] border border-line bg-porcelain">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-onyx-glow">
                     <Image
                       src={b.graphic}
                       alt={copy.title}
                       fill
                       sizes="(max-width: 1024px) 100vw, 33vw"
-                      className="object-contain p-6"
+                      className="object-cover"
                     />
                     {copy.tag && (
                       <span className="absolute left-4 top-4 rounded-full bg-charcoal px-3 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-cream">
@@ -67,7 +67,7 @@ export default async function PromotionsPage() {
                           key={n}
                           className="flex items-start gap-2 text-sm text-charcoal"
                         >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
                           {n}
                         </li>
                       ))}
@@ -109,7 +109,7 @@ export default async function PromotionsPage() {
       <section className="pb-24">
         <Container>
           <Reveal variant="fade">
-            <div className="rounded-3xl border border-gold/30 bg-gold-light/40 p-8 text-center sm:p-10">
+            <div className="rounded-[2px] border border-gold/30 bg-gold-light/40 p-8 text-center sm:p-10">
               <h2 className="font-serif text-2xl text-charcoal sm:text-3xl">
                 {p.noteTitle}
               </h2>

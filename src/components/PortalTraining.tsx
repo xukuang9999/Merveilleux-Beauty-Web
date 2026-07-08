@@ -73,7 +73,7 @@ export default function PortalTraining({
                   key={l}
                   className="flex items-start gap-2 text-[13px] text-charcoal"
                 >
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-rose-deep" />
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bronze" />
                   {l}
                 </li>
               ))}
@@ -87,7 +87,7 @@ export default function PortalTraining({
                 className={`rounded-full px-4 py-2 text-[13px] font-medium transition-colors ${
                   done
                     ? "border border-line text-mid hover:text-charcoal"
-                    : "bg-charcoal text-cream hover:bg-plum"
+                    : "bg-charcoal text-cream hover:bg-umber"
                 }`}
               >
                 {done ? dict.retakeQuiz : dict.startQuiz}
@@ -179,8 +179,8 @@ function QuizModal({
                         key={oi}
                         className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-2.5 text-sm transition-colors ${
                           answers[qi] === oi
-                            ? "border-rose-deep bg-rose-light/40 text-charcoal"
-                            : "border-line bg-white text-mid hover:border-rose-light"
+                            ? "border-bronze bg-champagne/40 text-charcoal"
+                            : "border-line bg-white text-mid hover:border-champagne"
                         }`}
                       >
                         <input
@@ -190,7 +190,7 @@ function QuizModal({
                           onChange={() =>
                             setAnswers((a) => ({ ...a, [qi]: oi }))
                           }
-                          className="accent-rose-deep"
+                          className="accent-bronze"
                         />
                         {opt}
                       </label>
@@ -202,7 +202,7 @@ function QuizModal({
             <button
               disabled={!allAnswered || submitting}
               onClick={handleSubmit}
-              className="mt-7 w-full rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-plum disabled:cursor-not-allowed disabled:opacity-40"
+              className="mt-7 w-full rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-umber disabled:cursor-not-allowed disabled:opacity-40"
             >
               {submitting
                 ? dict.marking
@@ -218,7 +218,7 @@ function QuizModal({
               className={`mx-auto flex h-20 w-20 items-center justify-center rounded-full text-3xl ${
                 result.passed
                   ? "bg-green-light text-green"
-                  : "bg-rose-light text-rose-deep"
+                  : "bg-champagne text-bronze"
               }`}
             >
               {result.passed ? "✓" : "↺"}
@@ -233,7 +233,7 @@ function QuizModal({
               {result.passed ? (
                 <button
                   onClick={onClose}
-                  className="rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream hover:bg-plum"
+                  className="rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream hover:bg-umber"
                 >
                   {dict.markComplete}
                 </button>
@@ -243,14 +243,14 @@ function QuizModal({
                     setResult(null);
                     setAnswers({});
                   }}
-                  className="rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream hover:bg-plum"
+                  className="rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-cream hover:bg-umber"
                 >
                   {dict.retake}
                 </button>
               )}
               <button
                 onClick={onClose}
-                className="rounded-full border border-line px-6 py-3 text-sm font-medium text-charcoal hover:border-rose-deep"
+                className="rounded-full border border-line px-6 py-3 text-sm font-medium text-charcoal hover:border-bronze"
               >
                 {dict.close}
               </button>

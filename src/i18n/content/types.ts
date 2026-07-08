@@ -1,6 +1,7 @@
 // Content translation overlays. Keyed by stable identifiers so the data-access
 // layer can merge the right language onto the canonical (English) DB content.
 export type ProductT = {
+  name?: string; // localized product name (e.g. Chinese); omit to keep the canonical English name
   type: string;
   tagline: string;
   description: string;

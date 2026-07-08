@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui";
 import EnquiryForm from "@/components/EnquiryForm";
 import MapEmbed from "@/components/MapEmbed";
@@ -22,7 +23,7 @@ export default async function ContactPage() {
           <p className="eyebrow mb-3">{d.eyebrow}</p>
           <h1 className="font-serif text-4xl font-medium leading-tight text-charcoal sm:text-5xl">
             {d.titleBefore}
-            <span className="italic text-rose-deep">{d.titleHighlight}</span>
+            <span className="italic text-bronze">{d.titleHighlight}</span>
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-mid">
             {d.body}
@@ -33,7 +34,7 @@ export default async function ContactPage() {
               href={whatsappLink("Hi Merveilleux Beauty, I'd like to know more.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-rose-light"
+              className="flex items-center gap-4 rounded-[2px] border border-line bg-porcelain p-5 transition-colors hover:border-champagne"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-green-light text-green">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -47,9 +48,9 @@ export default async function ContactPage() {
             </a>
             <a
               href={`mailto:${site.email}`}
-              className="flex items-center gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-rose-light"
+              className="flex items-center gap-4 rounded-[2px] border border-line bg-porcelain p-5 transition-colors hover:border-champagne"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-light text-rose-deep">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-champagne text-bronze">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="m3 7 9 6 9-6" />
@@ -63,7 +64,7 @@ export default async function ContactPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <a
                 href={`tel:${site.phone.replace(/\s|-/g, "")}`}
-                className="flex items-center gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-rose-light"
+                className="flex items-center gap-4 rounded-[2px] border border-line bg-porcelain p-5 transition-colors hover:border-champagne"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-light text-blue">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -75,7 +76,7 @@ export default async function ContactPage() {
                   <p className="text-sm text-mid">{site.phone}</p>
                 </div>
               </a>
-              <div className="flex items-center gap-4 rounded-2xl border border-line bg-white p-5">
+              <div className="flex items-center gap-4 rounded-[2px] border border-line bg-porcelain p-5">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-green-light text-green">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M9 3C4.6 3 1 6 1 9.7c0 2.1 1.2 4 3 5.2l-.7 2.4 2.7-1.4c.9.2 1.8.4 2.7.4h.5a6 6 0 0 1-.2-1.6c0-3.4 3.3-6.1 7.3-6.1h.6C16.3 5.2 13 3 9 3Z" />
@@ -91,7 +92,7 @@ export default async function ContactPage() {
               href={mapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-rose-light"
+              className="flex items-start gap-4 rounded-[2px] border border-line bg-porcelain p-5 transition-colors hover:border-champagne"
             >
               <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-light text-amber">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -110,16 +111,27 @@ export default async function ContactPage() {
             </a>
           </div>
 
-          <div className="mt-6 h-56 overflow-hidden rounded-2xl border border-line">
-            <MapEmbed title={site.name} />
+          <div className="mt-6 grid grid-cols-[1fr_1.6fr] gap-4">
+            <div className="arch-frame-tight relative overflow-hidden border border-line">
+              <Image
+                src="/renders/marble-sign.jpg"
+                alt="Mérvéilléux Premium marble entry"
+                fill
+                sizes="200px"
+                className="ken-burns object-cover"
+              />
+            </div>
+            <div className="h-56 overflow-hidden rounded-[2px] border border-line">
+              <MapEmbed title={site.name} />
+            </div>
           </div>
 
-          <div className="mt-6 rounded-2xl border border-gold/30 bg-gold-light/40 p-5">
+          <div className="mt-6 rounded-[2px] border border-gold/30 bg-gold-light/40 p-5">
             <p className="text-sm text-charcoal">{d.newDistributorNote}</p>
           </div>
         </div>
 
-        <div className="rounded-3xl border border-line bg-white/70 p-7 sm:p-9">
+        <div className="rounded-[2px] border border-line bg-porcelain/70 p-7 sm:p-9">
           <h2 className="font-serif text-2xl text-charcoal">{d.sendEnquiry}</h2>
           <p className="mt-1 mb-6 text-sm text-mid">{d.sendEnquirySub}</p>
           <EnquiryForm dict={d} />

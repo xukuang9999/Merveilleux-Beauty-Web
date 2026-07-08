@@ -1,39 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
-  <title id="title">Merveilleux abstract botanical hero art</title>
-  <desc id="desc">A soft rose and plum abstract form with thin gold circles and delicate botanical line accents.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="hero-art-title hero-art-desc">
+  <title id="hero-art-title">Merveilleux luminous arch backdrop</title>
+  <desc id="hero-art-desc">A light architectural arch with champagne glow, marble veining, and a bronze arc.</desc>
   <defs>
-    <radialGradient id="rosePlum" cx="42%" cy="35%" r="65%">
-      <stop offset="0" stop-color="#F2D9DE" stop-opacity=".95"/>
-      <stop offset=".55" stop-color="#C5778A" stop-opacity=".5"/>
-      <stop offset="1" stop-color="#4A3040" stop-opacity=".16"/>
+    <radialGradient id="champagne-glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#F2ECDF" stop-opacity="0.95"/>
+      <stop offset="0.52" stop-color="#F2ECDF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#F2ECDF" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="petalWash" x1="130" x2="470" y1="110" y2="500" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FDFAF7" stop-opacity=".5"/>
-      <stop offset="1" stop-color="#F2D9DE" stop-opacity=".18"/>
+    <linearGradient id="onyx-wash" x1="0" y1="110" x2="0" y2="540" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EAE2D2"/>
+      <stop offset="0.48" stop-color="#F2ECDF"/>
+      <stop offset="1" stop-color="#F7F4ED"/>
     </linearGradient>
   </defs>
-  <path fill="url(#rosePlum)" d="M336 71c71 17 130 75 154 145 27 78 12 173-37 238-48 63-129 96-210 84-76-11-138-64-169-131-32-69-34-154 4-219 40-69 131-136 258-117z"/>
-  <path fill="url(#petalWash)" d="M302 113c61 7 113 55 132 113 18 56 9 124-29 169-39 46-106 65-166 52-55-11-98-53-117-104-21-55-15-122 24-166 37-43 93-71 156-64z"/>
-  <g fill="none" stroke="#BFA76F" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="305" cy="305" r="205" stroke-width="1.15" opacity=".62"/>
-    <circle cx="305" cy="305" r="165" stroke-width=".95" opacity=".48"/>
-    <circle cx="305" cy="305" r="118" stroke-width=".85" opacity=".38"/>
-    <path d="M110 422c55-51 95-111 121-181" stroke-width="1.25" opacity=".72"/>
-    <path d="M159 360c-25-4-43-18-55-42 28 1 49 13 62 36" stroke-width="1.15" opacity=".72"/>
-    <path d="M194 299c-22-12-34-32-36-58 26 10 42 28 47 53" stroke-width="1.15" opacity=".7"/>
-    <path d="M222 239c-11-22-10-45 3-68 17 22 20 45 8 69" stroke-width="1.15" opacity=".68"/>
-    <path d="M151 367c8 24 4 47-13 68-12-24-9-47 8-68" stroke-width="1.1" opacity=".64"/>
-    <path d="M455 169c-28 57-42 118-39 184" stroke-width="1.25" opacity=".7"/>
-    <path d="M424 237c24-9 47-6 68 10-25 14-49 12-69-4" stroke-width="1.1" opacity=".68"/>
-    <path d="M416 296c22 4 39 18 51 41-26-1-46-12-58-33" stroke-width="1.1" opacity=".66"/>
-    <path d="M420 183c16-18 37-26 63-22-16 22-37 31-62 26" stroke-width="1.1" opacity=".66"/>
-    <path d="M292 514c9-38 28-70 58-96" stroke-width=".95" opacity=".42"/>
-    <path d="M326 456c19 0 35 9 48 26-21 4-39-3-52-20" stroke-width=".9" opacity=".42"/>
+  <circle cx="300" cy="296" r="292" fill="url(#champagne-glow)"/>
+  <path d="M156 536V272C156 192.5 220.5 128 300 128C379.5 128 444 192.5 444 272V536Z" fill="url(#onyx-wash)" opacity="0.9"/>
+  <path d="M177 535V281C177 213.1 232.1 158 300 158C367.9 158 423 213.1 423 281V535" fill="none" stroke="#E5DFD3" stroke-width="1"/>
+  <g fill="none" stroke="#C9C2B4" stroke-width="1" stroke-linecap="round" opacity="0.4">
+    <path d="M208 501C224 468 206 438 229 404C246 379 277 368 285 339C292 313 273 289 289 255C300 232 321 222 329 196"/>
+    <path d="M356 518C341 485 365 458 347 421C334 395 304 383 314 350C322 323 350 314 361 283C371 253 356 226 377 198"/>
+    <path d="M247 233C277 245 301 231 329 246C348 256 356 274 381 282"/>
+    <path d="M202 360C229 351 253 361 272 382C292 405 321 405 340 428"/>
   </g>
-  <g fill="#BFA76F" opacity=".55">
-    <circle cx="106" cy="421" r="2"/>
-    <circle cx="455" cy="169" r="2"/>
-    <circle cx="292" cy="514" r="1.5"/>
-  </g>
+  <path d="M168 503A132 132 0 0 1 432 503" fill="none" stroke="#8A7355" stroke-width="1.15" opacity="0.62" stroke-linecap="round"/>
 </svg>

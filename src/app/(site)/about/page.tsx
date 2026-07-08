@@ -17,7 +17,7 @@ export default async function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-line bg-white/60 py-16 sm:py-20">
+      <section className="border-b border-line bg-porcelain/60 py-16 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading eyebrow={a.eyebrow} title={a.title} description={a.intro} />
@@ -29,14 +29,26 @@ export default async function AboutPage() {
       <Container className="py-16">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal variant="left">
-            <div className="overflow-hidden rounded-3xl border border-line bg-gradient-to-b from-cream to-rose-light/30">
-              <Image
-                src="/graphics/hero-art.svg"
-                alt=""
-                width={560}
-                height={520}
-                className="h-auto w-full"
-              />
+            <div className="relative">
+              <div className="arch-frame relative aspect-[4/5] overflow-hidden border border-gold/40 shadow-[0_36px_70px_-38px_rgba(69,61,49,0.55)]">
+                <Image
+                  src="/renders/counter.jpg"
+                  alt="Mérvéilléux Premium reception counter"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 45vw"
+                  className="ken-burns object-cover"
+                />
+              </div>
+              <div className="arch-frame-tight absolute -bottom-6 -right-3 hidden h-48 w-36 overflow-hidden border-2 border-cream shadow-[0_28px_50px_-24px_rgba(69,61,49,0.6)] sm:block">
+                <Image
+                  src="/renders/lounge.jpg"
+                  alt="Reception lounge"
+                  fill
+                  sizes="144px"
+                  className="ken-burns object-cover"
+                  style={{ animationDelay: "-8s" }}
+                />
+              </div>
             </div>
           </Reveal>
           <Reveal variant="right">
@@ -55,7 +67,7 @@ export default async function AboutPage() {
       </Container>
 
       {/* VALUES */}
-      <section className="border-y border-line bg-white/60 py-16">
+      <section className="border-y border-line bg-porcelain/60 py-16">
         <Container>
           <Reveal>
             <SectionHeading center eyebrow={a.eyebrow} title={a.valuesTitle} />
@@ -63,7 +75,7 @@ export default async function AboutPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {a.values.map((v, i) => (
               <Reveal key={i} variant="up" delay={i * 110}>
-                <div className="h-full rounded-2xl border border-line bg-white p-7">
+                <div className="h-full rounded-[2px] border border-line bg-porcelain p-7">
                   <span className="font-serif text-3xl text-gold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -100,7 +112,7 @@ export default async function AboutPage() {
       <section className="pb-24">
         <Container>
           <Reveal variant="zoom">
-            <div className="rounded-3xl bg-gradient-to-br from-charcoal to-plum p-10 text-center text-cream sm:p-14">
+            <div className="rounded-[2px] water-wall relative overflow-hidden p-10 text-center text-cream sm:p-14">
               <h2 className="font-serif text-3xl font-light sm:text-4xl">
                 {a.ctaTitle}
               </h2>

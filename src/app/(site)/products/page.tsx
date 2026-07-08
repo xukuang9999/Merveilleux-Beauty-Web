@@ -17,7 +17,7 @@ export default async function ProductsPage() {
 
   return (
     <>
-      <section className="border-b border-line bg-white/60 py-16 sm:py-20">
+      <section className="border-b border-line bg-porcelain/60 py-16 sm:py-20">
         <Container>
           <SectionHeading eyebrow={d.eyebrow} title={d.title} description={d.desc} />
         </Container>
@@ -36,13 +36,13 @@ export default async function ProductsPage() {
                   i % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
-                <div className="overflow-hidden rounded-3xl border border-line bg-gradient-to-b from-cream to-rose-light/30">
+                <div className="arch-frame relative aspect-[5/6] overflow-hidden border border-line bg-onyx-glow shadow-[0_28px_60px_-36px_rgba(69,61,49,0.5)]">
                   <Image
                     src={p.graphic}
                     alt={p.name}
-                    width={300}
-                    height={360}
-                    className="h-auto w-full"
+                    fill
+                    sizes="(max-width: 1024px) 90vw, 40vw"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default async function ProductsPage() {
                 <h2 className="mt-2 font-serif text-4xl font-medium text-charcoal">
                   {p.name}
                 </h2>
-                <p className="mt-1 text-lg italic text-rose-deep">{p.tagline}</p>
+                <p className="mt-1 text-lg italic text-bronze">{p.tagline}</p>
                 <p className="mt-5 text-base leading-relaxed text-mid">
                   {p.description}
                 </p>
@@ -83,7 +83,7 @@ export default async function ProductsPage() {
                           key={b}
                           className="flex items-start gap-2 text-sm text-charcoal"
                         >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
                           {b}
                         </li>
                       ))}
@@ -106,12 +106,21 @@ export default async function ProductsPage() {
 
       <section className="pb-24">
         <Container>
-          <div className="rounded-3xl bg-gradient-to-br from-charcoal to-plum p-10 text-center text-cream sm:p-14">
-            <h2 className="font-serif text-3xl font-light sm:text-4xl">
+          <div className="relative overflow-hidden rounded-[2px] p-10 text-center text-cream sm:p-14">
+            <Image
+              src="/renders/atelier.jpg"
+              alt=""
+              aria-hidden
+              fill
+              sizes="100vw"
+              className="ken-burns object-cover"
+            />
+            <div aria-hidden className="absolute inset-0 bg-umber/75" />
+            <h2 className="relative font-serif text-3xl font-light sm:text-4xl">
               {d.deckTitle}
             </h2>
-            <p className="mx-auto mt-3 max-w-md text-cream/70">{d.deckBody}</p>
-            <div className="mt-7 flex justify-center">
+            <p className="relative mx-auto mt-3 max-w-md text-cream/80">{d.deckBody}</p>
+            <div className="relative mt-7 flex justify-center">
               <Button href="/contact" variant="gold">
                 {dict.common.getInTouch}
               </Button>

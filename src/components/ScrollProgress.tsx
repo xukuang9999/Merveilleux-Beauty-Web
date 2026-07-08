@@ -23,7 +23,7 @@ export default function ScrollProgress() {
   return (
     <div className="fixed inset-x-0 top-0 z-[60] h-[3px] bg-transparent">
       <div
-        className="h-full rounded-r-full bg-gradient-to-r from-rose-deep via-gold to-rose-deep"
+        className="h-full rounded-r-full bg-gradient-to-r from-bronze via-gold to-bronze"
         style={{ width: `${pct}%` }}
       />
     </div>

@@ -28,7 +28,7 @@ export default function Markdown({ content }: { content: string }) {
         <ul key={blocks.length} className="my-3 space-y-1.5 pl-1">
           {items.map((it, i) => (
             <li key={i} className="flex gap-2 text-sm text-mid">
-              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-rose-deep" />
+              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bronze" />
               <span>{inline(it)}</span>
             </li>
           ))}
@@ -39,7 +39,7 @@ export default function Markdown({ content }: { content: string }) {
         <ol key={blocks.length} className="my-3 space-y-1.5">
           {items.map((it, i) => (
             <li key={i} className="flex gap-2.5 text-sm text-mid">
-              <span className="font-serif text-rose-deep">{i + 1}.</span>
+              <span className="font-serif text-bronze">{i + 1}.</span>
               <span>{inline(it)}</span>
             </li>
           ))}

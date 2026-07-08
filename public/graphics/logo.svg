@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 90" role="img" aria-labelledby="title desc">
-  <title id="title">Merveilleux Beauty wordmark</title>
-  <desc id="desc">A horizontal luxury beauty logo with serif Merveilleux wordmark and gold BEAUTY subtitle.</desc>
-  <text x="170" y="43" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="42" font-weight="500" letter-spacing=".4" fill="#2C2C2C">Merveilleux</text>
-  <text x="170" y="69" text-anchor="middle" font-family="Avenir Next, Montserrat, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="500" letter-spacing="3.2" fill="#BFA76F">B E A U T Y</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">MÉRVÉILLÉUX Premium wordmark</title>
+  <desc id="logo-desc">Centered bronze metallic wordmark with premium subtitle and fine champagne hairlines.</desc>
+  <defs>
+    <linearGradient id="bronze-metal" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8A7355"/>
+      <stop offset="0.5" stop-color="#C0AA82"/>
+      <stop offset="1" stop-color="#8A7355"/>
+    </linearGradient>
+  </defs>
+  <text x="210" y="45" text-anchor="middle" font-family="'Avenir Next', Jost, Montserrat, Helvetica, Arial, sans-serif" font-size="31" font-weight="300" letter-spacing="8" fill="url(#bronze-metal)">MÉRVÉILLÉUX</text>
+  <line x1="62" y1="68" x2="122" y2="68" stroke="#A08C68" stroke-width="0.75" opacity="0.6" stroke-linecap="round"/>
+  <text x="210" y="72" text-anchor="middle" font-family="'Avenir Next', Jost, Montserrat, Helvetica, Arial, sans-serif" font-size="10" font-weight="300" letter-spacing="6" fill="#A08C68">P R E M I U M</text>
+  <line x1="298" y1="68" x2="358" y2="68" stroke="#A08C68" stroke-width="0.75" opacity="0.6" stroke-linecap="round"/>
 </svg>

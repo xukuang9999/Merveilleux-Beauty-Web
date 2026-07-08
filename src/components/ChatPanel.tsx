@@ -92,7 +92,7 @@ export default function ChatPanel({
             <div
               className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                 m.role === "user"
-                  ? "bg-rose-deep text-white"
+                  ? "bg-bronze text-white"
                   : "bg-cream text-charcoal"
               }`}
             >
@@ -111,7 +111,7 @@ export default function ChatPanel({
               <button
                 key={s}
                 onClick={() => send(s)}
-                className="rounded-full border border-line bg-white px-3 py-1.5 text-left text-xs text-mid transition-colors hover:border-rose-deep hover:text-rose-deep"
+                className="rounded-full border border-line bg-white px-3 py-1.5 text-left text-xs text-mid transition-colors hover:border-bronze hover:text-bronze"
               >
                 {s}
               </button>
@@ -131,13 +131,13 @@ export default function ChatPanel({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={placeholder}
-          className="flex-1 rounded-full border border-line bg-cream px-4 py-2.5 text-sm text-charcoal outline-none focus:border-rose-deep"
+          className="flex-1 rounded-full border border-line bg-cream px-4 py-2.5 text-sm text-charcoal outline-none focus:border-bronze"
         />
         <button
           type="submit"
           disabled={loading || !input.trim()}
           aria-label="Send"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-charcoal text-cream transition-colors hover:bg-plum disabled:opacity-40"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-charcoal text-cream transition-colors hover:bg-umber disabled:opacity-40"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
@@ -157,9 +157,9 @@ function replaceLast(messages: Msg[], content: string): Msg[] {
 function TypingDots() {
   return (
     <span className="inline-flex gap-1 py-1">
-      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-rose-deep [animation-delay:-0.3s]" />
-      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-rose-deep [animation-delay:-0.15s]" />
-      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-rose-deep" />
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-bronze [animation-delay:-0.3s]" />
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-bronze [animation-delay:-0.15s]" />
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-bronze" />
     </span>
   );
 }

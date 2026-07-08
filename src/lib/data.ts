@@ -5,14 +5,14 @@
 // ============================================================
 
 export const site = {
-  name: "Merveilleux Beauty",
-  brand: "Merveilleux",
+  name: "Mérvéilléux Premium",
+  brand: "Mérvéilléux",
   legalName: "Bellesenze Group Sdn Bhd",
   regNo: "202401042071",
   established: "2014",
-  tagline: "OEM French Beauty, made for modern skin",
+  tagline: "The Art of French Beauty",
   description:
-    "Merveilleux Beauty is an OEM French beauty house crafting clean, results-driven skincare — and the partner network that brings it to you.",
+    "Mérvéilléux Premium is a French-grade beauty house — clean, results-driven skincare, a flagship experience centre by Bellesenze, and a partner network built on training and trust.",
 
   // Primary contact (from brief)
   contactName: "Grace Phua",
@@ -33,8 +33,9 @@ export const site = {
     full: "No. 23A, Jalan SG 3/10, Sri Gombak, 68100 Batu Caves, Selangor, Malaysia",
   },
 
-  // Social profiles — swap in the real handle URLs once confirmed.
-  instagram: "https://instagram.com/merveilleux.my",
+  // Social profiles.
+  instagram: "https://www.instagram.com/merveilleuxskincare_sbn/",
+  instagramHandle: "merveilleuxskincare_sbn",
   facebook: "https://facebook.com/merveilleux.my",
   xiaohongshu: "https://www.xiaohongshu.com/",
 
@@ -64,6 +65,7 @@ export const navLinks: NavLink[] = [
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
   { href: "/promotions", label: "Promotions" },
+  { href: "/news", label: "News" },
   { href: "/blog", label: "Skincare Tips" },
   { href: "/gallery", label: "Gallery" },
   { href: "/testimonials", label: "Testimonials" },

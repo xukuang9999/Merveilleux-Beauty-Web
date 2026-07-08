@@ -21,10 +21,10 @@ export default function Marquee({
     >
       {items.map((it, i) => (
         <li key={i} className="flex items-center gap-10 whitespace-nowrap">
-          <span className="font-serif text-lg italic text-charcoal/70">
+          <span className="font-serif text-lg font-light italic text-umber/70">
             {it}
           </span>
-          <span className="text-gold">✦</span>
+          <span aria-hidden className="rotate-45 text-[8px] text-gold">■</span>
         </li>
       ))}
     </ul>

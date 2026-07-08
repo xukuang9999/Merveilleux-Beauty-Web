@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
-  <title id="title">Animated soft rose plum blob</title>
-  <desc id="desc">A low-contrast rose and plum organic gradient blob that drifts slowly.</desc>
-  <style>
-    .blob { transform-box: view-box; transform-origin: center; animation: rose-drift 18s ease-in-out infinite; }
-    .mist { animation: mist-pulse 9s ease-in-out infinite; }
-    @keyframes rose-drift {
-      0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-      33% { transform: translate(8px, -6px) scale(1.04) rotate(3deg); }
-      66% { transform: translate(-7px, 7px) scale(.98) rotate(-2deg); }
-    }
-    @keyframes mist-pulse {
-      0%, 100% { opacity: .66; }
-      50% { opacity: .86; }
-    }
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="greige-glow-title greige-glow-desc">
+  <title id="greige-glow-title">Soft greige champagne glow blob</title>
+  <desc id="greige-glow-desc">An organic deeper greige champagne radial glow with transparent edges.</desc>
   <defs>
-    <radialGradient id="roseBlob" cx="40%" cy="34%" r="70%">
-      <stop offset="0" stop-color="#F2D9DE" stop-opacity=".82"/>
-      <stop offset=".55" stop-color="#C5778A" stop-opacity=".34"/>
-      <stop offset="1" stop-color="#4A3040" stop-opacity=".12"/>
+    <radialGradient id="greige-blob" cx="45%" cy="45%" r="64%">
+      <stop offset="0" stop-color="#EAE2D2" stop-opacity="0.9"/>
+      <stop offset="0.46" stop-color="#C9C2B4" stop-opacity="0.34"/>
+      <stop offset="0.8" stop-color="#EAE2D2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#EAE2D2" stop-opacity="0"/>
     </radialGradient>
-    <filter id="softBlur" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur stdDeviation="9"/>
-    </filter>
   </defs>
-  <g class="blob" filter="url(#softBlur)">
-    <path class="mist" d="M230 39c58 8 111 50 131 105 22 60 8 134-34 183-43 51-113 75-179 62-61-12-106-58-126-113C2 218 15 151 58 109c40-40 102-80 172-70z" fill="url(#roseBlob)"/>
-    <path d="M224 78c46 7 87 39 102 82 16 48 5 103-28 141-35 40-89 57-139 45-46-11-81-47-95-91-15-46-4-98 32-129 33-29 77-56 128-48z" fill="#F2D9DE" opacity=".18"/>
-  </g>
+  <path d="M213 30C292 26 359 79 382 153C405 226 376 306 313 354C250 402 158 406 91 360C24 314 0 227 26 151C52 75 134 34 213 30Z" fill="url(#greige-blob)"/>
 </svg>

@@ -57,7 +57,7 @@ export default async function ProductDetailPage({
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-line bg-white/60">
+      <section className="border-b border-line bg-porcelain/60">
         <Container className="py-10 sm:py-14">
           <Link
             href="/products"
@@ -68,13 +68,13 @@ export default async function ProductDetailPage({
 
           <div className="mt-6 grid items-center gap-10 lg:grid-cols-2">
             <Reveal variant="left">
-              <div className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-line bg-gradient-to-b from-cream to-rose-light/30">
+              <div className="arch-frame relative mx-auto aspect-[5/6] w-full max-w-sm overflow-hidden border border-gold/40 bg-onyx-glow shadow-[0_36px_70px_-38px_rgba(69,61,49,0.55)]">
                 <Image
                   src={product.graphic}
                   alt={product.name}
-                  width={320}
-                  height={384}
-                  className="h-auto w-full"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                  className="ken-burns object-cover"
                   priority
                 />
               </div>
@@ -83,7 +83,7 @@ export default async function ProductDetailPage({
             <Reveal variant="right">
               <div className="flex flex-wrap items-center gap-3">
                 {categoryLabel && (
-                  <span className="rounded-full border border-line bg-white px-3 py-1 text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
+                  <span className="rounded-full border border-line bg-porcelain px-3 py-1 text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
                     {categoryLabel}
                   </span>
                 )}
@@ -94,7 +94,7 @@ export default async function ProductDetailPage({
               <h1 className="mt-3 font-serif text-4xl font-medium leading-tight text-charcoal sm:text-5xl">
                 {product.name}
               </h1>
-              <p className="mt-2 text-lg italic text-rose-deep">
+              <p className="mt-2 text-lg italic text-bronze">
                 {product.tagline}
               </p>
 
@@ -157,7 +157,7 @@ export default async function ProductDetailPage({
                 <ol className="space-y-4">
                   {steps.map((s, i) => (
                     <li key={i} className="flex gap-4">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-rose-light/60 font-serif text-sm text-rose-deep">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-champagne/60 font-serif text-sm text-bronze">
                         {i + 1}
                       </span>
                       <p className="pt-0.5 text-sm leading-relaxed text-charcoal">
@@ -171,7 +171,7 @@ export default async function ProductDetailPage({
           </Reveal>
 
           <Reveal variant="right">
-            <div className="rounded-3xl border border-line bg-white p-7">
+            <div className="rounded-[2px] border border-line bg-porcelain p-7">
               <h3 className="eyebrow mb-3">{d.keyIngredients}</h3>
               <ul className="space-y-1.5">
                 {product.keyIngredients.map((ing) => (
@@ -187,7 +187,7 @@ export default async function ProductDetailPage({
                     key={b}
                     className="flex items-start gap-2 text-sm text-charcoal"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
                     {b}
                   </li>
                 ))}
@@ -195,7 +195,7 @@ export default async function ProductDetailPage({
             </div>
 
             {/* Before / after — placeholder until client photography is loaded */}
-            <div className="mt-5 rounded-3xl border border-dashed border-line bg-cream/60 p-6">
+            <div className="mt-5 rounded-[2px] border border-dashed border-line bg-cream/60 p-6">
               <h3 className="eyebrow mb-2">{d.resultsTitle}</h3>
               <p className="text-sm leading-relaxed text-mid">{d.resultsNote}</p>
             </div>
@@ -205,7 +205,7 @@ export default async function ProductDetailPage({
 
       {/* REVIEWS */}
       {testimonials.length > 0 && (
-        <section className="border-y border-line bg-white/60 py-16">
+        <section className="border-y border-line bg-porcelain/60 py-16">
           <Container>
             <div className="mb-8 flex items-center gap-3">
               <Stars />
@@ -214,7 +214,7 @@ export default async function ProductDetailPage({
             <div className="grid gap-5 md:grid-cols-2">
               {testimonials.slice(0, 2).map((t, i) => (
                 <Reveal key={t.name} variant={i === 0 ? "left" : "right"}>
-                  <figure className="rounded-2xl border border-line bg-white p-7">
+                  <figure className="rounded-[2px] border border-line bg-porcelain p-7">
                     <Stars count={t.rating} />
                     <blockquote className="mt-4 font-serif text-lg leading-snug text-charcoal">
                       “{t.quote}”

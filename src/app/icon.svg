@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
-  <title id="title">Merveilleux monogram</title>
-  <desc id="desc">A refined serif M centered inside a thin gold circle.</desc>
-  <circle cx="32" cy="32" r="27" fill="none" stroke="#BFA76F" stroke-width="1.25"/>
-  <circle cx="32" cy="32" r="23.5" fill="none" stroke="#F5EFE0" stroke-width=".75"/>
-  <text x="32" y="42" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="34" font-weight="500" fill="#4A3040">M</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="icon-title icon-desc">
+  <title id="icon-title">Mérvéilléux Premium</title>
+  <desc id="icon-desc">Triple-arch bronze monogram on a warm ivory tile.</desc>
+  <defs>
+    <linearGradient id="icon-bronze" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8A7355"/>
+      <stop offset="0.5" stop-color="#A8916A"/>
+      <stop offset="1" stop-color="#8A7355"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="14" fill="#F7F4ED" stroke="#E5DFD3" stroke-width="1.5"/>
+  <g fill="none" stroke="url(#icon-bronze)" stroke-width="2" stroke-linecap="round">
+    <path d="M15 47 V27 a5.5 5.5 0 0 1 11 0 V47"/>
+    <path d="M26.5 47 V21.5 a5.5 5.5 0 0 1 11 0 V47"/>
+    <path d="M38 47 V27 a5.5 5.5 0 0 1 11 0 V47"/>
+  </g>
+  <line x1="13" y1="52" x2="51" y2="52" stroke="#8A7355" stroke-width="1.4" stroke-linecap="round"/>
 </svg>

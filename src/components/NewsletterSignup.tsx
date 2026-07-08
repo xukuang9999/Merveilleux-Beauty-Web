@@ -56,7 +56,7 @@ export default function NewsletterSignup({
         </button>
       </div>
       {state === "error" && (
-        <p className="mt-2 text-xs text-rose-light">{dict.subscribeError}</p>
+        <p className="mt-2 text-xs text-champagne">{dict.subscribeError}</p>
       )}
     </form>
   );

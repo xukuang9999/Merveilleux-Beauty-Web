@@ -1,31 +1,35 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Merveilleux Beauty — Design System
-   Palette & type lifted from the brand planning document.
+   Mérveilléux Premium — Design System
+   Palette & motifs lifted from the Bellesenze flagship design
+   proposal (MBDB2515 R4): warm ivory architecture, greige panels,
+   antique-bronze lettering, grey-veined marble, halo cove light.
    ============================================================ */
 
 @theme {
   /* Brand colors */
-  --color-rose-deep: #c5778a;
-  --color-rose-light: #f2d9de;
-  --color-gold: #bfa76f;
-  --color-gold-light: #f5efe0;
-  --color-charcoal: #2c2c2c;
-  --color-plum: #4a3040;
-  --color-mid: #6b6b6b;
-  --color-cream: #fdfaf7;
-  --color-line: #e8ddd5;
+  --color-bronze: #8a7355; /* antique bronze — primary accent */
+  --color-champagne: #eae2d2; /* soft champagne panel tint */
+  --color-gold: #a08c68; /* champagne-gold metal */
+  --color-gold-light: #f2ecdf; /* pale champagne wash */
+  --color-charcoal: #33302a; /* warm near-black text */
+  --color-umber: #453d31; /* deep umber — dark sections */
+  --color-mid: #7d7568; /* warm taupe-grey body text */
+  --color-cream: #f7f4ed; /* ivory page background */
+  --color-line: #e5dfd3; /* warm hairline */
+  --color-porcelain: #fdfcf8; /* card / label white */
+  --color-vein: #c9c2b4; /* marble vein grey */
 
-  /* Accent set */
-  --color-green: #5a8a6e;
-  --color-green-light: #e8f3ed;
-  --color-amber: #c08a3a;
-  --color-amber-light: #fdf3e3;
-  --color-blue: #4a6f8a;
-  --color-blue-light: #e3edf5;
-  --color-purple: #7a5a8a;
-  --color-purple-light: #f0ebf5;
+  /* Accent set (portal/admin) — warmed to sit with the new palette */
+  --color-green: #6a8a72;
+  --color-green-light: #ecf2ed;
+  --color-amber: #b08a4a;
+  --color-amber-light: #f8f0e0;
+  --color-blue: #5a7488;
+  --color-blue-light: #e8eef3;
+  --color-purple: #7d6a80;
+  --color-purple-light: #f1edf2;
 
   /* Fonts (wired to next/font variables in layout.tsx) */
   --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
@@ -60,8 +64,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-rose-light);
-  color: var(--color-plum);
+  background: var(--color-champagne);
+  color: var(--color-umber);
 }
 
 /* Utility composites */
@@ -71,13 +75,37 @@ body {
 
 .eyebrow {
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-weight: 500;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--color-gold);
 }
 
-/* Subtle entrance animation */
+/* Signage-style wordmark (matches the store's bronze channel letters) */
+.wordmark {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+
+/* ---- Marble + material washes ---- */
+.bg-marble {
+  background-color: var(--color-porcelain);
+  background-image:
+    radial-gradient(60% 40% at 20% 15%, rgba(201, 194, 180, 0.16), transparent 60%),
+    radial-gradient(50% 45% at 85% 70%, rgba(201, 194, 180, 0.13), transparent 65%),
+    radial-gradient(70% 30% at 55% 100%, rgba(234, 226, 210, 0.5), transparent 70%);
+}
+
+/* Backlit-onyx panel glow (hero arch, feature cards) */
+.bg-onyx-glow {
+  background-image:
+    radial-gradient(80% 60% at 50% 0%, rgba(242, 236, 223, 0.9), transparent 75%),
+    linear-gradient(180deg, #efe8d9 0%, #f7f4ed 100%);
+}
+
+/* ---- Subtle entrance animation ---- */
 @keyframes rise {
   from {
     opacity: 0;
@@ -90,15 +118,33 @@ body {
 }
 
 .rise {
-  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .rise-2 {
-  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
 .rise-3 {
-  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+/* Letter-spacing entrance for the hero wordmark — letters glide apart
+   like the backlit signage warming up. */
+@keyframes track-in {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.12em;
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.38em;
+    filter: blur(0);
+  }
+}
+.track-in {
+  animation: track-in 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 @keyframes float {
@@ -161,7 +207,7 @@ body {
   transform: none;
 }
 
-/* ---- Gradient / shimmer text ---- */
+/* ---- Gradient / shimmer text (bronze channel-letter sheen) ---- */
 @keyframes shimmer-text {
   to {
     background-position: 200% center;
@@ -170,15 +216,15 @@ body {
 .gradient-text {
   background-image: linear-gradient(
     100deg,
-    var(--color-rose-deep),
-    var(--color-gold),
-    var(--color-rose-deep)
+    var(--color-bronze) 20%,
+    #c8b389 40%,
+    var(--color-bronze) 60%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shimmer-text 6s linear infinite;
+  animation: shimmer-text 7s linear infinite;
 }
 
 /* ---- Animated gradient backgrounds ---- */
@@ -195,7 +241,82 @@ body {
 }
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradient-shift 14s ease infinite;
+  animation: gradient-shift 16s ease infinite;
+}
+
+/* ---- Halo ring (circular cove-light ceiling motif) ---- */
+@keyframes halo-breathe {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.03);
+  }
+}
+.halo {
+  border-radius: 9999px;
+  border: 1px solid rgba(160, 140, 104, 0.5);
+  box-shadow:
+    0 0 60px 12px rgba(234, 226, 210, 0.55),
+    inset 0 0 60px 10px rgba(242, 236, 223, 0.6);
+  animation: halo-breathe 7s ease-in-out infinite;
+}
+
+/* ---- Water-wall shimmer (bronze water feature) ---- */
+@keyframes water-fall {
+  from {
+    background-position:
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      0 640px,
+      0 380px;
+  }
+}
+.water-wall {
+  background-color: var(--color-umber);
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      rgba(200, 179, 137, 0.08) 0 3px,
+      transparent 3px 14px,
+      rgba(200, 179, 137, 0.05) 14px 18px,
+      transparent 18px 32px
+    ),
+    repeating-linear-gradient(
+      177deg,
+      transparent 0 9px,
+      rgba(247, 244, 237, 0.05) 9px 11px,
+      transparent 11px 26px
+    );
+  animation: water-fall 9s linear infinite;
+}
+
+/* ---- Vertical light slits (backlit wall panels) ---- */
+@keyframes slit-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.light-slit {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(242, 236, 223, 0.95) 20%,
+    rgba(242, 236, 223, 0.95) 80%,
+    transparent
+  );
+  animation: slit-glow 5s ease-in-out infinite;
 }
 
 /* ---- Marquee ---- */
@@ -226,7 +347,7 @@ body {
   background: linear-gradient(
     100deg,
     transparent,
-    rgba(255, 255, 255, 0.35),
+    rgba(255, 253, 245, 0.35),
     transparent
   );
   transform: skewX(-20deg);
@@ -236,7 +357,9 @@ body {
   left: 140%;
 }
 
-/* ---- Falling petals (contained in a section) ---- */
+/* ---- Falling light motes (contained in a section) ----
+   Keeps the legacy .petal-fall hook; the sprite is now a champagne
+   light particle drifting down like dust in warm cove light. */
 @keyframes fall {
   0% {
     transform: translate3d(0, -15%, 0) rotate(0deg);
@@ -297,6 +420,42 @@ body {
 }
 .glow-pulse {
   animation: glow 6s ease-in-out infinite;
+}
+
+/* ---- Ken Burns drift for flagship render photography ---- */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.09) translateY(-1.5%);
+  }
+}
+.ken-burns {
+  animation: ken-burns 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* ---- Arch frame (triple-arch facade motif) ---- */
+.arch-frame {
+  border-radius: 999px 999px 18px 18px;
+}
+.arch-frame-tight {
+  border-radius: 999px 999px 6px 6px;
+}
+
+/* ---- Hairline rule that draws itself in ---- */
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.rule-draw {
+  transform-origin: left center;
+  animation: rule-draw 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
 
 @media (prefers-reduced-motion: reduce) {

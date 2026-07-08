@@ -49,7 +49,7 @@ export default async function AdminUsersPage() {
                 <select
                   name="role"
                   defaultValue={u.role}
-                  className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm outline-none focus:border-rose-deep"
+                  className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm outline-none focus:border-bronze"
                 >
                   {ROLES.map((r) => (
                     <option key={r} value={r}>
@@ -57,7 +57,7 @@ export default async function AdminUsersPage() {
                     </option>
                   ))}
                 </select>
-                <button className="rounded-full bg-charcoal px-4 py-1.5 text-xs font-medium text-cream hover:bg-plum">
+                <button className="rounded-full bg-charcoal px-4 py-1.5 text-xs font-medium text-cream hover:bg-umber">
                   {d.update}
                 </button>
               </form>

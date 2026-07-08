@@ -19,6 +19,7 @@ const zh: Dictionary = {
     "about": "关于我们",
     "products": "产品",
     "promotions": "优惠套装",
+    "news": "动态",
     "blog": "护肤贴士",
     "gallery": "图库",
     "testimonials": "客户见证",
@@ -39,7 +40,7 @@ const zh: Dictionary = {
     "instagram": "Instagram",
     "facebook": "Facebook",
     "xiaohongshu": "小红书",
-    "rights": "OEM 法式美妆产品",
+    "rights": "法式美学之艺",
     "crafted": "用心精制",
     "newsletterTitle": "订阅美肌资讯",
     "newsletterSub": "护肤贴士、新品上市与经销商动态 —— 绝不发送垃圾邮件。",
@@ -52,13 +53,36 @@ const zh: Dictionary = {
     "companyLine": "{legal} · 注册号 {reg}"
   },
   "home": {
-    "heroEyebrow": "OEM 法式美妆 · 为现代肌肤而生",
+    "heroEyebrow": "法式美学 · 匠心之作",
     "heroTitleBefore": "令人 ",
     "heroTitleHighlight": "merveilleux",
-    "heroBody": "法国级配方，价格实在 —— 加上一个以真材实料的培训与信任为根基的经销商网络。认识 Margaux，我们的 AI 美容顾问，随时为您提供帮助。",
+    "heroBody": "法国级配方，源自一个以从容、匠心与信任立身的品牌 —— 还有 Margaux，我们的 AI 美容顾问，随时在您身旁。欢迎来到 Mérvéilléux Premium。",
     "exploreRange": "探索系列",
     "becomeDistributor": "成为经销商",
     "lovedBy": "深受全马来西亚顾客与经销商喜爱",
+    "statsYears": "年匠心工艺",
+    "statsFormulas": "款臻选配方",
+    "statsModules": "个培训单元",
+    "statsLanguages": "种服务语言",
+    "flagshipEyebrow": "旗舰体验",
+    "flagshipTitle": "Bellesenze @ Dataran Sunway",
+    "flagshipBody": "走进我们位于八打灵再也的旗舰体验中心 —— 暖象牙与天然石纹大理石包裹的私密护理室、光环灯下的产品陈列廊，以及见证伙伴成长的培训剧场。",
+    "flagshipCta": "预约到访",
+    "flagshipLocation": "Dataran Sunway · Kota Damansara · 八打灵再也",
+    "flagshipPoints": [
+      {
+        "title": "私密护理室",
+        "body": "灰褐亚麻帘幕与大理石饰面的独立护理间，让每一次护理从容不迫。"
+      },
+      {
+        "title": "产品陈列廊",
+        "body": "全系列产品陈列于背光展架之上 —— 试用、感受、爱上每一款配方。"
+      },
+      {
+        "title": "培训剧场",
+        "body": "专属舞台，见证每一位经销商完成培训、获得认证、绽放光彩。"
+      }
+    ],
     "valueProps": [
       {
         "title": "纯净 OEM 配方",
@@ -89,6 +113,21 @@ const zh: Dictionary = {
     "ctaBody": "每一位 Merveilleux 经销商都将通过结构化培训计划走向成功 —— {n} 个涵盖品牌、产品、政策与 SOP 的单元 —— 一个护肤知识库，以及一位随身的 AI 培训教练。",
     "applyToJoin": "申请加入",
     "seeTraining": "了解培训"
+  },
+  "news": {
+    "eyebrow": "品牌手记",
+    "title": "Mérvéilléux 最新动态",
+    "intro": "肌肤科学、新品上市与真实见证 —— 来自我们的 Instagram。",
+    "homeTitle": "动态与手记",
+    "homeIntro": "来自我们工作室与社群的最新分享。",
+    "viewPost": "在 Instagram 查看",
+    "readMore": "前往 Instagram 阅读",
+    "followUs": "关注 @merveilleuxskincare_sbn",
+    "followCta": "在 Instagram 关注我们",
+    "allUpdates": "所有动态",
+    "latestLabel": "最新动态",
+    "handle": "@merveilleuxskincare_sbn",
+    "empty": "更多故事即将上线 —— 敬请先在 Instagram 关注我们。"
   },
   "products": {
     "eyebrow": "产品系列",
@@ -214,18 +253,18 @@ const zh: Dictionary = {
     "bundles": [
       {
         "title": "焕采仪式套装",
-        "desc": "提亮并均匀肤色 —— Radiance Serum、Essence Toner 与 Sun Shield SPF50+。",
+        "desc": "提亮并均匀肤色 —— 美白精华、美白锁水乳霜与肤色保湿防晒 SPF35。",
         "tag": "畅销"
       },
       {
         "title": "水润仪式套装",
-        "desc": "丰盈玻璃肌补水 —— Hydra Essence Serum、Velvet Cream 与一片 Hydra Bomb Mask。",
+        "desc": "丰盈玻璃肌补水 —— 大分子玻尿酸精华、玻尿酸保湿乳霜与一片深层保湿面膜。",
         "tag": "玻璃肌"
       },
       {
-        "title": "完整护肤套装",
-        "desc": "由早到晚的完整流程 —— 洁面、化妆水、精华、面霜与防晒。",
-        "tag": "超值之选"
+        "title": "抗龄紧致套装",
+        "desc": "紧致抗氧防护 —— 抗老化精华、抗老修复面霜与紧致提拉眼霜。",
+        "tag": "抗龄防护"
       }
     ],
     "includes": "套装包含",
@@ -237,6 +276,24 @@ const zh: Dictionary = {
   },
   "gallery": {
     "eyebrow": "图库",
+    "flagshipTitle": "旗舰店实景",
+    "flagshipIntro": "Bellesenze @ Dataran Sunway 设计效果图 —— 每一处空间都以暖象牙、天然石纹大理石与古铜灯光为核心。",
+    "rooms": {
+      "facade": "门店立面",
+      "reception": "接待区",
+      "lounge": "接待休息区",
+      "waterWall": "水景墙",
+      "corridor": "护理走廊",
+      "suites": "私密护理室",
+      "vanity": "盥洗区",
+      "staircase": "大理石楼梯",
+      "counter": "接待前台",
+      "atelier": "产品陈列廊",
+      "theatre": "培训剧场",
+      "portraits": "培训休息区",
+      "nook": "试妆间",
+      "marbleSign": "大理石门厅"
+    },
     "title": "尽览 Merveilleux 系列",
     "intro": "一窥整个系列 —— 纯净的配方与用心的设计，让它在任何货架上都优雅出众。",
     "viewProduct": "查看产品 →"

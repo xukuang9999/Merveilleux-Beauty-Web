@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/lib/data";
@@ -40,6 +39,7 @@ export default function Nav({
     { href: "/about", label: dict.about },
     { href: "/products", label: dict.products },
     { href: "/promotions", label: dict.promotions },
+    { href: "/news", label: dict.news },
     { href: "/blog", label: dict.blog },
     { href: "/testimonials", label: dict.testimonials },
     { href: "/contact", label: dict.contact },
@@ -50,29 +50,32 @@ export default function Nav({
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-cream/85 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2.5"
+          className="flex shrink-0 items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          <Image src="/graphics/monogram.svg" alt="" width={34} height={34} priority />
-          <span className="font-serif text-xl leading-none tracking-wide text-charcoal">
-            Merveilleux
-            <span className="ml-1.5 align-middle text-[9px] font-medium uppercase tracking-[0.25em] text-gold">
-              Beauty
+          <span className="flex flex-col leading-none">
+            <span className="wordmark text-[13px] text-charcoal">
+              Mérvéilléux
+            </span>
+            <span className="mt-1 text-[7px] font-medium uppercase tracking-[0.5em] text-gold">
+              Premium
             </span>
           </span>
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-0.5 lg:flex">
           {links.slice(1, -1).map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`px-3 py-2 text-[13px] font-medium tracking-wide transition-colors ${
-                isActive(l.href) ? "text-rose-deep" : "text-mid hover:text-charcoal"
+              className={`relative whitespace-nowrap px-2.5 py-2 text-[11px] font-medium uppercase tracking-[0.1em] transition-colors after:absolute after:bottom-0.5 after:left-2.5 after:right-2.5 after:h-px after:origin-left after:bg-bronze after:transition-transform after:duration-300 ${
+                isActive(l.href)
+                  ? "text-bronze after:scale-x-100"
+                  : "text-mid after:scale-x-0 hover:text-charcoal hover:after:scale-x-100"
               }`}
             >
               {l.label}
@@ -82,7 +85,7 @@ export default function Nav({
           {user ? (
             <Link
               href={roleHome[user.role]}
-              className="ml-2 flex items-center gap-2 rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
+              className="ml-2 flex items-center gap-2 whitespace-nowrap rounded-[2px] bg-umber px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.1em] text-cream transition-colors hover:bg-charcoal"
             >
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/30 text-[10px] uppercase">
                 {user.name.charAt(0)}
@@ -93,13 +96,13 @@ export default function Nav({
             <>
               <Link
                 href="/login"
-                className="ml-1 px-3 py-2 text-[13px] font-medium text-mid transition-colors hover:text-charcoal"
+                className="ml-1 whitespace-nowrap px-2.5 py-2 text-[11px] font-medium uppercase tracking-[0.1em] text-mid transition-colors hover:text-charcoal"
               >
                 {dict.login}
               </Link>
               <Link
                 href="/join"
-                className="rounded-full bg-charcoal px-5 py-2.5 text-[13px] font-medium text-cream transition-colors hover:bg-plum"
+                className="whitespace-nowrap rounded-[2px] bg-umber px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.1em] text-cream transition-colors hover:bg-charcoal"
               >
                 {dict.join}
               </Link>
@@ -136,7 +139,7 @@ export default function Nav({
               href={l.href}
               onClick={() => setOpen(false)}
               className={`block border-b border-line/70 py-3 text-sm font-medium ${
-                isActive(l.href) ? "text-rose-deep" : "text-charcoal"
+                isActive(l.href) ? "text-bronze" : "text-charcoal"
               }`}
             >
               {l.label}
@@ -146,7 +149,7 @@ export default function Nav({
             <Link
               href={roleHome[user.role]}
               onClick={() => setOpen(false)}
-              className="mt-3 block text-sm font-medium text-rose-deep"
+              className="mt-3 block text-sm font-medium text-bronze"
             >
               {roleLabel[user.role]} →
             </Link>
@@ -162,7 +165,7 @@ export default function Nav({
               <Link
                 href="/join"
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-rose-deep"
+                className="text-sm font-medium text-bronze"
               >
                 {dict.join}
               </Link>

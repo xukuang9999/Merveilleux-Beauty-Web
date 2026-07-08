@@ -19,6 +19,7 @@ const en = {
     about: "About",
     products: "Products",
     promotions: "Promotions",
+    news: "News",
     blog: "Skincare Tips",
     gallery: "Gallery",
     testimonials: "Testimonials",
@@ -39,7 +40,7 @@ const en = {
     instagram: "Instagram",
     facebook: "Facebook",
     xiaohongshu: "Xiaohongshu (小红书)",
-    rights: "OEM French Beauty Products",
+    rights: "The Art of French Beauty",
     crafted: "Crafted with care",
     newsletterTitle: "Stay in the glow",
     newsletterSub: "Skincare tips, new launches and partner news — no spam.",
@@ -52,14 +53,38 @@ const en = {
     companyLine: "{legal} · Reg. {reg}",
   },
   home: {
-    heroEyebrow: "OEM French Beauty · Made for modern skin",
+    heroEyebrow: "The Art of French Beauty",
     heroTitleBefore: "Skincare that feels ",
     heroTitleHighlight: "merveilleux",
     heroBody:
-      "French-grade formulas, honestly priced — and a distributor network built on real training and trust. Meet Margaux, our AI beauty advisor, ready to help you any time.",
+      "French-grade formulas in a house built on calm, craft and trust — and Margaux, our AI beauty advisor, at your side any time. Welcome to Mérvéilléux Premium.",
     exploreRange: "Explore the range",
     becomeDistributor: "Become a Distributor",
     lovedBy: "Loved by customers & distributors across Malaysia",
+    statsYears: "Years of craft",
+    statsFormulas: "Signature formulas",
+    statsModules: "Training modules",
+    statsLanguages: "Languages served",
+    flagshipEyebrow: "The Flagship Experience",
+    flagshipTitle: "Bellesenze @ Dataran Sunway",
+    flagshipBody:
+      "Step inside our flagship experience centre in Petaling Jaya — private treatment suites wrapped in warm ivory and veined marble, a product atelier glowing under halo light, and a training theatre where our community grows.",
+    flagshipCta: "Plan your visit",
+    flagshipLocation: "Dataran Sunway · Kota Damansara · Petaling Jaya",
+    flagshipPoints: [
+      {
+        title: "Private treatment suites",
+        body: "Curtained cabins in greige linen and marble, designed for unhurried rituals.",
+      },
+      {
+        title: "Product atelier",
+        body: "The full collection on backlit shelves — test, feel and fall for every formula.",
+      },
+      {
+        title: "Training theatre",
+        body: "A dedicated stage where distributors are trained, certified and celebrated.",
+      },
+    ],
     valueProps: [
       {
         title: "Clean OEM formulas",
@@ -93,6 +118,22 @@ const en = {
       "Every Merveilleux distributor is set up to succeed with a structured training programme — {n} modules covering brand, products, policy and SOP — a skincare knowledge base, and an AI training coach in your pocket.",
     applyToJoin: "Apply to join",
     seeTraining: "See the training",
+  },
+  news: {
+    eyebrow: "The Journal",
+    title: "Latest from Mérvéilléux",
+    intro:
+      "Skin science, new launches and real results — straight from our Instagram.",
+    homeTitle: "News & journal",
+    homeIntro: "The latest from our studio and community.",
+    viewPost: "View on Instagram",
+    readMore: "Read on Instagram",
+    followUs: "Follow @merveilleuxskincare_sbn",
+    followCta: "Follow us on Instagram",
+    allUpdates: "All updates",
+    latestLabel: "Latest post",
+    handle: "@merveilleuxskincare_sbn",
+    empty: "New stories are on the way — follow us on Instagram in the meantime.",
   },
   products: {
     eyebrow: "The Collection",
@@ -223,19 +264,19 @@ const en = {
       "Save when you build a complete routine. Our bundles pair the products that work best side by side — ideal for gifting, sampling, or starting a new customer off right.",
     bundles: [
       {
-        title: "The Radiance Ritual",
-        desc: "Brighten and even tone — Radiance Serum, Essence Toner and Sun Shield SPF50+.",
+        title: "The Brightening Ritual",
+        desc: "Brighten and even tone — Oxy-Bright Serum, Youth-HA Moisturiser and Refined HA UV Shield SPF35.",
         tag: "Bestseller",
       },
       {
         title: "The Hydration Ritual",
-        desc: "Plump, glass-skin hydration — Hydra Essence Serum, Velvet Cream and a Hydra Bomb Mask.",
+        desc: "Plump, glass-skin hydration — Hydro-Moist Serum, Hyaluronate Moisturiser and an Aqua-Concentrate Mask.",
         tag: "Glass skin",
       },
       {
-        title: "The Complete Routine",
-        desc: "A full AM-to-PM regimen — cleanser, toner, serum, moisturiser and SPF.",
-        tag: "Best value",
+        title: "The Anti-Aging Ritual",
+        desc: "Firm and defend — Revitalise Anti-Oxidant Serum, Anti-Oxidant Cream and Intense Lift Eye Treatment Crème.",
+        tag: "Age-defence",
       },
     ],
     includes: "Includes",
@@ -248,6 +289,25 @@ const en = {
   },
   gallery: {
     eyebrow: "Gallery",
+    flagshipTitle: "Inside the flagship",
+    flagshipIntro:
+      "Rendered views of Bellesenze @ Dataran Sunway — every space designed around warm ivory, veined marble and bronze light.",
+    rooms: {
+      facade: "The facade",
+      reception: "Reception",
+      lounge: "Reception lounge",
+      waterWall: "Water feature wall",
+      corridor: "Treatment corridor",
+      suites: "Private treatment suites",
+      vanity: "Washroom vanity",
+      staircase: "Marble staircase",
+      counter: "Reception counter",
+      atelier: "Product atelier",
+      theatre: "Training theatre",
+      portraits: "Training lounge",
+      nook: "Fitting nook",
+      marbleSign: "Marble entry",
+    },
     title: "The Merveilleux collection, in view",
     intro:
       "A look at the range — clean formulas and considered design, made to sit beautifully on any shelf.",

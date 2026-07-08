@@ -31,7 +31,7 @@ export default async function AdminEnquiriesPage() {
                   <span className="text-sm font-medium text-charcoal">
                     {e.name}
                   </span>
-                  <span className="rounded-full bg-rose-light/50 px-2.5 py-0.5 text-[11px] font-medium text-rose-deep">
+                  <span className="rounded-full bg-champagne/50 px-2.5 py-0.5 text-[11px] font-medium text-bronze">
                     {e.interest}
                   </span>
                 </div>

@@ -52,9 +52,9 @@ export default async function AdminProgressPage() {
                       )}
                     </span>
                   </div>
-                  <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-rose-light/40">
+                  <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-champagne/40">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-rose-deep to-gold"
+                      className="h-full rounded-full bg-gradient-to-r from-bronze to-gold"
                       style={{ width: `${pct}%` }}
                     />
                   </div>

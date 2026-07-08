@@ -33,7 +33,7 @@ export default async function TrainingPage() {
 
   return (
     <>
-      <section className="border-b border-line bg-gradient-to-br from-rose-light/30 to-gold-light/30 py-16 sm:py-20">
+      <section className="border-b border-line bg-gradient-to-br from-champagne/30 to-gold-light/30 py-16 sm:py-20">
         <Container>
           <SectionHeading eyebrow={d.eyebrow} title={d.title} description={d.desc} />
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -42,9 +42,9 @@ export default async function TrainingPage() {
                 key={s.label}
                 variant="up"
                 delay={i * 100}
-                className="rounded-2xl border border-line bg-white/70 px-5 py-6 text-center transition-transform duration-300 hover:-translate-y-1"
+                className="rounded-[2px] border border-line bg-porcelain/70 px-5 py-6 text-center transition-transform duration-300 hover:-translate-y-1"
               >
-                <p className="font-serif text-4xl text-rose-deep">
+                <p className="font-serif text-4xl text-bronze">
                   {s.num != null ? (
                     <Counter value={s.num} suffix={s.text ?? ""} />
                   ) : (
@@ -73,7 +73,7 @@ export default async function TrainingPage() {
       </section>
 
       <Container className="py-16">
-        <div className="mb-10 rounded-2xl border border-blue/20 bg-blue-light/40 p-5 text-sm text-charcoal">
+        <div className="mb-10 rounded-[2px] border border-blue/20 bg-blue-light/40 p-5 text-sm text-charcoal">
           <span className="font-medium text-blue">{d.loginRequired}</span>{" "}
           {d.loginRequiredBody}
         </div>
@@ -84,7 +84,7 @@ export default async function TrainingPage() {
               key={m.ord}
               variant={i % 2 === 0 ? "left" : "right"}
               delay={(i % 2) * 80}
-              className="rounded-2xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-rose-light hover:shadow-[0_18px_40px_-24px_rgba(74,48,64,0.4)]"
+              className="rounded-[2px] border border-line bg-porcelain p-6 transition-all duration-300 hover:-translate-y-1 hover:border-champagne hover:shadow-[0_18px_40px_-24px_rgba(69,61,49,0.4)]"
             >
               <div className="flex items-start justify-between">
                 <span className="text-3xl">{m.icon}</span>
@@ -100,7 +100,7 @@ export default async function TrainingPage() {
                     key={l}
                     className="flex items-start gap-2 text-[13px] text-charcoal"
                   >
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-rose-deep" />
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bronze" />
                     {l}
                   </li>
                 ))}

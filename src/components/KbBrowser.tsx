@@ -48,7 +48,7 @@ export default function KbBrowser({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={dict.searchPlaceholder}
-          className="w-full rounded-full border border-line bg-white px-4 py-2.5 text-sm text-charcoal outline-none focus:border-rose-deep sm:max-w-xs"
+          className="w-full rounded-full border border-line bg-white px-4 py-2.5 text-sm text-charcoal outline-none focus:border-bronze sm:max-w-xs"
         />
         <div className="flex flex-wrap gap-2">
           {categories.map((c) => (
@@ -57,8 +57,8 @@ export default function KbBrowser({
               onClick={() => setCat(c)}
               className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                 cat === c
-                  ? "border-rose-deep bg-rose-light/50 text-rose-deep"
-                  : "border-line bg-white text-mid hover:border-rose-light"
+                  ? "border-bronze bg-champagne/50 text-bronze"
+                  : "border-line bg-white text-mid hover:border-champagne"
               }`}
             >
               {c}
@@ -77,7 +77,7 @@ export default function KbBrowser({
             <Link
               key={a.slug}
               href={`/portal/knowledge/${a.slug}`}
-              className="group rounded-2xl border border-line bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-rose-light"
+              className="group rounded-2xl border border-line bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-champagne"
             >
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-gold">
                 {a.category}
@@ -86,7 +86,7 @@ export default function KbBrowser({
                 {a.title}
               </h3>
               <p className="mt-2 text-sm text-mid">{a.excerpt}</p>
-              <span className="mt-3 inline-block text-sm font-medium text-rose-deep">
+              <span className="mt-3 inline-block text-sm font-medium text-bronze">
                 {dict.read}
               </span>
             </Link>

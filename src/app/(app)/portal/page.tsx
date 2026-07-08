@@ -94,7 +94,7 @@ export default async function PortalPage() {
         </ul>
         <Link
           href="/portal/training"
-          className="mt-4 inline-block text-sm font-medium text-rose-deep underline"
+          className="mt-4 inline-block text-sm font-medium text-bronze underline"
         >
           {d.goToTraining}
         </Link>
@@ -119,12 +119,12 @@ function PortalLink({
   return (
     <Link
       href={href}
-      className="group rounded-2xl border border-line bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-rose-light"
+      className="group rounded-2xl border border-line bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-champagne"
     >
       <span className="text-2xl">{icon}</span>
       <h3 className="mt-2 font-serif text-xl text-charcoal">{title}</h3>
       <p className="mt-1 text-sm text-mid">{desc}</p>
-      <span className="mt-3 inline-block text-sm font-medium text-rose-deep">
+      <span className="mt-3 inline-block text-sm font-medium text-bronze">
         {open}
       </span>
     </Link>

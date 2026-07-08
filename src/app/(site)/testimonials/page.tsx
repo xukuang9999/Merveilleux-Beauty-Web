@@ -16,7 +16,7 @@ export default async function TestimonialsPage() {
 
   return (
     <>
-      <section className="border-b border-line bg-white/60 py-16 sm:py-20">
+      <section className="border-b border-line bg-porcelain/60 py-16 sm:py-20">
         <Container>
           <SectionHeading eyebrow={d.eyebrow} title={d.title} description={d.desc} />
         </Container>
@@ -31,14 +31,14 @@ export default async function TestimonialsPage() {
               className="mb-5 break-inside-avoid"
             >
             <figure
-              className="rounded-2xl border border-line bg-white p-7 transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(74,48,64,0.4)]"
+              className="rounded-[2px] border border-line bg-porcelain p-7 transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(69,61,49,0.4)]"
             >
               <Stars count={t.rating} />
               <blockquote className="mt-4 font-serif text-xl leading-snug text-charcoal">
                 “{t.quote}”
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-rose-light font-serif text-lg text-rose-deep">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-champagne font-serif text-lg text-bronze">
                   {t.name.charAt(0)}
                 </span>
                 <span className="text-sm">
@@ -53,7 +53,7 @@ export default async function TestimonialsPage() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-3xl border border-rose-light bg-gradient-to-br from-rose-light/40 to-gold-light/40 p-10 text-center sm:p-14">
+        <div className="mt-16 rounded-[2px] border border-champagne bg-gradient-to-br from-champagne/40 to-gold-light/40 p-10 text-center sm:p-14">
           <h2 className="font-serif text-3xl font-medium text-charcoal sm:text-4xl">
             {d.haveStoryTitle}
           </h2>

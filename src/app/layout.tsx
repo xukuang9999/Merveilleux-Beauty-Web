@@ -22,20 +22,21 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://merveilleuxbeauty.com"),
   title: {
-    default: "Merveilleux Beauty — OEM French Beauty Products",
-    template: "%s · Merveilleux Beauty",
+    default: "Mérvéilléux Premium — The Art of French Beauty",
+    template: "%s · Mérvéilléux Premium",
   },
   description: site.description,
   keywords: [
-    "Merveilleux Beauty",
-    "OEM French beauty",
-    "skincare Malaysia",
+    "Merveilleux Premium",
+    "Bellesenze",
+    "French beauty",
+    "premium skincare Malaysia",
     "distributor",
     "serum",
     "moisturiser",
   ],
   openGraph: {
-    title: "Merveilleux Beauty — OEM French Beauty Products",
+    title: "Mérvéilléux Premium — The Art of French Beauty",
     description: site.description,
     type: "website",
     locale: "en_MY",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Merveilleux Beauty",
+    title: "Mérvéilléux Premium",
     description: site.description,
   },
 };

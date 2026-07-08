@@ -9,6 +9,7 @@ import {
   seedTestimonials,
   seedFaqs,
   seedKbArticles,
+  seedNews,
   type SeedProduct,
 } from "./seed-data";
 import { getLocale } from "@/i18n/server";
@@ -103,6 +104,36 @@ export async function getArticles(): Promise<ArticleView[]> {
 export async function getArticle(slug: string): Promise<ArticleView | null> {
   const all = await getArticles();
   return all.find((a) => a.slug === slug) ?? null;
+}
+
+export type NewsView = {
+  code: string;
+  type: "post" | "reel";
+  permalink: string;
+  image: string;
+  date: string;
+  category: string;
+  title: string;
+  excerpt: string;
+};
+
+// News/journal — curated real posts from the brand Instagram, localised to
+// the active locale. Newest first. Not DB-backed (small, editorial content).
+export async function getNews(limit?: number): Promise<NewsView[]> {
+  const locale = await getLocale();
+  const items = [...seedNews]
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .map((n) => ({
+      code: n.code,
+      type: n.type,
+      permalink: n.permalink,
+      image: n.image,
+      date: n.date,
+      category: n.category[locale],
+      title: n.title[locale],
+      excerpt: n.excerpt[locale],
+    }));
+  return limit ? items.slice(0, limit) : items;
 }
 
 export async function getFaqs(): Promise<FaqView[]> {
