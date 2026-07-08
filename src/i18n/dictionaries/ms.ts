@@ -60,6 +60,27 @@ const ms: Dictionary = {
     "exploreRange": "Terokai koleksi",
     "becomeDistributor": "Jadi seorang Pengedar",
     "lovedBy": "Disayangi pelanggan & pengedar di seluruh Malaysia",
+    "heroReel": {
+      "scrollHint": "Skrol untuk meneroka",
+      "chapters": [
+        {
+          "title": "Penjagaan kulit gaya Perancis",
+          "body": "Formula bersih pada tahap kosmetik Perancis — aktif berkesan yang menyayangi kulit, pada harga yang jujur.",
+        },
+        {
+          "title": "Rutin yang dipetakan untuk kulit anda",
+          "body": "Bersih, rawat, lindung — sepadan dengan kulit anda dan iklim kita, dengan Margaux, penasihat AI kami, membimbing setiap langkah.",
+        },
+        {
+          "title": "Aktif yang benar-benar berkesan",
+          "body": "Vitamin C, asid hialuronik, ceramide, SPF50+ — serum, krim dan mask untuk mencerahkan, melembap dan membaiki lapisan pelindung.",
+        },
+        {
+          "title": "Kulit yang terasa merveilleux",
+          "body": "Seri yang ketara, kelembapan mendalam, lapisan pelindung yang utuh — di sinilah ritual anda bermula.",
+        },
+      ],
+    },
     "statsYears": "Tahun ketukangan",
     "statsFormulas": "Formula istimewa",
     "statsModules": "Modul latihan",

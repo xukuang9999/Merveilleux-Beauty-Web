@@ -61,6 +61,27 @@ const en = {
     exploreRange: "Explore the range",
     becomeDistributor: "Become a Distributor",
     lovedBy: "Loved by customers & distributors across Malaysia",
+    heroReel: {
+      scrollHint: "Scroll to explore",
+      chapters: [
+        {
+          title: "Skincare, the French way",
+          body: "Clean formulas made to French cosmetic standards — potent, skin-loving actives, honestly priced.",
+        },
+        {
+          title: "A routine mapped to your skin",
+          body: "Cleanse, treat, protect — matched to your skin and our climate, with Margaux, our AI advisor, guiding every step.",
+        },
+        {
+          title: "Actives that truly perform",
+          body: "Vitamin C, hyaluronic acid, ceramides, SPF50+ — serums, creams and masks for brightening, hydration and barrier repair.",
+        },
+        {
+          title: "Skin that feels merveilleux",
+          body: "Visible radiance, deep hydration, a barrier that holds — this is where your ritual begins.",
+        },
+      ],
+    },
     statsYears: "Years of craft",
     statsFormulas: "Signature formulas",
     statsModules: "Training modules",

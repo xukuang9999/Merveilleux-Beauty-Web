@@ -60,6 +60,27 @@ const zh: Dictionary = {
     "exploreRange": "探索系列",
     "becomeDistributor": "成为经销商",
     "lovedBy": "深受全马来西亚顾客与经销商喜爱",
+    "heroReel": {
+      "scrollHint": "向下滚动，一探究竟",
+      "chapters": [
+        {
+          "title": "法式护肤之道",
+          "body": "对标法国化妆品标准的洁净配方 —— 高效亲肤的活性成分，价格却很诚实。",
+        },
+        {
+          "title": "为你的肌肤量身定制",
+          "body": "清洁、护理、防护，贴合你的肤质与本地气候 —— 还有 AI 美容顾问 Margaux，全程为你指引。",
+        },
+        {
+          "title": "真正见效的活性成分",
+          "body": "维他命 C、玻尿酸、神经酰胺、SPF50+ —— 精华、面霜与面膜，提亮、保湿、修护屏障。",
+        },
+        {
+          "title": "令肌肤焕然一新",
+          "body": "看得见的光泽、深层的水润、稳固的屏障 —— 你的护肤仪式，从这里开始。",
+        },
+      ],
+    },
     "statsYears": "年匠心工艺",
     "statsFormulas": "款臻选配方",
     "statsModules": "个培训单元",

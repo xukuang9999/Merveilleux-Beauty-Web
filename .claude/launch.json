@@ -4,7 +4,8 @@
     {
       "name": "merveilleux",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "start", "--", "-p", "4311"],
+      "runtimeArgs": ["run", "start"],
+      "autoPort": true,
       "port": 4311
     }
   ]

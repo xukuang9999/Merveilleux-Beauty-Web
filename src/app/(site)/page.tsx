@@ -1,17 +1,13 @@
 import { Button, Container, SectionHeading, Stars, Divider } from "@/components/ui";
-import ProductCard from "@/components/ProductCard";
-import NewsCard from "@/components/NewsCard";
-import HeroAvatar from "@/components/HeroAvatar";
+import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Reveal from "@/components/Reveal";
-import Petals from "@/components/Petals";
 import Marquee from "@/components/Marquee";
 import Counter from "@/components/Counter";
 import Image from "next/image";
-import { getProducts, getTestimonials, getNews } from "@/lib/content";
+import { getProducts, getTestimonials } from "@/lib/content";
 import { seedModules } from "@/lib/seed-data";
 import { site } from "@/lib/data";
-import { getLocale, getDict, fmt } from "@/i18n/server";
-import { localizeModule } from "@/i18n/content";
+import { getDict } from "@/i18n/server";
 
 const ingredients = [
   "Vitamin C",
@@ -26,18 +22,12 @@ const ingredients = [
 ];
 
 export default async function Home() {
-  const [products, testimonials, news, locale, dict] = await Promise.all([
+  const [products, testimonials, dict] = await Promise.all([
     getProducts(),
     getTestimonials(),
-    getNews(3),
-    getLocale(),
     getDict(),
   ]);
   const d = dict.home;
-  const featured = products.slice(0, 4);
-  const modules = seedModules
-    .slice(0, 4)
-    .map((m) => localizeModule(m, locale));
   const years = new Date().getFullYear() - Number(site.established);
   const stats = [
     { value: years, suffix: "+", label: d.statsYears },
@@ -47,82 +37,32 @@ export default async function Home() {
   ];
   return (
     <>
-      {/* HERO — backlit-onyx wall, halo ceiling light, drifting motes */}
-      <section className="bg-onyx-glow relative overflow-hidden">
-        <Petals count={9} />
-        {/* halo cove-light rings */}
-        <div
-          aria-hidden
-          className="halo pointer-events-none absolute -top-64 left-1/2 h-[560px] w-[560px] -translate-x-1/2"
-        />
-        <div
-          aria-hidden
-          className="halo pointer-events-none absolute -top-72 left-1/2 h-[720px] w-[720px] -translate-x-1/2 opacity-60"
-          style={{ animationDelay: "-3.5s" }}
-        />
-        {/* vertical backlit slits, as in the panelled walls */}
-        <div aria-hidden className="light-slit absolute inset-y-14 left-8 hidden md:block" />
-        <div
-          aria-hidden
-          className="light-slit absolute inset-y-24 left-12 hidden md:block"
-          style={{ animationDelay: "-2.2s" }}
-        />
-        <div
-          aria-hidden
-          className="light-slit absolute inset-y-16 right-10 hidden md:block"
-          style={{ animationDelay: "-1.4s" }}
-        />
+      {/* HERO — cinematic scroll-scrubbed walkthrough of the flagship boutique.
+          Scrolling scrubs the clip reception → threshold → consultation →
+          treatment suites → relaxation, with copy anchored to each key frame. */}
+      <ScrollVideoHero
+        eyebrow={d.heroEyebrow}
+        titleBefore={d.heroTitleBefore}
+        titleHighlight={d.heroTitleHighlight}
+        body={d.heroBody}
+        exploreLabel={d.exploreRange}
+        joinLabel={d.becomeDistributor}
+        lovedBy={d.lovedBy}
+        scrollHint={d.heroReel.scrollHint}
+        chapters={d.heroReel.chapters}
+      />
 
-        <Container className="relative grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-2 lg:gap-8">
-          <div className="rise">
-            <p className="wordmark track-in text-xl text-bronze sm:text-2xl">
-              Mérvéilléux
-            </p>
-            <p className="mt-2.5 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.55em] text-gold">
-              <span aria-hidden className="rule-draw h-px w-12 bg-gold/70" />
-              Premium
-              <span aria-hidden className="rule-draw h-px w-12 bg-gold/70" />
-            </p>
-            <h1 className="mt-7 font-serif text-5xl font-light leading-[1.05] text-charcoal sm:text-6xl">
-              {d.heroTitleBefore}
-              <span className="gradient-text italic">{d.heroTitleHighlight}</span>
-              .
-            </h1>
-            <p className="mt-3 eyebrow">{d.heroEyebrow}</p>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-mid">
-              {d.heroBody}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/products">{d.exploreRange}</Button>
-              <Button href="/join" variant="outline">
-                {d.becomeDistributor}
-              </Button>
-            </div>
-            <div className="mt-10 flex items-center gap-4">
-              <Stars />
-              <p className="text-sm text-mid">{d.lovedBy}</p>
-            </div>
-          </div>
-
-          <div className="rise-2">
-            <HeroAvatar dict={dict.chat} />
-          </div>
-        </Container>
-
-        <div className="pointer-events-none flex justify-center pb-6">
-          <Image
-            src="/graphics/scroll-cue.svg"
-            alt=""
-            aria-hidden
-            width={28}
-            height={46}
-            className="float-slow h-11 w-auto opacity-70"
-          />
-        </div>
-      </section>
+      {/* Dissolve bridge — the boutique footage melts up into the page so the
+          film and the content below read as one continuous scroll, not a video
+          you finish and then a wall of text. The negative margin overlaps the
+          hero's final frames; the gradient fades them into the page. */}
+      <div
+        aria-hidden
+        className="pointer-events-none relative z-10 -mt-[42vh] h-[42vh] bg-gradient-to-b from-transparent via-porcelain/40 to-porcelain"
+      />
 
       {/* INGREDIENT MARQUEE */}
-      <section className="border-y border-line bg-porcelain/60 py-6">
+      <section className="relative z-10 border-b border-line bg-porcelain/60 py-6">
         <Marquee items={ingredients} />
       </section>
 
@@ -143,29 +83,6 @@ export default async function Home() {
               <p className="mt-2 text-sm leading-relaxed text-mid">{v.body}</p>
             </Reveal>
           ))}
-        </Container>
-      </section>
-
-      {/* PRODUCTS */}
-      <section className="py-20">
-        <Container>
-          <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-            <SectionHeading
-              eyebrow={d.collectionEyebrow}
-              title={d.collectionTitle}
-              description={d.collectionDesc}
-            />
-            <Button href="/products" variant="outline" className="shrink-0">
-              {fmt(d.viewAllProducts, { n: products.length })}
-            </Button>
-          </Reveal>
-          <div className="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
-            {featured.map((p, i) => (
-              <Reveal key={p.slug} variant="up" delay={i * 90}>
-                <ProductCard product={p} discoverLabel={dict.common.explore} />
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </section>
 
@@ -339,34 +256,6 @@ export default async function Home() {
         </Container>
       </section>
 
-      {/* NEWS / JOURNAL — latest from Instagram */}
-      {news.length > 0 && (
-        <section className="border-t border-line bg-porcelain/40 py-20">
-          <Container>
-            <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-              <SectionHeading
-                eyebrow={dict.news.eyebrow}
-                title={dict.news.homeTitle}
-                description={dict.news.homeIntro}
-              />
-              <Button href="/news" variant="outline" className="shrink-0">
-                {dict.news.allUpdates}
-              </Button>
-            </Reveal>
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
-              {news.map((item, i) => (
-                <Reveal key={item.code} variant="up" delay={i * 90}>
-                  <NewsCard
-                    item={item}
-                    locale={locale}
-                    viewLabel={dict.news.viewPost}
-                  />
-                </Reveal>
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* TESTIMONIALS TEASER */}
       <section className="border-t border-line py-20">
@@ -399,58 +288,6 @@ export default async function Home() {
               {d.readMoreStories}
             </Button>
           </div>
-        </Container>
-      </section>
-
-      {/* JOIN / TRAINING CTA */}
-      <section className="pb-24">
-        <Container>
-          <Reveal variant="zoom">
-            <div className="relative overflow-hidden rounded-[2px] border border-gold/30 p-10 sm:p-14">
-              <Image
-                src="/renders/theatre-wide.jpg"
-                alt=""
-                aria-hidden
-                fill
-                sizes="100vw"
-                className="object-cover"
-              />
-              <div aria-hidden className="absolute inset-0 bg-porcelain/85" />
-              <Petals count={6} />
-              <div className="relative grid items-center gap-8 lg:grid-cols-[1.3fr_1fr]">
-                <div>
-                  <p className="eyebrow mb-3">{d.ctaEyebrow}</p>
-                  <h2 className="font-serif text-3xl font-light leading-tight text-charcoal sm:text-4xl">
-                    {d.ctaTitle}
-                  </h2>
-                  <p className="mt-4 max-w-lg text-base leading-relaxed text-mid">
-                    {fmt(d.ctaBody, { n: seedModules.length })}
-                  </p>
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    <Button href="/join">{d.applyToJoin}</Button>
-                    <Button href="/training" variant="outline">
-                      {d.seeTraining}
-                    </Button>
-                  </div>
-                </div>
-                <ul className="space-y-3">
-                  {modules.map((m) => (
-                    <li
-                      key={m.ord}
-                      className="flex items-center gap-3 rounded-[2px] border border-line bg-porcelain/80 px-4 py-3 transition-transform duration-300 hover:translate-x-1"
-                    >
-                      <span className="text-xl">{m.icon}</span>
-                      <div>
-                        <p className="text-sm font-medium text-charcoal">
-                          {m.title}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
         </Container>
       </section>
     </>
