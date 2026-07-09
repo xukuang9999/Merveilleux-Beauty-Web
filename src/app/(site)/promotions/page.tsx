@@ -4,8 +4,7 @@ import Image from "next/image";
 import { isFeatureEnabled } from "@/lib/settings";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
-import { getProducts } from "@/lib/content";
-import { seedBundles } from "@/lib/seed-data";
+import { getProducts, getPromotions } from "@/lib/content";
 import { whatsappLink } from "@/lib/data";
 import { getDict, fmt } from "@/i18n/server";
 
@@ -17,7 +16,11 @@ export const metadata: Metadata = {
 
 export default async function PromotionsPage() {
   if (!(await isFeatureEnabled("promotions"))) notFound();
-  const [products, dict] = await Promise.all([getProducts(), getDict()]);
+  const [promos, products, dict] = await Promise.all([
+    getPromotions(),
+    getProducts(),
+    getDict(),
+  ]);
   const p = dict.promotions;
   const nameBySlug = new Map(products.map((pr) => [pr.slug, pr.name]));
 
@@ -35,8 +38,7 @@ export default async function PromotionsPage() {
       {/* BUNDLES */}
       <Container className="py-16">
         <div className="grid gap-8 lg:grid-cols-3">
-          {seedBundles.map((b, i) => {
-            const copy = p.bundles[i];
+          {promos.map((b, i) => {
             const items = b.productSlugs.map((s) => nameBySlug.get(s) ?? s);
             return (
               <Reveal key={b.slug} variant="up" delay={i * 100}>
@@ -44,23 +46,23 @@ export default async function PromotionsPage() {
                   <div className="relative aspect-[4/3] overflow-hidden bg-onyx-glow">
                     <Image
                       src={b.graphic}
-                      alt={copy.title}
+                      alt={b.title}
                       fill
                       sizes="(max-width: 1024px) 100vw, 33vw"
                       className="object-cover"
                     />
-                    {copy.tag && (
+                    {b.tag && (
                       <span className="absolute left-4 top-4 rounded-full bg-charcoal px-3 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-cream">
-                        {copy.tag}
+                        {b.tag}
                       </span>
                     )}
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="font-serif text-2xl text-charcoal">
-                      {copy.title}
+                      {b.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-mid">
-                      {copy.desc}
+                      {b.description}
                     </p>
 
                     <p className="eyebrow mb-2 mt-5">{p.includes}</p>
@@ -91,7 +93,7 @@ export default async function PromotionsPage() {
                     <div className="mt-6">
                       <Button
                         href={whatsappLink(
-                          `Hi Merveilleux Beauty, I'd like to enquire about the ${copy.title} (${b.priceRM}).`,
+                          `Hi Merveilleux Beauty, I'd like to enquire about the ${b.title} (${b.priceRM}).`,
                         )}
                         variant="gold"
                         external

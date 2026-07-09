@@ -35,6 +35,11 @@ export default async function AdminPage() {
 
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <AdminLink href="/admin/products" icon="💄" label={d.linkProducts} />
+        <AdminLink
+          href="/admin/promotions"
+          icon="🏷️"
+          label={d.linkPromotions}
+        />
         <AdminLink href="/admin/kb" icon="📚" label={d.linkKb} />
         <AdminLink href="/admin/progress" icon="📈" label={d.linkProgress} />
         {isMasterAdmin(me.role) && (

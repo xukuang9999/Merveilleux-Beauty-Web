@@ -186,7 +186,29 @@ export const siteCopy = sqliteTable(
   (t) => [unique().on(t.key, t.locale)],
 );
 
+// Promotions / bundles — admin-managed. Localised copy (title/description/tag)
+// is stored per-locale as JSON; a missing locale falls back to English.
+export const promotions = sqliteTable("promotions", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  slug: text("slug").notNull().unique(),
+  title: text("title", { mode: "json" }).$type<Record<string, string>>().notNull(),
+  description: text("description", { mode: "json" })
+    .$type<Record<string, string>>()
+    .notNull(),
+  tag: text("tag", { mode: "json" }).$type<Record<string, string>>(),
+  priceRM: text("price_rm").notNull(),
+  wasRM: text("was_rm").notNull(),
+  saveRM: text("save_rm").notNull(),
+  graphic: text("graphic").notNull(),
+  productSlugs: text("product_slugs", { mode: "json" })
+    .$type<string[]>()
+    .notNull(),
+  sortOrder: integer("sort_order").notNull().default(0),
+  published: integer("published", { mode: "boolean" }).notNull().default(true),
+});
+
 export type User = typeof users.$inferSelect;
+export type Promotion = typeof promotions.$inferSelect;
 export type Product = typeof products.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;
 export type Faq = typeof faqs.$inferSelect;

@@ -16,6 +16,7 @@ import {
   featureFlags,
   siteSettings,
   siteCopy,
+  promotions,
 } from "@/db/schema";
 import { COPY_ITEMS } from "./copy-registry";
 import { getDictionary } from "@/i18n/server";
@@ -78,6 +79,58 @@ export async function deleteProduct(formData: FormData) {
   if (id) await db.delete(products).where(eq(products.id, id));
   revalidatePath("/admin/products");
   revalidatePath("/products");
+}
+
+// Promotions are admin-tier (both admin and master). Localised title/desc/tag
+// are collected per-locale from the form and stored as JSON.
+export async function savePromotion(formData: FormData) {
+  await ensureAdmin();
+  const idRaw = formData.get("id");
+  const id = idRaw ? Number(idRaw) : null;
+
+  const perLocale = (prefix: string): Record<string, string> => {
+    const o: Record<string, string> = {};
+    for (const l of locales) o[l] = String(formData.get(`${prefix}_${l}`) || "").trim();
+    return o;
+  };
+
+  const title = perLocale("title");
+  const description = perLocale("desc");
+  const tagObj = perLocale("tag");
+  const tag = locales.some((l) => tagObj[l]) ? tagObj : null;
+
+  const values = {
+    slug: String(formData.get("slug") || "").trim(),
+    title,
+    description,
+    tag,
+    priceRM: String(formData.get("priceRM") || "").trim(),
+    wasRM: String(formData.get("wasRM") || "").trim(),
+    saveRM: String(formData.get("saveRM") || "").trim(),
+    graphic:
+      String(formData.get("graphic") || "").trim() ||
+      "/products/oxy-bright-serum.jpg",
+    productSlugs: toList(formData.get("productSlugs")),
+    sortOrder: Number(formData.get("sortOrder") || 0),
+    published: formData.get("published") === "on",
+  };
+  if (!values.slug || !title.en) return; // require slug + English title
+
+  if (id) {
+    await db.update(promotions).set(values).where(eq(promotions.id, id));
+  } else {
+    await db.insert(promotions).values(values);
+  }
+  revalidatePath("/admin/promotions");
+  revalidatePath("/promotions");
+}
+
+export async function deletePromotion(formData: FormData) {
+  await ensureAdmin();
+  const id = Number(formData.get("id"));
+  if (id) await db.delete(promotions).where(eq(promotions.id, id));
+  revalidatePath("/admin/promotions");
+  revalidatePath("/promotions");
 }
 
 export async function setUserRole(formData: FormData) {

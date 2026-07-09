@@ -14,6 +14,7 @@ import {
   kbArticles,
   sessions,
   trainingProgress,
+  promotions,
 } from "./schema";
 import { hashPassword } from "../lib/auth-core";
 import {
@@ -22,7 +23,11 @@ import {
   seedFaqs,
   seedModules,
   seedKbArticles,
+  seedBundles,
 } from "../lib/seed-data";
+import enDict from "../i18n/dictionaries/en";
+import zhDict from "../i18n/dictionaries/zh";
+import msDict from "../i18n/dictionaries/ms";
 import { randomUUID } from "crypto";
 
 async function main() {
@@ -36,6 +41,7 @@ async function main() {
   await db.delete(testimonials);
   await db.delete(faqs);
   await db.delete(kbArticles);
+  await db.delete(promotions);
   await db.delete(sessions);
   await db.delete(users);
 
@@ -77,6 +83,36 @@ async function main() {
   await db.insert(testimonials).values(seedTestimonials);
   await db.insert(faqs).values(seedFaqs);
   await db.insert(kbArticles).values(seedKbArticles);
+
+  // Promotions — structural data from seedBundles, trilingual copy from the
+  // dictionaries (one language per locale).
+  await db.insert(promotions).values(
+    seedBundles.map((b, i) => ({
+      slug: b.slug,
+      title: {
+        en: enDict.promotions.bundles[i].title,
+        zh: zhDict.promotions.bundles[i].title,
+        ms: msDict.promotions.bundles[i].title,
+      },
+      description: {
+        en: enDict.promotions.bundles[i].desc,
+        zh: zhDict.promotions.bundles[i].desc,
+        ms: msDict.promotions.bundles[i].desc,
+      },
+      tag: {
+        en: enDict.promotions.bundles[i].tag,
+        zh: zhDict.promotions.bundles[i].tag,
+        ms: msDict.promotions.bundles[i].tag,
+      },
+      priceRM: b.priceRM,
+      wasRM: b.wasRM,
+      saveRM: b.saveRM,
+      graphic: b.graphic,
+      productSlugs: b.productSlugs,
+      sortOrder: i,
+      published: true,
+    })),
+  );
 
   // Training modules + quiz questions
   for (const m of seedModules) {

@@ -3,16 +3,18 @@
 // translations (English is the canonical source).
 import { asc, eq } from "drizzle-orm";
 import { db } from "@/db";
-import { products, testimonials, faqs } from "@/db/schema";
+import { products, testimonials, faqs, promotions } from "@/db/schema";
 import {
   seedProducts,
   seedTestimonials,
   seedFaqs,
   seedKbArticles,
   seedNews,
+  seedBundles,
   type SeedProduct,
 } from "./seed-data";
-import { getLocale } from "@/i18n/server";
+import { getLocale, getDictionary } from "@/i18n/server";
+import type { Locale } from "@/i18n/config";
 import { contentPack } from "@/i18n/content";
 
 export type ProductView = Omit<SeedProduct, "sortOrder">;
@@ -158,6 +160,75 @@ export async function getNews(limit?: number): Promise<NewsView[]> {
       excerpt: n.excerpt[locale],
     }));
   return limit ? items.slice(0, limit) : items;
+}
+
+export type PromotionView = {
+  slug: string;
+  title: string;
+  description: string;
+  tag: string | null;
+  priceRM: string;
+  wasRM: string;
+  saveRM: string;
+  graphic: string;
+  productSlugs: string[];
+};
+
+function pickLocale(
+  map: Record<string, string> | null | undefined,
+  locale: string,
+): string {
+  if (!map) return "";
+  return map[locale] ?? map.en ?? Object.values(map)[0] ?? "";
+}
+
+// Fallback projection from the curated seed bundles + dictionary copy, used
+// when the promotions table is empty (unseeded) or the DB is unreachable.
+function seedPromotionViews(locale: Locale): PromotionView[] {
+  const bundles = getDictionary(locale).promotions.bundles;
+  return seedBundles.map((b, i) => {
+    const copy = bundles[i];
+    return {
+      slug: b.slug,
+      title: copy?.title ?? b.slug,
+      description: copy?.desc ?? "",
+      tag: copy?.tag ?? null,
+      priceRM: b.priceRM,
+      wasRM: b.wasRM,
+      saveRM: b.saveRM,
+      graphic: b.graphic,
+      productSlugs: b.productSlugs,
+    };
+  });
+}
+
+/** Published promotions for the public page, localised. The DB is the source
+ *  of truth once it holds any rows (so unpublishing all yields an empty list);
+ *  an empty/unseeded table or an unreachable DB falls back to the seed bundles. */
+export async function getPromotions(): Promise<PromotionView[]> {
+  const locale = await getLocale();
+  try {
+    const rows = await db.select().from(promotions);
+    if (rows.length) {
+      return rows
+        .filter((r) => r.published)
+        .sort((a, b) => a.sortOrder - b.sortOrder)
+        .map((r) => ({
+          slug: r.slug,
+          title: pickLocale(r.title, locale),
+          description: pickLocale(r.description, locale),
+          tag: r.tag ? pickLocale(r.tag, locale) || null : null,
+          priceRM: r.priceRM,
+          wasRM: r.wasRM,
+          saveRM: r.saveRM,
+          graphic: r.graphic,
+          productSlugs: r.productSlugs,
+        }));
+    }
+  } catch {
+    // fall through to the curated seed bundles
+  }
+  return seedPromotionViews(locale);
 }
 
 export async function getFaqs(): Promise<FaqView[]> {
