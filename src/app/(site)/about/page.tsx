@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button, Container, SectionHeading, Divider } from "@/components/ui";
 import Reveal from "@/components/Reveal";
+import { getCopy } from "@/lib/settings";
 import { getDict } from "@/i18n/server";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const dict = await getDict();
+  const [dict, copy] = await Promise.all([getDict(), getCopy()]);
   const a = dict.about;
 
   return (
@@ -20,7 +21,11 @@ export default async function AboutPage() {
       <section className="border-b border-line bg-porcelain/60 py-16 sm:py-20">
         <Container>
           <Reveal>
-            <SectionHeading eyebrow={a.eyebrow} title={a.title} description={a.intro} />
+            <SectionHeading
+              eyebrow={copy("about.eyebrow", a.eyebrow)}
+              title={copy("about.title", a.title)}
+              description={copy("about.intro", a.intro)}
+            />
           </Reveal>
         </Container>
       </section>

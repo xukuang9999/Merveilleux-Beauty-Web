@@ -45,6 +45,7 @@ export default async function AdminPage() {
               icon="🎨"
               label={d.linkAppearance}
             />
+            <AdminLink href="/admin/content" icon="📝" label={d.linkContent} />
             <AdminLink
               href="/admin/features"
               icon="🎚️"

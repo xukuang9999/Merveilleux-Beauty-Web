@@ -5,7 +5,7 @@ import Marquee from "@/components/Marquee";
 import Counter from "@/components/Counter";
 import Image from "next/image";
 import { getProducts, getTestimonials } from "@/lib/content";
-import { getFeatureFlags } from "@/lib/settings";
+import { getFeatureFlags, getCopy } from "@/lib/settings";
 import { seedModules } from "@/lib/seed-data";
 import { site } from "@/lib/data";
 import { getDict } from "@/i18n/server";
@@ -23,11 +23,12 @@ const ingredients = [
 ];
 
 export default async function Home() {
-  const [products, testimonials, dict, flags] = await Promise.all([
+  const [products, testimonials, dict, flags, copy] = await Promise.all([
     getProducts(),
     getTestimonials(),
     getDict(),
     getFeatureFlags(),
+    getCopy(),
   ]);
   const d = dict.home;
   const years = new Date().getFullYear() - Number(site.established);
@@ -43,10 +44,10 @@ export default async function Home() {
           Scrolling scrubs the clip reception → threshold → consultation →
           treatment suites → relaxation, with copy anchored to each key frame. */}
       <ScrollVideoHero
-        eyebrow={d.heroEyebrow}
-        titleBefore={d.heroTitleBefore}
-        titleHighlight={d.heroTitleHighlight}
-        body={d.heroBody}
+        eyebrow={copy("home.heroEyebrow", d.heroEyebrow)}
+        titleBefore={copy("home.heroTitleBefore", d.heroTitleBefore)}
+        titleHighlight={copy("home.heroTitleHighlight", d.heroTitleHighlight)}
+        body={copy("home.heroBody", d.heroBody)}
         exploreLabel={d.exploreRange}
         joinLabel={d.becomeDistributor}
         lovedBy={d.lovedBy}

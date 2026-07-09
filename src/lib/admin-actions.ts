@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import {
   requireAdmin,
@@ -15,7 +15,11 @@ import {
   kbArticles,
   featureFlags,
   siteSettings,
+  siteCopy,
 } from "@/db/schema";
+import { COPY_ITEMS } from "./copy-registry";
+import { getDictionary } from "@/i18n/server";
+import { locales } from "@/i18n/config";
 import {
   FEATURE_KEYS,
   type FeatureKey,
@@ -184,4 +188,37 @@ export async function resetAppearance() {
   await db.delete(siteSettings).where(eq(siteSettings.key, APPEARANCE_KEY));
   revalidatePath("/", "layout");
   revalidatePath("/admin/appearance");
+}
+
+// Editable page copy is master-only. Each (field, locale) is edited in its own
+// input; a value equal to the dictionary default (or blank) removes the
+// override so the field falls back — the table only stores real overrides.
+export async function saveCopy(formData: FormData) {
+  await requireMasterAdmin();
+
+  for (const item of COPY_ITEMS) {
+    for (const locale of locales) {
+      const raw = String(formData.get(`${item.key}__${locale}`) ?? "").trim();
+      const def = item.resolve(getDictionary(locale)).trim();
+
+      if (!raw || raw === def) {
+        await db
+          .delete(siteCopy)
+          .where(
+            and(eq(siteCopy.key, item.key), eq(siteCopy.locale, locale)),
+          );
+      } else {
+        await db
+          .insert(siteCopy)
+          .values({ key: item.key, locale, value: raw, updatedAt: new Date() })
+          .onConflictDoUpdate({
+            target: [siteCopy.key, siteCopy.locale],
+            set: { value: raw, updatedAt: new Date() },
+          });
+      }
+    }
+  }
+
+  revalidatePath("/", "layout");
+  revalidatePath("/admin/content");
 }

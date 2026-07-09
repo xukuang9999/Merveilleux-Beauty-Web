@@ -37,6 +37,7 @@ export default function DashboardShell({
   const masterOnly: NavItem[] = [
     { href: "/admin/users", label: dict.users, icon: "👤" },
     { href: "/admin/appearance", label: dict.appearance, icon: "🎨" },
+    { href: "/admin/content", label: dict.content, icon: "📝" },
     { href: "/admin/features", label: dict.features, icon: "🎚️" },
   ];
 

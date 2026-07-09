@@ -169,6 +169,23 @@ export const siteSettings = sqliteTable("site_settings", {
     .$defaultFn(() => new Date()),
 });
 
+// Per-locale overrides for editable page copy. One row per (key, locale);
+// a missing row falls back to the dictionary default. One language per locale
+// is enforced by editing each locale in its own field (see /admin/content).
+export const siteCopy = sqliteTable(
+  "site_copy",
+  {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    key: text("key").notNull(),
+    locale: text("locale").notNull(),
+    value: text("value").notNull(),
+    updatedAt: integer("updated_at", { mode: "timestamp" })
+      .notNull()
+      .$defaultFn(() => new Date()),
+  },
+  (t) => [unique().on(t.key, t.locale)],
+);
+
 export type User = typeof users.$inferSelect;
 export type Product = typeof products.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;

@@ -4,7 +4,8 @@
 import { cache } from "react";
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
-import { featureFlags, siteSettings } from "@/db/schema";
+import { featureFlags, siteSettings, siteCopy } from "@/db/schema";
+import { getLocale } from "@/i18n/server";
 
 export type FeatureKey =
   | "aiChat"
@@ -147,6 +148,36 @@ export const getAppearance = cache(async (): Promise<Appearance> => {
   }
   return base;
 });
+
+// ---- Editable site copy -----------------------------------------
+// Per-locale overrides for main-page copy; unset keys fall back to the
+// dictionary default. See src/lib/copy-registry.ts for the editable fields.
+
+/** Copy overrides for a locale (cached): key → override value. */
+export const getCopyOverrides = cache(
+  async (locale: string): Promise<Map<string, string>> => {
+    const map = new Map<string, string>();
+    try {
+      const rows = await db
+        .select()
+        .from(siteCopy)
+        .where(eq(siteCopy.locale, locale));
+      for (const r of rows) map.set(r.key, r.value);
+    } catch {
+      // DB unavailable — no overrides, callers use their dictionary defaults.
+    }
+    return map;
+  },
+);
+
+/** Resolver for the current request's locale: `copy(key, fallback)` returns
+ *  the stored override or the passed dictionary default. */
+export const getCopy = cache(
+  async (): Promise<(key: string, fallback: string) => string> => {
+    const overrides = await getCopyOverrides(await getLocale());
+    return (key, fallback) => overrides.get(key) ?? fallback;
+  },
+);
 
 /** Inline CSS custom properties for <html>, containing only the values that
  *  differ from the compiled defaults (empty object when fully default). */

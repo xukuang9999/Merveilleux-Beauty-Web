@@ -503,6 +503,7 @@ const zh: Dictionary = {
     "users": "用户",
     "enquiries": "咨询",
     "appearance": "外观",
+    "content": "网站文案",
     "features": "功能",
     "signOut": "退出登录",
     "roleCustomer": "顾客",
@@ -525,7 +526,19 @@ const zh: Dictionary = {
     "linkEnquiries": "咨询",
     "viewLiveSite": "查看线上网站",
     "linkAppearance": "外观",
+    "linkContent": "网站文案",
     "linkFeatures": "功能开关",
+    "content": {
+      "eyebrow": "管理 · 网站",
+      "title": "网站文案",
+      "sub": "编辑主要页面的文案。每种语言单独编辑——清空字段即可恢复默认。",
+      "save": "保存文案",
+      "groups": {
+        "home": "首页",
+        "about": "关于",
+        "contact": "联系"
+      }
+    },
     "appearance": {
       "eyebrow": "管理 · 网站",
       "title": "外观",

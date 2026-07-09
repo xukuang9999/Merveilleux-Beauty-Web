@@ -4,6 +4,7 @@ import { Container } from "@/components/ui";
 import EnquiryForm from "@/components/EnquiryForm";
 import MapEmbed from "@/components/MapEmbed";
 import { site, whatsappLink, mapsLink } from "@/lib/data";
+import { getCopy } from "@/lib/settings";
 import { getDict } from "@/i18n/server";
 
 export const metadata: Metadata = {
@@ -13,20 +14,22 @@ export const metadata: Metadata = {
 };
 
 export default async function ContactPage() {
-  const dict = await getDict();
+  const [dict, copy] = await Promise.all([getDict(), getCopy()]);
   const d = dict.contact;
 
   return (
     <section className="py-16 sm:py-20">
       <Container className="grid gap-14 lg:grid-cols-[1fr_1.1fr]">
         <div>
-          <p className="eyebrow mb-3">{d.eyebrow}</p>
+          <p className="eyebrow mb-3">{copy("contact.eyebrow", d.eyebrow)}</p>
           <h1 className="font-serif text-4xl font-medium leading-tight text-charcoal sm:text-5xl">
-            {d.titleBefore}
-            <span className="italic text-bronze">{d.titleHighlight}</span>
+            {copy("contact.titleBefore", d.titleBefore)}
+            <span className="italic text-bronze">
+              {copy("contact.titleHighlight", d.titleHighlight)}
+            </span>
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-mid">
-            {d.body}
+            {copy("contact.body", d.body)}
           </p>
 
           <div className="mt-10 space-y-4">

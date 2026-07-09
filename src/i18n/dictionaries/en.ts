@@ -534,6 +534,7 @@ const en = {
     users: "Users",
     enquiries: "Enquiries",
     appearance: "Appearance",
+    content: "Site Copy",
     features: "Features",
     signOut: "Sign out",
     roleCustomer: "Customer",
@@ -556,7 +557,19 @@ const en = {
     linkEnquiries: "Enquiries",
     viewLiveSite: "View live site",
     linkAppearance: "Appearance",
+    linkContent: "Site Copy",
     linkFeatures: "Feature Flags",
+    content: {
+      eyebrow: "Admin · Site",
+      title: "Site copy",
+      sub: "Edit the main pages' copy. Each language is edited on its own — clear a field to restore its default.",
+      save: "Save copy",
+      groups: {
+        home: "Home",
+        about: "About",
+        contact: "Contact",
+      },
+    },
     appearance: {
       eyebrow: "Admin · Site",
       title: "Appearance",

@@ -503,6 +503,7 @@ const ms: Dictionary = {
     "users": "Pengguna",
     "enquiries": "Pertanyaan",
     "appearance": "Rupa",
+    "content": "Teks Laman",
     "features": "Ciri",
     "signOut": "Log keluar",
     "roleCustomer": "Pelanggan",
@@ -525,7 +526,19 @@ const ms: Dictionary = {
     "linkEnquiries": "Pertanyaan",
     "viewLiveSite": "Lihat laman langsung",
     "linkAppearance": "Rupa",
+    "linkContent": "Teks Laman",
     "linkFeatures": "Bendera Ciri",
+    "content": {
+      "eyebrow": "Admin · Laman",
+      "title": "Teks laman",
+      "sub": "Sunting teks halaman utama. Setiap bahasa disunting berasingan — kosongkan medan untuk kembali ke lalai.",
+      "save": "Simpan teks",
+      "groups": {
+        "home": "Laman Utama",
+        "about": "Tentang",
+        "contact": "Hubungi"
+      }
+    },
     "appearance": {
       "eyebrow": "Admin · Laman",
       "title": "Rupa",
