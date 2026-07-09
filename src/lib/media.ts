@@ -66,3 +66,25 @@ export async function storeImage(file: File): Promise<UploadResult> {
     size: buffer.length,
   };
 }
+
+/** Best-effort removal of a stored asset (Blob in prod, local file in dev).
+ *  Never throws — the caller still removes the DB record. */
+export async function deleteStoredImage(
+  pathname: string,
+  url: string,
+): Promise<void> {
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
+    try {
+      const { del } = await import("@vercel/blob");
+      await del(url);
+    } catch {
+      // already gone / transient — the DB row is removed regardless
+    }
+    return;
+  }
+  try {
+    await fs.unlink(path.join(process.cwd(), "public", pathname));
+  } catch {
+    // file already absent
+  }
+}

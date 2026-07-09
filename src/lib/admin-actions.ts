@@ -17,7 +17,9 @@ import {
   siteSettings,
   siteCopy,
   promotions,
+  mediaAssets,
 } from "@/db/schema";
+import { deleteStoredImage } from "./media";
 import { COPY_ITEMS } from "./copy-registry";
 import { getDictionary } from "@/i18n/server";
 import { locales } from "@/i18n/config";
@@ -131,6 +133,23 @@ export async function deletePromotion(formData: FormData) {
   if (id) await db.delete(promotions).where(eq(promotions.id, id));
   revalidatePath("/admin/promotions");
   revalidatePath("/promotions");
+}
+
+// Deleting media (removing the underlying file/blob too) is master-only.
+// Uploading is admin-tier and handled by the /api/admin/media route.
+export async function deleteMediaAsset(formData: FormData) {
+  await requireMasterAdmin();
+  const id = Number(formData.get("id"));
+  if (!id) return;
+  const [asset] = await db
+    .select()
+    .from(mediaAssets)
+    .where(eq(mediaAssets.id, id))
+    .limit(1);
+  if (!asset) return;
+  await deleteStoredImage(asset.pathname, asset.url);
+  await db.delete(mediaAssets).where(eq(mediaAssets.id, id));
+  revalidatePath("/admin/media");
 }
 
 export async function setUserRole(formData: FormData) {

@@ -40,6 +40,7 @@ export default async function AdminPage() {
           icon="🏷️"
           label={d.linkPromotions}
         />
+        <AdminLink href="/admin/media" icon="🖼️" label={d.linkMedia} />
         <AdminLink href="/admin/kb" icon="📚" label={d.linkKb} />
         <AdminLink href="/admin/progress" icon="📈" label={d.linkProgress} />
         {isMasterAdmin(me.role) && (

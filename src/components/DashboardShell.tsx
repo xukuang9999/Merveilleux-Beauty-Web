@@ -29,6 +29,7 @@ export default function DashboardShell({
     { href: "/admin", label: dict.dashboard, icon: "🏠" },
     { href: "/admin/products", label: dict.products, icon: "💄" },
     { href: "/admin/promotions", label: dict.promotions, icon: "🏷️" },
+    { href: "/admin/media", label: dict.media, icon: "🖼️" },
     { href: "/admin/kb", label: dict.knowledgeBase, icon: "📚" },
     { href: "/admin/progress", label: dict.trainingProgress, icon: "📈" },
     { href: "/admin/enquiries", label: dict.enquiries, icon: "✉️" },
