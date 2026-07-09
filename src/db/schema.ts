@@ -169,6 +169,24 @@ export const siteSettings = sqliteTable("site_settings", {
     .$defaultFn(() => new Date()),
 });
 
+// Uploaded media (product photos, marketing material). Stores the public URL
+// plus the backend pathname (Vercel Blob key, or the local /products path in
+// dev) so an asset can be located/deleted later.
+export const mediaAssets = sqliteTable("media_assets", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  url: text("url").notNull(),
+  pathname: text("pathname").notNull(),
+  kind: text("kind").notNull().default("image"),
+  contentType: text("content_type").notNull(),
+  size: integer("size").notNull(),
+  uploadedBy: text("uploaded_by").references(() => users.id, {
+    onDelete: "set null",
+  }),
+  createdAt: integer("created_at", { mode: "timestamp" })
+    .notNull()
+    .$defaultFn(() => new Date()),
+});
+
 // Per-locale overrides for editable page copy. One row per (key, locale);
 // a missing row falls back to the dictionary default. One language per locale
 // is enforced by editing each locale in its own field (see /admin/content).

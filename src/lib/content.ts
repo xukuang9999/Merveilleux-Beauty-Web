@@ -71,6 +71,26 @@ export async function getProducts(): Promise<ProductView[]> {
     });
   }
 
+  // Products created in the admin (a slug not in the seed catalogue) are shown
+  // after the curated range when published. Legacy/unpublished orphans stay
+  // hidden, preserving the storefront-can-never-blank-out guarantee.
+  const seedSlugs = new Set(base.map((p) => p.slug));
+  const extra = [...edits.values()]
+    .filter((r) => !seedSlugs.has(r.slug) && r.published)
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .map((r) => ({
+      slug: r.slug,
+      name: r.name,
+      type: r.type,
+      tagline: r.tagline,
+      description: r.description,
+      keyIngredients: r.keyIngredients,
+      benefits: r.benefits,
+      priceRM: r.priceRM,
+      graphic: r.graphic,
+    }));
+  rows.push(...extra);
+
   if (!pack) return rows;
   return rows.map((p) => {
     const t = pack.products[p.slug];

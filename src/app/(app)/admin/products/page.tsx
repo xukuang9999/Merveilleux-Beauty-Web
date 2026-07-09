@@ -4,6 +4,7 @@ import { db } from "@/db";
 import { products, type Product } from "@/db/schema";
 import { saveProduct, deleteProduct } from "@/lib/admin-actions";
 import { DashHeading } from "@/components/dash";
+import ImageUploadField from "@/components/ImageUploadField";
 import { getDict } from "@/i18n/server";
 
 const input =
@@ -100,12 +101,11 @@ function ProductForm({
           <label className={label}>Tagline</label>
           <input name="tagline" defaultValue={product?.tagline} className={input} />
         </div>
-        <div>
-          <label className={label}>Graphic path</label>
-          <input
+        <div className="sm:col-span-2">
+          <ImageUploadField
             name="graphic"
-            defaultValue={product?.graphic ?? "/products/oxy-bright-serum.jpg"}
-            className={input}
+            defaultValue={product?.graphic ?? ""}
+            label="Product image"
           />
         </div>
         <div>
