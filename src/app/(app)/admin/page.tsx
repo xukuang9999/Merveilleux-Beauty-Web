@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { desc } from "drizzle-orm";
-import { requireRole } from "@/lib/auth";
+import { requireAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { products, users, enquiries, kbArticles } from "@/db/schema";
 import { DashHeading, StatCard, Panel } from "@/components/dash";
 import { getDict, fmt } from "@/i18n/server";
 
 export default async function AdminPage() {
-  await requireRole(["admin"]);
+  await requireAdmin();
   const [prod, usr, enq, kb, dict] = await Promise.all([
     db.select().from(products),
     db.select().from(users),

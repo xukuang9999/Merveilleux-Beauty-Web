@@ -21,7 +21,10 @@ export default async function TrainingPage() {
   ]);
   const d = dict.training;
   const isDistributor =
-    user && (user.role === "distributor" || user.role === "admin");
+    user &&
+    (user.role === "distributor" ||
+      user.role === "admin" ||
+      user.role === "master_admin");
   const modules = seedModules.map((m) => localizeModule(m, locale));
 
   const stats: { num?: number; text?: string; label: string }[] = [

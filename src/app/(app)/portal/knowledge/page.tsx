@@ -5,7 +5,7 @@ import KbBrowser from "@/components/KbBrowser";
 import { getDict } from "@/i18n/server";
 
 export default async function KnowledgePage() {
-  await requireRole(["distributor", "admin"]);
+  await requireRole(["distributor", "admin", "master_admin"]);
   const [articles, dict] = await Promise.all([getKbArticles(), getDict()]);
   const d = dict.knowledge;
 

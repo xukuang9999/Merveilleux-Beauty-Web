@@ -2,12 +2,12 @@
 
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { requireRole, deleteUserSessions, type Role } from "./auth";
+import { requireAdmin, deleteUserSessions, type Role } from "./auth";
 import { db } from "@/db";
 import { products, users, kbArticles } from "@/db/schema";
 
 async function ensureAdmin() {
-  return requireRole(["admin"]);
+  return requireAdmin();
 }
 
 function toList(v: FormDataEntryValue | null): string[] {

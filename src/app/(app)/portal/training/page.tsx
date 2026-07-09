@@ -5,7 +5,7 @@ import PortalTraining from "@/components/PortalTraining";
 import { getDict, fmt } from "@/i18n/server";
 
 export default async function PortalTrainingPage() {
-  const user = await requireRole(["distributor", "admin"]);
+  const user = await requireRole(["distributor", "admin", "master_admin"]);
   const [modules, progress, dict] = await Promise.all([
     getModulesWithQuiz(),
     getUserProgress(user.id),

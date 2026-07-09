@@ -1,5 +1,5 @@
 import { desc } from "drizzle-orm";
-import { requireRole } from "@/lib/auth";
+import { requireAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { users } from "@/db/schema";
 import { setUserRole } from "@/lib/admin-actions";
@@ -9,7 +9,7 @@ import { getDict } from "@/i18n/server";
 const ROLES = ["customer", "distributor", "admin"] as const;
 
 export default async function AdminUsersPage() {
-  const me = await requireRole(["admin"]);
+  const me = await requireAdmin();
   const [rows, dict] = await Promise.all([
     db.select().from(users).orderBy(desc(users.createdAt)),
     getDict(),

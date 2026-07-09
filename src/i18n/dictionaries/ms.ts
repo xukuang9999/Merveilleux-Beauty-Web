@@ -505,7 +505,8 @@ const ms: Dictionary = {
     "signOut": "Log keluar",
     "roleCustomer": "Pelanggan",
     "roleDistributor": "Pengedar",
-    "roleAdmin": "Admin"
+    "roleAdmin": "Admin",
+    "roleMasterAdmin": "Admin Utama"
   },
   "admin": {
     "eyebrowDashboard": "Admin",

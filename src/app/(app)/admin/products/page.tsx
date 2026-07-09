@@ -1,5 +1,5 @@
 import { asc } from "drizzle-orm";
-import { requireRole } from "@/lib/auth";
+import { requireAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { products, type Product } from "@/db/schema";
 import { saveProduct, deleteProduct } from "@/lib/admin-actions";
@@ -11,7 +11,7 @@ const input =
 const label = "mb-1 block text-[11px] font-semibold uppercase tracking-wide text-mid";
 
 export default async function AdminProductsPage() {
-  await requireRole(["admin"]);
+  await requireAdmin();
   const [rows, dict] = await Promise.all([
     db.select().from(products).orderBy(asc(products.sortOrder)),
     getDict(),

@@ -12,7 +12,7 @@ export async function submitQuiz(
   answers: number[],
 ): Promise<{ score: number; passed: boolean }> {
   // Gate the write-path to the same roles as the training pages/chat.
-  const user = await requireRole(["distributor", "admin"]);
+  const user = await requireRole(["distributor", "admin", "master_admin"]);
 
   const qs = await db
     .select()

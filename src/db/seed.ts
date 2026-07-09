@@ -43,8 +43,15 @@ async function main() {
   const demoUsers = [
     {
       id: randomUUID(),
-      email: "admin@merveilleux.test",
+      email: "master@merveilleux.test",
       name: "Grace Phua",
+      passwordHash: hashPassword("master1234"),
+      role: "master_admin" as const,
+    },
+    {
+      id: randomUUID(),
+      email: "admin@merveilleux.test",
+      name: "Site Admin",
       passwordHash: hashPassword("admin1234"),
       role: "admin" as const,
     },
@@ -100,6 +107,7 @@ async function main() {
   console.log("  Modules:", seedModules.length);
   console.log("  KB articles:", seedKbArticles.length);
   console.log("\n  Demo logins:");
+  console.log("   master@merveilleux.test / master1234  (master admin)");
   console.log("   admin@merveilleux.test / admin1234  (admin)");
   console.log("   distributor@merveilleux.test / dist1234  (经销商)");
   console.log("   customer@merveilleux.test / cust1234  (customer)");

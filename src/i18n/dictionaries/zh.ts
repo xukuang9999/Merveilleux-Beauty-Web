@@ -505,7 +505,8 @@ const zh: Dictionary = {
     "signOut": "退出登录",
     "roleCustomer": "顾客",
     "roleDistributor": "经销商",
-    "roleAdmin": "管理员"
+    "roleAdmin": "管理员",
+    "roleMasterAdmin": "超级管理员"
   },
   "admin": {
     "eyebrowDashboard": "管理后台",

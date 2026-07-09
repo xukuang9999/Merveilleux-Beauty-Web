@@ -537,6 +537,7 @@ const en = {
     roleCustomer: "Customer",
     roleDistributor: "Distributor",
     roleAdmin: "Admin",
+    roleMasterAdmin: "Master Admin",
   },
   admin: {
     eyebrowDashboard: "Admin",

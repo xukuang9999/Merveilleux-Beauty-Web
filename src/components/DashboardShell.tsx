@@ -8,7 +8,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
-type Role = "customer" | "distributor" | "admin";
+type Role = "customer" | "distributor" | "admin" | "master_admin";
 type NavItem = { href: string; label: string; icon: string };
 
 export default function DashboardShell({
@@ -24,6 +24,15 @@ export default function DashboardShell({
 }) {
   const pathname = usePathname();
 
+  const adminNav: NavItem[] = [
+    { href: "/admin", label: dict.dashboard, icon: "🏠" },
+    { href: "/admin/products", label: dict.products, icon: "💄" },
+    { href: "/admin/kb", label: dict.knowledgeBase, icon: "📚" },
+    { href: "/admin/progress", label: dict.trainingProgress, icon: "📈" },
+    { href: "/admin/users", label: dict.users, icon: "👤" },
+    { href: "/admin/enquiries", label: dict.enquiries, icon: "✉️" },
+  ];
+
   const NAV: Record<Role, NavItem[]> = {
     customer: [
       { href: "/account", label: dict.overview, icon: "🏠" },
@@ -35,19 +44,16 @@ export default function DashboardShell({
       { href: "/portal/knowledge", label: dict.knowledgeBase, icon: "📚" },
       { href: "/portal/assistant", label: dict.aiCoachConsult, icon: "✨" },
     ],
-    admin: [
-      { href: "/admin", label: dict.dashboard, icon: "🏠" },
-      { href: "/admin/products", label: dict.products, icon: "💄" },
-      { href: "/admin/kb", label: dict.knowledgeBase, icon: "📚" },
-      { href: "/admin/progress", label: dict.trainingProgress, icon: "📈" },
-      { href: "/admin/users", label: dict.users, icon: "👤" },
-      { href: "/admin/enquiries", label: dict.enquiries, icon: "✉️" },
-    ],
+    // Phase 0: master_admin reuses the admin console; the capability-driven
+    // nav split (master-only sections) lands in Phase 1.
+    admin: adminNav,
+    master_admin: adminNav,
   };
   const roleBadge: Record<Role, string> = {
     customer: dict.roleCustomer,
     distributor: dict.roleDistributor,
     admin: dict.roleAdmin,
+    master_admin: dict.roleMasterAdmin,
   };
 
   const items = NAV[user.role];

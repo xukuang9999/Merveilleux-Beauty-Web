@@ -12,7 +12,7 @@ export const users = sqliteTable("users", {
   email: text("email").notNull().unique(),
   name: text("name").notNull(),
   passwordHash: text("password_hash").notNull(),
-  role: text("role", { enum: ["customer", "distributor", "admin"] })
+  role: text("role", { enum: ["customer", "distributor", "admin", "master_admin"] })
     .notNull()
     .default("customer"),
   status: text("status", { enum: ["active", "pending"] })

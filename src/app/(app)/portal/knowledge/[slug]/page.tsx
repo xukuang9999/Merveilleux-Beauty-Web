@@ -10,7 +10,7 @@ export default async function KbArticlePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  await requireRole(["distributor", "admin"]);
+  await requireRole(["distributor", "admin", "master_admin"]);
   const { slug } = await params;
   const [article, dict] = await Promise.all([getKbArticle(slug), getDict()]);
   if (!article) notFound();

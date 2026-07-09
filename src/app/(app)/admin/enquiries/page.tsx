@@ -1,12 +1,12 @@
 import { desc } from "drizzle-orm";
-import { requireRole } from "@/lib/auth";
+import { requireAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { enquiries } from "@/db/schema";
 import { DashHeading, Panel } from "@/components/dash";
 import { getDict } from "@/i18n/server";
 
 export default async function AdminEnquiriesPage() {
-  await requireRole(["admin"]);
+  await requireAdmin();
   const [rows, dict] = await Promise.all([
     db.select().from(enquiries).orderBy(desc(enquiries.createdAt)),
     getDict(),

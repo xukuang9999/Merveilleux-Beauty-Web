@@ -132,8 +132,35 @@ export async function requireRole(roles: Role[]): Promise<User> {
   return user;
 }
 
+// ---- Admin tiers ------------------------------------------------
+// `admin` and `master_admin` share the admin console; master_admin adds
+// appearance / feature-flags / site-copy / media / user management on top.
+// Keep these helpers as the single source of truth for tier checks so
+// enforcement stays centralized (never gate on the raw role string).
+
+/** True for either admin tier (normal admin OR master admin). */
+export function isAdminTier(role: Role): boolean {
+  return role === "admin" || role === "master_admin";
+}
+
+/** True only for the top-level master admin. */
+export function isMasterAdmin(role: Role): boolean {
+  return role === "master_admin";
+}
+
+/** Guard: allow both admin tiers. Master inherits everything admin can do. */
+export function requireAdmin(): Promise<User> {
+  return requireRole(["admin", "master_admin"]);
+}
+
+/** Guard: allow master admin only (appearance, flags, copy, media, users). */
+export function requireMasterAdmin(): Promise<User> {
+  return requireRole(["master_admin"]);
+}
+
 export const roleHome: Record<Role, string> = {
   customer: "/account",
   distributor: "/portal",
   admin: "/admin",
+  master_admin: "/admin",
 };

@@ -5,7 +5,7 @@ import AssistantTabs from "@/components/AssistantTabs";
 import { getDict } from "@/i18n/server";
 
 export default async function AssistantPage() {
-  await requireRole(["distributor", "admin"]);
+  await requireRole(["distributor", "admin", "master_admin"]);
   const dict = await getDict();
   const d = dict.assistant;
   const configured = aiConfigured();

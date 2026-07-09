@@ -5,7 +5,7 @@ import { DashHeading, StatCard, Panel } from "@/components/dash";
 import { getDict, fmt } from "@/i18n/server";
 
 export default async function PortalPage() {
-  const user = await requireRole(["distributor", "admin"]);
+  const user = await requireRole(["distributor", "admin", "master_admin"]);
   const [modules, progress, dict] = await Promise.all([
     getModules(),
     getUserProgress(user.id),

@@ -1,11 +1,11 @@
-import { requireRole } from "@/lib/auth";
+import { requireAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { users, trainingProgress, trainingModules } from "@/db/schema";
 import { DashHeading, Panel } from "@/components/dash";
 import { getDict } from "@/i18n/server";
 
 export default async function AdminProgressPage() {
-  await requireRole(["admin"]);
+  await requireAdmin();
   const [allUsers, progress, modules, dict] = await Promise.all([
     db.select().from(users),
     db.select().from(trainingProgress),

@@ -8,12 +8,16 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
-type NavUser = { name: string; role: "customer" | "distributor" | "admin" };
+type NavUser = {
+  name: string;
+  role: "customer" | "distributor" | "admin" | "master_admin";
+};
 
 const roleHome: Record<NavUser["role"], string> = {
   customer: "/account",
   distributor: "/portal",
   admin: "/admin",
+  master_admin: "/admin",
 };
 
 export default function Nav({
@@ -32,6 +36,7 @@ export default function Nav({
     customer: dict.myAccount,
     distributor: dict.myPortal,
     admin: dict.admin,
+    master_admin: dict.admin,
   };
 
   const links = [

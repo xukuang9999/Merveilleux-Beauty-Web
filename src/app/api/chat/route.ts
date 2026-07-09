@@ -46,7 +46,8 @@ export async function POST(req: NextRequest) {
     if (
       mode === "training" &&
       user.role !== "distributor" &&
-      user.role !== "admin"
+      user.role !== "admin" &&
+      user.role !== "master_admin"
     ) {
       return new Response("Unauthorized", { status: 401 });
     }
