@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { desc } from "drizzle-orm";
-import { requireAdmin } from "@/lib/auth";
+import { requireAdmin, isMasterAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { products, users, enquiries, kbArticles } from "@/db/schema";
 import { DashHeading, StatCard, Panel } from "@/components/dash";
 import { getDict, fmt } from "@/i18n/server";
 
 export default async function AdminPage() {
-  await requireAdmin();
+  const me = await requireAdmin();
   const [prod, usr, enq, kb, dict] = await Promise.all([
     db.select().from(products),
     db.select().from(users),
@@ -37,7 +37,9 @@ export default async function AdminPage() {
         <AdminLink href="/admin/products" icon="💄" label={d.linkProducts} />
         <AdminLink href="/admin/kb" icon="📚" label={d.linkKb} />
         <AdminLink href="/admin/progress" icon="📈" label={d.linkProgress} />
-        <AdminLink href="/admin/users" icon="👤" label={d.linkUsers} />
+        {isMasterAdmin(me.role) && (
+          <AdminLink href="/admin/users" icon="👤" label={d.linkUsers} />
+        )}
         <AdminLink href="/admin/enquiries" icon="✉️" label={d.linkEnquiries} />
         <AdminLink href="/" icon="🌐" label={d.viewLiveSite} />
       </div>

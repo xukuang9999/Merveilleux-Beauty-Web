@@ -2,7 +2,12 @@
 
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { requireAdmin, deleteUserSessions, type Role } from "./auth";
+import {
+  requireAdmin,
+  requireMasterAdmin,
+  deleteUserSessions,
+  type Role,
+} from "./auth";
 import { db } from "@/db";
 import { products, users, kbArticles } from "@/db/schema";
 
@@ -56,22 +61,25 @@ export async function deleteProduct(formData: FormData) {
 }
 
 export async function setUserRole(formData: FormData) {
-  const me = await ensureAdmin();
+  // Only master admins manage accounts / roles.
+  await requireMasterAdmin();
   const id = String(formData.get("id"));
   const role = String(formData.get("role"));
-  if (!["customer", "distributor", "admin"].includes(role)) return;
+  if (!["customer", "distributor", "admin", "master_admin"].includes(role)) {
+    return;
+  }
 
   const [target] = await db.select().from(users).where(eq(users.id, id)).limit(1);
   if (!target) return;
 
-  // Guard against admin lockout: can't demote yourself or the last admin.
-  if (target.role === "admin" && role !== "admin") {
-    if (target.id === me.id) return;
-    const admins = await db
+  // Guard against master-admin lockout: never demote the last master admin
+  // (this also blocks the sole master from demoting themselves).
+  if (target.role === "master_admin" && role !== "master_admin") {
+    const masters = await db
       .select()
       .from(users)
-      .where(eq(users.role, "admin"));
-    if (admins.length <= 1) return;
+      .where(eq(users.role, "master_admin"));
+    if (masters.length <= 1) return;
   }
 
   await db

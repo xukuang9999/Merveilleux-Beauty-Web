@@ -24,13 +24,18 @@ export default function DashboardShell({
 }) {
   const pathname = usePathname();
 
-  const adminNav: NavItem[] = [
+  // Content operations available to both admin tiers.
+  const adminBase: NavItem[] = [
     { href: "/admin", label: dict.dashboard, icon: "🏠" },
     { href: "/admin/products", label: dict.products, icon: "💄" },
     { href: "/admin/kb", label: dict.knowledgeBase, icon: "📚" },
     { href: "/admin/progress", label: dict.trainingProgress, icon: "📈" },
-    { href: "/admin/users", label: dict.users, icon: "👤" },
     { href: "/admin/enquiries", label: dict.enquiries, icon: "✉️" },
+  ];
+  // Master-only sections (Phase 1: user management; appearance / feature
+  // flags / site copy / media are appended in later phases).
+  const masterOnly: NavItem[] = [
+    { href: "/admin/users", label: dict.users, icon: "👤" },
   ];
 
   const NAV: Record<Role, NavItem[]> = {
@@ -44,10 +49,8 @@ export default function DashboardShell({
       { href: "/portal/knowledge", label: dict.knowledgeBase, icon: "📚" },
       { href: "/portal/assistant", label: dict.aiCoachConsult, icon: "✨" },
     ],
-    // Phase 0: master_admin reuses the admin console; the capability-driven
-    // nav split (master-only sections) lands in Phase 1.
-    admin: adminNav,
-    master_admin: adminNav,
+    admin: adminBase,
+    master_admin: [...adminBase, ...masterOnly],
   };
   const roleBadge: Record<Role, string> = {
     customer: dict.roleCustomer,

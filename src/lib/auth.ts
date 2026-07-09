@@ -153,9 +153,15 @@ export function requireAdmin(): Promise<User> {
   return requireRole(["admin", "master_admin"]);
 }
 
-/** Guard: allow master admin only (appearance, flags, copy, media, users). */
-export function requireMasterAdmin(): Promise<User> {
-  return requireRole(["master_admin"]);
+/** Guard: allow master admin only (appearance, flags, copy, media, users).
+ *  A normal admin who lands here is bounced back to the admin console
+ *  (not the customer account page); everyone else goes to /account. */
+export async function requireMasterAdmin(): Promise<User> {
+  const user = await requireUser();
+  if (!isMasterAdmin(user.role)) {
+    redirect(isAdminTier(user.role) ? "/admin" : "/account");
+  }
+  return user;
 }
 
 export const roleHome: Record<Role, string> = {
