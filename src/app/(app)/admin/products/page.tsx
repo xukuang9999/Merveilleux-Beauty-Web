@@ -121,7 +121,7 @@ function ProductForm({
           <input
             type="checkbox"
             name="published"
-            defaultChecked={product?.published ?? true}
+            defaultChecked={product?.published ?? false}
             className="accent-bronze"
           />
           Published

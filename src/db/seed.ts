@@ -79,7 +79,11 @@ async function main() {
   await db.insert(users).values(demoUsers);
 
   // Catalog
-  await db.insert(products).values(seedProducts);
+  // Seed products are explicitly published (the column now defaults to
+  // unpublished so admin-created DB-only products stay hidden until published).
+  await db.insert(products).values(
+    seedProducts.map((p) => ({ ...p, published: true })),
+  );
   await db.insert(testimonials).values(seedTestimonials);
   await db.insert(faqs).values(seedFaqs);
   await db.insert(kbArticles).values(seedKbArticles);

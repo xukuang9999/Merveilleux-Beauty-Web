@@ -37,12 +37,15 @@ export type FaqView = { category: string; question: string; answer: string };
 export async function getProducts(): Promise<ProductView[]> {
   const pack = contentPack(await getLocale());
 
-  // The curated catalogue in seed-data.ts is the canonical source of truth for
-  // the public storefront — it guarantees every product has a valid image under
-  // /products/*.jpg. The database is treated as an OPTIONAL overlay keyed by
-  // slug: an admin edit to a matching product wins, unpublishing it hides it,
-  // and orphaned legacy rows (old SKUs whose graphics were deleted) are simply
-  // ignored so they can never blank out the storefront again.
+  // The storefront is the seed catalogue PLUS explicitly-published DB-only
+  // products, additively:
+  //   1. seed-data.ts is the canonical base — every seed product has a valid
+  //      image under /products/*.jpg. A DB row with a matching slug overlays it
+  //      (admin edits win; unpublishing hides that seed product).
+  //   2. DB rows whose slug is NOT in the seed catalogue appear only when
+  //      explicitly published (published defaults to false). Unpublished /
+  //      orphaned overlay rows (e.g. old SKUs removed from the seed) are
+  //      ignored, so a deleted-seed product can never blank the storefront.
   const base = [...seedProducts].sort((a, b) => a.sortOrder - b.sortOrder);
 
   const edits = new Map<string, typeof products.$inferSelect>();

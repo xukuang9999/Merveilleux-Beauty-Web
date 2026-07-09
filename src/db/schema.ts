@@ -47,7 +47,10 @@ export const products = sqliteTable("products", {
   priceRM: text("price_rm").notNull(),
   graphic: text("graphic").notNull(),
   sortOrder: integer("sort_order").notNull().default(0),
-  published: integer("published", { mode: "boolean" }).notNull().default(true),
+  // DB-only products (created in the admin) default to unpublished — they only
+  // appear on the storefront once explicitly published. Seed products are
+  // seeded as published; see src/db/seed.ts.
+  published: integer("published", { mode: "boolean" }).notNull().default(false),
 });
 
 export const testimonials = sqliteTable("testimonials", {
