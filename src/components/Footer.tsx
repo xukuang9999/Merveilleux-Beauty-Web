@@ -3,8 +3,10 @@ import Image from "next/image";
 import { site, whatsappLink, mapsLink } from "@/lib/data";
 import { getDict, getLocale, fmt } from "@/i18n/server";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import type { FeatureFlags } from "@/lib/settings";
+import { LINK_FLAG } from "@/lib/feature-links";
 
-export default async function Footer() {
+export default async function Footer({ flags }: { flags: FeatureFlags }) {
   const [dict, locale] = await Promise.all([getDict(), getLocale()]);
   const f = dict.footer;
   const links = [
@@ -19,7 +21,10 @@ export default async function Footer() {
     { href: "/training", label: dict.nav.training },
     { href: "/join", label: dict.nav.joinUs },
     { href: "/contact", label: dict.nav.contact },
-  ];
+  ].filter((l) => {
+    const flag = LINK_FLAG[l.href];
+    return !flag || flags[flag];
+  });
   const socials = [
     { href: site.instagram, label: f.instagram },
     { href: site.facebook, label: f.facebook },

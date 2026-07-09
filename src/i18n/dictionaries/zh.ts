@@ -502,6 +502,7 @@ const zh: Dictionary = {
     "trainingProgress": "培训进度",
     "users": "用户",
     "enquiries": "咨询",
+    "features": "功能",
     "signOut": "退出登录",
     "roleCustomer": "顾客",
     "roleDistributor": "经销商",
@@ -522,6 +523,25 @@ const zh: Dictionary = {
     "linkUsers": "用户与角色",
     "linkEnquiries": "咨询",
     "viewLiveSite": "查看线上网站",
+    "linkFeatures": "功能开关",
+    "features": {
+      "eyebrow": "管理 · 网站",
+      "title": "功能开关",
+      "sub": "显示或隐藏网站功能。更改会立即应用于整个网站。",
+      "enable": "启用",
+      "disable": "停用",
+      "on": "开",
+      "off": "关",
+      "labels": {
+        "aiChat": "AI 聊天助手",
+        "booking": "预约咨询按钮",
+        "testimonials": "客户评价",
+        "gallery": "相册",
+        "promotions": "促销",
+        "news": "动态",
+        "blog": "博客"
+      }
+    },
     "recentEnquiries": "最近的咨询",
     "noEnquiries": "暂无咨询。新的联系表单提交将显示在此处。",
     "viewAllEnquiries": "查看所有咨询 →",

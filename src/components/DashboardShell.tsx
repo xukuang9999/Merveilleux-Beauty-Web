@@ -36,6 +36,7 @@ export default function DashboardShell({
   // flags / site copy / media are appended in later phases).
   const masterOnly: NavItem[] = [
     { href: "/admin/users", label: dict.users, icon: "👤" },
+    { href: "/admin/features", label: dict.features, icon: "🎚️" },
   ];
 
   const NAV: Record<Role, NavItem[]> = {

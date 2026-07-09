@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import Petals from "@/components/Petals";
 import EnquiryForm from "@/components/EnquiryForm";
 import { whatsappLink } from "@/lib/data";
+import { getFeatureFlags } from "@/lib/settings";
 import { seedModules } from "@/lib/seed-data";
 import { getDict, getLocale, fmt } from "@/i18n/server";
 import { localizeModule } from "@/i18n/content";
@@ -18,7 +19,11 @@ export const metadata: Metadata = {
 const actionIcons = ["✉️", "📖", "📞", "💬"];
 
 export default async function JoinPage() {
-  const [dict, locale] = await Promise.all([getDict(), getLocale()]);
+  const [dict, locale, flags] = await Promise.all([
+    getDict(),
+    getLocale(),
+    getFeatureFlags(),
+  ]);
   const j = dict.join;
   const d = dict.home;
   const modules = seedModules.map((m) => localizeModule(m, locale));
@@ -56,9 +61,11 @@ export default async function JoinPage() {
               <Button href={links[1]} variant="gold" external>
                 {j.downloadBrochure}
               </Button>
-              <Button href={links[2]} variant="outline" external>
-                {j.bookCall}
-              </Button>
+              {flags.booking && (
+                <Button href={links[2]} variant="outline" external>
+                  {j.bookCall}
+                </Button>
+              )}
               <Button href={links[3]} external>
                 {j.whatsappUs}
               </Button>

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { isFeatureEnabled } from "@/lib/settings";
 import Image from "next/image";
 import Link from "next/link";
 import { Container, SectionHeading } from "@/components/ui";
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function GalleryPage() {
+  if (!(await isFeatureEnabled("gallery"))) notFound();
   const [products, dict] = await Promise.all([getProducts(), getDict()]);
   const g = dict.gallery;
 

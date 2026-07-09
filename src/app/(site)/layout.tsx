@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import ScrollProgress from "@/components/ScrollProgress";
 import { getCurrentUser } from "@/lib/auth";
+import { getFeatureFlags } from "@/lib/settings";
 import { getLocale, getDict } from "@/i18n/server";
 
 export default async function SiteLayout({
@@ -10,10 +11,11 @@ export default async function SiteLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [user, locale, dict] = await Promise.all([
+  const [user, locale, dict, flags] = await Promise.all([
     getCurrentUser(),
     getLocale(),
     getDict(),
+    getFeatureFlags(),
   ]);
   return (
     <>
@@ -22,10 +24,11 @@ export default async function SiteLayout({
         user={user ? { name: user.name, role: user.role } : null}
         locale={locale}
         dict={dict.nav}
+        flags={flags}
       />
       <main className="flex-1">{children}</main>
-      <Footer />
-      <ChatWidget dict={dict.chat} />
+      <Footer flags={flags} />
+      {flags.aiChat && <ChatWidget dict={dict.chat} />}
     </>
   );
 }

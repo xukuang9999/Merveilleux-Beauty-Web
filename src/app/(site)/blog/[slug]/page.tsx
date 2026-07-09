@@ -5,6 +5,7 @@ import { Container } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import Markdown from "@/components/Markdown";
 import { getArticle, getArticles } from "@/lib/content";
+import { isFeatureEnabled } from "@/lib/settings";
 import { getDict } from "@/i18n/server";
 
 export async function generateMetadata({
@@ -23,6 +24,7 @@ export default async function BlogArticlePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  if (!(await isFeatureEnabled("blog"))) notFound();
   const { slug } = await params;
   const [article, all, dict] = await Promise.all([
     getArticle(slug),

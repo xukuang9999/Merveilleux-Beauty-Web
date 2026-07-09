@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Image from "next/image";
+import { isFeatureEnabled } from "@/lib/settings";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getProducts } from "@/lib/content";
@@ -14,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default async function PromotionsPage() {
+  if (!(await isFeatureEnabled("promotions"))) notFound();
   const [products, dict] = await Promise.all([getProducts(), getDict()]);
   const p = dict.promotions;
   const nameBySlug = new Map(products.map((pr) => [pr.slug, pr.name]));

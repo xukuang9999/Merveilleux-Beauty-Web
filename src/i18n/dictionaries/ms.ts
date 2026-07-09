@@ -502,6 +502,7 @@ const ms: Dictionary = {
     "trainingProgress": "Kemajuan Latihan",
     "users": "Pengguna",
     "enquiries": "Pertanyaan",
+    "features": "Ciri",
     "signOut": "Log keluar",
     "roleCustomer": "Pelanggan",
     "roleDistributor": "Pengedar",
@@ -522,6 +523,25 @@ const ms: Dictionary = {
     "linkUsers": "Pengguna & Peranan",
     "linkEnquiries": "Pertanyaan",
     "viewLiveSite": "Lihat laman langsung",
+    "linkFeatures": "Bendera Ciri",
+    "features": {
+      "eyebrow": "Admin · Laman",
+      "title": "Bendera ciri",
+      "sub": "Tunjuk atau sembunyikan ciri laman. Perubahan digunakan ke seluruh laman serta-merta.",
+      "enable": "Aktifkan",
+      "disable": "Nyahaktif",
+      "on": "Hidup",
+      "off": "Mati",
+      "labels": {
+        "aiChat": "Widget sembang AI",
+        "booking": "CTA tempah panggilan",
+        "testimonials": "Testimoni",
+        "gallery": "Galeri",
+        "promotions": "Promosi",
+        "news": "Berita",
+        "blog": "Blog"
+      }
+    },
     "recentEnquiries": "Pertanyaan terkini",
     "noEnquiries": "Belum ada pertanyaan lagi. Penyerahan borang hubungi yang baharu akan dipaparkan di sini.",
     "viewAllEnquiries": "Lihat semua pertanyaan →",

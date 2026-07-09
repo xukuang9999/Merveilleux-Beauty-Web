@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { isFeatureEnabled } from "@/lib/settings";
 import { Button, Container, SectionHeading, Stars } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getTestimonials } from "@/lib/content";
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function TestimonialsPage() {
+  if (!(await isFeatureEnabled("testimonials"))) notFound();
   const [testimonials, dict] = await Promise.all([getTestimonials(), getDict()]);
   const d = dict.testimonials;
 

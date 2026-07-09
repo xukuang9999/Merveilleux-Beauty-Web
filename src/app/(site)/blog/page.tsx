@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
+import { isFeatureEnabled } from "@/lib/settings";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getArticles } from "@/lib/content";
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
+  if (!(await isFeatureEnabled("blog"))) notFound();
   const [articles, dict] = await Promise.all([getArticles(), getDict()]);
   const b = dict.blog;
 

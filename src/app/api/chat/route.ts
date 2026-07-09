@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { getAnthropic, buildSystem, MODEL, type ChatMode } from "@/lib/ai";
 import { getCurrentUser } from "@/lib/auth";
+import { isFeatureEnabled } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -37,6 +38,11 @@ export async function POST(req: NextRequest) {
   const mode: ChatMode = MODES.includes(body.mode as ChatMode)
     ? (body.mode as ChatMode)
     : "customer";
+
+  // The public customer chat can be switched off site-wide via feature flags.
+  if (mode === "customer" && !(await isFeatureEnabled("aiChat"))) {
+    return new Response("AI chat is currently unavailable.", { status: 403 });
+  }
 
   // Consultation and training require a signed-in user; training is
   // distributor/admin only.

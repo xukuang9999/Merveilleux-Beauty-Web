@@ -147,6 +147,18 @@ export const subscribers = sqliteTable("subscribers", {
     .$defaultFn(() => new Date()),
 });
 
+// ---- Site administration (master admin) ------------------------
+
+// Feature flags — show/hide site features. A missing row means "use the
+// coded default" (see src/lib/settings.ts), so the table only stores overrides.
+export const featureFlags = sqliteTable("feature_flags", {
+  key: text("key").primaryKey(),
+  enabled: integer("enabled", { mode: "boolean" }).notNull().default(true),
+  updatedAt: integer("updated_at", { mode: "timestamp" })
+    .notNull()
+    .$defaultFn(() => new Date()),
+});
+
 export type User = typeof users.$inferSelect;
 export type Product = typeof products.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;

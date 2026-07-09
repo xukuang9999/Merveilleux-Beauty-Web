@@ -5,6 +5,7 @@ import Marquee from "@/components/Marquee";
 import Counter from "@/components/Counter";
 import Image from "next/image";
 import { getProducts, getTestimonials } from "@/lib/content";
+import { getFeatureFlags } from "@/lib/settings";
 import { seedModules } from "@/lib/seed-data";
 import { site } from "@/lib/data";
 import { getDict } from "@/i18n/server";
@@ -22,10 +23,11 @@ const ingredients = [
 ];
 
 export default async function Home() {
-  const [products, testimonials, dict] = await Promise.all([
+  const [products, testimonials, dict, flags] = await Promise.all([
     getProducts(),
     getTestimonials(),
     getDict(),
+    getFeatureFlags(),
   ]);
   const d = dict.home;
   const years = new Date().getFullYear() - Number(site.established);
@@ -258,6 +260,7 @@ export default async function Home() {
 
 
       {/* TESTIMONIALS TEASER */}
+      {flags.testimonials && (
       <section className="border-t border-line py-20">
         <Container>
           <Reveal>
@@ -290,6 +293,7 @@ export default async function Home() {
           </div>
         </Container>
       </section>
+      )}
     </>
   );
 }

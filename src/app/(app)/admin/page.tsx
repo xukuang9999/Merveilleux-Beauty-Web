@@ -38,7 +38,14 @@ export default async function AdminPage() {
         <AdminLink href="/admin/kb" icon="📚" label={d.linkKb} />
         <AdminLink href="/admin/progress" icon="📈" label={d.linkProgress} />
         {isMasterAdmin(me.role) && (
-          <AdminLink href="/admin/users" icon="👤" label={d.linkUsers} />
+          <>
+            <AdminLink href="/admin/users" icon="👤" label={d.linkUsers} />
+            <AdminLink
+              href="/admin/features"
+              icon="🎚️"
+              label={d.linkFeatures}
+            />
+          </>
         )}
         <AdminLink href="/admin/enquiries" icon="✉️" label={d.linkEnquiries} />
         <AdminLink href="/" icon="🌐" label={d.viewLiveSite} />

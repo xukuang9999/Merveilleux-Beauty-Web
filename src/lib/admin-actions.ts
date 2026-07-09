@@ -9,7 +9,8 @@ import {
   type Role,
 } from "./auth";
 import { db } from "@/db";
-import { products, users, kbArticles } from "@/db/schema";
+import { products, users, kbArticles, featureFlags } from "@/db/schema";
+import { FEATURE_KEYS, type FeatureKey } from "./settings";
 
 async function ensureAdmin() {
   return requireAdmin();
@@ -107,4 +108,24 @@ export async function toggleKbPublished(formData: FormData) {
     .set({ published: !current })
     .where(eq(kbArticles.id, id));
   revalidatePath("/admin/kb");
+}
+
+// Feature flags are master-only. Toggling one revalidates the root layout so
+// nav / footer / widgets across the whole site pick up the change.
+export async function setFeatureFlag(formData: FormData) {
+  await requireMasterAdmin();
+  const key = String(formData.get("key"));
+  if (!(FEATURE_KEYS as readonly string[]).includes(key)) return;
+  const enabled = formData.get("enabled") === "true";
+
+  await db
+    .insert(featureFlags)
+    .values({ key: key as FeatureKey, enabled, updatedAt: new Date() })
+    .onConflictDoUpdate({
+      target: featureFlags.key,
+      set: { enabled, updatedAt: new Date() },
+    });
+
+  revalidatePath("/", "layout");
+  revalidatePath("/admin/features");
 }

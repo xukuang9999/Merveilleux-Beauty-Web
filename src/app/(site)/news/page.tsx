@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { isFeatureEnabled } from "@/lib/settings";
 import { Container, SectionHeading, Button } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import NewsCard from "@/components/NewsCard";
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function NewsPage() {
+  if (!(await isFeatureEnabled("news"))) notFound();
   const [news, dict, locale] = await Promise.all([
     getNews(),
     getDict(),

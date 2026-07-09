@@ -7,6 +7,8 @@ import { site } from "@/lib/data";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
+import type { FeatureFlags } from "@/lib/settings";
+import { LINK_FLAG } from "@/lib/feature-links";
 
 type NavUser = {
   name: string;
@@ -24,10 +26,12 @@ export default function Nav({
   user,
   locale,
   dict,
+  flags,
 }: {
   user: NavUser | null;
   locale: Locale;
   dict: Dictionary["nav"];
+  flags: FeatureFlags;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -48,7 +52,10 @@ export default function Nav({
     { href: "/blog", label: dict.blog },
     { href: "/testimonials", label: dict.testimonials },
     { href: "/contact", label: dict.contact },
-  ];
+  ].filter((l) => {
+    const flag = LINK_FLAG[l.href];
+    return !flag || flags[flag];
+  });
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
