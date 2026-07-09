@@ -159,6 +159,16 @@ export const featureFlags = sqliteTable("feature_flags", {
     .$defaultFn(() => new Date()),
 });
 
+// Generic key/value store for site settings (e.g. the "appearance" JSON blob:
+// brand colours + font choices). Absent keys fall back to coded defaults.
+export const siteSettings = sqliteTable("site_settings", {
+  key: text("key").primaryKey(),
+  value: text("value", { mode: "json" }).notNull(),
+  updatedAt: integer("updated_at", { mode: "timestamp" })
+    .notNull()
+    .$defaultFn(() => new Date()),
+});
+
 export type User = typeof users.$inferSelect;
 export type Product = typeof products.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;

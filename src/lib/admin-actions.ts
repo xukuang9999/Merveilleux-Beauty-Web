@@ -9,8 +9,23 @@ import {
   type Role,
 } from "./auth";
 import { db } from "@/db";
-import { products, users, kbArticles, featureFlags } from "@/db/schema";
-import { FEATURE_KEYS, type FeatureKey } from "./settings";
+import {
+  products,
+  users,
+  kbArticles,
+  featureFlags,
+  siteSettings,
+} from "@/db/schema";
+import {
+  FEATURE_KEYS,
+  type FeatureKey,
+  COLOR_TOKENS,
+  FONT_SERIF_OPTIONS,
+  FONT_SANS_OPTIONS,
+  APPEARANCE_KEY,
+  type Appearance,
+  type ColorTokenKey,
+} from "./settings";
 
 async function ensureAdmin() {
   return requireAdmin();
@@ -128,4 +143,45 @@ export async function setFeatureFlag(formData: FormData) {
 
   revalidatePath("/", "layout");
   revalidatePath("/admin/features");
+}
+
+// Appearance (brand colours + fonts) is master-only. Values are validated
+// server-side (hex colours, allowlisted fonts) before they can drive the
+// site-wide CSS variables, so nothing user-supplied reaches the DOM raw.
+const HEX = /^#[0-9a-fA-F]{6}$/;
+
+export async function saveAppearance(formData: FormData) {
+  await requireMasterAdmin();
+
+  const colors = {} as Record<ColorTokenKey, string>;
+  for (const t of COLOR_TOKENS) {
+    const v = String(formData.get(`color_${t.key}`) || "").trim();
+    colors[t.key] = HEX.test(v) ? v : t.default; // invalid → back to default
+  }
+
+  const serif = String(formData.get("fontSerif") || "");
+  const sans = String(formData.get("fontSans") || "");
+  const appearance: Appearance = {
+    colors,
+    fontSerif: FONT_SERIF_OPTIONS[serif] ? serif : "cormorant",
+    fontSans: FONT_SANS_OPTIONS[sans] ? sans : "dmSans",
+  };
+
+  await db
+    .insert(siteSettings)
+    .values({ key: APPEARANCE_KEY, value: appearance, updatedAt: new Date() })
+    .onConflictDoUpdate({
+      target: siteSettings.key,
+      set: { value: appearance, updatedAt: new Date() },
+    });
+
+  revalidatePath("/", "layout");
+  revalidatePath("/admin/appearance");
+}
+
+export async function resetAppearance() {
+  await requireMasterAdmin();
+  await db.delete(siteSettings).where(eq(siteSettings.key, APPEARANCE_KEY));
+  revalidatePath("/", "layout");
+  revalidatePath("/admin/appearance");
 }

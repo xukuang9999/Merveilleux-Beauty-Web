@@ -502,6 +502,7 @@ const zh: Dictionary = {
     "trainingProgress": "培训进度",
     "users": "用户",
     "enquiries": "咨询",
+    "appearance": "外观",
     "features": "功能",
     "signOut": "退出登录",
     "roleCustomer": "顾客",
@@ -523,7 +524,29 @@ const zh: Dictionary = {
     "linkUsers": "用户与角色",
     "linkEnquiries": "咨询",
     "viewLiveSite": "查看线上网站",
+    "linkAppearance": "外观",
     "linkFeatures": "功能开关",
+    "appearance": {
+      "eyebrow": "管理 · 网站",
+      "title": "外观",
+      "sub": "品牌颜色和字体，应用于整个网站。",
+      "colorsTitle": "品牌颜色",
+      "fontsTitle": "字体",
+      "serifLabel": "标题（衬线体）",
+      "sansLabel": "正文（无衬线体）",
+      "save": "保存外观",
+      "reset": "恢复默认",
+      "colors": {
+        "bronze": "古铜色（强调）",
+        "gold": "金色",
+        "champagne": "香槟色",
+        "charcoal": "炭黑色（文字）",
+        "umber": "深褐色（深色）",
+        "mid": "正文文字",
+        "cream": "背景",
+        "line": "细线"
+      }
+    },
     "features": {
       "eyebrow": "管理 · 网站",
       "title": "功能开关",

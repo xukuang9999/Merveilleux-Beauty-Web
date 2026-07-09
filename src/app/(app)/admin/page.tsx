@@ -41,6 +41,11 @@ export default async function AdminPage() {
           <>
             <AdminLink href="/admin/users" icon="👤" label={d.linkUsers} />
             <AdminLink
+              href="/admin/appearance"
+              icon="🎨"
+              label={d.linkAppearance}
+            />
+            <AdminLink
               href="/admin/features"
               icon="🎚️"
               label={d.linkFeatures}

@@ -502,6 +502,7 @@ const ms: Dictionary = {
     "trainingProgress": "Kemajuan Latihan",
     "users": "Pengguna",
     "enquiries": "Pertanyaan",
+    "appearance": "Rupa",
     "features": "Ciri",
     "signOut": "Log keluar",
     "roleCustomer": "Pelanggan",
@@ -523,7 +524,29 @@ const ms: Dictionary = {
     "linkUsers": "Pengguna & Peranan",
     "linkEnquiries": "Pertanyaan",
     "viewLiveSite": "Lihat laman langsung",
+    "linkAppearance": "Rupa",
     "linkFeatures": "Bendera Ciri",
+    "appearance": {
+      "eyebrow": "Admin · Laman",
+      "title": "Rupa",
+      "sub": "Warna jenama dan fon, digunakan ke seluruh laman.",
+      "colorsTitle": "Warna jenama",
+      "fontsTitle": "Fon",
+      "serifLabel": "Tajuk (serif)",
+      "sansLabel": "Teks (sans-serif)",
+      "save": "Simpan rupa",
+      "reset": "Set semula ke lalai",
+      "colors": {
+        "bronze": "Gangsa (aksen)",
+        "gold": "Emas",
+        "champagne": "Champagne",
+        "charcoal": "Arang (teks)",
+        "umber": "Umber (gelap)",
+        "mid": "Teks badan",
+        "cream": "Latar belakang",
+        "line": "Garis halus"
+      }
+    },
     "features": {
       "eyebrow": "Admin · Laman",
       "title": "Bendera ciri",

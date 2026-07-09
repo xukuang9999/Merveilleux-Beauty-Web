@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/data";
 import Analytics from "@/components/Analytics";
+import { getAppearance, appearanceVars } from "@/lib/settings";
 import { getLocale } from "@/i18n/server";
 import { localeHtmlLang } from "@/i18n/config";
 
@@ -54,11 +55,18 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = await getLocale();
+  const [locale, appearance] = await Promise.all([
+    getLocale(),
+    getAppearance(),
+  ]);
+  // Master-admin brand overrides as inline custom properties — these win over
+  // the compiled @theme :root defaults; empty when appearance is untouched.
+  const themeVars = appearanceVars(appearance);
   return (
     <html
       lang={localeHtmlLang[locale]}
       className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
+      style={themeVars}
     >
       <body className="flex min-h-full flex-col bg-cream">
         {children}
