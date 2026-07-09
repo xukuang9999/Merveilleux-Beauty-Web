@@ -20,6 +20,7 @@ import {
   mediaAssets,
 } from "@/db/schema";
 import { deleteStoredImage } from "./media";
+import { isMediaInUse } from "./media-usage";
 import { COPY_ITEMS } from "./copy-registry";
 import { getDictionary } from "@/i18n/server";
 import { locales } from "@/i18n/config";
@@ -147,6 +148,9 @@ export async function deleteMediaAsset(formData: FormData) {
     .where(eq(mediaAssets.id, id))
     .limit(1);
   if (!asset) return;
+  // Guard: never delete an asset still referenced by a product or promotion
+  // (the UI hides the delete button for these; this enforces it server-side).
+  if (await isMediaInUse(asset.url)) return;
   await deleteStoredImage(asset.pathname, asset.url);
   await db.delete(mediaAssets).where(eq(mediaAssets.id, id));
   revalidatePath("/admin/media");

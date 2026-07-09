@@ -607,6 +607,7 @@ const ms: Dictionary = {
       "sub": "Muat naik foto produk dan imej pemasaran. Hanya admin utama boleh memadam.",
       "upload": "Muat naik imej",
       "delete": "Padam",
+      "inUse": "Sedang digunakan",
       "empty": "Belum ada muat naik. Guna Muat naik imej untuk menambah foto produk atau pemasaran."
     },
     "usersEyebrow": "Admin · Orang",

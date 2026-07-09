@@ -607,6 +607,7 @@ const zh: Dictionary = {
       "sub": "上传产品照片和营销图片。仅超级管理员可删除。",
       "upload": "上传图片",
       "delete": "删除",
+      "inUse": "使用中",
       "empty": "尚无上传。使用「上传图片」添加产品或营销照片。"
     },
     "usersEyebrow": "管理后台 · 人员",

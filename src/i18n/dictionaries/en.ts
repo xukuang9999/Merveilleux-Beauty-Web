@@ -640,6 +640,7 @@ const en = {
       sub: "Upload product photos and marketing images. Deleting is master-admin only.",
       upload: "Upload image",
       delete: "Delete",
+      inUse: "In use",
       empty: "No uploads yet. Use Upload image to add product or marketing photos.",
     },
     usersEyebrow: "Admin · People",

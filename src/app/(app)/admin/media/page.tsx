@@ -3,14 +3,16 @@ import { requireAdmin, isMasterAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { mediaAssets } from "@/db/schema";
 import { deleteMediaAsset } from "@/lib/admin-actions";
+import { getInUseMediaUrls } from "@/lib/media-usage";
 import { DashHeading, Panel } from "@/components/dash";
 import MediaUploadButton from "@/components/MediaUploadButton";
 import { getDict } from "@/i18n/server";
 
 export default async function AdminMediaPage() {
   const user = await requireAdmin();
-  const [assets, dict] = await Promise.all([
+  const [assets, inUse, dict] = await Promise.all([
     db.select().from(mediaAssets).orderBy(desc(mediaAssets.createdAt)),
+    getInUseMediaUrls(),
     getDict(),
   ]);
   const m = dict.admin.media;
@@ -43,13 +45,19 @@ export default async function AdminMediaPage() {
                 <p className="truncate text-[11px] text-mid" title={a.url}>
                   {a.url}
                 </p>
-                {canDelete && (
-                  <form action={deleteMediaAsset} className="mt-1.5">
-                    <input type="hidden" name="id" value={a.id} />
-                    <button className="text-[11px] font-medium text-bronze hover:underline">
-                      {m.delete}
-                    </button>
-                  </form>
+                {inUse.has(a.url) ? (
+                  <span className="mt-1.5 inline-block rounded-full bg-champagne/60 px-2 py-0.5 text-[10px] font-medium text-bronze">
+                    {m.inUse}
+                  </span>
+                ) : (
+                  canDelete && (
+                    <form action={deleteMediaAsset} className="mt-1.5">
+                      <input type="hidden" name="id" value={a.id} />
+                      <button className="text-[11px] font-medium text-bronze hover:underline">
+                        {m.delete}
+                      </button>
+                    </form>
+                  )
                 )}
               </div>
             </div>
