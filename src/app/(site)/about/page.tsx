@@ -35,23 +35,13 @@ export default async function AboutPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal variant="left">
             <div className="relative">
-              <div className="arch-frame relative aspect-[4/5] overflow-hidden border border-gold/40 shadow-[0_36px_70px_-38px_rgba(69,61,49,0.55)]">
+              <div className="arch-frame relative aspect-[3/2] overflow-hidden border border-gold/40 shadow-[0_36px_70px_-38px_rgba(69,61,49,0.55)]">
                 <Image
-                  src="/renders/counter.jpg"
-                  alt="Mérvéilléux Premium reception counter"
+                  src="/renders/product-lineup.jpg"
+                  alt="Mérvéilléux Premium skincare lineup on stone blocks with dried botanicals"
                   fill
                   sizes="(max-width: 1024px) 90vw, 45vw"
                   className="ken-burns object-cover"
-                />
-              </div>
-              <div className="arch-frame-tight absolute -bottom-6 -right-3 hidden h-48 w-36 overflow-hidden border-2 border-cream shadow-[0_28px_50px_-24px_rgba(69,61,49,0.6)] sm:block">
-                <Image
-                  src="/renders/lounge.jpg"
-                  alt="Reception lounge"
-                  fill
-                  sizes="144px"
-                  className="ken-burns object-cover"
-                  style={{ animationDelay: "-8s" }}
                 />
               </div>
             </div>
