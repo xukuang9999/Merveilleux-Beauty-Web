@@ -68,13 +68,16 @@ export default async function ProductDetailPage({
 
           <div className="mt-6 grid items-center gap-10 lg:grid-cols-2">
             <Reveal variant="left">
-              <div className="arch-frame relative mx-auto aspect-[5/6] w-full max-w-sm overflow-hidden border border-gold/40 bg-onyx-glow shadow-[0_36px_70px_-38px_rgba(69,61,49,0.55)]">
+              <div className="relative mx-auto aspect-[5/6] w-full max-w-sm">
                 <Image
                   src={product.graphic}
                   alt={product.name}
                   fill
                   sizes="(max-width: 1024px) 90vw, 40vw"
-                  className="ken-burns object-cover"
+                  // Transparent PNGs (cut-out composites) blend on their own;
+                  // opaque photos on a white studio background multiply so the
+                  // white vanishes into the cream page.
+                  className={`object-contain ${product.graphic.endsWith(".png") ? "" : "mix-blend-multiply"}`}
                   priority
                 />
               </div>

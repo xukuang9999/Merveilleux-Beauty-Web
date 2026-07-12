@@ -14,18 +14,17 @@ export default function ProductCard({
       href={`/products/${product.slug}`}
       className="group flex flex-col"
     >
-      {/* Arch-framed product vitrine — the boutique's backlit display niches */}
-      <div className="arch-frame relative aspect-[5/6] overflow-hidden border border-line bg-onyx-glow transition-all duration-500 group-hover:border-gold/50 group-hover:shadow-[0_24px_50px_-28px_rgba(69,61,49,0.5)]">
+      {/* Product photo blended straight onto the page — the white studio
+          background multiplies away into the cream, leaving the product crisp */}
+      <div className="relative aspect-[5/6] overflow-hidden">
         <Image
           src={product.graphic}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 50vw, 25vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-umber/15 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          // Transparent PNG cut-outs blend on their own; opaque white-studio
+          // photos multiply so the white vanishes into the cream page.
+          className={`object-contain transition-transform duration-700 ease-out group-hover:scale-105 ${product.graphic.endsWith(".png") ? "" : "mix-blend-multiply"}`}
         />
       </div>
       <div className="flex flex-1 flex-col px-1 pt-5">
