@@ -57,7 +57,7 @@ export default async function ProductDetailPage({
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-line bg-porcelain/60">
+      <section className="border-b border-line">
         <Container className="py-10 sm:py-14">
           <Link
             href="/products"

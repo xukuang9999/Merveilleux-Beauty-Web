@@ -36,13 +36,13 @@ export default async function ProductsPage() {
                   i % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
-                <div className="arch-frame relative aspect-[5/6] overflow-hidden border border-line bg-onyx-glow shadow-[0_28px_60px_-36px_rgba(69,61,49,0.5)]">
+                <div className="relative aspect-[5/6]">
                   <Image
                     src={p.graphic}
                     alt={p.name}
                     fill
                     sizes="(max-width: 1024px) 90vw, 40vw"
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
               </div>
