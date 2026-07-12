@@ -21,7 +21,7 @@ export const devProducts: DevProduct[] = [
       "Brightens and lifts"
     ],
     "priceRM": "RM168",
-    "graphic": "/images/products/merveilleux-intensive-hydro-treatment-silk-mask.jpg",
+    "graphic": "/images/products/merveilleux-intensive-hydro-treatment-silk-mask.png",
     "sortOrder": 101,
     "published": true
   },
@@ -39,7 +39,7 @@ export const devProducts: DevProduct[] = [
       "Supports barrier repair"
     ],
     "priceRM": "RM178",
-    "graphic": "/images/products/merveilleux-intensive-restoration-treatment-silk-mask.jpg",
+    "graphic": "/images/products/merveilleux-intensive-restoration-treatment-silk-mask.png",
     "sortOrder": 102,
     "published": true
   },

@@ -74,10 +74,7 @@ export default async function ProductDetailPage({
                   alt={product.name}
                   fill
                   sizes="(max-width: 1024px) 90vw, 40vw"
-                  // Transparent PNGs (cut-out composites) blend on their own;
-                  // opaque photos on a white studio background multiply so the
-                  // white vanishes into the cream page.
-                  className={`object-contain ${product.graphic.endsWith(".png") ? "" : "mix-blend-multiply"}`}
+                  className="object-contain"
                   priority
                 />
               </div>

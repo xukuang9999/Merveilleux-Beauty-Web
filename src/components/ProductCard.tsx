@@ -14,17 +14,14 @@ export default function ProductCard({
       href={`/products/${product.slug}`}
       className="group flex flex-col"
     >
-      {/* Product photo blended straight onto the page — the white studio
-          background multiplies away into the cream, leaving the product crisp */}
+      {/* Transparent cut-out product photo sits straight on the cream page */}
       <div className="relative aspect-[5/6] overflow-hidden">
         <Image
           src={product.graphic}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 50vw, 25vw"
-          // Transparent PNG cut-outs blend on their own; opaque white-studio
-          // photos multiply so the white vanishes into the cream page.
-          className={`object-contain transition-transform duration-700 ease-out group-hover:scale-105 ${product.graphic.endsWith(".png") ? "" : "mix-blend-multiply"}`}
+          className="object-contain transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
       <div className="flex flex-1 flex-col px-1 pt-5">
