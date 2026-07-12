@@ -16,6 +16,7 @@ import {
   trainingProgress,
   promotions,
 } from "./schema";
+import { devProducts } from "./dev-products";
 import { hashPassword } from "../lib/auth-core";
 import {
   seedProducts,
@@ -81,9 +82,14 @@ async function main() {
   // Catalog
   // Seed products are explicitly published (the column now defaults to
   // unpublished so admin-created DB-only products stay hidden until published).
-  await db.insert(products).values(
-    seedProducts.map((p) => ({ ...p, published: true })),
-  );
+  // seedProducts is the (currently empty) storefront base; devProducts is a
+  // local-dev fixture of the 7 real products so a freshly seeded local.db has
+  // something to develop against, without putting them in the storefront base.
+  const productRows = [
+    ...seedProducts.map((p) => ({ ...p, published: true })),
+    ...devProducts,
+  ];
+  if (productRows.length) await db.insert(products).values(productRows);
   await db.insert(testimonials).values(seedTestimonials);
   await db.insert(faqs).values(seedFaqs);
   await db.insert(kbArticles).values(seedKbArticles);
@@ -143,7 +149,7 @@ async function main() {
   }
 
   console.log("✓ Seed complete.");
-  console.log("  Products:", seedProducts.length);
+  console.log("  Products:", seedProducts.length + devProducts.length);
   console.log("  Modules:", seedModules.length);
   console.log("  KB articles:", seedKbArticles.length);
   console.log("\n  Demo logins:");
