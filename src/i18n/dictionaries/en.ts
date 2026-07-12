@@ -611,6 +611,7 @@ const en = {
         promotions: "Promotions",
         news: "News",
         blog: "Blog",
+        bahasaMelayu: "Bahasa Melayu (BM) language",
       },
     },
     recentEnquiries: "Recent enquiries",

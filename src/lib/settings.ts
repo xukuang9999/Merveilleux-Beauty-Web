@@ -14,7 +14,8 @@ export type FeatureKey =
   | "gallery"
   | "promotions"
   | "news"
-  | "blog";
+  | "blog"
+  | "bahasaMelayu";
 
 /** The canonical list of flags, in the order the admin UI lists them. */
 export const FEATURE_KEYS: readonly FeatureKey[] = [
@@ -25,11 +26,14 @@ export const FEATURE_KEYS: readonly FeatureKey[] = [
   "promotions",
   "news",
   "blog",
+  "bahasaMelayu",
 ] as const;
 
 export type FeatureFlags = Record<FeatureKey, boolean>;
 
 // Everything ships enabled; the table only ever stores overrides.
+// Exception: bahasaMelayu ships OFF — BM translations exist but the language
+// toggle hides the option until an admin turns it on.
 const DEFAULTS: FeatureFlags = {
   aiChat: true,
   booking: true,
@@ -38,6 +42,7 @@ const DEFAULTS: FeatureFlags = {
   promotions: true,
   news: true,
   blog: true,
+  bahasaMelayu: false,
 };
 
 function isFeatureKey(k: string): k is FeatureKey {

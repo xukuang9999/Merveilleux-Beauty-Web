@@ -579,7 +579,8 @@ const ms: Dictionary = {
         "gallery": "Galeri",
         "promotions": "Promosi",
         "news": "Berita",
-        "blog": "Blog"
+        "blog": "Blog",
+        "bahasaMelayu": "Bahasa Melayu (BM)"
       }
     },
     "recentEnquiries": "Pertanyaan terkini",

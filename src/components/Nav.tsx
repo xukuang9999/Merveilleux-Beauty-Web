@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/lib/data";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import type { Locale } from "@/i18n/config";
+import { switcherLocales, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { FeatureFlags } from "@/lib/settings";
 import { LINK_FLAG } from "@/lib/feature-links";
@@ -68,14 +69,14 @@ export default function Nav({
           className="flex shrink-0 items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          <span className="flex flex-col leading-none">
-            <span className="wordmark text-[13px] text-charcoal">
-              Mérvéilléux
-            </span>
-            <span className="mt-1 text-[7px] font-medium uppercase tracking-[0.5em] text-gold">
-              Premium
-            </span>
-          </span>
+          <Image
+            src="/graphics/logo.png"
+            alt={site.name}
+            width={1200}
+            height={222}
+            priority
+            className="h-8 w-auto sm:h-9"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -93,7 +94,11 @@ export default function Nav({
               {l.label}
             </Link>
           ))}
-          <LanguageSwitcher current={locale} className="ml-2" />
+          <LanguageSwitcher
+            current={locale}
+            options={switcherLocales(flags.bahasaMelayu)}
+            className="ml-2"
+          />
           {user ? (
             <Link
               href={roleHome[user.role]}
@@ -124,7 +129,10 @@ export default function Nav({
 
         {/* Mobile toggle */}
         <div className="flex items-center gap-2 xl:hidden">
-          <LanguageSwitcher current={locale} />
+          <LanguageSwitcher
+            current={locale}
+            options={switcherLocales(flags.bahasaMelayu)}
+          />
           <button
             aria-label="Toggle menu"
             aria-expanded={open}

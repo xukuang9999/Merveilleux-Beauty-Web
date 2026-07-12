@@ -46,14 +46,13 @@ export default async function Footer({ flags }: { flags: FeatureFlags }) {
                 height={36}
                 className="brightness-[1.7] saturate-[0.75]"
               />
-              <span className="flex flex-col leading-none">
-                <span className="wordmark text-lg text-cream">
-                  Mérvéilléux
-                </span>
-                <span className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.5em] text-gold">
-                  Premium
-                </span>
-              </span>
+              <Image
+                src="/graphics/logo-light.png"
+                alt={site.name}
+                width={1200}
+                height={222}
+                className="h-8 w-auto"
+              />
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/60">
               {site.description}

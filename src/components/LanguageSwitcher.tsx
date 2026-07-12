@@ -7,9 +7,13 @@ import { locales, localeLabels, type Locale } from "@/i18n/config";
 
 export default function LanguageSwitcher({
   current,
+  options = locales,
   className = "",
 }: {
   current: Locale;
+  /** Locales to offer; defaults to all. Callers pass a filtered list to hide
+   *  options gated by a feature flag (e.g. BM). */
+  options?: readonly Locale[];
   className?: string;
 }) {
   const router = useRouter();
@@ -28,7 +32,7 @@ export default function LanguageSwitcher({
       aria-label="Language"
       className={`inline-flex items-center gap-0.5 rounded-full border border-line bg-white/70 p-0.5 ${className}`}
     >
-      {locales.map((l) => (
+      {options.map((l) => (
         <button
           key={l}
           onClick={() => pick(l)}

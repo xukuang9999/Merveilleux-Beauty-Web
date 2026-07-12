@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { logoutAction } from "@/lib/auth-actions";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import type { Locale } from "@/i18n/config";
+import { switcherLocales, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
 type Role = "customer" | "distributor" | "admin" | "master_admin";
@@ -15,11 +15,13 @@ export default function DashboardShell({
   user,
   locale,
   dict,
+  bahasaMelayu = false,
   children,
 }: {
   user: { name: string; role: Role };
   locale: Locale;
   dict: Dictionary["dashboard"];
+  bahasaMelayu?: boolean;
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
@@ -83,7 +85,10 @@ export default function DashboardShell({
             <span className="rounded-full bg-champagne/60 px-3 py-1 text-[11px] font-semibold text-bronze">
               {roleBadge[user.role]}
             </span>
-            <LanguageSwitcher current={locale} />
+            <LanguageSwitcher
+              current={locale}
+              options={switcherLocales(bahasaMelayu)}
+            />
           </div>
         </div>
 

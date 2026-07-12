@@ -579,7 +579,8 @@ const zh: Dictionary = {
         "gallery": "相册",
         "promotions": "促销",
         "news": "动态",
-        "blog": "博客"
+        "blog": "博客",
+        "bahasaMelayu": "马来文（BM）语言"
       }
     },
     "recentEnquiries": "最近的咨询",

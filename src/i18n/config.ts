@@ -27,3 +27,10 @@ export const localeHtmlLang: Record<Locale, string> = {
 export function isLocale(value: string | undefined | null): value is Locale {
   return !!value && (locales as readonly string[]).includes(value);
 }
+
+// Locales offered in the language switcher. `ms` (BM) is hidden unless the
+// `bahasaMelayu` feature flag is on — the translations still exist, they're
+// just not offered in the toggle. Hiding, not removing.
+export function switcherLocales(showBahasa: boolean): Locale[] {
+  return locales.filter((l) => l !== "ms" || showBahasa);
+}
