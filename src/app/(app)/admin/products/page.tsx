@@ -3,6 +3,7 @@ import { requireAdmin } from "@/lib/auth";
 import { db } from "@/db";
 import { products, type Product } from "@/db/schema";
 import { saveProduct, deleteProduct } from "@/lib/admin-actions";
+import { productCategories } from "@/lib/categories";
 import { DashHeading } from "@/components/dash";
 import ImageUploadField from "@/components/ImageUploadField";
 import { getDict } from "@/i18n/server";
@@ -92,6 +93,21 @@ function ProductForm({
         <div>
           <label className={label}>Type</label>
           <input name="type" defaultValue={product?.type} className={input} />
+        </div>
+        <div>
+          <label className={label}>Category</label>
+          <select
+            name="category"
+            defaultValue={product?.category ?? ""}
+            className={input}
+          >
+            <option value="">— Uncategorised —</option>
+            {productCategories.map((c) => (
+              <option key={c.slug} value={c.slug}>
+                {c.en}
+              </option>
+            ))}
+          </select>
         </div>
         <div>
           <label className={label}>Price (RM)</label>

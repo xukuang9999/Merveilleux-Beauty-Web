@@ -46,6 +46,8 @@ export const products = sqliteTable("products", {
   benefits: text("benefits", { mode: "json" }).$type<string[]>().notNull(),
   priceRM: text("price_rm").notNull(),
   graphic: text("graphic").notNull(),
+  // Canonical category slug (see src/lib/categories.ts); "" = uncategorised.
+  category: text("category").notNull().default(""),
   sortOrder: integer("sort_order").notNull().default(0),
   // DB-only products (created in the admin) default to unpublished — they only
   // appear on the storefront once explicitly published. Seed products are

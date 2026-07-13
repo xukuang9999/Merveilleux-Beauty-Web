@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getProducts } from "@/lib/content";
+import { productCategories } from "@/lib/categories";
 import { getDict, fmt } from "@/i18n/server";
 
 export const metadata: Metadata = {
@@ -11,9 +13,34 @@ export const metadata: Metadata = {
     "Explore the Merveilleux Beauty collection — OEM French-formulated serums, moisturiser, cleanser, essence, sunscreen, eye cream and masks.",
 };
 
-export default async function ProductsPage() {
-  const [products, dict] = await Promise.all([getProducts(), getDict()]);
+export default async function ProductsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const [products, dict, sp] = await Promise.all([
+    getProducts(),
+    getDict(),
+    searchParams,
+  ]);
   const d = dict.products;
+
+  // Only categories that actually have (published) products appear in the nav;
+  // empty ones auto-hide. Shown in the canonical order from categories.ts.
+  const present = productCategories.filter((c) =>
+    products.some((p) => p.category === c.slug),
+  );
+  const active = present.some((c) => c.slug === sp.category)
+    ? sp.category!
+    : null;
+  const shown = active ? products.filter((p) => p.category === active) : products;
+
+  const pill = (on: boolean) =>
+    `whitespace-nowrap rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.12em] transition-colors ${
+      on
+        ? "bg-charcoal text-cream"
+        : "border border-line text-mid hover:border-gold/50 hover:text-charcoal"
+    }`;
 
   return (
     <>
@@ -23,9 +50,31 @@ export default async function ProductsPage() {
         </Container>
       </section>
 
+      {present.length > 1 && (
+        <Container className="pt-10">
+          <nav
+            aria-label="Product categories"
+            className="flex flex-wrap items-center gap-2"
+          >
+            <Link href="/products" className={pill(active === null)}>
+              {d.allCategories}
+            </Link>
+            {present.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/products?category=${c.slug}`}
+                className={pill(active === c.slug)}
+              >
+                {d.categories[c.slug as keyof typeof d.categories]}
+              </Link>
+            ))}
+          </nav>
+        </Container>
+      )}
+
       <Container className="py-16">
         <div className="space-y-20">
-          {products.map((p, i) => (
+          {shown.map((p, i) => (
             <Reveal key={p.slug} variant={i % 2 === 1 ? "right" : "left"}>
             <article
               id={p.slug}

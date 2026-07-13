@@ -171,14 +171,18 @@ const ms: Dictionary = {
     "priceLabel": "Harga runcit",
     "resultsTitle": "Sebelum & selepas",
     "resultsNote": "Imej klinikal sebelum-dan-selepas untuk produk ini dikongsi dalam kit Pengedar — tanya kami untuk deck hasil yang penuh.",
+    "allCategories": "Semua",
     "categories": {
-      "cleansers": "Pencuci",
-      "toners": "Toner & Esens",
-      "serums": "Serum & Rawatan",
-      "moisturisers": "Pelembap",
-      "sun": "Perlindungan Matahari",
-      "eye": "Penjagaan Mata",
-      "masks": "Topeng"
+      "cleanser-mist-lotion": "Cleanser, Mist & Lotion",
+      "soothing-repairing-care": "Soothing & Repairing Care",
+      "hydrating-moisture-care": "Hydrating & Moisture Care",
+      "antioxidant-firming": "Anti-oxidant & Firming Series",
+      "whitening": "Whitening Series",
+      "eye-care": "Intensive Eye Care",
+      "soft-exfoliator": "Soft Exfoliator",
+      "purifying-care": "Purifying Care",
+      "sun-defence": "Sun Defence",
+      "trial-sets": "Trial Sets"
     },
     "skinTypeLabels": {
       "all": "Semua jenis kulit",

@@ -22,6 +22,7 @@ export const devProducts: DevProduct[] = [
     ],
     "priceRM": "RM168",
     "graphic": "/images/products/merveilleux-intensive-hydro-treatment-silk-mask.png",
+    "category": "hydrating-moisture-care",
     "sortOrder": 101,
     "published": true
   },
@@ -40,6 +41,7 @@ export const devProducts: DevProduct[] = [
     ],
     "priceRM": "RM178",
     "graphic": "/images/products/merveilleux-intensive-restoration-treatment-silk-mask.png",
+    "category": "soothing-repairing-care",
     "sortOrder": 102,
     "published": true
   },
@@ -57,6 +59,7 @@ export const devProducts: DevProduct[] = [
     ],
     "priceRM": "RM168",
     "graphic": "/images/products/merveilleux-daily-care-trial-set.png",
+    "category": "trial-sets",
     "sortOrder": 103,
     "published": true
   },
@@ -74,6 +77,7 @@ export const devProducts: DevProduct[] = [
     ],
     "priceRM": "RM288",
     "graphic": "/images/products/merveilleux-repairing-hydrating-trial-set.png",
+    "category": "trial-sets",
     "sortOrder": 104,
     "published": true
   },
@@ -91,6 +95,7 @@ export const devProducts: DevProduct[] = [
     ],
     "priceRM": "RM288",
     "graphic": "/images/products/merveilleux-brightening-hydrating-trial-set.png",
+    "category": "trial-sets",
     "sortOrder": 105,
     "published": true
   },
@@ -108,6 +113,7 @@ export const devProducts: DevProduct[] = [
     ],
     "priceRM": "RM260",
     "graphic": "/images/products/merveilleux-congested-set.png",
+    "category": "trial-sets",
     "sortOrder": 106,
     "published": true
   },
@@ -125,6 +131,7 @@ export const devProducts: DevProduct[] = [
     ],
     "priceRM": "RM260",
     "graphic": "/images/products/merveilleux-pimples-trial-set.png",
+    "category": "trial-sets",
     "sortOrder": 107,
     "published": true
   }

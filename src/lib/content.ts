@@ -17,7 +17,7 @@ import { getLocale, getDictionary } from "@/i18n/server";
 import type { Locale } from "@/i18n/config";
 import { contentPack } from "@/i18n/content";
 
-export type ProductView = Omit<SeedProduct, "sortOrder">;
+export type ProductView = Omit<SeedProduct, "sortOrder"> & { category: string };
 export type ArticleView = {
   slug: string;
   title: string;
@@ -71,6 +71,7 @@ export async function getProducts(): Promise<ProductView[]> {
       benefits: src.benefits,
       priceRM: src.priceRM,
       graphic: src.graphic,
+      category: edit?.category ?? "",
     });
   }
 
@@ -91,6 +92,7 @@ export async function getProducts(): Promise<ProductView[]> {
       benefits: r.benefits,
       priceRM: r.priceRM,
       graphic: r.graphic,
+      category: r.category,
     }));
   rows.push(...extra);
 

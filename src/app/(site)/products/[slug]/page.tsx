@@ -39,13 +39,13 @@ export default async function ProductDetailPage({
   const d = dict.products;
   const detail = productDetails[slug];
   const steps = detail?.howToUse[locale] ?? detail?.howToUse.en ?? [];
-  const categoryLabel = detail
-    ? d.categories[detail.category as keyof typeof d.categories]
+  const categoryLabel = product.category
+    ? d.categories[product.category as keyof typeof d.categories]
     : undefined;
 
   // Related: same category first, then fill from the rest of the range.
   const sameCat = allProducts.filter(
-    (p) => p.slug !== slug && productDetails[p.slug]?.category === detail?.category,
+    (p) => p.slug !== slug && !!product.category && p.category === product.category,
   );
   const others = allProducts.filter(
     (p) => p.slug !== slug && !sameCat.some((s) => s.slug === p.slug),

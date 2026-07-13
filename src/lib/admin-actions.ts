@@ -54,6 +54,7 @@ export async function saveProduct(formData: FormData) {
     slug: String(formData.get("slug") || "").trim(),
     name: String(formData.get("name") || "").trim(),
     type: String(formData.get("type") || "").trim(),
+    category: String(formData.get("category") || "").trim(),
     tagline: String(formData.get("tagline") || "").trim(),
     description: String(formData.get("description") || "").trim(),
     keyIngredients: toList(formData.get("keyIngredients")),

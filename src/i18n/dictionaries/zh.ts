@@ -171,14 +171,18 @@ const zh: Dictionary = {
     "priceLabel": "零售价",
     "resultsTitle": "使用前后对比",
     "resultsNote": "本产品的使用前后临床对比图收录于经销商资料包中 —— 欢迎向我们索取完整成效手册。",
+    "allCategories": "全部",
     "categories": {
-      "cleansers": "洁面",
-      "toners": "化妆水与精华水",
-      "serums": "精华与护理",
-      "moisturisers": "面霜保湿",
-      "sun": "防晒",
-      "eye": "眼部护理",
-      "masks": "面膜"
+      "cleanser-mist-lotion": "Cleanser, Mist & Lotion",
+      "soothing-repairing-care": "Soothing & Repairing Care",
+      "hydrating-moisture-care": "Hydrating & Moisture Care",
+      "antioxidant-firming": "Anti-oxidant & Firming Series",
+      "whitening": "Whitening Series",
+      "eye-care": "Intensive Eye Care",
+      "soft-exfoliator": "Soft Exfoliator",
+      "purifying-care": "Purifying Care",
+      "sun-defence": "Sun Defence",
+      "trial-sets": "Trial Sets"
     },
     "skinTypeLabels": {
       "all": "所有肤质",
