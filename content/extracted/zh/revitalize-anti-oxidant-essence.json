@@ -1,0 +1,16 @@
+{
+  "name_zh": null,
+  "name_en": "Revitalize Anti-Oxidant Essence",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "增加皮肤饱满度 · 保湿&自然光泽 · 质地细腻柔滑",
+  "price_myr": 258,
+  "size": "30 ml",
+  "overview_zh": "提升细胞间组织透明度，补充肌肤水分，刺激胶原合成与弹力蛋白重建，填充真皮结构、提升饱满度。",
+  "key_ingredients": ["Astaxanthin", "Hexapeptide-8", "Dipotassium Glycyrrhizate", "Sodium Hyaluronate", "Haematococcus Pluvialis Extract"],
+  "benefits_zh": ["增加皮肤饱满度", "保湿与自然光泽", "淡化细纹与皱纹"],
+  "claims_flagged": [],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_26@14-07-2026_02-18-38.jpg", "ChatExport_2026-07-14/photos/photo_27@14-07-2026_02-19-01.jpg"],
+  "source_msg_ids": ["dm-101", "dm-102", "dm-103", "hq-322"]
+}

@@ -1,0 +1,16 @@
+{
+  "name_zh": "优越修复精华",
+  "name_en": "Intensive Restoration Sérum",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "抗敏感、消炎 · 增强皮肤免疫系统 · 重整及修复受损皮肤",
+  "price_myr": 298,
+  "size": "30 ml",
+  "overview_zh": "专为敏感肌设计，补充免疫球蛋白，富含抗氧化、抗过敏与镇静成分，减轻泛红、降低敏感度。",
+  "key_ingredients": ["Dipotassium Glycyrrhizate", "Sodium Hyaluronate", "Serine", "Diosgenin Glyco", "Tremella Fuciformis Polysaccharide"],
+  "benefits_zh": ["抗敏舒缓", "增强肌肤免疫力", "修复受损细胞"],
+  "claims_flagged": ["抗敏感、消炎", "改善痘痘炎症，减少泛红", "快速镇静并改善皮肤炎、红血丝等问题"],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_15@14-07-2026_01-30-59.jpg", "ChatExport_2026-07-14/photos/photo_16@14-07-2026_01-31-31.jpg", "ChatExport_2026-07-13/photos/photo_13@18-10-2025_13-08-23.jpg"],
+  "source_msg_ids": ["dm-84", "dm-85", "dm-86", "hq-66", "hq-68", "hq-72"]
+}

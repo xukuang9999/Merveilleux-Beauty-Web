@@ -1,0 +1,16 @@
+{
+  "name_zh": "小分子洗面奶",
+  "name_en": "Gentle Cleansing Milk",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "微细小分子 · 舒缓保湿 · 温和洁面",
+  "price_myr": 168,
+  "size": "200 ml",
+  "overview_zh": "具备洁净、保湿与舒缓三大核心功效，细腻柔滑质地深入毛孔溶解油脂污垢，避免毛孔堵塞。",
+  "key_ingredients": ["Chamomile Recutita Extract", "Anthemis Nobilis Plant Extract", "Magnesium Chloride", "Magnesium Nitrate"],
+  "benefits_zh": ["深层清洁毛孔", "温和洁面不刺激", "洗后舒缓保湿"],
+  "claims_flagged": ["洗后会感觉皮肤细嫩白皙"],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_1@14-07-2026_01-14-41.jpg", "ChatExport_2026-07-14/photos/photo_2@14-07-2026_01-15-15.jpg", "ChatExport_2026-07-13/photos/photo_116@25-01-2026_16-38-31.jpg"],
+  "source_msg_ids": ["dm-63", "dm-64", "dm-65", "hq-287", "hq-288", "hq-312"]
+}

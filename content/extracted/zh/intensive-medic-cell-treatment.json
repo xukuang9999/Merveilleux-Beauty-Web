@@ -1,0 +1,16 @@
+{
+  "name_zh": "炎症调理系统",
+  "name_en": "Intensive Medic-Cell Treatment",
+  "type": "treatment",
+  "status": "available",
+  "tagline_zh": "重建平衡，修复根源",
+  "price_myr": null,
+  "size": null,
+  "overview_zh": "专为问题肌肤研发的专业细胞医学调理护理系统，从源头稳定炎症，重建肌肤健康基础。",
+  "key_ingredients": ["Medic Cell Powder", "Stem Cell 冻干粉", "Soothing Gel Mask", "氨基酸粉", "Nano Mist"],
+  "benefits_zh": ["泛红敏感炎症缓解", "堵塞痘痘与粗糙度下降", "整体肤色更干净透亮"],
+  "claims_flagged": ["医学级抗炎护理系统", "炎症因子抑制：精准靶向炎症介质", "色素管理…有效分解和淡化色素沉淀", "仅需1-3次专业操作即可见效", "痤疮医学强化治疗"],
+  "how_to_use_zh": ["双层洁脸 + peeling gel + 挤压", "Soothing gel mask + 氨基酸粉 + nano mist", "冻干粉逆向毛孔刷 + Stem cell mask 敷20分钟 + 防晒"],
+  "photo_files": ["ChatExport_2026-07-13/photos/photo_34@31-10-2025_03-52-53.jpg", "ChatExport_2026-07-13/photos/photo_101@06-01-2026_01-48-25.jpg"],
+  "source_msg_ids": ["hq-124", "hq-125", "hq-126", "hq-127", "hq-129", "hq-131", "hq-133", "hq-134", "hq-135", "hq-153", "hq-258", "hq-259", "hq-260", "hq-261"]
+}

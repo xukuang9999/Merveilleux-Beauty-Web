@@ -1,0 +1,16 @@
+{
+  "name_zh": "医用冰镇保湿退红舒缓面膜",
+  "name_en": "Medic ICE - Hydro Soothing Mask",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "医用冰镇 · 保湿退红 · 舒缓修护",
+  "price_myr": null,
+  "size": null,
+  "overview_zh": "全新升级冰感修护面膜，高浓度双重修复精华提升保湿力与修复力，针对泛红、干燥、晒后不适。",
+  "key_ingredients": ["尿囊素 (Allantoin)", "维生素原B5 (Provitamin B5)", "透明质酸钠 (Sodium Hyaluronate)", "黄芩提取物", "光果甘草根 / 迷迭香叶提取物"],
+  "benefits_zh": ["快速减缓泛红", "深层舒缓保湿", "晒后修护降温"],
+  "claims_flagged": ["医用冰镇保湿退红舒缓面膜", "抗炎镇静：尿囊素 + 黄芩提取物，减轻红肿不适"],
+  "how_to_use_zh": ["20分钟冰感降温护理"],
+  "photo_files": ["ChatExport_2026-07-13/photos/photo_88@03-01-2026_02-15-24.jpg", "ChatExport_2026-07-13/photos/photo_91@03-01-2026_02-16-02.jpg", "ChatExport_2026-07-13/photos/photo_159@07-07-2026_12-10-22.jpg"],
+  "source_msg_ids": ["hq-231", "hq-232", "hq-233", "hq-235", "hq-372", "hq-373", "hq-374", "hq-376"]
+}

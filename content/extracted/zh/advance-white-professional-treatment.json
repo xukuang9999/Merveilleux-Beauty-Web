@@ -1,0 +1,16 @@
+{
+  "name_zh": "钻石水光美白护理疗程",
+  "name_en": "Advance White Professional Treatment",
+  "type": "treatment",
+  "status": "available",
+  "tagline_zh": "亮、滑、紧、透",
+  "price_myr": null,
+  "size": null,
+  "overview_zh": "专为干性、中性及老化性肌肤研发的高端水光美白护理疗程，采用天然酵素与植萃复合配方。",
+  "key_ingredients": ["AW Caviar Lime Enzyme", "AW Active Complex", "AW Treatment Serum", "Hydrating Ampoule", "AW Treatment Silk Mask"],
+  "benefits_zh": ["肤色提亮1–2度", "肌肤更光滑、毛孔细致", "光泽感与紧致度提升"],
+  "claims_flagged": ["抑制黑色素", "水光美白淡斑护理", "抑制酪氨酸酶与氧化反应，有效阻断黑色素生成链", "定期疗程后可淡化斑点、均匀肤色", "不建议用于痘痘、发炎或敏感肌肤"],
+  "how_to_use_zh": ["双层洁脸 → Caviar Lime Enzyme → 挤压 → Active Complex", "Treatment Serum 精华导入 + Hydrating Amp 导入", "按摩 + Treatment Silk Mask 敷20-30分钟"],
+  "photo_files": ["ChatExport_2026-07-13/photos/photo_19@21-10-2025_05-05-31.jpg", "ChatExport_2026-07-13/photos/photo_23@21-10-2025_23-34-54.jpg"],
+  "source_msg_ids": ["hq-91", "hq-92", "hq-93", "hq-104", "hq-105", "hq-107", "hq-109", "hq-110", "hq-112", "hq-113", "hq-114", "hq-115", "hq-118"]
+}

@@ -1,0 +1,16 @@
+{
+  "name_zh": null,
+  "name_en": "PlantCell Double Ampoules Treatment",
+  "type": "treatment",
+  "status": "available",
+  "tagline_zh": "美白 + 补水双安瓶护理",
+  "price_myr": null,
+  "size": null,
+  "overview_zh": "PlantCell 沙龙专业护理，含美白安瓶 + 补水安瓶 + 医用冰膜，改善色素不均、质感粗糙。",
+  "key_ingredients": ["Whitening Ampoules", "Hydrating Ampoules", "Medic Ice Mask"],
+  "benefits_zh": ["色素明显改善", "肌理平滑", "光泽感提升"],
+  "claims_flagged": ["护理后色素明显改善"],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-13/photos/photo_133@07-07-2026_11-02-10.jpg", "ChatExport_2026-07-13/photos/photo_151@07-07-2026_12-06-31.jpg"],
+  "source_msg_ids": ["hq-179", "hq-341", "hq-342", "hq-361", "hq-362", "hq-363"]
+}

@@ -45,3 +45,4 @@ local.db
 local.db-*
 *.db
 *.db-journal
+ChatExport_*/

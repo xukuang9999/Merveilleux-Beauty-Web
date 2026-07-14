@@ -1,0 +1,16 @@
+{
+  "name_zh": "玫瑰精华露",
+  "name_en": "Essential Lotion",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "玫瑰精华露 · 具有三合一用法 · 平衡酸碱性",
+  "price_myr": 178,
+  "size": "150 ml",
+  "overview_zh": "由天然玫瑰精华与抗氧化成分组成的高级配制，持久补水保湿，令毛孔细腻、肌肤柔软膨胀。",
+  "key_ingredients": ["Rose Essence", "Aloe Vera", "Vitamin B5", "Oat Polypeptide", "Sodium Hyaluronate"],
+  "benefits_zh": ["持久补水保湿", "细致毛孔", "抗敏舒缓"],
+  "claims_flagged": [],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_9@14-07-2026_01-21-05.jpg", "ChatExport_2026-07-14/photos/photo_10@14-07-2026_01-21-28.jpg"],
+  "source_msg_ids": ["dm-75", "dm-76", "dm-77"]
+}

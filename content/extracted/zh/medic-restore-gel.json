@@ -1,0 +1,16 @@
+{
+  "name_zh": null,
+  "name_en": "Medic-Restore Gel",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "消炎 × 修复 × 稳定",
+  "price_myr": null,
+  "size": null,
+  "overview_zh": "医学级修复配方，专为缓解炎症、抗菌止痒、抗氧化及修护脆弱肌肤屏障而研制，专为反复不稳定肌设计。",
+  "key_ingredients": ["Bifida Ferment Lysate", "Centella Asiatica Extract", "Portulaca Oleracea Extract", "Matrine (苦参碱)", "Niacinamide"],
+  "benefits_zh": ["舒缓泛红不适", "修护脆弱屏障", "稳定肌肤状态"],
+  "claims_flagged": ["医学级修复配方，专为缓解炎症、抗菌止痒、抗氧化、抑制过敏反应", "适用于医美术后、敏感或痘痘肌", "强效消炎，深层修复，加速皮肤疗愈", "治疗痘痘脸"],
+  "how_to_use_zh": ["局部点涂于发炎、痘痘、堵塞、脓包、红肿区域", "白天局部点涂5–6次", "晚上睡前厚敷在发炎位置"],
+  "photo_files": ["ChatExport_2026-07-13/photos/photo_118@23-03-2026_04-11-46.jpg", "ChatExport_2026-07-13/photos/photo_120@06-04-2026_11-35-38.jpg", "ChatExport_2026-07-13/photos/photo_130@27-05-2026_19-41-38.jpg"],
+  "source_msg_ids": ["hq-295", "hq-296", "hq-297", "hq-300", "hq-307", "hq-308", "hq-309", "hq-310", "hq-311", "hq-333", "hq-334", "hq-335", "hq-336", "hq-337"]
+}

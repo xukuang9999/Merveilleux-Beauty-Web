@@ -1,0 +1,16 @@
+{
+  "name_zh": null,
+  "name_en": "Refined Hydro-Care",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "温和补水 · 清爽不油腻",
+  "price_myr": 248,
+  "size": "50 ml",
+  "overview_zh": "质地清透的温和保湿凝霜，专为缺水、阻塞与肤况不稳定肌肤设计，迅速补水同时修复屏障。",
+  "key_ingredients": ["Sodium Hyaluronate", "Vitamin B3", "Rose Rugosa Flower Water", "Chamomile Recutita (Matricaria) Flower Extract"],
+  "benefits_zh": ["快速补水", "支持屏障修复", "清爽不黏腻"],
+  "claims_flagged": [],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_32@14-07-2026_03-24-21.jpg", "ChatExport_2026-07-14/photos/photo_33@14-07-2026_03-24-40.jpg"],
+  "source_msg_ids": ["dm-110", "dm-111", "dm-112"]
+}

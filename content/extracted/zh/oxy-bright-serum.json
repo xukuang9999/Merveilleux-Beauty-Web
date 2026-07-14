@@ -1,0 +1,16 @@
+{
+  "name_zh": null,
+  "name_en": "Oxy-Bright Sérum",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "净白、光亮 · 强效抗氧化 · 密集含氧和活性成分",
+  "price_myr": 308,
+  "size": "30 ml",
+  "overview_zh": "专门配制持久提亮，通过密集氧合促进新陈代谢，以CamuCamu等活性成分补充维生素与氧气。",
+  "key_ingredients": ["Camu Camu Extract", "Beet Root", "Honey", "White Mulberry & Chamomile", "Coenzyme Q10"],
+  "benefits_zh": ["提亮改善暗沉", "强效抗氧化", "均匀肤色"],
+  "claims_flagged": ["净白、光亮", "有助于增强皮肤细胞的免疫力、抗衰老、抗氧化和抗菌"],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_23@14-07-2026_02-08-56.jpg", "ChatExport_2026-07-14/photos/photo_24@14-07-2026_02-10-25.jpg"],
+  "source_msg_ids": ["dm-96", "dm-97", "dm-98"]
+}

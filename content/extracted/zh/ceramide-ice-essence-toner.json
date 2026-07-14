@@ -1,0 +1,16 @@
+{
+  "name_zh": null,
+  "name_en": "Ceramide Ice-Essence Toner",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "清爽质地 · 冰凉舒适 · 幼细毛孔",
+  "price_myr": 178,
+  "size": "150 ml",
+  "overview_zh": "蕴含神经酰胺（Ceramide）修护皮脂膜，添加玻尿酸钠深层补水，强化肌肤屏障、提升防御力。",
+  "key_ingredients": ["Ceramide NS", "Sodium Hyaluronate", "Maris Aqua", "Trehalose", "Crocus Sativus Flower Extract"],
+  "benefits_zh": ["修护皮脂膜屏障", "深层补水保湿", "减少细纹、肤色透亮"],
+  "claims_flagged": ["有效预防因外部刺激引起的肌肤过敏，同时抵御细菌侵害"],
+  "how_to_use_zh": [],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_11@14-07-2026_01-22-20.jpg", "ChatExport_2026-07-14/photos/photo_12@14-07-2026_01-22-46.jpg"],
+  "source_msg_ids": ["dm-78", "dm-79", "dm-80"]
+}

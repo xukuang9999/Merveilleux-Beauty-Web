@@ -1,0 +1,16 @@
+{
+  "name_zh": null,
+  "name_en": "Hydro-Sensi Concentrate",
+  "type": "product",
+  "status": "available",
+  "tagline_zh": "补水BOOSTER · 小分子高渗透 · 细腻嫩滑",
+  "price_myr": 218,
+  "size": "30 ml",
+  "overview_zh": "含海藻、玻尿酸、洋甘菊等，采用小于500道尔顿小分子玻尿酸，深层补水并缓解干燥肌肤。",
+  "key_ingredients": ["Sodium Hyaluronate", "Aloe Vera", "Chamomile", "Hammamelis Extract", "Marine Algae"],
+  "benefits_zh": ["深层补水保湿", "提亮肤色抚平细纹", "强化受损屏障"],
+  "claims_flagged": [],
+  "how_to_use_zh": ["护肤第一步，于洁面后使用，帮助打开吸收通道"],
+  "photo_files": ["ChatExport_2026-07-14/photos/photo_17@14-07-2026_01-32-48.jpg", "ChatExport_2026-07-14/photos/photo_18@14-07-2026_01-33-38.jpg"],
+  "source_msg_ids": ["dm-87", "dm-88", "dm-89", "hq-322"]
+}
