@@ -53,6 +53,30 @@ export const products = sqliteTable("products", {
   // appear on the storefront once explicitly published. Seed products are
   // seeded as published; see src/db/seed.ts.
   published: integer("published", { mode: "boolean" }).notNull().default(false),
+
+  // ---- Catalogue-extraction fields (see src/db/import-extracted.ts) --------
+  // Source classification: product | treatment | bundle. Distinct from `type`,
+  // which is a free-text display label ("Silk Treatment Mask", "Trial Set").
+  // Nullable — the pre-existing dev rows predate this column.
+  kind: text("kind", { enum: ["product", "treatment", "bundle"] }),
+  // Editorial/lifecycle state from the source card (e.g. "available"), separate
+  // from `published` (storefront visibility). Defaulted so db:push is safe.
+  status: text("status").notNull().default("available"),
+  // Marketing grouping from the source cards (e.g. "Eye Care", "Silk Mask").
+  // Distinct from `category` (the canonical storefront filter slug); "" = none.
+  collection: text("collection").notNull().default(""),
+  // Pack/size label as printed on the card (e.g. "3 items", "30ml"); null = n/a.
+  sizeLabel: text("size"),
+  // Bundle / trial-set contents — one line per item. Null for single products.
+  contents: text("contents", { mode: "json" }).$type<string[]>(),
+  // Compliance-sensitive marketing claims flagged during extraction, for review.
+  claimsFlagged: text("claims_flagged", { mode: "json" }).$type<string[]>(),
+  // Directions for use — one step per line.
+  howToUse: text("how_to_use", { mode: "json" }).$type<string[]>(),
+  // Provenance: Telegram / manifest message ids this card was extracted from.
+  sourceMsgIds: text("source_msg_ids", { mode: "json" }).$type<string[]>(),
+  // Additional gallery images (public URLs). `graphic` stays the primary image.
+  photos: text("photos", { mode: "json" }).$type<string[]>(),
 });
 
 export const testimonials = sqliteTable("testimonials", {
