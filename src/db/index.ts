@@ -1,45 +1,40 @@
-import { drizzle } from "drizzle-orm/libsql";
-import { createClient, type Client } from "@libsql/client";
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
 import * as schema from "./schema";
 
-// Resolve the DB URL:
-// - TURSO_DATABASE_URL when configured (dev or prod)
-// - a local file in dev (writable)
-// - in-memory in prod when no Turso is set, so the serverless runtime never
-//   crashes on the read-only filesystem (content falls back to curated seed)
-function resolveUrl(): string {
-  if (process.env.TURSO_DATABASE_URL) return process.env.TURSO_DATABASE_URL;
-  // On Vercel's read-only serverless filesystem a file DB crashes; use
-  // in-memory so the app stays up (content falls back to curated seed).
-  // Accounts / training / admin stay inert until Turso is configured.
-  if (process.env.VERCEL) {
-    console.warn(
-      "[merveilleux] No TURSO_DATABASE_URL set — using in-memory DB. " +
-        "Public pages use seed fallback; accounts/training/admin are disabled until Turso is configured.",
-    );
-    return ":memory:";
-  }
-  return "file:./local.db";
+// Postgres connection string:
+// - DATABASE_URL when configured — Supabase (prod) or local Postgres (dev).
+// - When unset, we point at an unreachable local address so queries REJECT
+//   quickly instead of hanging. Public content then falls back to the curated
+//   seed (see src/lib/content.ts) and the app never hard-crashes on boot.
+//   Accounts / training / admin stay inert until a DB is configured.
+const connectionString = process.env.DATABASE_URL;
+
+const globalForDb = globalThis as unknown as {
+  __pg?: ReturnType<typeof postgres>;
+};
+
+function makeClient() {
+  return postgres(connectionString ?? "postgres://nodb@127.0.0.1:1/nodb", {
+    // Required for Supabase's transaction-mode pooler (PgBouncer, port 6543):
+    // it doesn't support prepared statements. Harmless on a direct/local conn.
+    prepare: false,
+    // Fail fast when no DB is configured so the seed fallback kicks in quickly.
+    connect_timeout: connectionString ? 30 : 2,
+    // Release idle connections promptly — friendly to the shared pooler and to
+    // serverless instances that come and go.
+    idle_timeout: 20,
+    // postgres-js prints connection notices to stderr by default; silence them.
+    onnotice: () => {},
+  });
 }
 
-const authToken = process.env.TURSO_AUTH_TOKEN;
-
-const globalForDb = globalThis as unknown as { __libsql?: Client };
-
-function makeClient(): Client {
-  try {
-    return createClient({ url: resolveUrl(), authToken });
-  } catch {
-    // Last-resort fallback so the app never hard-crashes at startup.
-    return createClient({ url: ":memory:" });
-  }
-}
-
-const client = globalForDb.__libsql ?? makeClient();
-if (process.env.NODE_ENV !== "production") globalForDb.__libsql = client;
+// Reuse the client across HMR reloads in dev; a fresh one per cold start in prod.
+const client = globalForDb.__pg ?? makeClient();
+if (process.env.NODE_ENV !== "production") globalForDb.__pg = client;
 
 export const db = drizzle(client, { schema });
 export { schema };
 
-/** True when a real Turso connection is configured (vs local/in-memory). */
-export const hasRemoteDb = Boolean(process.env.TURSO_DATABASE_URL);
+/** True when a real Postgres connection is configured (vs the no-DB fallback). */
+export const hasRemoteDb = Boolean(connectionString);

@@ -18,6 +18,7 @@
  * splitting the zh overlay into src/i18n/content/zh.ts is a follow-up step, not
  * something this script does.
  */
+import "./load-env";
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { db } from "./index";

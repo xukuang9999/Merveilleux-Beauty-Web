@@ -40,7 +40,7 @@ export async function submitQuiz(
     .onConflictDoUpdate({
       target: [trainingProgress.userId, trainingProgress.moduleId],
       set: {
-        score: sql`max(${trainingProgress.score}, excluded.score)`,
+        score: sql`greatest(${trainingProgress.score}, excluded.score)`,
         completed: sql`${trainingProgress.completed} OR excluded.completed`,
         completedAt: sql`coalesce(${trainingProgress.completedAt}, excluded.completed_at)`,
       },

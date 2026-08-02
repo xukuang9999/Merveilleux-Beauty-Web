@@ -1,8 +1,9 @@
 /**
  * Seed the database with curated content + demo accounts.
- * Local:  npm run db:seed            (uses file:./local.db)
- * Turso:  npm run db:seed:remote     (reads .env.local for TURSO_*)
+ * Local:      npm run db:seed
+ * A specific DB (e.g. Supabase): DATABASE_URL="postgres://…" npm run db:seed
  */
+import "./load-env";
 import { db } from "./index";
 import {
   users,
