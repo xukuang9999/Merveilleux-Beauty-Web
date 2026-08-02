@@ -19,8 +19,14 @@ function makeClient() {
     // Required for Supabase's transaction-mode pooler (PgBouncer, port 6543):
     // it doesn't support prepared statements. Harmless on a direct/local conn.
     prepare: false,
-    // Fail fast when no DB is configured so the seed fallback kicks in quickly.
-    connect_timeout: connectionString ? 30 : 2,
+    // Fail FAST on an unreachable/misconfigured DB. Our reads are wrapped in
+    // try/catch and fall back to the curated seed — but a try/catch only catches
+    // an *error*, not a *hang*. A short connect timeout (well under Next's 60s
+    // per-page static-generation limit, even across retries) turns a stalled
+    // connection into a prompt rejection, so a DB blip can never hang the build.
+    connect_timeout: connectionString ? 8 : 2,
+    // Belt-and-braces: also bound query execution server-side.
+    connection: { statement_timeout: 8000 },
     // Release idle connections promptly — friendly to the shared pooler and to
     // serverless instances that come and go.
     idle_timeout: 20,
