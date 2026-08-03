@@ -4,8 +4,9 @@ import Link from "next/link";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getProducts } from "@/lib/content";
+import { productDetails } from "@/lib/seed-data";
 import { productCategories } from "@/lib/categories";
-import { getDict, fmt } from "@/i18n/server";
+import { getDict } from "@/i18n/server";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -97,53 +98,33 @@ export default async function ProductsPage({
               </div>
 
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="flex items-center gap-3">
-                  <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
-                    {p.type}
-                  </p>
-                  <span className="rounded-full bg-gold-light px-2.5 py-0.5 text-xs font-medium text-amber">
-                    {p.priceRM}
-                  </span>
-                </div>
+                <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
+                  {p.type}
+                </p>
                 <h2 className="mt-2 font-serif text-4xl font-medium text-charcoal">
                   {p.name}
                 </h2>
-                <p className="mt-1 text-lg italic text-bronze">{p.tagline}</p>
-                <p className="mt-5 text-base leading-relaxed text-mid">
-                  {p.description}
-                </p>
 
-                <div className="mt-7 grid gap-6 sm:grid-cols-2">
+                <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-3">
                   <div>
-                    <h3 className="eyebrow mb-3">{d.keyIngredients}</h3>
-                    <ul className="space-y-1.5">
-                      {p.keyIngredients.map((ing) => (
-                        <li key={ing} className="text-sm text-charcoal">
-                          {ing}
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="eyebrow mb-1">{d.priceLabel}</p>
+                    <p className="font-serif text-2xl text-charcoal">
+                      {p.priceRM}
+                    </p>
                   </div>
-                  <div>
-                    <h3 className="eyebrow mb-3">{d.benefits}</h3>
-                    <ul className="space-y-1.5">
-                      {p.benefits.map((b) => (
-                        <li
-                          key={b}
-                          className="flex items-start gap-2 text-sm text-charcoal"
-                        >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {productDetails[p.slug]?.size && (
+                    <div>
+                      <p className="eyebrow mb-1">{d.size}</p>
+                      <p className="text-charcoal">
+                        {productDetails[p.slug]!.size}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Button href={`/products/${p.slug}`}>{d.viewDetails}</Button>
-                  <Button href="/contact" variant="outline">
-                    {fmt(d.enquireAbout, { name: p.name })}
+                <div className="mt-8">
+                  <Button href={`/products/${p.slug}`}>
+                    {d.clickForDetails}
                   </Button>
                 </div>
               </div>
