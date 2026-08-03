@@ -175,6 +175,8 @@ const en = {
     reviewsTitle: "What people say",
     relatedTitle: "Complete the routine",
     enquireNow: "Enquire on WhatsApp",
+    clickForDetails: "Click for Details",
+    hideDetails: "Hide Details",
     priceLabel: "Retail price",
     resultsTitle: "Before & after",
     resultsNote:

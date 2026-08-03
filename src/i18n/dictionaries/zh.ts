@@ -168,6 +168,8 @@ const zh: Dictionary = {
     "reviewsTitle": "使用者评价",
     "relatedTitle": "完善您的护肤流程",
     "enquireNow": "通过 WhatsApp 咨询",
+    "clickForDetails": "查看详情",
+    "hideDetails": "收起详情",
     "priceLabel": "零售价",
     "resultsTitle": "使用前后对比",
     "resultsNote": "本产品的使用前后临床对比图收录于经销商资料包中 —— 欢迎向我们索取完整成效手册。",
