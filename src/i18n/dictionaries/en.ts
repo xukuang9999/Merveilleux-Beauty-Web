@@ -70,7 +70,7 @@ const en = {
         },
         {
           title: "A routine mapped to your skin",
-          body: "Cleanse, treat, protect — matched to your skin and our climate, with Margaux, our AI advisor, guiding every step.",
+          body: "Cleanse, treat, protect — matched to your skin and our climate.",
         },
         {
           title: "Actives that truly perform",

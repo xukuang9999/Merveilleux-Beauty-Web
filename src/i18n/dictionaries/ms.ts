@@ -69,7 +69,7 @@ const ms: Dictionary = {
         },
         {
           "title": "Rutin yang dipetakan untuk kulit anda",
-          "body": "Bersih, rawat, lindung — sepadan dengan kulit anda dan iklim kita, dengan Margaux, penasihat AI kami, membimbing setiap langkah.",
+          "body": "Bersih, rawat, lindung — sepadan dengan kulit anda dan iklim kita.",
         },
         {
           "title": "Aktif yang benar-benar berkesan",
