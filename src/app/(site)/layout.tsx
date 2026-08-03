@@ -6,6 +6,12 @@ import { getCurrentUser } from "@/lib/auth";
 import { getFeatureFlags } from "@/lib/settings";
 import { getLocale, getDict } from "@/i18n/server";
 
+// This site is DB-backed and admin-editable, so public pages render on-demand
+// (in the serverless function) rather than being baked at build time. This also
+// keeps the build itself free of any database access — a slow or unreachable DB
+// can never hang or fail the production build during static generation.
+export const dynamic = "force-dynamic";
+
 export default async function SiteLayout({
   children,
 }: {
