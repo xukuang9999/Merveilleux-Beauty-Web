@@ -1,18 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Button, Stars } from "@/components/ui";
+import { Button } from "@/components/ui";
 
 type Chapter = { title: string; body: string };
 
 type Props = {
-  eyebrow: string;
-  titleBefore: string;
-  titleHighlight: string;
-  body: string;
   exploreLabel: string;
   joinLabel: string;
-  lovedBy: string;
   scrollHint: string;
   /** Scenes 2–5 of the walkthrough (scene 1 is the brand hero below). */
   chapters: Chapter[];
@@ -55,13 +50,8 @@ function windowOpacity(p: number, [a, b, c, d]: readonly number[]): number {
 }
 
 export default function ScrollVideoHero({
-  eyebrow,
-  titleBefore,
-  titleHighlight,
-  body,
   exploreLabel,
   joinLabel,
-  lovedBy,
   scrollHint,
   chapters,
 }: Props) {
@@ -70,7 +60,6 @@ export default function ScrollVideoHero({
   const layers = useRef<Array<HTMLDivElement | null>>([]);
   const barRef = useRef<HTMLDivElement | null>(null);
   const hintRef = useRef<HTMLDivElement | null>(null);
-  const haloRef = useRef<HTMLDivElement | null>(null);
 
   const reducedRef = useRef(false);
 
@@ -175,10 +164,6 @@ export default function ScrollVideoHero({
       if (barRef.current) barRef.current.style.width = `${(p * 100).toFixed(2)}%`;
       if (hintRef.current)
         hintRef.current.style.opacity = Math.max(0, 1 - p * 7).toFixed(3);
-      // The top cove-light halo belongs to the reception; fade it away as the
-      // journey moves deeper into the boutique.
-      if (haloRef.current)
-        haloRef.current.style.opacity = Math.max(0, 1 - p / 0.22).toFixed(3);
     };
 
     // Update synchronously on scroll — browsers already fire scroll at most once
@@ -230,15 +215,6 @@ export default function ScrollVideoHero({
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-gradient-to-r from-umber/85 via-umber/25 to-transparent"
         />
-        <div
-          ref={haloRef}
-          aria-hidden
-          className="pointer-events-none absolute -top-72 left-1/2 h-[620px] w-[620px] -translate-x-1/2"
-          style={{ willChange: "opacity" }}
-        >
-          <div className="halo h-full w-full" />
-        </div>
-
         {/* 01 · Reception — the brand hero */}
         <div
           ref={setLayer(0)}
@@ -246,35 +222,12 @@ export default function ScrollVideoHero({
           style={{ willChange: "opacity, transform" }}
         >
           <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-            <div
-              className="max-w-xl"
-              style={{ textShadow: "0 2px 22px rgba(41,37,31,0.55)" }}
-            >
-              <p className="wordmark text-2xl text-cream sm:text-3xl">Mérvéilléux</p>
-              <p className="mt-2.5 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.55em] text-gold">
-                <span aria-hidden className="h-px w-12 bg-gold/70" />
-                Premium
-                <span aria-hidden className="h-px w-12 bg-gold/70" />
-              </p>
-              <h1 className="mt-5 font-serif text-[2.6rem] font-light leading-[1.08] text-cream sm:mt-6 sm:text-6xl sm:leading-[1.05]">
-                {titleBefore}
-                <span className="gradient-text italic">{titleHighlight}</span>.
-              </h1>
-              <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.3em] text-gold/90">
-                {eyebrow}
-              </p>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-cream/85 sm:mt-6 sm:text-lg">
-                {body}
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
+            <div className="max-w-xl">
+              <div className="flex flex-wrap gap-3">
                 <Button href="/products">{exploreLabel}</Button>
                 <Button href="/join" variant="outline" className="bg-umber/45 text-cream! backdrop-blur-[2px]">
                   {joinLabel}
                 </Button>
-              </div>
-              <div className="mt-9 hidden items-center gap-4 sm:flex">
-                <Stars />
-                <p className="text-sm text-cream/75">{lovedBy}</p>
               </div>
             </div>
           </div>
