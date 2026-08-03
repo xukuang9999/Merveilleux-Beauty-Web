@@ -218,10 +218,10 @@ export default function ScrollVideoHero({
         {/* 01 · Reception — the brand hero */}
         <div
           ref={setLayer(0)}
-          className="absolute inset-0 flex items-center"
+          className="absolute inset-0 flex items-end"
           style={{ willChange: "opacity, transform" }}
         >
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <div className="mx-auto w-full max-w-6xl px-5 pb-[20vh] sm:px-8">
             <div className="flex flex-wrap justify-center gap-3">
               <Button href="/products">{exploreLabel}</Button>
               <Button href="/join" variant="outline" className="bg-umber/45 text-cream! backdrop-blur-[2px]">
