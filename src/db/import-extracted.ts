@@ -10,13 +10,14 @@
  *    until an admin publishes it (see the JS filter in src/lib/content.ts).
  *  - Slugs that already exist (the 7 dev/admin rows) are SKIPPED, never
  *    overwritten or unpublished — the import is additive and re-runnable.
- *  - Runs against whatever `src/db/index.ts` resolves (local.db by default, or
- *    Turso when TURSO_DATABASE_URL is set), same as the seed script.
+ *  - Runs against whatever `src/db/index.ts` resolves from DATABASE_URL (local
+ *    Postgres in dev, Supabase in prod), same as the seed script.
  *
- * The cards are Chinese-sourced, so the zh copy is loaded into the canonical
- * (English) columns as WORKING COPY for reviewers. Translating to English and
- * splitting the zh overlay into src/i18n/content/zh.ts is a follow-up step, not
- * something this script does.
+ * The cards are bilingual: the ENGLISH copy (name_en, tagline_en, overview_en,
+ * benefits_en, how_to_use_en) is loaded into the canonical columns — English is
+ * the source language the read layer expects (see src/lib/content.ts) — while the
+ * Chinese copy lives in the src/i18n/content/zh.ts overlay, keyed by the same slug.
+ * Keep the two in sync: re-run `python3 gen-zh-overlay.py` after editing cards.
  */
 import "./load-env";
 import { readdirSync, readFileSync, existsSync } from "node:fs";
@@ -30,13 +31,18 @@ type Card = {
   type: "product" | "treatment" | "bundle" | string;
   status: string | null;
   collection?: string | null;
+  // English → canonical columns; the _zh copy → src/i18n/content/zh.ts overlay.
+  tagline_en: string | null;
   tagline_zh: string | null;
   price_myr: number | null;
   size: string | null;
+  overview_en: string | null;
   overview_zh: string | null;
   key_ingredients: string[] | null;
+  benefits_en: string[] | null;
   benefits_zh: string[] | null;
   claims_flagged: string[] | null;
+  how_to_use_en: string[] | null;
   how_to_use_zh: string[] | null;
   contents?: string[] | null;
   photo_files: string[] | null;
@@ -94,10 +100,11 @@ function toRow(slug: string, c: Card, ord: number): ProductInsert {
     name: c.name_en || c.name_zh || slug,
     type: typeLabel,
     kind,
-    tagline: c.tagline_zh ?? "",
-    description: c.overview_zh ?? "",
+    // Canonical columns hold English; Chinese is overlaid via the zh content pack.
+    tagline: c.tagline_en ?? "",
+    description: c.overview_en ?? "",
     keyIngredients: c.key_ingredients ?? [],
-    benefits: c.benefits_zh ?? [],
+    benefits: c.benefits_en ?? [],
     priceRM: c.price_myr != null ? `RM${c.price_myr}` : "",
     graphic: resolveGraphic(slug),
     category: COLLECTION_TO_CATEGORY[c.collection ?? ""] ?? "",
@@ -106,7 +113,7 @@ function toRow(slug: string, c: Card, ord: number): ProductInsert {
     sizeLabel: c.size ?? null,
     contents: nonEmpty(c.contents),
     claimsFlagged: nonEmpty(c.claims_flagged),
-    howToUse: nonEmpty(c.how_to_use_zh),
+    howToUse: nonEmpty(c.how_to_use_en),
     sourceMsgIds: nonEmpty(c.source_msg_ids),
     // photo_files point at ChatExport paths not present under /public; leave the
     // gallery empty and let reviewers upload real photos via the admin.

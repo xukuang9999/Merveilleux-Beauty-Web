@@ -1,16 +1,43 @@
 {
-  "name_zh": null,
-  "name_en": "AQUA Concentrate Mask",
+  "name_en": "Aqua-Concentrate Mask",
+  "name_zh": "深层保湿面膜",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Intensive hydration that locks in moisture for soft, luminous skin",
   "tagline_zh": "密集补水 · 锁水保湿 · 柔嫩透亮",
-  "price_myr": null,
-  "size": null,
-  "overview_zh": "凝萃多种植物保湿凝胶面膜，结合微分子补水科技，补充水分、提升含水量并减少水分流失。",
-  "key_ingredients": [],
-  "benefits_zh": ["密集补水改善干燥", "锁住水分维持水润", "肌肤柔嫩细致有光泽"],
+  "price_myr": 128,
+  "size": "50 ml",
+  "overview_en": "Rich in assorted plant essences and hyaluronic water molecules that penetrate deep into the skin for lasting hydration and a balanced, even complexion.",
+  "overview_zh": "含有丰富的各种植物精华和水分子玻尿酸，能更好地渗透肌肤，为肌肤提供持久保湿，最终达到肤色平衡。",
+  "key_ingredients": [
+    "Sodium Hyaluronate",
+    "Aloe Barbadensis Leaf Extract",
+    "Propylene Glycol"
+  ],
+  "benefits_en": [
+    "Replenishes moisture",
+    "Locks in hydration and prevents water loss",
+    "Soothes tightness from dryness",
+    "Leaves skin softer, finer and more radiant",
+    "Recommended as a 7-day intensive hydration course"
+  ],
+  "benefits_zh": [
+    "密集补水改善干燥",
+    "锁住水分，防止流失",
+    "舒缓干燥带来的紧绷",
+    "肌肤更柔嫩、细致、有光泽",
+    "建议连续7天密集补水护理"
+  ],
+  "how_to_use_en": [
+    "Use for 7 consecutive days as an intensive hydration course."
+  ],
+  "how_to_use_zh": [
+    "建议连续使用7天作为密集补水护理"
+  ],
   "claims_flagged": [],
-  "how_to_use_zh": ["建议连续使用7天作为密集补水护理"],
-  "photo_files": ["ChatExport_2026-07-13/photos/photo_163@13-07-2026_01-05-36.jpg"],
+  "photo_files": [
+    "ChatExport_2026-07-13/photos/photo_163@13-07-2026_01-05-36.jpg"
+  ],
   "source_msg_ids": ["hq-381", "hq-382"]
 }

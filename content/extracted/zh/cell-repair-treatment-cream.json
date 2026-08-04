@@ -1,16 +1,40 @@
 {
-  "name_zh": null,
-  "name_en": "Cell-Repair Treatment Cream",
+  "name_en": "Cell Repair Treatment Cream",
+  "name_zh": "修复屏障乳霜",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Moisture-locking barrier repair with a light, refined feel",
   "tagline_zh": "锁水保湿 · 屏障修复 · 清爽细腻",
   "price_myr": 228,
   "size": "30 ml",
-  "overview_zh": "专注于屏障修护的保湿面霜，富含麦角硫因（Ergothioneine）及多种修护肌肤脂质的活性成分。",
-  "key_ingredients": ["Ergothioneine", "Sodium Hyaluronate", "Vitamin B3", "Rose Rugosa Flower Water", "Chamomile Recutita (Matricaria) Flower Extract"],
-  "benefits_zh": ["锁水保湿", "修护肌肤屏障", "清爽细腻"],
-  "claims_flagged": [],
+  "overview_en": "Enriched with Ergothioneine and skin-moisturising actives that repair skin lipids and protect skin cells; peptides and plant extracts deeply nourish the skin, relieve dryness and dispel dullness for a supple, radiant complexion.",
+  "overview_zh": "添加麦角硫因和肌肤保湿成分，珍贵成分修护肌肤脂质，保护与修复皮肤细胞；多肽及多种植物精华深入滋润肌肤，缓解肌肤干燥，扫除肌肤黄气，令肌肤水润弹滑。",
+  "key_ingredients": [
+    "Ergothioneine",
+    "Sodium Hyaluronate",
+    "Niacinamide (Vitamin B3)",
+    "Rosa Rugosa Flower Water",
+    "Chamomilla Recutita (Matricaria) Flower Extract"
+  ],
+  "benefits_en": [
+    "Rebuilds the skin barrier system",
+    "Relieves dryness while replenishing and locking in moisture and nutrition",
+    "Intensely repairs skin lipids"
+  ],
+  "benefits_zh": [
+    "重建皮肤屏障系统",
+    "缓解皮肤干燥，补水锁水锁营养",
+    "极度修复皮肤脂质"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
-  "photo_files": ["ChatExport_2026-07-14/photos/photo_36@14-07-2026_03-26-51.jpg", "ChatExport_2026-07-14/photos/photo_37@14-07-2026_03-27-12.jpg"],
+  "claims_flagged": [
+    "Overview claims protection and repair of skin cells against DNA damage from infrared light — strong efficacy claim, verify before publishing."
+  ],
+  "photo_files": [
+    "ChatExport_2026-07-14/photos/photo_36@14-07-2026_03-26-51.jpg",
+    "ChatExport_2026-07-14/photos/photo_37@14-07-2026_03-27-12.jpg"
+  ],
   "source_msg_ids": ["dm-116", "dm-117", "dm-118"]
 }

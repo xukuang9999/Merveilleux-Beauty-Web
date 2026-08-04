@@ -1,18 +1,31 @@
 {
-  "name_zh": null,
   "name_en": "Daily Care Trial Set",
-  "collection": "Trial Sets & Bundles",
+  "name_zh": "日常护理体验套装",
   "type": "bundle",
   "status": "available",
-  "tagline_zh": null,
+  "collection": "Trial Sets & Bundles",
+  "tagline_en": "A travel-size trio for everyday basic care",
+  "tagline_zh": "日常基础护理入门三件套",
   "price_myr": 168,
   "size": "3 items",
-  "contents": ["Gentle Cleansing Milk 30ml", "Ultrafine Cleansing Gel 20ml", "Ceramide Ice-Essence Toner 30ml"],
-  "overview_zh": null,
-  "key_ingredients": null,
-  "benefits_zh": null,
-  "claims_flagged": [],
+  "overview_en": "A starter trio for daily basic care — gentle cleanse, deep cleanse and a barrier-repairing toner in travel sizes. Includes Gentle Cleansing Milk 30 ml, Ultrafine Cleansing Gel 20 ml and Ceramide Ice-Essence Toner 30 ml.",
+  "overview_zh": "日常基础护理入门三件套（旅行装）：温和洁面、深层洁净与修护屏障爽肤水。内含温和洁面乳 30ml、精华蜜状洁面凝胶 20ml、神经酰胺爽肤水 30ml。",
+  "key_ingredients": [],
+  "benefits_en": [
+    "Includes Gentle Cleansing Milk 30 ml",
+    "Includes Ultrafine Cleansing Gel 20 ml",
+    "Includes Ceramide Ice-Essence Toner 30 ml",
+    "Travel-friendly sizes to trial the daily basic-care routine"
+  ],
+  "benefits_zh": [
+    "内含温和洁面乳 30ml",
+    "内含精华蜜状洁面凝胶 20ml",
+    "内含神经酰胺爽肤水 30ml",
+    "旅行装尺寸，轻松体验日常基础护理"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [],
   "photo_files": [],
   "source_msg_ids": ["manifest"]
 }

@@ -1,16 +1,37 @@
 {
-  "name_zh": null,
-  "name_en": "Vital Perfect-UV SPF30",
+  "name_en": "Vital Perfect UV SPF30",
+  "name_zh": "完美保湿防晒 SPF30",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Moisturising daily UV defence",
   "tagline_zh": "防晒 · 保湿 · 自然修饰肤色",
   "price_myr": 188,
   "size": "30 ml",
-  "overview_zh": "质地如清爽粉底液般顺滑的多效防晒，轻盈易推开，含透明质酸防止水分流失、持续补水。",
-  "key_ingredients": ["Sodium Hyaluronate", "Micro Crystalline Silica", "Cyclopentasiloxane", "Sodium Chloride", "Micro Titanium Dioxide"],
-  "benefits_zh": ["防晒保湿", "自然修饰肤色", "清爽不厚重"],
-  "claims_flagged": [],
+  "overview_en": "A moisturising daily sunscreen that shields skin from UV damage while keeping it hydrated and comfortable, with a smooth, lightweight foundation-like glide.",
+  "overview_zh": "质地如清爽粉底液般顺滑的多效防晒，轻盈易推开，含透明质酸防止水分流失、持续为肌肤补水，同时抵御紫外线伤害。",
+  "key_ingredients": [
+    "Sodium Hyaluronate",
+    "Microcrystalline Silica",
+    "Cyclopentasiloxane",
+    "Micro Titanium Dioxide",
+    "Sodium Chloride"
+  ],
+  "benefits_en": [
+    "Broad-spectrum UV protection",
+    "Keeps skin hydrated and comfortable",
+    "Naturally perfects skin tone",
+    "Lightweight, non-greasy finish"
+  ],
+  "benefits_zh": [
+    "广谱UV防护",
+    "保湿舒适不干燥",
+    "自然修饰肤色",
+    "清爽轻盈不厚重"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [],
   "photo_files": ["ChatExport_2026-07-14/photos/photo_44@14-07-2026_03-33-41.jpg", "ChatExport_2026-07-14/photos/photo_45@14-07-2026_03-34-03.jpg"],
   "source_msg_ids": ["dm-128", "dm-129", "dm-130"]
 }

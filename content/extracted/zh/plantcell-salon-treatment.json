@@ -1,16 +1,36 @@
 {
-  "name_zh": null,
-  "name_en": "PlantCell Double Ampoules Treatment",
+  "name_en": "PlantCell Salon Treatment",
+  "name_zh": "PlantCell 双安瓶沙龙护理",
   "type": "treatment",
   "status": "available",
+  "collection": null,
+  "tagline_en": "A double-ampoule salon facial for brighter, dewier skin",
   "tagline_zh": "美白 + 补水双安瓶护理",
   "price_myr": null,
   "size": null,
-  "overview_zh": "PlantCell 沙龙专业护理，含美白安瓶 + 补水安瓶 + 医用冰膜，改善色素不均、质感粗糙。",
+  "overview_en": "A professional double-ampoule salon facial (whitening ampoule + hydrating ampoule) paired with a Medic Ice mask that visibly evens pigmentation, smooths texture and boosts radiance — before-and-after shows brighter, finer, more luminous skin.",
+  "overview_zh": "PlantCell 沙龙专业双安瓶护理（美白安瓶 + 补水安瓶）搭配医用冰膜，明显改善色素不均、平滑肤质、提升光泽——护理前后可见肌肤更白皙、细腻、透亮。",
   "key_ingredients": ["Whitening Ampoules", "Hydrating Ampoules", "Medic Ice Mask"],
-  "benefits_zh": ["色素明显改善", "肌理平滑", "光泽感提升"],
-  "claims_flagged": ["护理后色素明显改善"],
+  "benefits_en": [
+    "Brightens and evens pigmentation",
+    "Smooths and refines texture",
+    "Deeply hydrates",
+    "Boosts luminosity",
+    "Professional double-ampoule protocol"
+  ],
+  "benefits_zh": [
+    "提亮肤色，改善色素不均",
+    "平滑细致肤质",
+    "深层补水",
+    "提升光泽感",
+    "专业双安瓶护理程序"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [
+    "护理后色素明显改善",
+    "REVIEW: 'visibly improves and evens pigmentation' — anti-pigmentation efficacy claim needs substantiation"
+  ],
   "photo_files": ["ChatExport_2026-07-13/photos/photo_133@07-07-2026_11-02-10.jpg", "ChatExport_2026-07-13/photos/photo_151@07-07-2026_12-06-31.jpg"],
   "source_msg_ids": ["hq-179", "hq-341", "hq-342", "hq-361", "hq-362", "hq-363"]
 }

@@ -1,18 +1,31 @@
 {
-  "name_zh": null,
   "name_en": "Congested Set",
-  "collection": "Trial Sets & Bundles",
+  "name_zh": "净化调理体验套装",
   "type": "bundle",
   "status": "available",
-  "tagline_zh": null,
+  "collection": "Trial Sets & Bundles",
+  "tagline_en": "A purifying trial set for congested, clogged-pore skin",
+  "tagline_zh": "堵塞闭口肌的净化调理体验套装",
   "price_myr": 260,
   "size": "3 items",
-  "contents": ["(contents partially legible on card — verify with Grace)"],
-  "overview_zh": null,
-  "key_ingredients": null,
-  "benefits_zh": null,
-  "claims_flagged": [],
+  "overview_en": "A trial set targeting congested, clogged-pore skin. The set contents are only partially legible on the source card and need to be verified with Grace before publishing.",
+  "overview_zh": "专为堵塞、闭口肌打造的净化调理体验套装。套装内容在原始卡片上仅部分清晰可辨，需与 Grace 确认后再发布。",
+  "key_ingredients": [],
+  "benefits_en": [
+    "Targets congested, clogged-pore skin",
+    "Purifying and balancing trial routine",
+    "Full set contents to be confirmed with Grace"
+  ],
+  "benefits_zh": [
+    "针对堵塞、闭口肌",
+    "净化调理体验组合",
+    "套装完整内容待与 Grace 确认"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [
+    "REVIEW: bundle contents partially legible on the source card — verify the full item list with Grace before publishing"
+  ],
   "photo_files": [],
   "source_msg_ids": ["manifest"]
 }

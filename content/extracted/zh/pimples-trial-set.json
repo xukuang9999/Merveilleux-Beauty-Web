@@ -1,18 +1,31 @@
 {
-  "name_zh": null,
   "name_en": "Pimples Trial Set",
-  "collection": "Trial Sets & Bundles",
+  "name_zh": "祛痘体验套装",
   "type": "bundle",
   "status": "available",
-  "tagline_zh": null,
+  "collection": "Trial Sets & Bundles",
+  "tagline_en": "A trial set for acne-prone, breakout skin",
+  "tagline_zh": "痘痘易爆痘肌的祛痘体验套装",
   "price_myr": 260,
   "size": "3 items",
-  "contents": ["Restoration Serum 10ml", "Blemish Serum 5ml", "Hydro-Sensi Con 10ml"],
-  "overview_zh": null,
-  "key_ingredients": null,
-  "benefits_zh": null,
-  "claims_flagged": [],
+  "overview_en": "A trial set for acne-prone, breakout skin. Includes Intensive Restoration Sérum 10 ml, Blemish Serum 5 ml and Hydro-Sensi Concentré 10 ml.",
+  "overview_zh": "专为痘痘、易爆痘肌打造的祛痘体验套装。内含优越修复精华 10ml、祛痘精华 5ml、小分子玻尿酸精华 10ml。",
+  "key_ingredients": [],
+  "benefits_en": [
+    "Includes Intensive Restoration Sérum 10 ml",
+    "Includes Blemish Serum 5 ml",
+    "Includes Hydro-Sensi Concentré 10 ml",
+    "Trial sizes for acne-prone, breakout skin"
+  ],
+  "benefits_zh": [
+    "内含优越修复精华 10ml",
+    "内含祛痘精华 5ml",
+    "内含小分子玻尿酸精华 10ml",
+    "体验装，适合痘痘、易爆痘肌"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [],
   "photo_files": [],
   "source_msg_ids": ["manifest"]
 }

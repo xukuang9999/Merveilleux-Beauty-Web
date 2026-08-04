@@ -1,18 +1,33 @@
 {
-  "name_zh": null,
   "name_en": "Brightening + Hydrating Trial Set",
-  "collection": "Trial Sets & Bundles",
+  "name_zh": "亮白补水体验套装",
   "type": "bundle",
   "status": "available",
-  "tagline_zh": null,
+  "collection": "Trial Sets & Bundles",
+  "tagline_en": "A brightening-and-hydrating trio for dull, congested skin",
+  "tagline_zh": "暗沉堵塞肌的亮白补水三件套",
   "price_myr": 288,
   "size": "3 items",
-  "contents": ["Oxy-Bright Serum 10ml", "Pore Refine Serum 5ml", "(third item unverified — confirm with Grace)"],
-  "overview_zh": null,
-  "key_ingredients": null,
-  "benefits_zh": null,
-  "claims_flagged": [],
+  "overview_en": "A brightening-and-hydrating trial trio for dull, congested skin. Includes Oxy-Bright Sérum 10 ml and Pore Refining Sérum 5 ml; the third item is to be confirmed with Grace.",
+  "overview_zh": "专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。",
+  "key_ingredients": [],
+  "benefits_en": [
+    "Includes Oxy-Bright Sérum 10 ml",
+    "Includes Pore Refining Sérum 5 ml",
+    "Third item to be confirmed with Grace",
+    "Trial sizes to brighten dullness and hydrate congested skin"
+  ],
+  "benefits_zh": [
+    "内含美白精华 10ml",
+    "内含消炎抗痘精华 5ml",
+    "第三件产品待与 Grace 确认",
+    "体验装，提亮暗沉、补水调理堵塞肌"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [
+    "REVIEW: bundle contents incomplete — third item unverified, confirm with Grace before publishing"
+  ],
   "photo_files": [],
   "source_msg_ids": ["manifest"]
 }

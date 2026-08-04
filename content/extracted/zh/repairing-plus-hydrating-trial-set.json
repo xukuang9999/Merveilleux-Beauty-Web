@@ -1,18 +1,31 @@
 {
-  "name_zh": null,
   "name_en": "Repairing + Hydrating Trial Set",
-  "collection": "Trial Sets & Bundles",
+  "name_zh": "修复补水体验套装",
   "type": "bundle",
   "status": "available",
-  "tagline_zh": null,
+  "collection": "Trial Sets & Bundles",
+  "tagline_en": "A repair-and-hydrate trio for sensitive, dehydrated skin",
+  "tagline_zh": "敏感缺水肌的修复补水三件套",
   "price_myr": 288,
   "size": "3 items",
-  "contents": ["Restoration Serum 10ml", "Hydro-Sensi Con 10ml", "Hydro Moist Serum 10ml"],
-  "overview_zh": null,
-  "key_ingredients": null,
-  "benefits_zh": null,
-  "claims_flagged": [],
+  "overview_en": "A repair-and-hydrate trial trio for sensitive, dehydrated skin. Includes Intensive Restoration Sérum 10 ml, Hydro-Sensi Concentré 10 ml and Hydro-Moist Sérum 10 ml.",
+  "overview_zh": "专为敏感缺水肌打造的修复补水体验三件套。内含优越修复精华 10ml、小分子玻尿酸精华 10ml、大分子玻尿酸精华 10ml。",
+  "key_ingredients": [],
+  "benefits_en": [
+    "Includes Intensive Restoration Sérum 10 ml",
+    "Includes Hydro-Sensi Concentré 10 ml",
+    "Includes Hydro-Moist Sérum 10 ml",
+    "Trial sizes to repair and deeply hydrate sensitive skin"
+  ],
+  "benefits_zh": [
+    "内含优越修复精华 10ml",
+    "内含小分子玻尿酸精华 10ml",
+    "内含大分子玻尿酸精华 10ml",
+    "体验装，修复并深层补水敏感肌"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [],
   "photo_files": [],
   "source_msg_ids": ["manifest"]
 }

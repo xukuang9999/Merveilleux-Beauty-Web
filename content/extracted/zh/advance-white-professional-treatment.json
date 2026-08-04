@@ -1,16 +1,45 @@
 {
-  "name_zh": "钻石水光美白护理疗程",
   "name_en": "Advance White Professional Treatment",
+  "name_zh": "钻石水光美白护理疗程",
   "type": "treatment",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Bright, smooth, firm and translucent — no injections",
   "tagline_zh": "亮、滑、紧、透",
   "price_myr": null,
   "size": null,
-  "overview_zh": "专为干性、中性及老化性肌肤研发的高端水光美白护理疗程，采用天然酵素与植萃复合配方。",
+  "overview_en": "A high-end salon \"diamond glow\" whitening treatment developed for dry, normal and mature skin — no injections. Multi-enzyme and botanical complexes gently dissolve dead cells, activate cell renewal and suppress melanin to instantly reveal a bright, translucent, firm, diamond-like radiance. Not recommended for acne, inflamed or sensitive skin.",
+  "overview_zh": "专为干性、中性及老化性肌肤研发的高端水光美白护理疗程，采用多重天然酵素与植萃复合配方，温和分解老废角质、激活细胞更新、抑制黑色素，让肌肤在一次护理中呈现白皙透亮、紧致细腻的钻石光泽。不建议用于痘痘、发炎或敏感肌肤。",
   "key_ingredients": ["AW Caviar Lime Enzyme", "AW Active Complex", "AW Treatment Serum", "Hydrating Ampoule", "AW Treatment Silk Mask"],
-  "benefits_zh": ["肤色提亮1–2度", "肌肤更光滑、毛孔细致", "光泽感与紧致度提升"],
-  "claims_flagged": ["抑制黑色素", "水光美白淡斑护理", "抑制酪氨酸酶与氧化反应，有效阻断黑色素生成链", "定期疗程后可淡化斑点、均匀肤色", "不建议用于痘痘、发炎或敏感肌肤"],
+  "benefits_en": [
+    "One session delivers whitening, firming and translucency",
+    "Water-glow radiance without injections",
+    "Gentle and non-irritating for dry, normal and mature skin",
+    "Visible results with a high repeat rate",
+    "Brightens skin tone by 1–2 shades and refines pores"
+  ],
+  "benefits_zh": [
+    "一次护理 = 美白 + 紧致 + 透亮",
+    "无需打针即享水光肌效果",
+    "温和无刺激，适合干性、中性、老化肌",
+    "效果立竿见影，复购率高",
+    "肤色提亮 1–2 度，毛孔细致"
+  ],
+  "how_to_use_en": [
+    "Double cleanse, then AW Caviar Lime Enzyme, followed by extraction and AW Active Complex",
+    "Device-infuse the AW Treatment Serum, then the Hydrating Ampoule",
+    "Facial massage, then apply the AW Treatment Silk Masque for 20–30 minutes"
+  ],
   "how_to_use_zh": ["双层洁脸 → Caviar Lime Enzyme → 挤压 → Active Complex", "Treatment Serum 精华导入 + Hydrating Amp 导入", "按摩 + Treatment Silk Mask 敷20-30分钟"],
+  "claims_flagged": [
+    "抑制黑色素",
+    "水光美白淡斑护理",
+    "抑制酪氨酸酶与氧化反应，有效阻断黑色素生成链",
+    "定期疗程后可淡化斑点、均匀肤色",
+    "不建议用于痘痘、发炎或敏感肌肤",
+    "REVIEW: claims to inhibit tyrosinase and 'block the melanin synthesis chain' — strong whitening/cosmeceutical efficacy claim, verify substantiation before publishing",
+    "REVIEW: 'fades spots and evens skin tone with regular treatment' — anti-pigmentation efficacy claim needs substantiation"
+  ],
   "photo_files": ["ChatExport_2026-07-13/photos/photo_19@21-10-2025_05-05-31.jpg", "ChatExport_2026-07-13/photos/photo_23@21-10-2025_23-34-54.jpg"],
   "source_msg_ids": ["hq-91", "hq-92", "hq-93", "hq-104", "hq-105", "hq-107", "hq-109", "hq-110", "hq-112", "hq-113", "hq-114", "hq-115", "hq-118"]
 }

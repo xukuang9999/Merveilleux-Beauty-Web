@@ -1,16 +1,45 @@
 {
-  "name_zh": "炎症调理系统",
   "name_en": "Intensive Medic-Cell Treatment",
+  "name_zh": "细胞医学炎症调理护理疗程",
   "type": "treatment",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Rebuild balance, repair at the source",
   "tagline_zh": "重建平衡，修复根源",
   "price_myr": null,
   "size": null,
-  "overview_zh": "专为问题肌肤研发的专业细胞医学调理护理系统，从源头稳定炎症，重建肌肤健康基础。",
-  "key_ingredients": ["Medic Cell Powder", "Stem Cell 冻干粉", "Soothing Gel Mask", "氨基酸粉", "Nano Mist"],
-  "benefits_zh": ["泛红敏感炎症缓解", "堵塞痘痘与粗糙度下降", "整体肤色更干净透亮"],
-  "claims_flagged": ["医学级抗炎护理系统", "炎症因子抑制：精准靶向炎症介质", "色素管理…有效分解和淡化色素沉淀", "仅需1-3次专业操作即可见效", "痤疮医学强化治疗"],
+  "overview_en": "A professional medical-grade cell-therapy system for problem skin that stabilises inflammation at the source and rebuilds a healthy skin foundation — restoring microbiome balance, suppressing inflammatory factors, activating cell repair, rebuilding the barrier and delivering anti-ageing and pigment-fading benefits. Visible improvement in 1–3 sessions.",
+  "overview_zh": "专为问题肌肤研发的专业细胞医学调理护理系统，从源头稳定炎症、重建肌肤健康基础；重建微生态平衡、抑制炎症因子、激活细胞修复、重建屏障，并带来抗老与色素淡化功效。仅需 1–3 次专业护理即可见明显改善。",
+  "key_ingredients": ["Medic Cell Powder", "Stem Cell Lyophilised Powder", "Soothing Gel Mask", "Amino Acid Powder", "Nano Mist"],
+  "benefits_en": [
+    "Rebuilds microbiome balance",
+    "Targets and suppresses inflammation",
+    "Activates cell repair and regeneration",
+    "Rebuilds barrier structure",
+    "Anti-ageing and pigment management for cleaner, clearer, calmer skin"
+  ],
+  "benefits_zh": [
+    "重建微生态平衡",
+    "精准靶向并抑制炎症",
+    "激活细胞修复与再生",
+    "重建屏障结构",
+    "抗老与色素管理，肌肤更干净、透亮、稳定"
+  ],
+  "how_to_use_en": [
+    "Double cleanse, apply peeling gel, then extraction",
+    "Soothing gel mask, then amino-acid powder with Nano Mist",
+    "Brush the restoration powder against the pores, apply the Stem Cell mask for 20 minutes, then finish with sunscreen"
+  ],
   "how_to_use_zh": ["双层洁脸 + peeling gel + 挤压", "Soothing gel mask + 氨基酸粉 + nano mist", "冻干粉逆向毛孔刷 + Stem cell mask 敷20分钟 + 防晒"],
+  "claims_flagged": [
+    "医学级抗炎护理系统",
+    "炎症因子抑制：精准靶向炎症介质",
+    "色素管理…有效分解和淡化色素沉淀",
+    "仅需1-3次专业操作即可见效",
+    "痤疮医学强化治疗",
+    "REVIEW: 'medical-grade' / 'medic-cell' and 'acne medical intensive treatment' language implies a therapeutic or medical procedure — verify regulatory compliance before publishing",
+    "REVIEW: claims to suppress inflammatory factors and break down/fade pigmentation — drug-like efficacy claims needing substantiation"
+  ],
   "photo_files": ["ChatExport_2026-07-13/photos/photo_34@31-10-2025_03-52-53.jpg", "ChatExport_2026-07-13/photos/photo_101@06-01-2026_01-48-25.jpg"],
   "source_msg_ids": ["hq-124", "hq-125", "hq-126", "hq-127", "hq-129", "hq-131", "hq-133", "hq-134", "hq-135", "hq-153", "hq-258", "hq-259", "hq-260", "hq-261"]
 }

@@ -1,16 +1,38 @@
 {
-  "name_zh": null,
-  "name_en": "UV Protection SPF35 / PA+++",
+  "name_en": "UV Protection SPF35/PA+++",
+  "name_zh": "轻盈保湿防晒",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Weightless dry-touch daily UV defence",
   "tagline_zh": "素颜乳效果 · 清爽透气 · 透嫩白皙",
   "price_myr": 178,
   "size": "30 ml",
-  "overview_zh": "采用干触摸技术（Dry Touch Technology），超轻盈不油腻防晒，形成隔离防护层抵御紫外线。",
-  "key_ingredients": ["Sodium Hyaluronate", "Vitamin B3", "Rose Rugosa Flower Water", "Chamomile Recutita (Matricaria) Flower Extract"],
-  "benefits_zh": ["清爽防晒", "保湿修护", "自然修饰肤色"],
-  "claims_flagged": ["透嫩白皙"],
+  "overview_en": "An ultra-lightweight, non-greasy sunscreen with dry-touch technology that shields skin from harmful UVA and UVB radiation and oxidative stress while promoting cell growth and renewal.",
+  "overview_zh": "采用干触技术（Dry Touch）配制，质地不油腻、超轻盈；有效保护肌肤免受紫外线与氧化压力损伤，同时促进细胞生长与更新。",
+  "key_ingredients": [
+    "Aqua",
+    "Hyaluronic Acid",
+    "Microcrystalline Silica",
+    "Cyclopentasiloxane",
+    "Micro Titanium Dioxide",
+    "Sodium Chloride"
+  ],
+  "benefits_en": [
+    "Broad-spectrum UVA/UVB defence",
+    "Guards against oxidative stress",
+    "Promotes cell renewal",
+    "Weightless, dry-touch and non-greasy"
+  ],
+  "benefits_zh": [
+    "广谱防护UVA/UVB",
+    "抵御氧化压力损伤",
+    "促进细胞更新",
+    "干触轻盈，清爽不油腻"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": ["透嫩白皙"],
   "photo_files": ["ChatExport_2026-07-14/photos/photo_40@14-07-2026_03-29-18.jpg", "ChatExport_2026-07-14/photos/photo_41@14-07-2026_03-29-27.jpg"],
   "source_msg_ids": ["dm-122", "dm-123", "dm-124"]
 }

@@ -1,16 +1,43 @@
 {
-  "name_zh": null,
   "name_en": "Hydro-Moist Sérum",
+  "name_zh": "大分子玻尿酸精华",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Locks in moisture, forms a protective film, keeps skin supple",
   "tagline_zh": "增强肌肤锁水能力 · 形成保护膜 · 水润弹滑",
   "price_myr": 228,
   "size": "30 ml",
-  "overview_zh": "富含北美金缕梅、透明质酸钠和神经酰胺，增强肌肤锁水能力，防止脱水，减少敏感与细纹。",
-  "key_ingredients": ["Sodium Hyaluronate", "Hamamelis Virginiana (Witch Hazel) Water", "Ceramide 3", "Niacinamide", "Prunella Vulgaris Extract"],
-  "benefits_zh": ["增强锁水保湿", "减少细纹", "提升弹性与丰盈"],
-  "claims_flagged": [],
+  "overview_en": "Contains Witch Hazel (Hamamelis virginiana) water, Sodium Hyaluronate and Ceramide to boost the skin's moisture-holding capacity, form a protective film, repair skin lipids, calm inflammation and support the skin's natural immunity.",
+  "overview_zh": "含北美金缕梅水、透明质酸钠和神经酰胺保湿成分，内源补水锁水，修护肌肤脂质，形成保护膜，减少敏感与细纹。",
+  "key_ingredients": [
+    "Ceramide 3",
+    "Hamamelis Virginiana (Witch Hazel) Water",
+    "Sodium Hyaluronate",
+    "Niacinamide",
+    "Glycyrrhiza Inflata Root Extract",
+    "Tremella Fuciformis Polysaccharide"
+  ],
+  "benefits_en": [
+    "Forms a protective film and calms inflammation",
+    "Prevents dehydration and sensitivity",
+    "Stimulates cell rejuvenation for balanced moisture",
+    "Delivers deep hydration and luminosity",
+    "Leaves skin softer, smoother and more elastic with fewer fine lines"
+  ],
+  "benefits_zh": [
+    "形成保护膜，舒缓炎症",
+    "防止脱水，减少敏感",
+    "激活细胞焕新，平衡水分",
+    "深层补水，提升光泽",
+    "肌肤更柔滑弹润，减少细纹"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
-  "photo_files": ["ChatExport_2026-07-14/photos/photo_19@14-07-2026_01-36-43.jpg", "ChatExport_2026-07-14/photos/photo_20@14-07-2026_01-36-57.jpg"],
+  "claims_flagged": [],
+  "photo_files": [
+    "ChatExport_2026-07-14/photos/photo_19@14-07-2026_01-36-43.jpg",
+    "ChatExport_2026-07-14/photos/photo_20@14-07-2026_01-36-57.jpg"
+  ],
   "source_msg_ids": ["dm-90", "dm-91", "dm-92"]
 }

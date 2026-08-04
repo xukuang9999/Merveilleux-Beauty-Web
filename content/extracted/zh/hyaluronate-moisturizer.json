@@ -1,16 +1,39 @@
 {
-  "name_zh": null,
-  "name_en": "Hyaluronate Moisturizer",
+  "name_en": "Hyaluronate Moisturiser",
+  "name_zh": "玻尿酸保湿乳霜",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "High-concentration hyaluronic acid for deep, lasting hydration",
   "tagline_zh": "高效保湿 · 深层滋养 · 弹润修复",
   "price_myr": 188,
   "size": "30 ml",
-  "overview_zh": "含高浓度玻尿酸，提供强效而持久的保湿滋润，改善因缺水导致的干燥、紧绷与细纹问题。",
-  "key_ingredients": ["Sodium Hyaluronate", "Vitamin B3", "Rose Rugosa Flower Water", "Chamomile Recutita (Matricaria) Flower Extract"],
-  "benefits_zh": ["高效持久保湿", "深层滋养", "提升弹性"],
-  "claims_flagged": [],
+  "overview_en": "High-concentration hyaluronic acid that penetrates easily to intensely hydrate and lock in moisture, prevents dehydration and boosts skin elasticity and suppleness while slowing signs of ageing.",
+  "overview_zh": "含高浓度玻尿酸，帮助肌肤强效保湿滋润，减缓老化过程，维持肌肤弹性与柔韧。",
+  "key_ingredients": [
+    "Sodium Hyaluronate",
+    "Tamarindus Indica Extract",
+    "Aloe Vera Extract",
+    "Hydrogenated Sweet Almond Oil"
+  ],
+  "benefits_en": [
+    "Enhances hydration and elasticity",
+    "Reduces fine lines and wrinkles",
+    "Suited to dehydrated and sensitive skin",
+    "Supports collagen synthesis and renewal"
+  ],
+  "benefits_zh": [
+    "提升保湿与弹性",
+    "减少细纹与皱纹",
+    "适合缺水与敏感肌",
+    "促进胶原合成与更新"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
-  "photo_files": ["ChatExport_2026-07-14/photos/photo_38@14-07-2026_03-28-13.jpg", "ChatExport_2026-07-14/photos/photo_39@14-07-2026_03-28-35.jpg"],
+  "claims_flagged": [],
+  "photo_files": [
+    "ChatExport_2026-07-14/photos/photo_38@14-07-2026_03-28-13.jpg",
+    "ChatExport_2026-07-14/photos/photo_39@14-07-2026_03-28-35.jpg"
+  ],
   "source_msg_ids": ["dm-119", "dm-120", "dm-121"]
 }

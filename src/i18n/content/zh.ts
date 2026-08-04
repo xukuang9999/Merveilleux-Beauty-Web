@@ -3,481 +3,784 @@ import { type ContentPack } from "./types";
 
 const zh: ContentPack = {
   "products": {
-    "gentle-cleansing-milk": {
-      "name": "温和洁面乳",
-      "type": "舒缓洁面乳",
-      "tagline": "温柔而彻底的洁净",
-      "description": "温和的洁面乳，轻柔卸除彩妆与杂质，洋甘菊令肌肤保持平静舒适。它疏通毛孔，为后续每一步护理开启通道，却绝不带走水分或造成紧绷。",
+    "advance-white-professional-treatment": {
+      "name": "钻石水光美白护理疗程",
+      "type": "护理疗程",
+      "tagline": "亮、滑、紧、透",
+      "description": "专为干性、中性及老化性肌肤研发的高端水光美白护理疗程，采用多重天然酵素与植萃复合配方，温和分解老废角质、激活细胞更新、抑制黑色素，让肌肤在一次护理中呈现白皙透亮、紧致细腻的钻石光泽。不建议用于痘痘、发炎或敏感肌肤。",
       "keyIngredients": [
-        "母菊花提取物",
-        "罗马洋甘菊提取物",
-        "氯化镁",
-        "甘油"
+        "AW Caviar Lime Enzyme",
+        "AW Active Complex",
+        "AW Treatment Serum",
+        "Hydrating Ampoule",
+        "AW Treatment Silk Mask"
       ],
       "benefits": [
-        "深层却温和的毛孔清洁",
-        "洁净同时舒缓滋润",
-        "为后续保养打底、提升吸收",
-        "预防洁面后的水分流失"
-      ]
-    },
-    "ultrafine-cleansing-gel": {
-      "name": "精华蜜状洁面凝胶",
-      "type": "微泡洁面凝胶",
-      "tagline": "绵密泡沫，丝滑肤感",
-      "description": "可搓揉出细腻绵密微泡的洁面凝胶，深层清洁毛孔而不过度带走油脂。它尊重肌肤天然的 pH 值与屏障，令肌肤清爽柔嫩，绝不紧绷。",
-      "keyIngredients": [
-        "氨基酸表面活性剂",
-        "透明质酸钠",
-        "甘油",
-        "泛醇"
-      ],
-      "benefits": [
-        "细腻微泡，深层洁净毛孔",
-        "守护天然屏障与 pH 平衡",
-        "平衡多余油脂",
-        "肌肤柔嫩不紧绷"
-      ]
-    },
-    "micellaire-solution": {
-      "name": "净颜卸妆水",
-      "type": "无油卸妆水",
-      "tagline": "轻松溶妆，无需冲洗",
-      "description": "蕴含玫瑰的卸妆水，一抹即溶去妆容与杂质——无油、不黏腻——同时高效保湿因子令肌肤水润平滑。",
-      "keyIngredients": [
-        "玫瑰花提取物",
-        "PEG-6 辛酸／癸酸甘油酯",
-        "甘油"
-      ],
-      "benefits": [
-        "快速无油卸妆",
-        "不留油腻残留",
-        "洁净同时补水",
-        "为疲惫肌肤带来清新"
-      ]
-    },
-    "essential-lotion-toner": {
-      "name": "玫瑰爽肤水",
-      "type": "玫瑰保湿爽肤水",
-      "tagline": "玫瑰清新，补水第一步",
-      "description": "天然玫瑰提取物、芦荟与维他命 B5 在洁面后第一时间为肌肤注入充盈水分，细致毛孔外观并抵御自由基侵害。适合各种肤质的舒缓、抗敏第一层。",
-      "keyIngredients": [
-        "玫瑰提取物",
-        "芦荟",
-        "维他命 B5",
-        "燕麦多肽"
-      ],
-      "benefits": [
-        "玫瑰清新，瞬间补水",
-        "细致毛孔外观",
-        "抗氧化、抗敏防护",
-        "为精华打底"
-      ]
-    },
-    "ceramide-toner": {
-      "name": "神经酰胺爽肤水",
-      "type": "神经酰胺屏障爽肤水",
-      "tagline": "重建屏障，锁住水分",
-      "description": "富含神经酰胺的精华爽肤水，补充并修护肌肤皮脂膜，抵御过敏原与细菌，同时减少水分流失。它强化屏障，令肌肤丰盈、平滑而细腻。",
-      "keyIngredients": [
-        "神经酰胺",
-        "透明质酸钠",
-        "天然植物提取物"
-      ],
-      "benefits": [
-        "补充并修护屏障",
-        "减少水分流失",
-        "提升弹性与丰盈度",
-        "舒缓敏感肌肤"
-      ]
-    },
-    "micro-nano-mist": {
-      "name": "细胞能量微小纳米喷雾",
-      "type": "细胞能量纳米喷雾",
-      "tagline": "细腻喷雾，即刻渗透",
-      "description": "超细微小纳米水粒子深层渗透，活化肌肤代谢，带来抗氧化、舒缓的补水。它安抚敏感、阻塞的肌肤，并可在不破坏妆容的情况下随时提神。",
-      "keyIngredients": [
-        "金缕梅水",
-        "甘草根水",
-        "水"
-      ],
-      "benefits": [
-        "深层快速的细胞补水",
-        "抗氧化并舒缓",
-        "安抚敏感、阻塞肌肤",
-        "妆容之上亦可提神"
-      ]
-    },
-    "oxy-bright-serum": {
-      "name": "美白精华",
-      "type": "焕亮补氧精华",
-      "tagline": "焕氧亮采，重现光彩",
-      "description": "一款强效焕亮精华，为疲惫肌肤补氧焕活，促进代谢与胶原生成，长期使用均匀肤色。卡姆果、辅酶 Q10 与维他命 A、E 带来抗氧化、抗老的光采。",
-      "keyIngredients": [
-        "卡姆果提取物",
-        "辅酶 Q10",
-        "维他命 A 与 E 醋酸酯",
-        "维他命原 B5"
-      ],
-      "benefits": [
-        "持久焕亮肤色",
-        "改善暗沉、粗糙肤质",
-        "抗氧化并抗老",
-        "唤醒肌肤细胞活力"
-      ]
-    },
-    "hydro-moist-serum": {
-      "name": "大分子玻尿酸精华",
-      "type": "大分子玻尿酸精华",
-      "tagline": "水润屏障，温柔守护",
-      "description": "北美金缕梅、神经酰胺与透明质酸钠提升肌肤锁水与修护脂质的能力，形成保护性水膜，安抚炎症并预防缺水。肌肤更显平滑、丰盈而有光采。",
-      "keyIngredients": [
-        "神经酰胺 3",
-        "金缕梅",
-        "透明质酸钠",
-        "烟酰胺"
-      ],
-      "benefits": [
-        "深层补水并锁住水分",
-        "修护肌肤脂质",
-        "抚平细纹、改善肤质",
-        "重现肌肤光采"
-      ]
-    },
-    "hydro-sensi-concentre": {
-      "name": "小分子玻尿酸精华",
-      "type": "小分子玻尿酸精华",
-      "tagline": "深层补水，呵护敏感肌",
-      "description": "超细玻尿酸分子（小于 500 道尔顿）顺应肌肤更新周期深入真皮层，实现持久补水与锁水。它修护受损屏障，安抚炎症并提亮肤色。",
-      "keyIngredients": [
-        "小分子透明质酸钠",
-        "芦荟",
-        "洋甘菊",
-        "金缕梅提取物"
-      ],
-      "benefits": [
-        "深层锁水",
-        "舒缓干燥、瘙痒、发炎的肌肤",
-        "修护受损屏障",
-        "提亮肤色、细致肤质"
-      ]
-    },
-    "antioxidant-serum": {
-      "name": "抗老化精华",
-      "type": "胶原抗老精华",
-      "tagline": "紧致、焕新、防护",
-      "description": "六胜肽-8 重塑胶原与弹性，虾青素——自然界最强效的抗氧化剂之一——中和自由基并修护环境损伤。皱纹淡化，松弛提拉，屏障更强韧。",
-      "keyIngredients": [
-        "六胜肽-8",
-        "虾青素",
-        "透明质酸钠"
-      ],
-      "benefits": [
-        "补充胶原蛋白",
-        "淡化皱纹与细纹",
-        "提拉松弛、衰老的肌肤",
-        "抗氧化，抵御环境侵害"
-      ]
-    },
-    "antioxidant-essence": {
-      "name": "抗氧化精华",
-      "type": "紧致胶原精华",
-      "tagline": "胶原充盈，肌底焕活",
-      "description": "一款紧致精华，补充流失的胶原、修护弹性、提拉松弛肌肤，虾青素则守护细胞与 DNA 免受氧化压力与污染侵害。深层补水、锁水焕新。",
-      "keyIngredients": [
-        "六胜肽-8",
-        "虾青素",
-        "保湿复合物"
-      ],
-      "benefits": [
-        "补充胶原、重塑紧致",
-        "预防肌肤松弛",
-        "守护细胞抵御氧化压力",
-        "锁水焕新"
-      ]
-    },
-    "blemish-serum": {
-      "name": "祛痘修复精华",
-      "type": "痘肌修护精华",
-      "tagline": "针对痘痘的精准急救",
-      "description": "一款高效痘肌修护精华，以天然清热植萃为基础，去除老废角质、安抚炎症、对抗引发痘痘的细菌。点涂于痘痘处，加速肌肤更新并有助淡化痘印。",
-      "keyIngredients": [
-        "清热植物提取物",
-        "水杨酸类活性成分",
-        "锌"
-      ],
-      "benefits": [
-        "针对活跃期痘痘",
-        "抗炎抑菌",
-        "加速肌肤更新",
-        "有助预防复发与痘印"
-      ]
-    },
-    "pore-refining-serum": {
-      "name": "消炎抗痘精华",
-      "type": "抗痘净颜毛孔精华",
-      "tagline": "毛孔洁净，肌肤平和",
-      "description": "一款收敛精华，专为阻塞、易长痘肌肤而设，溶解闭口、黑头与白头，同时安抚炎症、平衡油脂。它细致粗大毛孔，并有助预防未来痘痘。",
-      "keyIngredients": [
-        "收敛植物成分",
-        "烟酰胺",
-        "PCA 锌"
-      ],
-      "benefits": [
-        "清除黑头与白头",
-        "抗炎、平衡油脂",
-        "细致粗大毛孔",
-        "有助预防未来痘痘"
-      ]
-    },
-    "cell-repair-powder": {
-      "name": "冻干粉（10g）",
-      "type": "冻干修护粉 · 10g",
-      "tagline": "受压肌肤的强效修护",
-      "description": "一款冻干修护粉，专为受损、敏感肌肤而设——泛红、损伤、刺激与瘙痒。高纯度甘草提取物过滤致敏因子、抑制疤痕成纤维细胞，强化肌肤自我修护并恢复水分。",
-      "keyIngredients": [
-        "甘草提取物",
-        "保湿复合物",
-        "修护胜肽"
-      ],
-      "benefits": [
-        "强效细胞再生",
-        "安抚泛红与刺激",
-        "针对痘疤与痘印",
-        "为受损肌肤补充水分"
-      ]
-    },
-    "cell-repair-powder-3g": {
-      "name": "冻干粉（3g）",
-      "type": "冻干修护粉 · 3g",
-      "tagline": "便携装的修护能量",
-      "description": "我们冻干修护粉的便携装——同样的高纯度甘草修护复合物，再生受损细胞、过滤致敏与泛红因子，为受压、敏感肌肤补充水分。",
-      "keyIngredients": [
-        "甘草提取物",
-        "保湿复合物",
-        "修护胜肽"
-      ],
-      "benefits": [
-        "细胞再生，便携装",
-        "安抚泛红与敏感",
-        "强化自我修护",
-        "恢复肌肤水分"
-      ]
-    },
-    "hyaluronate-moisturiser": {
-      "name": "玻尿酸保湿乳霜",
-      "type": "玻尿酸保湿乳霜",
-      "tagline": "弹润、饱水、富弹性",
-      "description": "一款高浓度玻尿酸乳霜，强效补水锁水，同时促进胶原与弹性。它抚平细纹与干燥，令肌肤清爽、平滑而富有弹性。",
-      "keyIngredients": [
-        "透明质酸钠",
-        "罗望子提取物",
-        "芦荟",
-        "甜杏仁油"
-      ],
-      "benefits": [
-        "强效补水并锁水",
-        "提升肌肤弹性",
-        "促进胶原生成",
-        "抚平细纹与干燥"
-      ]
-    },
-    "youth-ha-moisturiser": {
-      "name": "美白锁水乳霜",
-      "type": "焕亮保湿乳霜",
-      "tagline": "焕亮、锁水、年轻",
-      "description": "甘草提取物与植物精粹焕亮肤色、锁住水分，同时促进更新，淡化暗沉与色斑。胶原合成与弹性得以改善，令肌肤平滑、柔软而透亮。",
-      "keyIngredients": [
-        "透明质酸钠",
-        "维他命 B3",
-        "玫瑰水",
-        "洋甘菊提取物"
-      ],
-      "benefits": [
-        "焕亮并均匀肤色",
-        "锁住持久水分",
-        "促进更新与胶原生成",
-        "柔化干燥与细纹"
-      ]
-    },
-    "antioxidant-cream": {
-      "name": "抗老修复面霜",
-      "type": "胶原抗老面霜",
-      "tagline": "丰盈、紧致、防护",
-      "description": "一款抗老面霜，补充胶原、修护弹性、提拉松弛肌肤，质地轻盈、快速吸收。虾青素与六胜肽-8 抵御紫外线、污染与自由基，同时锁住水分。",
-      "keyIngredients": [
-        "六胜肽-8",
-        "虾青素",
-        "保湿复合物"
-      ],
-      "benefits": [
-        "补充胶原、重塑紧致",
-        "丰盈并紧致",
-        "抗氧化环境防护",
-        "质地轻盈、不油腻"
-      ]
-    },
-    "cell-repair-cream": {
-      "name": "修复屏障乳霜",
-      "type": "屏障修护面霜",
-      "tagline": "重建、防护、舒适",
-      "description": "一款屏障修护面霜，以麦角硫因与胜肽为核心，重建肌肤屏障、修护受损细胞，同时缓解干燥。它抵御 DNA 损伤与刺激，维持肌肤微生态平衡。",
-      "keyIngredients": [
-        "麦角硫因",
-        "胜肽",
-        "植物提取物",
-        "保湿复合物"
-      ],
-      "benefits": [
-        "重建肌肤屏障",
-        "修护受损细胞",
-        "缓解干燥与暗沉",
-        "减少环境刺激"
-      ]
-    },
-    "refined-hydro-care": {
-      "name": "舒缓镇静乳霜",
-      "type": "舒缓镇静面霜",
-      "tagline": "镇静、修护、水润",
-      "description": "一款温和修护面霜——足够温柔以呵护受损肌肤——蕴含植物提取物、燕麦胜肽与玻尿酸，深入肌底促进修护与更新。它镇静敏感、缓解干燥与瘙痒，并锁住水分。",
-      "keyIngredients": [
-        "透明质酸钠",
-        "库拉索芦荟提取物",
-        "黄瓜提取物",
-        "燕麦胜肽"
-      ],
-      "benefits": [
-        "重建并修护肌肤细胞",
-        "降低肌肤敏感",
-        "缓解干燥与瘙痒",
-        "锁住肌肤水分"
-      ]
-    },
-    "essence-oil": {
-      "name": "玫瑰迷迭香精油",
-      "type": "玫瑰迷迭香面部精油",
-      "tagline": "金萃养护，如纱轻覆",
-      "description": "一款奢华植物油混合精油，以黄金比例贴合肌肤自身的脂质屏障，促进吸收、平衡水分。双重抗氧化与抗糖化活性成分焕亮、紧致并强化屏障。",
-      "keyIngredients": [
-        "玫瑰精油",
-        "迷迭香叶提取物",
-        "植物油复合物"
-      ],
-      "benefits": [
-        "强化脂质屏障",
-        "双重抗氧化焕亮",
-        "紧致并提升弹性",
-        "修复受损肌肤"
-      ]
-    },
-    "eye-treatment-creme": {
-      "name": "紧致提拉眼霜",
-      "type": "紧致提拉眼部护理",
-      "tagline": "提拉、平滑、明亮有神",
-      "description": "白松露与双重咖啡提取物激活细胞更新，小分子胜肽紧致提拉眼周。随着微循环改善，细纹、浮肿与黑眼圈明显淡化。",
-      "keyIngredients": [
-        "白松露",
-        "咖啡提取物",
-        "小分子胜肽"
-      ],
-      "benefits": [
-        "抚平细纹与皱纹",
-        "消除浮肿、改善眼袋",
-        "紧致提拉眼周",
-        "提亮黑眼圈"
-      ]
-    },
-    "uv-shield-spf35": {
-      "name": "肤色保湿防晒 SPF35",
-      "type": "保湿日间防晒 SPF35",
-      "tagline": "防护、保湿、全天舒适",
-      "description": "一款广谱 SPF35 防晒，抵御 UVA 与 UVB，质地轻盈不油腻，并带来 12 小时保湿。透明质酸钠与金缕梅预防缺水，同时有助淡化色素沉淀与细纹。",
-      "keyIngredients": [
-        "二氧化钛",
-        "透明质酸钠",
-        "金缕梅水",
-        "甘油"
-      ],
-      "benefits": [
-        "广谱 UVA/UVB SPF35 防护",
-        "12 小时保湿",
-        "不油腻、不堵塞毛孔",
-        "有助淡化色素沉淀"
-      ]
-    },
-    "uv-protection-spf35": {
-      "name": "轻盈保湿防晒 SPF35",
-      "type": "干爽触感防晒 PA+++",
-      "tagline": "羽量干爽，轻盈防护",
-      "description": "一款超轻盈、干爽触感的防晒，形成天然保护屏障，抵御 UVA/UVB 与污染，同时平衡油脂、锁住水分。触感轻盈清爽，绝不厚重油腻。",
-      "keyIngredients": [
-        "微粒二氧化钛",
-        "玻尿酸",
-        "微晶二氧化硅"
-      ],
-      "benefits": [
-        "UVA/UVB SPF35 PA+++ 防护",
-        "干爽触感、轻盈无负担",
-        "平衡油脂、锁住水分",
-        "抗氧化，抵御污染"
+        "一次护理 = 美白 + 紧致 + 透亮",
+        "无需打针即享水光肌效果",
+        "温和无刺激，适合干性、中性、老化肌",
+        "效果立竿见影，复购率高",
+        "肤色提亮 1–2 度，毛孔细致"
       ]
     },
     "aqua-concentrate-mask": {
       "name": "深层保湿面膜",
-      "type": "深层补水面膜",
-      "tagline": "为渴水肌肤深层畅饮",
-      "description": "植物精粹与玻尿酸分子经由水通道传输系统深层渗透，补充水分、锁住水分并预防流失。肌肤重获平衡与活力，变得平滑柔嫩。",
+      "type": "产品",
+      "tagline": "密集补水 · 锁水保湿 · 柔嫩透亮",
+      "description": "含有丰富的各种植物精华和水分子玻尿酸，能更好地渗透肌肤，为肌肤提供持久保湿，最终达到肤色平衡。",
       "keyIngredients": [
-        "透明质酸钠",
-        "库拉索芦荟提取物",
-        "植物精粹"
+        "Sodium Hyaluronate",
+        "Aloe Barbadensis Leaf Extract",
+        "Propylene Glycol"
       ],
       "benefits": [
-        "深层补充水分",
-        "持久锁水保湿",
-        "平衡并焕活肌肤",
-        "平滑柔嫩肤感"
+        "密集补水改善干燥",
+        "锁住水分，防止流失",
+        "舒缓干燥带来的紧绷",
+        "肌肤更柔嫩、细致、有光泽",
+        "建议连续7天密集补水护理"
       ]
     },
-    "hydra-soothing-gel-mask": {
+    "brightening-plus-hydrating-trial-set": {
+      "name": "亮白补水体验套装",
+      "type": "套装",
+      "tagline": "暗沉堵塞肌的亮白补水三件套",
+      "description": "专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。",
+      "keyIngredients": [],
+      "benefits": [
+        "内含美白精华 10ml",
+        "内含消炎抗痘精华 5ml",
+        "第三件产品待与 Grace 确认",
+        "体验装，提亮暗沉、补水调理堵塞肌"
+      ]
+    },
+    "cell-repair-treatment-cream": {
+      "name": "修复屏障乳霜",
+      "type": "产品",
+      "tagline": "锁水保湿 · 屏障修复 · 清爽细腻",
+      "description": "添加麦角硫因和肌肤保湿成分，珍贵成分修护肌肤脂质，保护与修复皮肤细胞；多肽及多种植物精华深入滋润肌肤，缓解肌肤干燥，扫除肌肤黄气，令肌肤水润弹滑。",
+      "keyIngredients": [
+        "Ergothioneine",
+        "Sodium Hyaluronate",
+        "Niacinamide (Vitamin B3)",
+        "Rosa Rugosa Flower Water",
+        "Chamomilla Recutita (Matricaria) Flower Extract"
+      ],
+      "benefits": [
+        "重建皮肤屏障系统",
+        "缓解皮肤干燥，补水锁水锁营养",
+        "极度修复皮肤脂质"
+      ]
+    },
+    "ceramide-ice-essence-toner": {
+      "name": "神经酰胺爽肤水",
+      "type": "产品",
+      "tagline": "清爽质地 · 冰凉舒适 · 幼细毛孔",
+      "description": "含神经酰胺强效补充修复皮肤皮脂膜，能够抵御外界过敏性刺激，抵御细菌病毒的植入，减少水分蒸发和流失，强韧肌肤屏障。",
+      "keyIngredients": [
+        "Ceramide NS",
+        "Sodium Hyaluronate",
+        "Maris Aqua",
+        "Trehalose",
+        "Crocus Sativus Flower Extract"
+      ],
+      "benefits": [
+        "适合所有肌肤",
+        "促进新陈代谢与营养输送",
+        "肌肤更平滑、细致、饱满，减少细纹",
+        "敏感肌可见效果"
+      ]
+    },
+    "congested-set": {
+      "name": "净化调理体验套装",
+      "type": "套装",
+      "tagline": "堵塞闭口肌的净化调理体验套装",
+      "description": "专为堵塞、闭口肌打造的净化调理体验套装。套装内容在原始卡片上仅部分清晰可辨，需与 Grace 确认后再发布。",
+      "keyIngredients": [],
+      "benefits": [
+        "针对堵塞、闭口肌",
+        "净化调理体验组合",
+        "套装完整内容待与 Grace 确认"
+      ]
+    },
+    "daily-care-trial-set": {
+      "name": "日常护理体验套装",
+      "type": "套装",
+      "tagline": "日常基础护理入门三件套",
+      "description": "日常基础护理入门三件套（旅行装）：温和洁面、深层洁净与修护屏障爽肤水。内含温和洁面乳 30ml、精华蜜状洁面凝胶 20ml、神经酰胺爽肤水 30ml。",
+      "keyIngredients": [],
+      "benefits": [
+        "内含温和洁面乳 30ml",
+        "内含精华蜜状洁面凝胶 20ml",
+        "内含神经酰胺爽肤水 30ml",
+        "旅行装尺寸，轻松体验日常基础护理"
+      ]
+    },
+    "essential-lotion": {
+      "name": "玫瑰爽肤水",
+      "type": "产品",
+      "tagline": "玫瑰精华露 · 具有三合一用法 · 平衡酸碱性",
+      "description": "天然玫瑰提取物，芦荟和维他命B5有很好的补水与修复功效，提供肌肤湿润与抗氧化，帮助紧致缩小毛孔，保护肌肤免受自由基侵袭并具抗敏效果。",
+      "keyIngredients": [
+        "Rose Essence",
+        "Aloe Vera",
+        "Vitamin B5",
+        "Rose Extract",
+        "Oat Polypeptide",
+        "Deionised Water",
+        "Sodium Hyaluronate",
+        "Betula Alba Leaf Extract"
+      ],
+      "benefits": [
+        "补水修复",
+        "抗氧化保护",
+        "细致毛孔",
+        "抵御自由基侵袭",
+        "抗敏舒缓"
+      ]
+    },
+    "eye-egf-serum": {
+      "name": "EGF 眼部修护精华",
+      "type": "产品",
+      "tagline": "高效抗老精华 · 焕亮年轻眼周",
+      "description": "眼部EGF精华，用于爽肤水后、眼霜前，润泽滋养娇嫩眼周，抚平老化痕迹、焕亮暗沉、紧致眼周，短短10天即可拥有年轻有活力的双眼。",
+      "keyIngredients": [
+        "sh-Oligopeptide-1 (EGF)",
+        "Palmitoyl Tripeptide-1 & -5",
+        "Squalane",
+        "Tocopherol (Vitamin E)"
+      ],
+      "benefits": [
+        "润泽滋养眼周",
+        "紧致平滑，抚平老化痕迹",
+        "焕亮暗沉眼周",
+        "约10天可见眼周更紧致"
+      ]
+    },
+    "gentle-cleansing-milk": {
+      "name": "温和洁面乳",
+      "type": "产品",
+      "tagline": "微细小分子 · 舒缓保湿 · 温和洁面",
+      "description": "小分子洗面奶，可更深层渗入肌底乳化油脂，温和洁面；有效彻底深层清洁整个皮肤与毛孔，去除杂质，疏通营养输送通道，防止皮肤脱水，令肌肤细嫩白皙润泽。",
+      "keyIngredients": [
+        "Chamomilla Recutita Extract",
+        "Anthemis Nobilis Flower Extract",
+        "Magnesium Chloride",
+        "Magnesium Nitrate"
+      ],
+      "benefits": [
+        "深层清洁毛孔",
+        "预防毛孔堵塞",
+        "提升后续护肤品吸收",
+        "防止皮肤脱水",
+        "保湿柔嫩肌肤",
+        "适合所有肌肤"
+      ]
+    },
+    "hyaluronate-moisturizer": {
+      "name": "玻尿酸保湿乳霜",
+      "type": "产品",
+      "tagline": "高效保湿 · 深层滋养 · 弹润修复",
+      "description": "含高浓度玻尿酸，帮助肌肤强效保湿滋润，减缓老化过程，维持肌肤弹性与柔韧。",
+      "keyIngredients": [
+        "Sodium Hyaluronate",
+        "Tamarindus Indica Extract",
+        "Aloe Vera Extract",
+        "Hydrogenated Sweet Almond Oil"
+      ],
+      "benefits": [
+        "提升保湿与弹性",
+        "减少细纹与皱纹",
+        "适合缺水与敏感肌",
+        "促进胶原合成与更新"
+      ]
+    },
+    "hydro-moist-serum": {
+      "name": "大分子玻尿酸精华",
+      "type": "产品",
+      "tagline": "增强肌肤锁水能力 · 形成保护膜 · 水润弹滑",
+      "description": "含北美金缕梅水、透明质酸钠和神经酰胺保湿成分，内源补水锁水，修护肌肤脂质，形成保护膜，减少敏感与细纹。",
+      "keyIngredients": [
+        "Ceramide 3",
+        "Hamamelis Virginiana (Witch Hazel) Water",
+        "Sodium Hyaluronate",
+        "Niacinamide",
+        "Glycyrrhiza Inflata Root Extract",
+        "Tremella Fuciformis Polysaccharide"
+      ],
+      "benefits": [
+        "形成保护膜，舒缓炎症",
+        "防止脱水，减少敏感",
+        "激活细胞焕新，平衡水分",
+        "深层补水，提升光泽",
+        "肌肤更柔滑弹润，减少细纹"
+      ]
+    },
+    "hydro-sensi-concentrate": {
+      "name": "小分子玻尿酸精华",
+      "type": "产品",
+      "tagline": "补水BOOSTER · 小分子高渗透 · 细腻嫩滑",
+      "description": "含天然植物提取物，包括海藻、玻尿酸、洋甘菊、金缕梅提取物，采用小于500道尔顿小分子玻尿酸，深层补水并舒缓干燥、瘙痒与皮肤炎症。",
+      "keyIngredients": [
+        "Sodium Hyaluronate",
+        "Aloe Vera",
+        "Chamomile",
+        "Hamamelis Extract",
+        "Citric Acid",
+        "Marine Algae"
+      ],
+      "benefits": [
+        "深层补水保湿",
+        "修复肌肤屏障",
+        "舒缓干燥、瘙痒与炎症",
+        "提亮肤色，改善肤质"
+      ]
+    },
+    "intense-lift-eye-treatment-creme": {
+      "name": "紧致提拉眼部护理霜",
+      "type": "产品",
+      "tagline": "淡化黑眼圈 · 紧致、提亮 · 丝滑清爽",
+      "description": "小分子高渗透，强效焕活细胞新生，抗氧化，小分子多肽与多种有效成分快速显著减少皱纹与眼袋。",
+      "keyIngredients": [
+        "Tuber Magnatum (White Truffle) Extract",
+        "Palmitoyl Tripeptide-1 / -8",
+        "Acetyl Heptapeptide-4",
+        "Coffea Arabica Seed Extract",
+        "Sodium Hyaluronate + Ectoin"
+      ],
+      "benefits": [
+        "减少细纹与眼袋",
+        "紧致眼周肌肤",
+        "促进微循环",
+        "淡化黑眼圈"
+      ]
+    },
+    "intensive-hydro-treatment-silk-mask": {
+      "name": "深层补水蚕丝面膜",
+      "type": "产品",
+      "tagline": "深层补水 · 光泽焕新",
+      "description": "专注于肌肤深层水循环与光泽管理的蚕丝面膜，从根源改善干燥、粗糙与疲倦肤况，长效锁水并提亮肤色。",
+      "keyIngredients": [],
+      "benefits": [
+        "深层补水，重建肌肤含水系统",
+        "长效锁水，维持持久水润状态",
+        "提亮肤色，改善暗沉与疲态",
+        "促进细胞更新，延缓肌肤老化",
+        "提升弹性与细致度，肌肤水润透亮柔嫩"
+      ]
+    },
+    "intensive-medic-cell-treatment": {
+      "name": "细胞医学炎症调理护理疗程",
+      "type": "护理疗程",
+      "tagline": "重建平衡，修复根源",
+      "description": "专为问题肌肤研发的专业细胞医学调理护理系统，从源头稳定炎症、重建肌肤健康基础；重建微生态平衡、抑制炎症因子、激活细胞修复、重建屏障，并带来抗老与色素淡化功效。仅需 1–3 次专业护理即可见明显改善。",
+      "keyIngredients": [
+        "Medic Cell Powder",
+        "Stem Cell Lyophilised Powder",
+        "Soothing Gel Mask",
+        "Amino Acid Powder",
+        "Nano Mist"
+      ],
+      "benefits": [
+        "重建微生态平衡",
+        "精准靶向并抑制炎症",
+        "激活细胞修复与再生",
+        "重建屏障结构",
+        "抗老与色素管理，肌肤更干净、透亮、稳定"
+      ]
+    },
+    "intensive-restoration-powder": {
+      "name": "冻干粉",
+      "type": "产品",
+      "tagline": "专业修复粉 · 医美术后/创伤后修复期 · 抗炎抗敏",
+      "description": "医学级小分子活性肽修复粉，修复能力超强，帮助受损细胞再生；以保养方式彻底滤去造成过敏与红血丝的残留“致敏致红”因子，巩固肌肤复原基础。",
+      "keyIngredients": [
+        "Dipotassium Glycyrrhizate",
+        "Opuntia Streptacantha Stem Extract",
+        "Trehalose",
+        "Glycerin",
+        "Niacinamide"
+      ],
+      "benefits": [
+        "帮助受损细胞再生",
+        "天然抗氧化，抑制疤痕纤维母细胞增生",
+        "淡化痘印痘疤",
+        "滋润干燥粗糙肌肤",
+        "舒缓泛红与敏感"
+      ]
+    },
+    "intensive-restoration-serum": {
+      "name": "优越修复精华",
+      "type": "产品",
+      "tagline": "抗敏感、消炎 · 增强皮肤免疫系统 · 重整及修复受损皮肤",
+      "description": "专为敏感肌设计，补充免疫球蛋白，富含抗氧化、抗过敏与镇静成分，减轻泛红、降低敏感度，重整并修复受损细胞。",
+      "keyIngredients": [
+        "Dipotassium Glycyrrhizate",
+        "Allantoin",
+        "Serine",
+        "Asparagine",
+        "Tocopherol (Vitamin E)"
+      ],
+      "benefits": [
+        "即时减少泛红与敏感",
+        "舒缓镇静",
+        "重整并修复受损肌肤",
+        "抗刺激、抗炎",
+        "增强肌肤免疫力"
+      ]
+    },
+    "intensive-restoration-treatment-silk-mask": {
+      "name": "深层修复蚕丝面膜",
+      "type": "产品",
+      "tagline": "屏障修复 · 炎症调理 · 稳定舒适",
+      "description": "专为敏感与受损肌肤而设的蚕丝面膜，从屏障修复 × 炎症调理双重机制入手：强效抗氧化、舒缓泛红炎症、形成肌肤保护屏障、深层修复细胞，恢复肌肤平衡状态。",
+      "keyIngredients": [
+        "Dipotassium Glycyrrhizate"
+      ],
+      "benefits": [
+        "强效抗氧化，降低外界刺激",
+        "舒缓泛红、炎症与不适",
+        "形成肌肤保护屏障，强化防御力",
+        "深层修复细胞，提升自我修复力",
+        "恢复肌肤平衡，稳定舒适健康"
+      ]
+    },
+    "medic-ice-hydro-soothing-mask": {
+      "name": "医用冰镇保湿退红舒缓面膜",
+      "type": "产品",
+      "tagline": "医用冰镇 · 保湿退红 · 舒缓修护",
+      "description": "全新升级冰感修护面膜，蕴含高浓度双重修复精华（尿囊素 × 维生素原B5 × 透明质酸）；20分钟冰感护理，快速退红、深层舒缓保湿，晒后即时降温安抚。",
+      "keyIngredients": [
+        "Allantoin",
+        "Panthenol (Provitamin B5)",
+        "Sodium Hyaluronate",
+        "Glycerin",
+        "Scutellaria Baicalensis Extract",
+        "Glycyrrhiza Glabra Root Extract",
+        "Rosmarinus Officinalis Leaf Extract"
+      ],
+      "benefits": [
+        "快速舒缓退红",
+        "深层舒缓保湿",
+        "晒后即时降温安抚",
+        "抗炎镇静（尿囊素 + 黄芩）",
+        "抗氧防护（光果甘草根 + 迷迭香叶）"
+      ]
+    },
+    "medic-restore-gel": {
+      "name": "医学修复凝胶",
+      "type": "产品",
+      "tagline": "消炎 × 修复 × 稳定",
+      "description": "医学级修复凝胶，专为缓解炎症、抗菌止痒、抗氧化、抑制过敏反应及修护脆弱肌肤屏障而研制；蕴含苦参碱、蒲公英、夏枯草与蔓生百部等植物精萃，结合烟酰胺强化肌肤防御力，适用于医美术后、敏感或痘痘肌。",
+      "keyIngredients": [
+        "Aqua",
+        "Bifida Ferment Lysate",
+        "Glycerin",
+        "Daucus Carota Sativa (Carrot) Root Extract",
+        "Centella Asiatica Extract",
+        "Portulaca Oleracea Extract",
+        "Lophatherum Gracile Leaf/Stem Extract",
+        "Cnidium Monnieri Fruit Extract",
+        "Diatomaceous Earth",
+        "Kochia Scoparia Fruit Extract",
+        "Andrographis Paniculata Extract",
+        "Kaolin",
+        "Ethylhexylglycerin"
+      ],
+      "benefits": [
+        "舒缓炎症、泛红与不适",
+        "抗菌止痒",
+        "抗氧化、抗过敏",
+        "强化肌肤防御力，促进修复再生",
+        "适合医美术后与敏感/痘痘肌"
+      ]
+    },
+    "micellaire-solution": {
+      "name": "净颜卸妆水",
+      "type": "产品",
+      "tagline": "温和、不刺激卸妆 · 细护肤 · 深养护",
+      "description": "内含玫瑰花提取物，迅速彻底卸妆的同时保湿肌肤，清爽无油直达肌底带走彩妆污垢，温和呵护并注入天然养分。",
+      "keyIngredients": [
+        "Rosa Rugosa Flower Extract",
+        "PEG-6 Caprylic/Capric Glycerides"
+      ],
+      "benefits": [
+        "快速彻底卸妆",
+        "温和护肤，注入天然养分",
+        "深层补水锁水"
+      ]
+    },
+    "micro-nano-mist": {
+      "name": "细胞能量微小纳米喷雾",
+      "type": "产品",
+      "tagline": "细胞微小纳米水 · 小分子团水 · 帮助细胞充盈",
+      "description": "凭借纳米分子科技将水分子微米化至3–5个分子，直达肌底实现“超渗水”深层补给，唤醒疲惫肌肤、注入能量，促进角质层修复、平衡微生态、维持屏障稳定。",
+      "keyIngredients": [
+        "Aqua",
+        "Hamamelis Virginiana (Witch Hazel) Water",
+        "Glycyrrhiza Glabra (Licorice) Root Water"
+      ],
+      "benefits": [
+        "修复并强化肌肤屏障",
+        "细致毛孔、改善肤质",
+        "唤醒暗沉肌、促进吸收",
+        "舒缓敏感、镇静刺激",
+        "缓解干燥、紧绷、脱皮",
+        "平衡水油与pH值"
+      ]
+    },
+    "o2-clear-bubble-mask": {
+      "name": "O₂ 净化泡泡面膜",
+      "type": "产品",
+      "tagline": "自动起泡 · 毛孔深净 · 舒缓疗愈",
+      "description": "蕴含天然活性成分，自动起泡深层净化毛孔、吸附多余油脂，温和溶解毛孔内堆积物；快速镇静泛红、改善炎症，修护敏感肌屏障，同时淡化暗沉与疲倦感，令肌肤细嫩透亮。",
+      "keyIngredients": [],
+      "benefits": [
+        "起泡深洁，净化毛孔垃圾",
+        "舒缓镇定炎症肌肤",
+        "焕亮暗沉、改善粗糙",
+        "强韧屏障，防御敏感刺激",
+        "提升后续保养渗透力"
+      ]
+    },
+    "oxy-bright-serum": {
+      "name": "美白精华",
+      "type": "产品",
+      "tagline": "净白、光亮 · 强效抗氧化 · 密集含氧和活性成分",
+      "description": "理想的持久美白效果，促进新陈代谢，密集含氧，以卡姆果提取物等活性成分激发肌肤赋活机能。",
+      "keyIngredients": [
+        "Camu Camu Extract",
+        "Beet Root",
+        "Honey",
+        "White Mulberry",
+        "Chamomile",
+        "Vitamin A Acetate",
+        "Vitamin E Acetate",
+        "Provitamin B5",
+        "Coenzyme Q10",
+        "Olive Oil"
+      ],
+      "benefits": [
+        "改善肤质",
+        "减少暗沉与粗糙",
+        "均匀肤色",
+        "增强细胞免疫力",
+        "抗衰老抗氧化"
+      ]
+    },
+    "pimples-trial-set": {
+      "name": "祛痘体验套装",
+      "type": "套装",
+      "tagline": "痘痘易爆痘肌的祛痘体验套装",
+      "description": "专为痘痘、易爆痘肌打造的祛痘体验套装。内含优越修复精华 10ml、祛痘精华 5ml、小分子玻尿酸精华 10ml。",
+      "keyIngredients": [],
+      "benefits": [
+        "内含优越修复精华 10ml",
+        "内含祛痘精华 5ml",
+        "内含小分子玻尿酸精华 10ml",
+        "体验装，适合痘痘、易爆痘肌"
+      ]
+    },
+    "plantcell-salon-treatment": {
+      "name": "PlantCell 双安瓶沙龙护理",
+      "type": "护理疗程",
+      "tagline": "美白 + 补水双安瓶护理",
+      "description": "PlantCell 沙龙专业双安瓶护理（美白安瓶 + 补水安瓶）搭配医用冰膜，明显改善色素不均、平滑肤质、提升光泽——护理前后可见肌肤更白皙、细腻、透亮。",
+      "keyIngredients": [
+        "Whitening Ampoules",
+        "Hydrating Ampoules",
+        "Medic Ice Mask"
+      ],
+      "benefits": [
+        "提亮肤色，改善色素不均",
+        "平滑细致肤质",
+        "深层补水",
+        "提升光泽感",
+        "专业双安瓶护理程序"
+      ]
+    },
+    "pore-refine-serum": {
+      "name": "消炎抗痘精华",
+      "type": "产品",
+      "tagline": "疏通毛孔 · 净化毛孔 · 软化顽固堵塞型痘痘",
+      "description": "专为痘痘与油性肌研发，蕴含收敛活性成分，软化消炎顽固堵塞型痘痘，收敛毛孔、去除黑白头，平衡油脂、抑制细菌，并促进再生修护受损肌肤。",
+      "keyIngredients": [
+        "Sophora Angustifolia Root Extract",
+        "Phellodendron Amurense Bark Extract",
+        "Azadirachta Indica Leaf Extract",
+        "Centella Asiatica Root Extract",
+        "Rehmannia Chinensis Root Extract"
+      ],
+      "benefits": [
+        "疏通毛孔，清除黑白头",
+        "消炎抗菌，抑制痘痘滋生",
+        "加速代谢，细致毛孔",
+        "平衡油脂分泌",
+        "修护受损肌肤"
+      ]
+    },
+    "refined-ha-uv-shield-spf35": {
+      "name": "肤色保湿防晒",
+      "type": "产品",
+      "tagline": "外防晒内补水 · 自然粉肤色 · 清爽自然光感",
+      "description": "富含北美金缕梅水和透明质酸的日常防晒，保护肌肤免受有害紫外线（UVA & UVB）伤害，质地清爽不油腻、轻盈。",
+      "keyIngredients": [
+        "Aqua",
+        "Sodium Hyaluronate",
+        "Hamamelis Virginiana (Witch Hazel) Water",
+        "Glycerin",
+        "Trioctyldodecyl Citrate",
+        "Dicaprylyl Carbonate",
+        "Dimethicone Crosspolymer",
+        "Neopentyl Glycol",
+        "Sodium Chloride",
+        "Titanium Dioxide"
+      ],
+      "benefits": [
+        "广谱防护UVA/UVB",
+        "防止水分流失，长达12小时保湿",
+        "预防色素沉淀与皱纹",
+        "肌肤平滑，呈现年轻光感"
+      ]
+    },
+    "refined-hydro-care": {
+      "name": "舒缓镇静乳霜",
+      "type": "产品",
+      "tagline": "温和补水 · 清爽不油腻",
+      "description": "含天然植物提取物、燕麦胜肽与玻尿酸，帮助修复肌肤细胞；温和适合任何肤质，提供舒缓、镇静、修复受损肌肤，深层渗透至肌底层，保持水分，预防脱水。",
+      "keyIngredients": [
+        "Aqua",
+        "Sodium Hyaluronate",
+        "Aloe Barbadensis Extract",
+        "Cucumis Sativus (Cucumber) Extract"
+      ],
+      "benefits": [
+        "重建并修复肌肤细胞",
+        "降低敏感度",
+        "缓解干燥、瘙痒与炎症"
+      ]
+    },
+    "repair-treatment-oil": {
+      "name": "修复精华油",
+      "type": "产品",
+      "tagline": "抗敏抗炎 · 保湿润肤 · 抗衰老",
+      "description": "以深海鱼乳蛋油为核心，快速修复未愈合肌肤、抗敏抗炎，深层保湿润肤、增加弹性；质地细腻亮泽、渗透力高，补充肌肤胆固醇，显著淡化皱纹、紧致熟龄肌。",
+      "keyIngredients": [
+        "Deep-Sea Fish Roe Lipid Oil"
+      ],
+      "benefits": [
+        "快速修复受损、未愈合肌肤",
+        "抗敏抗炎",
+        "深层保湿润肤",
+        "提升弹性与紧致度",
+        "强效抗衰老，淡化皱纹"
+      ]
+    },
+    "repairing-plus-hydrating-trial-set": {
+      "name": "修复补水体验套装",
+      "type": "套装",
+      "tagline": "敏感缺水肌的修复补水三件套",
+      "description": "专为敏感缺水肌打造的修复补水体验三件套。内含优越修复精华 10ml、小分子玻尿酸精华 10ml、大分子玻尿酸精华 10ml。",
+      "keyIngredients": [],
+      "benefits": [
+        "内含优越修复精华 10ml",
+        "内含小分子玻尿酸精华 10ml",
+        "内含大分子玻尿酸精华 10ml",
+        "体验装，修复并深层补水敏感肌"
+      ]
+    },
+    "revitalize-anti-oxidant-creme": {
+      "name": "抗老修复面霜",
+      "type": "产品",
+      "tagline": "锁水保湿 · 饱满丰润 · 质地细腻不厚重",
+      "description": "内含六胜肽-8，补充肌肤流失的胶原蛋白，修复断裂老化的弹力纤维网，填补局部塌陷，改善松弛。",
+      "keyIngredients": [
+        "Astaxanthin",
+        "Hexapeptide-8",
+        "Haematococcus Pluvialis Extract",
+        "Sodium Hyaluronate",
+        "Yeast Beta-Glucan"
+      ],
+      "benefits": [
+        "强效保湿防护",
+        "抗衰老，紧致饱满丰润",
+        "质地细腻不厚重，润而不油",
+        "提亮肤色"
+      ]
+    },
+    "revitalize-anti-oxidant-essence": {
+      "name": "抗氧化精华",
+      "type": "产品",
+      "tagline": "增加皮肤饱满度 · 保湿&自然光泽 · 质地细腻柔滑",
+      "description": "内含六胜肽-8，补充肌肤流失的胶原蛋白，修复断裂老化的弹力纤维网，避免松弛与弹性流失，改善衰老，驻颜新生。",
+      "keyIngredients": [
+        "Astaxanthin",
+        "Hexapeptide-8",
+        "Dipotassium Glycyrrhizate",
+        "Sodium Hyaluronate",
+        "Haematococcus Pluvialis Extract"
+      ],
+      "benefits": [
+        "补充流失胶原蛋白",
+        "防止松弛与弹性流失",
+        "改善衰老迹象",
+        "驻颜焕发光泽"
+      ]
+    },
+    "revitalize-anti-oxidant-serum": {
+      "name": "抗老化精华",
+      "type": "产品",
+      "tagline": "促进弹性纤维网 · 增强紧致度 · 改善松弛垮脸",
+      "description": "内含六胜肽-8，快速打开肌肤水通道，重新组织胶原弹力，增加弹力蛋白活性，补充胶原蛋白，深层保湿，抗皱紧致抗老。",
+      "keyIngredients": [
+        "Astaxanthin",
+        "Hexapeptide-8",
+        "Dipotassium Glycyrrhizate",
+        "Sodium Hyaluronate",
+        "Jojoba Esters"
+      ],
+      "benefits": [
+        "注入并重组胶原弹力",
+        "紧致平滑，淡化皱纹",
+        "深层保湿",
+        "焕发新生光泽"
+      ]
+    },
+    "rose-rosemary-essence-oil": {
+      "name": "玫瑰迷迭香精油",
+      "type": "产品",
+      "tagline": "轻盈不油腻 · 抑制AGS形成 · 光滑弹润细腻",
+      "description": "精油帮助锁住营养，加强滋润与柔嫩，令肌肤更有光泽；双重天然强效抗氧化剂，抑制AGEs形成，抗糖祛黄，改善粗糙，细嫩肌肤。",
+      "keyIngredients": [
+        "Olea Europaea (Olive) Fruit Oil",
+        "Rosa Rugosa Flower Oil",
+        "Rosmarinus Officinalis (Rosemary) Leaf Oil",
+        "Tocopheryl Acetate"
+      ],
+      "benefits": [
+        "锁住营养与水分",
+        "抗糖化抗氧化",
+        "祛除暗黄",
+        "软化粗糙肌肤",
+        "增添光泽"
+      ]
+    },
+    "soothing-gel-mask": {
       "name": "舒缓修复凝胶膜",
-      "type": "舒缓修护凝胶膜",
-      "tagline": "清凉舒缓，多层补水",
-      "description": "一款清凉凝胶膜，蕴含黄瓜、海藻与芦荟提取物，缓解炎症，为干燥疲惫的肌肤注入多层水分。它安抚并重建平衡，令肤色透亮均匀。",
+      "type": "产品",
+      "tagline": "降温舒缓 · 镇定补水 · 稳定肤况",
+      "description": "融合黄瓜、海藻与芦荟等植萃的升级配方，快速为肌肤降温、舒缓与补水；特别适合敏感、发炎、易堵塞与不稳定肌肤，先让皮肤稳定下来，后续精华修复品才能更好渗透，效果加倍。",
       "keyIngredients": [
-        "黄瓜提取物",
-        "海藻提取物",
-        "芦荟提取物",
-        "甘油"
+        "Cucumber Extract",
+        "Algae Extract",
+        "Glycerin",
+        "Aloe Vera Extract",
+        "Deionised Water",
+        "Butylene Glycol"
       ],
       "benefits": [
-        "缓解炎症",
-        "多层细胞补水",
-        "为疲惫肌肤锁住水分",
-        "透亮均匀肤感"
+        "快速降温镇定",
+        "多层次补水",
+        "舒缓炎症、细致肤质",
+        "均匀提亮肤色",
+        "稳定肌肤，提升后续吸收"
       ]
     },
-    "silk-mask": {
-      "name": "深层修复面膜",
-      "type": "修护蚕丝面膜 · 一盒 5 片",
-      "tagline": "医美术后的屏障急救",
-      "description": "一款蚕丝面膜，专为敏感、过薄肌肤而设——抗氧化、抑菌、舒缓。它修护受损细胞、强化屏障、安抚泛红与刺激，是医美术后的理想之选。",
+    "ultrafine-cleansing-gel": {
+      "name": "精华蜜状洁面凝胶",
+      "type": "产品",
+      "tagline": "细密小分子泡沫 · 双重氨基酸 · 保护皮脂膜",
+      "description": "精华蜜状洁面，绵密细腻泡沫，轻松深入毛孔，带走油脂污垢；洗后干净清爽，不拔干不紧绷，肌肤舒缓水润。",
       "keyIngredients": [
-        "甘草酸二钾",
-        "透明质酸钠",
-        "舒缓复合物"
+        "Amino Acids (dual complex)",
+        "Glycyrrhiza Glabra (Licorice) Root Extract",
+        "Scutellaria Baicalensis Root Extract",
+        "Polygonum Cuspidatum Root Extract",
+        "Chamomilla Recutita (Matricaria) Flower Extract"
       ],
       "benefits": [
-        "修护并强化屏障",
-        "舒缓敏感、薄弱肌肤",
-        "减少泛红与刺激",
-        "医美术后理想之选"
+        "维持肌肤天然pH值并减少多余皮脂",
+        "防止皮肤干燥脱水",
+        "修护受损肌肤屏障",
+        "肌肤柔软丝滑"
+      ]
+    },
+    "uv-protection-spf35": {
+      "name": "轻盈保湿防晒",
+      "type": "产品",
+      "tagline": "素颜乳效果 · 清爽透气 · 透嫩白皙",
+      "description": "采用干触技术（Dry Touch）配制，质地不油腻、超轻盈；有效保护肌肤免受紫外线与氧化压力损伤，同时促进细胞生长与更新。",
+      "keyIngredients": [
+        "Aqua",
+        "Hyaluronic Acid",
+        "Microcrystalline Silica",
+        "Cyclopentasiloxane",
+        "Micro Titanium Dioxide",
+        "Sodium Chloride"
+      ],
+      "benefits": [
+        "广谱防护UVA/UVB",
+        "抵御氧化压力损伤",
+        "促进细胞更新",
+        "干触轻盈，清爽不油腻"
+      ]
+    },
+    "vital-perfect-uv-spf30": {
+      "name": "完美保湿防晒 SPF30",
+      "type": "产品",
+      "tagline": "防晒 · 保湿 · 自然修饰肤色",
+      "description": "质地如清爽粉底液般顺滑的多效防晒，轻盈易推开，含透明质酸防止水分流失、持续为肌肤补水，同时抵御紫外线伤害。",
+      "keyIngredients": [
+        "Sodium Hyaluronate",
+        "Microcrystalline Silica",
+        "Cyclopentasiloxane",
+        "Micro Titanium Dioxide",
+        "Sodium Chloride"
+      ],
+      "benefits": [
+        "广谱UV防护",
+        "保湿舒适不干燥",
+        "自然修饰肤色",
+        "清爽轻盈不厚重"
+      ]
+    },
+    "whitening-stem-cell": {
+      "name": "亮白干细胞精华",
+      "type": "产品",
+      "tagline": "夜间使用 · 亮白 · 淡化色斑",
+      "description": "夜间专用的亮白干细胞精华，趁肌肤黄金修复期活化皮肤干细胞、提升再生能力，强效分解黑色素，美白细嫩、淡化色斑，令肤质细腻光滑。",
+      "keyIngredients": [],
+      "benefits": [
+        "活化皮肤干细胞，提升再生力",
+        "强效分解黑色素",
+        "美白淡斑",
+        "细腻光滑肤质",
+        "夜间使用"
+      ]
+    },
+    "youth-ha-moisturizer": {
+      "name": "美白锁水乳霜",
+      "type": "产品",
+      "tagline": "美白光泽、细腻 · 锁水保湿 · 质地干爽、不油腻",
+      "description": "含光果甘草与多种植物萃取，有效帮助皮肤美白锁水保湿，改善皮肤缺水与暗沉偏黄。",
+      "keyIngredients": [
+        "Sodium Hyaluronate",
+        "Niacinamide (Vitamin B3)",
+        "Rosa Rugosa Flower Water",
+        "Chamomilla Recutita (Matricaria) Flower Extract"
+      ],
+      "benefits": [
+        "美白提亮",
+        "恢复水分平衡",
+        "促进胶原合成与弹性",
+        "淡化色素沉淀",
+        "促进肌肤更新"
       ]
     }
   },
   "testimonials": {
     "Aisyah R.": {
-      "quote": "我的肌肤从未如此均匀。使用美白精华三个星期，我的黑斑明显淡化了。每个星期都有顾客问我用了什么。",
+      "quote": "我的肤色从未如此匀净。使用美白精华三个星期，色斑明显淡化了。每个星期都有顾客问我用了什么。",
       "role": "经销商 · Kuala Lumpur"
     },
     "Mei Ling T.": {
@@ -516,7 +819,7 @@ const zh: ContentPack = {
     "3": {
       "category": "护肤",
       "question": "多久才能看到效果？",
-      "answer": "补水与肤质的改善往往几天内就能看见。美白精华在肤色与黑斑方面的效果，通常在持续使用 4 至 8 周后显现。"
+      "answer": "补水与肤质的改善往往几天内就能看见。美白精华在肤色与色斑方面的效果，通常在持续使用 4 至 8 周后显现。"
     },
     "4": {
       "category": "经销商",
@@ -589,20 +892,20 @@ const zh: ContentPack = {
     "dark-spots-hyperpigmentation": {
       "title": "案例：色斑与痘印",
       "category": "护肤案例",
-      "excerpt": "针对热带肌肤肤色不均与顽固痘印的护理流程。",
-      "body": "**困扰：** 肤色不均、阳光引起的色斑，以及挥之不去的痘印——在我们的气候里极为常见。\n\n**成因：** 紫外线照射与炎症（例如长痘之后）会刺激黑色素过度生成。若不每天使用防晒，痘印消退缓慢，新的色斑也会不断形成。\n\n**建议流程：**\n1. **温和洁面乳** 早晚使用。\n2. **美白精华** 每天早上在洁净肌肤上使用。\n3. **美白锁水乳霜** 焕亮并锁住养分。\n4. **肤色保湿防晒 SPF35** 每天早上必用——想淡化痘印，这一步绝不能省。\n\n**时间线：** 在坚持使用防晒的前提下，肤色一般会在 4 至 8 周内出现可见的均匀改善。请事先向顾客说明这个预期。\n\n**专业提示：** 美白\"没效果\"的头号原因就是没擦防晒。把精华和防晒一起卖给顾客。"
+      "excerpt": "针对热带肌肤肤色不均与顽固痘印的护肤程序。",
+      "body": "**困扰：** 肤色不均、阳光引起的色斑，以及挥之不去的痘印——在我们的气候里极为常见。\n\n**成因：** 紫外线照射与炎症（例如长痘之后）会刺激黑色素过度生成。若不每天使用防晒，痘印消退缓慢，新的色斑也会不断形成。\n\n**建议程序：**\n1. **温和洁面乳** 早晚使用。\n2. **美白精华** 每天早上在洁净肌肤上使用。\n3. **美白锁水乳霜** 焕亮并锁住养分。\n4. **肤色保湿防晒 SPF35** 每天早上必用——想淡化痘印，这一步绝不能省。\n\n**时间线：** 在坚持使用防晒的前提下，肤色一般会在 4 至 8 周内出现可见的匀净改善。请事先向顾客说明这个预期。\n\n**专业提示：** 美白\"没效果\"的头号原因就是没擦防晒。把精华和防晒一起卖给顾客。"
     },
     "dehydrated-vs-dry-skin": {
       "title": "缺水肌与干性肌——以及各自的解决方法",
       "category": "护肤案例",
       "excerpt": "两者感觉相似，却需要不同的解决方案。这里教你如何分辨。",
-      "body": "**缺水肌**缺的是*水分*。它可能看起来暗沉、感觉紧绷，并出现细小的\"皱纹纹路\"——即使是油性肌肤也一样。**干性肌**缺的是*油脂*（脂质）；它会脱屑、摸起来粗糙。\n\n**针对缺水：** 层层叠加水性保湿。**玫瑰爽肤水** → **大分子玻尿酸精华**（多分子量玻尿酸 + 神经酰胺）→ 用 **玻尿酸保湿乳霜** 锁水。\n\n**针对干性：** 优先补充屏障脂质——**修复屏障乳霜**（麦角硫因 + 胜肽），并避免过度清洁。\n\n**两者同时存在？** 在冷气办公室里非常常见。请使用完整的层层补水流程，再加上面霜。\n\n**反直觉提示：** 油性、易长痘的肌肤往往其实是*缺水*。别去剥夺它的水分——给它补水，出油情况通常就会平稳下来。"
+      "body": "**缺水肌**缺的是*水分*。它可能看起来暗沉、感觉紧绷，并出现细小的\"皱纹纹路\"——即使是油性肌肤也一样。**干性肌**缺的是*油脂*（脂质）；它会脱屑、摸起来粗糙。\n\n**针对缺水：** 层层叠加水性保湿。**玫瑰爽肤水** → **大分子玻尿酸精华**（多分子量玻尿酸 + 神经酰胺）→ 用 **玻尿酸保湿乳霜** 锁水。\n\n**针对干性：** 优先补充屏障脂质——**修复屏障乳霜**（麦角硫因 + 胜肽），并避免过度清洁。\n\n**两者同时存在？** 在冷气办公室里非常常见。请使用完整的层层补水程序，再加上面霜。\n\n**反直觉提示：** 油性、易长痘的肌肤往往其实是*缺水*。别去剥夺它的水分——给它补水，出油情况通常就会平稳下来。"
     },
     "sensitive-skin-redness": {
       "title": "舒缓敏感、易反应肌肤",
       "category": "护肤案例",
       "excerpt": "针对泛红与易反应肌肤，以屏障为先的温和护理方式。",
-      "body": "**困扰：** 刺痛、泛红，对许多产品都会起反应。\n\n**原则：** 少即是多。先修复屏障，再缓慢引入活性成分。\n\n**流程：**\n1. **温和洁面乳**（洋甘菊）——绝不剥夺水分。\n2. **舒缓镇静乳霜** 含燕麦胜肽，舒缓并重建屏障。\n3. 泛红爆发时，用 **冻干粉** 作为强效修护加持。\n4. **肤色保湿防晒 SPF35**——敏感肌晒伤和起反应都更快。\n\n**暂缓使用：** 在屏障平稳之前，先别用高浓度美白或去角质酸类。情况稳定后，可隔天使用一次美白精华。\n\n**务必：** 新产品先在耳后或手臂内侧做 24 小时局部测试。"
+      "body": "**困扰：** 刺痛、泛红，对许多产品都会起反应。\n\n**原则：** 少即是多。先修护屏障，再缓慢引入活性成分。\n\n**护肤程序：**\n1. **温和洁面乳**（洋甘菊）——绝不剥夺水分。\n2. **舒缓镇静乳霜** 含燕麦胜肽，舒缓并重建屏障。\n3. 泛红爆发时，用 **冻干粉** 作为强效修护加持。\n4. **肤色保湿防晒 SPF35**——敏感肌晒伤和起反应都更快。\n\n**暂缓使用：** 在屏障平稳之前，先别用高浓度美白或去角质酸类。情况稳定后，可隔天使用一次美白精华。\n\n**务必：** 新产品先在耳后或手臂内侧做 24 小时局部测试。"
     },
     "ingredient-niacinamide": {
       "title": "成分指南：烟酰胺",
@@ -623,16 +926,16 @@ const zh: ContentPack = {
       "body": "**简短版：** 防晒守护着你花钱换来的每一项护理成果。\n\n**为什么每天都要擦，即使在室内：** UVA 能穿透玻璃窗，会造成色素沉淀和老化。在我们的气候里，紫外线全年都很强。\n\n**我们的推荐：** **肤色保湿防晒 SPF35** 带来水润肤感，或 **轻盈保湿防晒 SPF35** 带来超轻盈干爽触感——两者皆为广谱防晒，让顾客真的愿意补擦。\n\n**用量：** 脸部和颈部约两指节长度；外出时全天补擦。\n\n**销售角度：** 任何美白产品都搭配防晒一起卖——没有防晒，美白成果就会停滞不前。"
     },
     "building-a-routine": {
-      "title": "如何打造一套简单有效的护理流程",
+      "title": "如何搭建一套简单有效的护肤程序",
       "category": "产品使用指南",
       "excerpt": "使用 Mérvéilléux 系列的正确早晚顺序。",
-      "body": "**顺序 = 由稀到稠，早上最后才擦防晒。**\n\n**早上：**\n1. 温和洁面乳\n2. 玫瑰爽肤水\n3. 美白精华\n4. 紧致提拉眼霜\n5. 玻尿酸保湿乳霜\n6. 肤色保湿防晒 SPF35\n\n**晚上：**\n1. 温和洁面乳\n2. 玫瑰爽肤水\n3. 大分子玻尿酸精华\n4. 紧致提拉眼霜\n5. 修复屏障乳霜\n\n**每周：** 深层保湿面膜 每周 1 至 2 次，加强补水。\n\n**保持实际：** 一套顾客真的会坚持的流程，胜过一套完美却被放弃的流程。先从洁面 + 精华 + 面霜 + 防晒开始，再逐步增加。"
+      "body": "**顺序 = 由稀到稠，早上最后才擦防晒。**\n\n**早上：**\n1. 温和洁面乳\n2. 玫瑰爽肤水\n3. 美白精华\n4. 紧致提拉眼霜\n5. 玻尿酸保湿乳霜\n6. 肤色保湿防晒 SPF35\n\n**晚上：**\n1. 温和洁面乳\n2. 玫瑰爽肤水\n3. 大分子玻尿酸精华\n4. 紧致提拉眼霜\n5. 修复屏障乳霜\n\n**每周：** 深层保湿面膜 每周 1 至 2 次，加强补水。\n\n**保持实际：** 一套顾客真的会坚持的程序，胜过一套完美却被放弃的程序。先从洁面 + 精华 + 面霜 + 防晒开始，再逐步增加。"
     },
     "oily-acne-prone-tropical": {
       "title": "案例：潮湿气候下的油性、易长痘肌肤",
       "category": "护肤案例",
       "excerpt": "在不剥夺屏障的前提下控制出油与痘痘。",
-      "body": "**困扰：** 午后泛油光、毛孔阻塞，以及在炎热潮湿天气里冒痘。\n\n**关键洞察：** 剥夺油性肌肤的水分会让它分泌*更多*油脂。应该改为补水与平衡。\n\n**流程：**\n1. **精华蜜状洁面凝胶** 早晚使用（别洗得太频繁）。\n2. **消炎抗痘精华** 涂于阻塞部位，疏通并平衡。\n3. **小分子玻尿酸精华** 提供无油补水。\n4. 薄薄一层 **舒缓镇静乳霜**。\n5. **轻盈保湿防晒 SPF35**（干爽触感、不堵塞毛孔）。\n\n**加入：** 用 **祛痘修复精华** 作为针对活跃痘痘的局部护理。\n\n**告诉顾客：** 坚持胜过粗暴搓洗。预期在几周内肌肤会变得更平稳。"
+      "body": "**困扰：** 午后泛油光、毛孔阻塞，以及在炎热潮湿天气里冒痘。\n\n**关键洞察：** 剥夺油性肌肤的水分会让它分泌*更多*油脂。应该改为补水与平衡。\n\n**护肤程序：**\n1. **精华蜜状洁面凝胶** 早晚使用（别洗得太频繁）。\n2. **消炎抗痘精华** 涂于阻塞部位，疏通并平衡。\n3. **小分子玻尿酸精华** 提供无油补水。\n4. 薄薄一层 **舒缓镇静乳霜**。\n5. **轻盈保湿防晒 SPF35**（干爽触感、不堵塞毛孔）。\n\n**加入：** 用 **祛痘修复精华** 作为针对活跃痘痘的局部护理。\n\n**告诉顾客：** 坚持胜过粗暴搓洗。预期在几周内肌肤会变得更平稳。"
     }
   }
 };

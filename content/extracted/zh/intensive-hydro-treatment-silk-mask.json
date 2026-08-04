@@ -1,17 +1,33 @@
 {
-  "name_zh": null,
   "name_en": "Intensive Hydro-Treatment Silk Mask",
-  "collection": "Silk Mask",
+  "name_zh": "深层补水蚕丝面膜",
   "type": "product",
   "status": "available",
+  "collection": "Silk Mask",
+  "tagline_en": "Deep hydration, renewed radiance",
   "tagline_zh": "深层补水 · 光泽焕新",
   "price_myr": 168,
   "size": "5 pcs",
-  "overview_zh": "专注于肌肤深层水循环与光泽管理，从根源改善干燥、粗糙与疲倦肤况，长效锁水并提亮肤色。",
+  "overview_en": "A silk sheet mask focused on the skin's deep water circulation and radiance, improving dryness, roughness and tired-looking skin at the source while locking in lasting moisture.",
+  "overview_zh": "专注于肌肤深层水循环与光泽管理的蚕丝面膜，从根源改善干燥、粗糙与疲倦肤况，长效锁水并提亮肤色。",
   "key_ingredients": [],
-  "benefits_zh": ["深层补水、长效锁水", "提亮肤色、改善暗沉", "提升弹性与细致度"],
-  "claims_flagged": [],
+  "benefits_en": [
+    "Deep hydration rebuilds the skin's water system",
+    "Long-lasting moisture lock",
+    "Brightens dullness and tired-looking skin",
+    "Promotes cell renewal to slow ageing",
+    "Boosts elasticity and refinement for dewy, translucent, supple skin"
+  ],
+  "benefits_zh": [
+    "深层补水，重建肌肤含水系统",
+    "长效锁水，维持持久水润状态",
+    "提亮肤色，改善暗沉与疲态",
+    "促进细胞更新，延缓肌肤老化",
+    "提升弹性与细致度，肌肤水润透亮柔嫩"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
+  "claims_flagged": [],
   "photo_files": [],
   "source_msg_ids": ["hq-303", "manifest"]
 }

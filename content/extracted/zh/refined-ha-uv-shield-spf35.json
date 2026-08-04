@@ -1,16 +1,50 @@
 {
-  "name_zh": null,
-  "name_en": "Refined HA UV Shield SPF35",
+  "name_en": "Refined HA UV Shield SPF 35",
+  "name_zh": "肤色保湿防晒",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Broad-spectrum SPF 35 with all-day hydration",
   "tagline_zh": "外防晒内补水 · 自然粉肤色 · 清爽自然光感",
   "price_myr": 188,
   "size": "30 ml",
-  "overview_zh": "兼具防晒与保湿的轻盈防护乳，含北美金缕梅水与透明质酸，抵御UVA&UVB并持续为肌肤补水。",
-  "key_ingredients": ["Sodium Hyaluronate", "Hamamelis Virginiana (Witch Hazel) Water", "Glycerin", "Dimethicone Crosspolymer", "Neopentyl Glycol"],
-  "benefits_zh": ["防晒兼保湿", "自然粉润肤色", "清爽不阻塞毛孔"],
+  "overview_en": "A daily broad-spectrum sunscreen rich in Witch Hazel water and hyaluronic acid that protects against harmful UVA and UVB rays, with a non-greasy, lightweight feel.",
+  "overview_zh": "富含北美金缕梅水和透明质酸的日常防晒，保护肌肤免受有害紫外线（UVA & UVB）伤害，质地清爽不油腻、轻盈。",
+  "key_ingredients": [
+    "Aqua",
+    "Sodium Hyaluronate",
+    "Hamamelis Virginiana (Witch Hazel) Water",
+    "Glycerin",
+    "Trioctyldodecyl Citrate",
+    "Dicaprylyl Carbonate",
+    "Dimethicone Crosspolymer",
+    "Neopentyl Glycol",
+    "Sodium Chloride",
+    "Titanium Dioxide"
+  ],
+  "benefits_en": [
+    "Broad-spectrum UVA/UVB protection",
+    "Prevents dehydration, up to 12h moisture",
+    "Prevents pigmentation and wrinkles",
+    "Smooth, youthful finish"
+  ],
+  "benefits_zh": [
+    "广谱防护UVA/UVB",
+    "防止水分流失，长达12小时保湿",
+    "预防色素沉淀与皱纹",
+    "肌肤平滑，呈现年轻光感"
+  ],
+  "how_to_use_en": [
+    "After toner and moisturiser, apply evenly to face and neck until absorbed.",
+    "Use every morning, 20 minutes before outdoor activity.",
+    "Reapply every 2–3 hours."
+  ],
+  "how_to_use_zh": [
+    "于爽肤水与乳霜后，均匀涂抹于脸部与颈部至吸收。",
+    "每天早上出门前20分钟使用。",
+    "每2–3小时补涂一次。"
+  ],
   "claims_flagged": [],
-  "how_to_use_zh": [],
   "photo_files": ["ChatExport_2026-07-14/photos/photo_42@14-07-2026_03-30-20.jpg", "ChatExport_2026-07-14/photos/photo_43@14-07-2026_03-32-54.jpg"],
   "source_msg_ids": ["dm-125", "dm-126", "dm-127"]
 }

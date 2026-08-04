@@ -1,16 +1,44 @@
 {
-  "name_zh": null,
-  "name_en": "Youth-HA Moisturizer",
+  "name_en": "Youth-HA Moisturiser",
+  "name_zh": "美白锁水乳霜",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Brightening, moisture-locking care with a dry-touch, non-greasy finish",
   "tagline_zh": "美白光泽、细腻 · 锁水保湿 · 质地干爽、不油腻",
   "price_myr": 188,
   "size": "30 ml",
-  "overview_zh": "蕴含光果甘草与多种植物萃取，提升水分含量并改善肌肤偏黄与暗沉，长时间保持柔软水润。",
-  "key_ingredients": ["Sodium Hyaluronate", "Vitamin B3", "Rose Rugosa Flower Water", "Chamomile Recutita (Matricaria) Flower Extract"],
-  "benefits_zh": ["锁水保湿", "改善暗沉", "改善粗糙纹理"],
-  "claims_flagged": ["美白光泽", "有效提亮肤色…改善肌肤偏黄与暗沉问题"],
+  "overview_en": "Contains a variety of active ingredients — Licorice (Glabridin) and plant extracts — that improve dryness caused by dehydration, collagen loss or ageing, whitening and locking in moisture for lasting, radiant skin.",
+  "overview_zh": "含光果甘草与多种植物萃取，有效帮助皮肤美白锁水保湿，改善皮肤缺水与暗沉偏黄。",
+  "key_ingredients": [
+    "Sodium Hyaluronate",
+    "Niacinamide (Vitamin B3)",
+    "Rosa Rugosa Flower Water",
+    "Chamomilla Recutita (Matricaria) Flower Extract"
+  ],
+  "benefits_en": [
+    "Whitens and brightens",
+    "Restores moisture balance",
+    "Supports collagen synthesis and elasticity",
+    "Fades pigmentation",
+    "Stimulates skin renewal"
+  ],
+  "benefits_zh": [
+    "美白提亮",
+    "恢复水分平衡",
+    "促进胶原合成与弹性",
+    "淡化色素沉淀",
+    "促进肌肤更新"
+  ],
+  "how_to_use_en": [],
   "how_to_use_zh": [],
-  "photo_files": ["ChatExport_2026-07-14/photos/photo_34@14-07-2026_03-26-00.jpg", "ChatExport_2026-07-14/photos/photo_35@14-07-2026_03-26-09.jpg"],
+  "claims_flagged": [
+    "美白光泽",
+    "有效提亮肤色…改善肌肤偏黄与暗沉问题"
+  ],
+  "photo_files": [
+    "ChatExport_2026-07-14/photos/photo_34@14-07-2026_03-26-00.jpg",
+    "ChatExport_2026-07-14/photos/photo_35@14-07-2026_03-26-09.jpg"
+  ],
   "source_msg_ids": ["dm-113", "dm-114", "dm-115"]
 }

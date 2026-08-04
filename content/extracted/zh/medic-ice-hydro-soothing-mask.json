@@ -1,16 +1,41 @@
 {
+  "name_en": "Medic ICE Hydro-Soothing Mask",
   "name_zh": "医用冰镇保湿退红舒缓面膜",
-  "name_en": "Medic ICE - Hydro Soothing Mask",
   "type": "product",
   "status": "available",
+  "collection": null,
+  "tagline_en": "Iced calm for red, sun-stressed skin",
   "tagline_zh": "医用冰镇 · 保湿退红 · 舒缓修护",
   "price_myr": null,
   "size": null,
-  "overview_zh": "全新升级冰感修护面膜，高浓度双重修复精华提升保湿力与修复力，针对泛红、干燥、晒后不适。",
-  "key_ingredients": ["尿囊素 (Allantoin)", "维生素原B5 (Provitamin B5)", "透明质酸钠 (Sodium Hyaluronate)", "黄芩提取物", "光果甘草根 / 迷迭香叶提取物"],
-  "benefits_zh": ["快速减缓泛红", "深层舒缓保湿", "晒后修护降温"],
-  "claims_flagged": ["医用冰镇保湿退红舒缓面膜", "抗炎镇静：尿囊素 + 黄芩提取物，减轻红肿不适"],
-  "how_to_use_zh": ["20分钟冰感降温护理"],
+  "overview_en": "An upgraded cooling sheet mask carrying a high-concentration dual repair essence (Allantoin, Provitamin B5 and Hyaluronic Acid). Twenty minutes of icy care rapidly reduces redness, deeply soothes and hydrates, and gives instant post-sun relief.",
+  "overview_zh": "全新升级冰感修护面膜，蕴含高浓度双重修复精华（尿囊素 × 维生素原B5 × 透明质酸）；20分钟冰感护理，快速退红、深层舒缓保湿，晒后即时降温安抚。",
+  "key_ingredients": [
+    "Allantoin",
+    "Panthenol (Provitamin B5)",
+    "Sodium Hyaluronate",
+    "Glycerin",
+    "Scutellaria Baicalensis Extract",
+    "Glycyrrhiza Glabra Root Extract",
+    "Rosmarinus Officinalis Leaf Extract"
+  ],
+  "benefits_en": [
+    "Rapidly calms redness",
+    "Deep soothing hydration",
+    "Instant post-sun cooling",
+    "Anti-inflammatory (Allantoin and Scutellaria)",
+    "Antioxidant defence (licorice root and rosemary leaf)"
+  ],
+  "benefits_zh": [
+    "快速舒缓退红",
+    "深层舒缓保湿",
+    "晒后即时降温安抚",
+    "抗炎镇静（尿囊素 + 黄芩）",
+    "抗氧防护（光果甘草根 + 迷迭香叶）"
+  ],
+  "how_to_use_en": ["Apply to clean skin and leave on for a 20-minute icy cooling treatment, then pat in the remaining essence."],
+  "how_to_use_zh": ["洁面后敷贴于脸部，静敷20分钟享受冰感降温护理，取下后轻拍至精华吸收。"],
+  "claims_flagged": ["医用冰镇保湿退红舒缓面膜", "抗炎镇静：尿囊素 + 黄芩提取物，减轻红肿不适", "Name uses 医用 / 'Medic' (medical) — verify medical-device or therapeutic positioning before publishing."],
   "photo_files": ["ChatExport_2026-07-13/photos/photo_88@03-01-2026_02-15-24.jpg", "ChatExport_2026-07-13/photos/photo_91@03-01-2026_02-16-02.jpg", "ChatExport_2026-07-13/photos/photo_159@07-07-2026_12-10-22.jpg"],
   "source_msg_ids": ["hq-231", "hq-232", "hq-233", "hq-235", "hq-372", "hq-373", "hq-374", "hq-376"]
 }
