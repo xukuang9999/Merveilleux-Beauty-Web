@@ -21,9 +21,16 @@ npm run build      # production build
 npm run lint       # eslint (flat config, eslint.config.mjs)
 
 npm run db:push    # apply src/db/schema.ts to the DB (drizzle-kit, no migration files)
-npm run db:seed    # run src/db/seed.ts — seeds content + 3 demo users
+npm run db:seed    # run src/db/seed.ts — seeds content + 4 demo users
 npm run db:reset   # db:push + db:seed — the usual first-run / post-pull setup
+npm run db:import  # tsx src/db/import-extracted.ts — import extracted product cards as
+                   # UNPUBLISHED drafts (dry-run by default; pass --commit to write)
 ```
+
+The DB CLI scripts need `DATABASE_URL` (Next.js loads `.env*` automatically; drizzle-kit / tsx
+don't, so `src/db/load-env.ts` loads it). To target a specific DB, prefix with an env file, e.g.
+`ENV_FILE=.env.supabase npm run db:push` (assembles the Supabase pooler URLs from a password so
+only the password is pasted). **Never point local dev at production Supabase.**
 
 No test runner is configured. Verify changes by driving the app. Demo logins after seeding:
 `master@merveilleux.test / master1234` (master admin), `admin@merveilleux.test / admin1234`
@@ -31,30 +38,45 @@ No test runner is configured. Verify changes by driving the app. Demo logins aft
 
 ## Environment / data resolution
 
-The DB URL is resolved at runtime in `src/db/index.ts`, and this cascade shapes behavior:
+**Database is Postgres** (migrated off Turso/SQLite — Turso vars may linger in Vercel as unused
+rollback safety, ignore them). The connection is built in `src/db/index.ts` from `DATABASE_URL`:
 
-1. `TURSO_DATABASE_URL` set → real Turso (dev or prod).
-2. No Turso but on Vercel → **in-memory** DB (serverless FS is read-only). Public pages still
-   render from curated seed data; **accounts / training / admin are inert**.
-3. Local dev → `file:./local.db`.
+- **Production** → Supabase Postgres via the **transaction-mode pooler** (`…pooler.supabase.com:6543`),
+  which requires `prepare: false` (already set). Region ap-southeast-1.
+- **Local dev** → local Postgres (Postgres.app) on `localhost:5432`, DB `merveilleux_dev`; set in
+  `.env.development.local`.
+- **Migrations / seeding** use `DIRECT_DATABASE_URL` (Supabase **session** pooler `:5432`) — the
+  transaction pooler isn't suited to DDL. `drizzle.config.ts` and `load-env.ts` handle the split.
+- **DB unset / unreachable** → `src/db/index.ts` points at an unreachable local address with a short
+  `connect_timeout`, so queries **reject fast instead of hanging** (critical: a hang would stall
+  Next's static generation). Reads in `content.ts` are try/caught and fall back to the curated seed,
+  so the public site still renders; **accounts / training / admin stay inert** until a DB is set.
 
-`hasRemoteDb` (exported from `src/db`) gates features needing real persistence. AI is gated on
-`ANTHROPIC_API_KEY` via `aiConfigured()` / `getAnthropic()` (`src/lib/ai.ts`); the chat route
-degrades to a "not switched on" message rather than erroring. So the public site never
-hard-crashes with no DB and no API key.
+`hasRemoteDb` (exported from `src/db`, = `Boolean(DATABASE_URL)`) gates features needing real
+persistence. AI is gated on `ANTHROPIC_API_KEY` via `aiConfigured()` / `getAnthropic()`
+(`src/lib/ai.ts`); the chat route degrades to a "not switched on" message rather than erroring. So
+the public site never hard-crashes with no DB and no API key. The repo has **public git history** —
+never commit credentials; all `.env*` files are gitignored.
 
 ## Content model — the important part
 
 `src/lib/content.ts` is the single read layer, and **the three content types resolve differently**:
 
-- **Products** — additive: `seedProducts` in `src/lib/seed-data.ts` is the canonical base, and
-  the DB is a slug-keyed **overlay** (an edit to a matching seed slug wins; unpublishing hides
-  that seed product). DB rows whose slug is *not* in the seed catalogue appear on the storefront
-  **only when explicitly published** — `products.published` defaults to `false`, so
-  unpublished/orphan rows are ignored and the storefront can never blank out. Seed products are
-  seeded as published. Editing an existing seed product and creating brand-new products are both
-  done in the admin; product photos are set by **upload** (see the admin console section), not by
+- **Products** — additive over a seed base, but **`seedProducts` is intentionally empty** (it's
+  compiled into the bundle; when it held demo data, fake SKUs leaked onto the live storefront —
+  commit 815aa37). So in practice the storefront = DB rows that are **explicitly published**
+  (`products.published` defaults to `false`; unpublished/orphan rows are ignored, so it can never
+  blank out). The overlay machinery in `getProducts()` still works if `seedProducts` is ever
+  repopulated (a matching slug's DB edit wins; unpublishing hides it). Local-dev product fixtures
+  live in `src/db/dev-products.ts` (restored by `db:seed`), **not** in `seedProducts`. Products are
+  created/edited in the admin; photos are set by **upload** (see the admin console section), not by
   hand-editing paths.
+  - **Catalogue-extraction pipeline**: `src/db/import-extracted.ts` (`npm run db:import`) imports
+    product cards from `content/extracted/zh/*.json` into `products` as **unpublished drafts** —
+    additive, re-runnable, and it skips existing slugs (never overwrites/unpublishes). These rows
+    carry extra columns beyond the seed shape (`kind`, `status`, `collection`, `sizeLabel`,
+    `contents`, `howToUse`, `claimsFlagged`, `sourceMsgIds`, `photos` — see `schema.ts`). Category
+    slugs are the canonical storefront filters in `src/lib/categories.ts`.
 - **Promotions** — DB-backed and admin-managed (`promotions` table, per-locale JSON copy).
   `getPromotions()` is the source of truth once the table holds rows, falling back to the seed
   bundles (`seedBundles` + dict copy) when empty/unreachable.
@@ -67,10 +89,13 @@ Everything read here is then overlaid with the active locale's translation (see 
 ## Architecture
 
 **Route groups** (`src/app/`) = audiences, each with its own layout/guard:
-- `(site)` — public marketing pages (incl. `/news`, `/join`, `/products`) + chat widget
+- `(site)` — public marketing pages (`/products` + `/products/[slug]`, `/promotions`, `/blog` +
+  `/blog/[slug]` "Skincare Tips", `/news`, `/gallery`, `/testimonials`, `/faq`, `/about`,
+  `/contact`, `/join`, `/training`) + chat widget
 - `(auth)` — login / register
-- `(app)` — authenticated dashboards: `account` (customer), `portal` (distributor / 经销商),
-  `admin`. Guards live in the layouts.
+- `(app)` — authenticated dashboards: `account` (customer, incl. `/consult`), `portal`
+  (distributor / 经销商: `/training`, `/knowledge`, `/assistant`), `admin`. Guards live in the
+  layouts.
 - API routes (mutations are otherwise server actions): `api/chat/route.ts` (streaming Claude,
   Node runtime, in-instance rate limit) and `api/admin/media/route.ts` (admin-tier image upload).
 

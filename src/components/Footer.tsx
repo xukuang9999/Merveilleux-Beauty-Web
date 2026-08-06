@@ -55,7 +55,7 @@ export default async function Footer({ flags }: { flags: FeatureFlags }) {
               />
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/60">
-              {site.description}
+              {f.brandBlurb}
             </p>
             <div className="mt-6 max-w-sm">
               <h4 className="eyebrow mb-2">{f.newsletterTitle}</h4>

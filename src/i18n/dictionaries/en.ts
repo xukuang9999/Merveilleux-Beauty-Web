@@ -34,6 +34,9 @@ const en = {
     admin: "Admin",
   },
   footer: {
+    // Localised twin of `site.description` in lib/data.ts — keep them in sync.
+    brandBlurb:
+      "Mérvéilléux Premium is a French-grade beauty house — clean, results-driven skincare, a flagship experience centre by Bellesenze, and a partner network built on training and trust.",
     explore: "Explore",
     connect: "Connect",
     whatsapp: "WhatsApp us",

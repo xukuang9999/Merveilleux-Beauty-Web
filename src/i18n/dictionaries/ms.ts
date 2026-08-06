@@ -34,6 +34,7 @@ const ms: Dictionary = {
     "admin": "Admin"
   },
   "footer": {
+    "brandBlurb": "Mérvéilléux Premium ialah sebuah rumah kecantikan bertaraf Perancis — penjagaan kulit yang tulen dan berkesan, sebuah pusat pengalaman utama oleh Bellesenze, serta rangkaian rakan niaga yang dibina atas latihan dan kepercayaan.",
     "explore": "Terokai",
     "connect": "Berhubung",
     "whatsapp": "WhatsApp kami",

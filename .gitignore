@@ -46,3 +46,4 @@ local.db-*
 *.db
 *.db-journal
 ChatExport_*/
+backup-*.sql
