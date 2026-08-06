@@ -172,6 +172,7 @@ const en = {
     viewDetails: "View details",
     backToProducts: "← All products",
     overview: "Overview",
+    contents: "What's included",
     size: "Size",
     suitableFor: "Suitable for",
     howToUse: "How to use",

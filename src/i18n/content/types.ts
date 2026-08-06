@@ -7,6 +7,9 @@ export type ProductT = {
   description: string;
   keyIngredients: string[];
   benefits: string[];
+  // Optional: omit to fall back to the canonical English value.
+  contents?: string[]; // what's in a set / bundle, one line per item
+  howToUse?: string[]; // application steps, one line per step
 };
 export type TestimonialT = { quote: string; role: string };
 export type FaqT = { category: string; question: string; answer: string };

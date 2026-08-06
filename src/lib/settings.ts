@@ -31,17 +31,21 @@ export const FEATURE_KEYS: readonly FeatureKey[] = [
 
 export type FeatureFlags = Record<FeatureKey, boolean>;
 
-// Everything ships enabled; the table only ever stores overrides.
-// Exception: bahasaMelayu ships OFF — BM translations exist but the language
-// toggle hides the option until an admin turns it on.
+// The table only ever stores overrides, so these are what the site ships with.
+// Off by default until the content behind them is ready — an admin can turn any
+// of them on from /admin/features:
+//   promotions / news / blog — the public nav is About · Products · Testimonials
+//     for now; enabling one restores both its nav link and its route.
+//   bahasaMelayu — BM translations exist, but the language toggle hides the
+//     option until an admin turns it on.
 const DEFAULTS: FeatureFlags = {
   aiChat: true,
   booking: true,
   testimonials: true,
   gallery: true,
-  promotions: true,
-  news: true,
-  blog: true,
+  promotions: false,
+  news: false,
+  blog: false,
   bahasaMelayu: false,
 };
 

@@ -10,6 +10,16 @@
   "size": "3 items",
   "overview_en": "A trial set for acne-prone, breakout skin. Includes Intensive Restoration Sérum 10 ml, Blemish Serum 5 ml and Hydro-Sensi Concentré 10 ml.",
   "overview_zh": "专为痘痘、易爆痘肌打造的祛痘体验套装。内含优越修复精华 10ml、祛痘精华 5ml、小分子玻尿酸精华 10ml。",
+  "contents": [
+    "Intensive Restoration Sérum 10 ml",
+    "Blemish Serum 5 ml",
+    "Hydro-Sensi Concentré 10 ml"
+  ],
+  "contents_zh": [
+    "优越修复精华 10ml",
+    "祛痘精华 5ml",
+    "小分子玻尿酸精华 10ml"
+  ],
   "key_ingredients": [],
   "benefits_en": [
     "Includes Intensive Restoration Sérum 10 ml",
@@ -27,5 +37,7 @@
   "how_to_use_zh": [],
   "claims_flagged": [],
   "photo_files": [],
-  "source_msg_ids": ["manifest"]
+  "source_msg_ids": [
+    "manifest"
+  ]
 }

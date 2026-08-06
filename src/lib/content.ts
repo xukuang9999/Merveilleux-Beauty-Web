@@ -17,7 +17,16 @@ import { getLocale, getDictionary } from "@/i18n/server";
 import type { Locale } from "@/i18n/config";
 import { contentPack } from "@/i18n/content";
 
-export type ProductView = Omit<SeedProduct, "sortOrder"> & { category: string };
+export type ProductView = Omit<SeedProduct, "sortOrder"> & {
+  category: string;
+  // Extraction-pipeline columns. Absent for seed products (which get their
+  // size / steps from the productDetails map in seed-data.ts instead), so the
+  // detail page falls back to that map when these are null.
+  kind: "product" | "treatment" | "bundle" | null;
+  sizeLabel: string | null;
+  contents: string[] | null;
+  howToUse: string[] | null;
+};
 export type ArticleView = {
   slug: string;
   title: string;
@@ -72,6 +81,10 @@ export async function getProducts(): Promise<ProductView[]> {
       priceRM: src.priceRM,
       graphic: src.graphic,
       category: edit?.category ?? "",
+      kind: edit?.kind ?? null,
+      sizeLabel: edit?.sizeLabel ?? null,
+      contents: edit?.contents ?? null,
+      howToUse: edit?.howToUse ?? null,
     });
   }
 
@@ -93,6 +106,10 @@ export async function getProducts(): Promise<ProductView[]> {
       priceRM: r.priceRM,
       graphic: r.graphic,
       category: r.category,
+      kind: r.kind,
+      sizeLabel: r.sizeLabel,
+      contents: r.contents,
+      howToUse: r.howToUse,
     }));
   rows.push(...extra);
 

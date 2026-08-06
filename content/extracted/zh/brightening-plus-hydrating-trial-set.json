@@ -10,6 +10,14 @@
   "size": "3 items",
   "overview_en": "A brightening-and-hydrating trial trio for dull, congested skin. Includes Oxy-Bright Sérum 10 ml and Pore Refining Sérum 5 ml; the third item is to be confirmed with Grace.",
   "overview_zh": "专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。",
+  "contents": [
+    "Oxy-Bright Sérum 10 ml",
+    "Pore Refining Sérum 5 ml"
+  ],
+  "contents_zh": [
+    "美白精华 10ml",
+    "消炎抗痘精华 5ml"
+  ],
   "key_ingredients": [],
   "benefits_en": [
     "Includes Oxy-Bright Sérum 10 ml",
@@ -29,5 +37,7 @@
     "REVIEW: bundle contents incomplete — third item unverified, confirm with Grace before publishing"
   ],
   "photo_files": [],
-  "source_msg_ids": ["manifest"]
+  "source_msg_ids": [
+    "manifest"
+  ]
 }

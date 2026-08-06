@@ -163,6 +163,7 @@ const ms: Dictionary = {
     "viewDetails": "Lihat butiran",
     "backToProducts": "← Semua produk",
     "overview": "Gambaran keseluruhan",
+    "contents": "Kandungan set",
     "size": "Saiz",
     "suitableFor": "Sesuai untuk",
     "howToUse": "Cara guna",

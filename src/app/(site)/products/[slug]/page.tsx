@@ -33,8 +33,13 @@ export default async function ProductDetailPage({
   if (!product) notFound();
 
   const d = dict.products;
+  // Products from the extraction pipeline carry their own size / steps /
+  // contents on the row (already locale-overlaid); the older seed catalogue
+  // keeps them in the productDetails map, so fall back to that.
   const detail = productDetails[slug];
-  const steps = detail?.howToUse[locale] ?? detail?.howToUse.en ?? [];
+  const steps =
+    product.howToUse ?? detail?.howToUse[locale] ?? detail?.howToUse.en ?? [];
+  const size = product.sizeLabel ?? detail?.size;
   const categoryLabel = product.category
     ? d.categories[product.category as keyof typeof d.categories]
     : undefined;
@@ -58,9 +63,10 @@ export default async function ProductDetailPage({
             type={product.type}
             categoryLabel={categoryLabel}
             priceRM={product.priceRM}
-            size={detail?.size}
+            size={size}
             graphic={product.graphic}
             description={product.description}
+            contents={product.contents ?? []}
             keyIngredients={product.keyIngredients}
             benefits={product.benefits}
             howToUse={steps}
@@ -68,9 +74,8 @@ export default async function ProductDetailPage({
             labels={{
               priceLabel: d.priceLabel,
               size: d.size,
-              clickForDetails: d.clickForDetails,
-              hideDetails: d.hideDetails,
               overview: d.overview,
+              contents: d.contents,
               keyIngredients: d.keyIngredients,
               benefits: d.benefits,
               howToUse: d.howToUse,

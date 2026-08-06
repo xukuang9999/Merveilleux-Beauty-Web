@@ -1,14 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 
 type Labels = {
   priceLabel: string;
   size: string;
-  clickForDetails: string;
-  hideDetails: string;
   overview: string;
+  contents: string;
   keyIngredients: string;
   benefits: string;
   howToUse: string;
@@ -24,6 +20,8 @@ type Props = {
   size?: string;
   graphic: string;
   description: string;
+  /** Set / bundle line-up, one line per item. Empty for single products. */
+  contents: string[];
   keyIngredients: string[];
   benefits: string[];
   howToUse: string[];
@@ -40,17 +38,16 @@ export default function ProductShowcase({
   size,
   graphic,
   description,
+  contents,
   keyIngredients,
   benefits,
   howToUse,
   whatsappHref,
   labels: L,
 }: Props) {
-  const [open, setOpen] = useState(false);
-
   return (
     <div>
-      {/* ---- Summary: photo + name / price / size / details button ---- */}
+      {/* ---- Summary: photo + name / price / size ---- */}
       <div className="grid items-center gap-10 lg:grid-cols-2">
         <div className="relative mx-auto aspect-[5/6] w-full max-w-sm">
           <Image
@@ -94,90 +91,76 @@ export default function ProductShowcase({
               </div>
             )}
           </div>
-
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            className="shine mt-8 inline-flex items-center gap-2 rounded-[2px] bg-umber px-8 py-3.5 text-[12px] font-medium uppercase tracking-[0.2em] text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-charcoal"
-          >
-            {open ? L.hideDetails : L.clickForDetails}
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-              aria-hidden
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
         </div>
       </div>
 
-      {/* ---- Collapsible details (revealed on click; photo above stays) ---- */}
-      <div
-        className={`grid transition-all duration-500 ease-out ${
-          open ? "mt-14 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <div className="grid gap-12 border-t border-line pt-12 lg:grid-cols-[1.3fr_1fr]">
-            <div>
-              <h2 className="eyebrow mb-3">{L.overview}</h2>
-              <p className="text-base leading-relaxed text-mid">{description}</p>
+      {/* ---- Details ---- */}
+      <div className="mt-14 grid gap-12 border-t border-line pt-12 lg:grid-cols-[1.3fr_1fr]">
+        <div>
+          <h2 className="eyebrow mb-3">{L.overview}</h2>
+          <p className="text-base leading-relaxed text-mid">{description}</p>
 
-              {howToUse.length > 0 && (
-                <div className="mt-10">
-                  <h2 className="eyebrow mb-4">{L.howToUse}</h2>
-                  <ol className="space-y-4">
-                    {howToUse.map((s, i) => (
-                      <li key={i} className="flex gap-4">
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-champagne/60 font-serif text-sm text-bronze">
-                          {i + 1}
-                        </span>
-                        <p className="pt-0.5 text-sm leading-relaxed text-charcoal">
-                          {s}
-                        </p>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
-            </div>
-
-            <div className="rounded-[2px] border border-line bg-porcelain p-7">
-              {keyIngredients.length > 0 && (
-                <>
-                  <h3 className="eyebrow mb-3">{L.keyIngredients}</h3>
-                  <ul className="mb-7 space-y-1.5">
-                    {keyIngredients.map((ing) => (
-                      <li key={ing} className="text-sm text-charcoal">
-                        {ing}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-              <h3 className="eyebrow mb-3">{L.benefits}</h3>
-              <ul className="space-y-2">
-                {benefits.map((b) => (
+          {contents.length > 0 && (
+            <div className="mt-10">
+              <h2 className="eyebrow mb-4">{L.contents}</h2>
+              <ul className="divide-y divide-line border-y border-line">
+                {contents.map((item) => (
                   <li
-                    key={b}
-                    className="flex items-start gap-2 text-sm text-charcoal"
+                    key={item}
+                    className="flex items-center gap-3 py-3 text-sm text-charcoal"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
-                    {b}
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
+          )}
+
+          {howToUse.length > 0 && (
+            <div className="mt-10">
+              <h2 className="eyebrow mb-4">{L.howToUse}</h2>
+              <ol className="space-y-4">
+                {howToUse.map((s, i) => (
+                  <li key={i} className="flex gap-4">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-champagne/60 font-serif text-sm text-bronze">
+                      {i + 1}
+                    </span>
+                    <p className="pt-0.5 text-sm leading-relaxed text-charcoal">
+                      {s}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+        </div>
+
+        <div className="rounded-[2px] border border-line bg-porcelain p-7">
+          {keyIngredients.length > 0 && (
+            <>
+              <h3 className="eyebrow mb-3">{L.keyIngredients}</h3>
+              <ul className="mb-7 space-y-1.5">
+                {keyIngredients.map((ing) => (
+                  <li key={ing} className="text-sm text-charcoal">
+                    {ing}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          <h3 className="eyebrow mb-3">{L.benefits}</h3>
+          <ul className="space-y-2">
+            {benefits.map((b) => (
+              <li
+                key={b}
+                className="flex items-start gap-2 text-sm text-charcoal"
+              >
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
+                {b}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

@@ -154,7 +154,7 @@ function PromotionForm({
           <label className={label}>Graphic path</label>
           <input
             name="graphic"
-            defaultValue={promotion?.graphic ?? "/products/oxy-bright-serum.jpg"}
+            defaultValue={promotion?.graphic ?? "/products/oxy-bright-serum.png"}
             className={input}
           />
         </div>

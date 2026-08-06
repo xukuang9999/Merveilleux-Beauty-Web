@@ -52,6 +52,11 @@ export const devProducts: DevProduct[] = [
     "tagline": "Cleanse · refine · hydrate — daily essentials",
     "description": "A 3-piece daily essentials trial set: Gentle Cleansing Milk (30ml), Ultrafine Cleansing Gel (20ml) and Ceramide Ice-Essence Toner (30ml).",
     "keyIngredients": [],
+    "contents": [
+      "Gentle Cleansing Milk 30 ml",
+      "Ultrafine Cleansing Gel 20 ml",
+      "Ceramide Ice-Essence Toner 30 ml"
+    ],
     "benefits": [
       "Complete daily cleanse routine",
       "Refines and tones",
@@ -70,6 +75,11 @@ export const devProducts: DevProduct[] = [
     "tagline": "Repair & deep-hydrate trio",
     "description": "A 3-piece repair-and-hydrate trial set: Intensive Restoration Serum (10ml), Hydro-Sensi Concentre (10ml) and Hydro Moist Serum (10ml).",
     "keyIngredients": [],
+    "contents": [
+      "Intensive Restoration Serum 10 ml",
+      "Hydro-Sensi Concentre 10 ml",
+      "Hydro Moist Serum 10 ml"
+    ],
     "benefits": [
       "Targets repair and hydration",
       "Layerable serum trio",
@@ -88,6 +98,10 @@ export const devProducts: DevProduct[] = [
     "tagline": "Brighten & hydrate trio",
     "description": "A 3-piece brighten-and-hydrate trial set featuring OXY-Bright Serum (10ml) and Hydro Moist Serum (10ml), plus one more serum (to be confirmed).",
     "keyIngredients": [],
+    "contents": [
+      "OXY-Bright Serum 10 ml",
+      "Hydro Moist Serum 10 ml"
+    ],
     "benefits": [
       "Brightening + hydration",
       "Layerable serum trio",
@@ -106,6 +120,11 @@ export const devProducts: DevProduct[] = [
     "tagline": "Clarify & de-congest trio",
     "description": "A 3-piece trial set for congested skin: Intensive Restoration Serum (10ml), Pore Refine Serum (5ml) and Hydro-Sensi Concentre (10ml).",
     "keyIngredients": [],
+    "contents": [
+      "Intensive Restoration Serum 10 ml",
+      "Pore Refine Serum 5 ml",
+      "Hydro-Sensi Concentre 10 ml"
+    ],
     "benefits": [
       "Clears congestion & refines pores",
       "For oily / blemish-prone skin",
@@ -124,6 +143,11 @@ export const devProducts: DevProduct[] = [
     "tagline": "Blemish-care trio",
     "description": "A 3-piece trial set for blemish-prone skin: Intensive Restoration Serum (10ml), Blemish Serum (10ml) and Hydro-Sensi Concentre (10ml).",
     "keyIngredients": [],
+    "contents": [
+      "Intensive Restoration Serum 10 ml",
+      "Blemish Serum 10 ml",
+      "Hydro-Sensi Concentre 10 ml"
+    ],
     "benefits": [
       "Calms breakouts",
       "For blemish-prone skin",

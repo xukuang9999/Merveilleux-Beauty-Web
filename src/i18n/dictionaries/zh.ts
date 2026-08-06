@@ -166,6 +166,7 @@ const zh: Dictionary = {
     "viewDetails": "查看详情",
     "backToProducts": "← 所有产品",
     "overview": "产品概览",
+    "contents": "套装内含",
     "size": "规格",
     "suitableFor": "适用肤质",
     "howToUse": "使用方法",

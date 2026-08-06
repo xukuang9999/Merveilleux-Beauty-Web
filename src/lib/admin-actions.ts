@@ -62,7 +62,7 @@ export async function saveProduct(formData: FormData) {
     priceRM: String(formData.get("priceRM") || "").trim(),
     graphic:
       String(formData.get("graphic") || "").trim() ||
-      "/products/oxy-bright-serum.jpg",
+      "/products/oxy-bright-serum.png",
     sortOrder: Number(formData.get("sortOrder") || 0),
     published: formData.get("published") === "on",
   };
@@ -113,7 +113,7 @@ export async function savePromotion(formData: FormData) {
     saveRM: String(formData.get("saveRM") || "").trim(),
     graphic:
       String(formData.get("graphic") || "").trim() ||
-      "/products/oxy-bright-serum.jpg",
+      "/products/oxy-bright-serum.png",
     productSlugs: toList(formData.get("productSlugs")),
     sortOrder: Number(formData.get("sortOrder") || 0),
     published: formData.get("published") === "on",

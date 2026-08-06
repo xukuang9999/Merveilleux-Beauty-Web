@@ -1262,7 +1262,7 @@ export const seedNews: SeedNews[] = [
     code: "DWny58Lkg2t",
     type: "reel",
     permalink: "https://www.instagram.com/reel/DWny58Lkg2t/",
-    image: "/products/silk-mask.jpg",
+    image: "/products/silk-mask.png",
     date: "2026-04-02",
     category: {
       en: "New Launch",
@@ -1302,7 +1302,7 @@ export const seedNews: SeedNews[] = [
     code: "DRgkvAfktdO",
     type: "post",
     permalink: "https://www.instagram.com/p/DRgkvAfktdO/",
-    image: "/products/micro-nano-mist.jpg",
+    image: "/products/micro-nano-mist.png",
     date: "2025-11-26",
     category: {
       en: "Product Spotlight",
@@ -1346,7 +1346,7 @@ export const seedNews: SeedNews[] = [
     code: "DQiN8NIEnv1",
     type: "post",
     permalink: "https://www.instagram.com/p/DQiN8NIEnv1/",
-    image: "/products/pore-refining-serum.jpg",
+    image: "/products/pore-refining-serum.png",
     date: "2025-11-02",
     category: {
       en: "Before & After",
@@ -1368,7 +1368,7 @@ export const seedNews: SeedNews[] = [
     code: "DQeOR4NkooI",
     type: "post",
     permalink: "https://www.instagram.com/p/DQeOR4NkooI/",
-    image: "/products/cell-repair-powder.jpg",
+    image: "/products/cell-repair-powder.png",
     date: "2025-10-31",
     category: { en: "Skin Science", zh: "肌肤科学", ms: "Sains Kulit" },
     title: {
@@ -1386,7 +1386,7 @@ export const seedNews: SeedNews[] = [
     code: "DQI87sKEqe4",
     type: "post",
     permalink: "https://www.instagram.com/p/DQI87sKEqe4/",
-    image: "/products/hydro-sensi-concentre.jpg",
+    image: "/products/hydro-sensi-concentre.png",
     date: "2025-10-23",
     category: { en: "Testimonial", zh: "肌肤见证", ms: "Testimoni" },
     title: {
@@ -1427,7 +1427,7 @@ export const seedBundles: SeedBundle[] = [
     priceRM: "RM559",
     wasRM: "RM654",
     saveRM: "RM95",
-    graphic: "/products/oxy-bright-serum.jpg",
+    graphic: "/products/oxy-bright-serum.png",
   },
   {
     slug: "hydration-ritual",
@@ -1439,7 +1439,7 @@ export const seedBundles: SeedBundle[] = [
     priceRM: "RM439",
     wasRM: "RM514",
     saveRM: "RM75",
-    graphic: "/products/hydro-moist-serum.jpg",
+    graphic: "/products/hydro-moist-serum.png",
   },
   {
     slug: "anti-aging-ritual",
@@ -1451,6 +1451,6 @@ export const seedBundles: SeedBundle[] = [
     priceRM: "RM639",
     wasRM: "RM744",
     saveRM: "RM105",
-    graphic: "/products/antioxidant-serum.jpg",
+    graphic: "/products/antioxidant-serum.png",
   },
 ];

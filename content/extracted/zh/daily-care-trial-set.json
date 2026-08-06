@@ -10,6 +10,16 @@
   "size": "3 items",
   "overview_en": "A starter trio for daily basic care — gentle cleanse, deep cleanse and a barrier-repairing toner in travel sizes. Includes Gentle Cleansing Milk 30 ml, Ultrafine Cleansing Gel 20 ml and Ceramide Ice-Essence Toner 30 ml.",
   "overview_zh": "日常基础护理入门三件套（旅行装）：温和洁面、深层洁净与修护屏障爽肤水。内含温和洁面乳 30ml、精华蜜状洁面凝胶 20ml、神经酰胺爽肤水 30ml。",
+  "contents": [
+    "Gentle Cleansing Milk 30 ml",
+    "Ultrafine Cleansing Gel 20 ml",
+    "Ceramide Ice-Essence Toner 30 ml"
+  ],
+  "contents_zh": [
+    "温和洁面乳 30ml",
+    "精华蜜状洁面凝胶 20ml",
+    "神经酰胺爽肤水 30ml"
+  ],
   "key_ingredients": [],
   "benefits_en": [
     "Includes Gentle Cleansing Milk 30 ml",
@@ -27,5 +37,7 @@
   "how_to_use_zh": [],
   "claims_flagged": [],
   "photo_files": [],
-  "source_msg_ids": ["manifest"]
+  "source_msg_ids": [
+    "manifest"
+  ]
 }

@@ -10,6 +10,16 @@
   "size": "3 items",
   "overview_en": "A repair-and-hydrate trial trio for sensitive, dehydrated skin. Includes Intensive Restoration Sérum 10 ml, Hydro-Sensi Concentré 10 ml and Hydro-Moist Sérum 10 ml.",
   "overview_zh": "专为敏感缺水肌打造的修复补水体验三件套。内含优越修复精华 10ml、小分子玻尿酸精华 10ml、大分子玻尿酸精华 10ml。",
+  "contents": [
+    "Intensive Restoration Sérum 10 ml",
+    "Hydro-Sensi Concentré 10 ml",
+    "Hydro-Moist Sérum 10 ml"
+  ],
+  "contents_zh": [
+    "优越修复精华 10ml",
+    "小分子玻尿酸精华 10ml",
+    "大分子玻尿酸精华 10ml"
+  ],
   "key_ingredients": [],
   "benefits_en": [
     "Includes Intensive Restoration Sérum 10 ml",
@@ -27,5 +37,7 @@
   "how_to_use_zh": [],
   "claims_flagged": [],
   "photo_files": [],
-  "source_msg_ids": ["manifest"]
+  "source_msg_ids": [
+    "manifest"
+  ]
 }

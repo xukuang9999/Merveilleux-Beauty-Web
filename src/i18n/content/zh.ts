@@ -41,12 +41,33 @@ const zh: ContentPack = {
         "建议连续7天密集补水护理"
       ]
     },
+    "brightening-hydrating-trial-set": {
+      "name": "亮白补水体验套装",
+      "type": "套装",
+      "tagline": "暗沉堵塞肌的亮白补水三件套",
+      "description": "专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。",
+      "keyIngredients": [],
+      "contents": [
+        "美白精华 10ml",
+        "消炎抗痘精华 5ml"
+      ],
+      "benefits": [
+        "内含美白精华 10ml",
+        "内含消炎抗痘精华 5ml",
+        "第三件产品待与 Grace 确认",
+        "体验装，提亮暗沉、补水调理堵塞肌"
+      ]
+    },
     "brightening-plus-hydrating-trial-set": {
       "name": "亮白补水体验套装",
       "type": "套装",
       "tagline": "暗沉堵塞肌的亮白补水三件套",
       "description": "专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。",
       "keyIngredients": [],
+      "contents": [
+        "美白精华 10ml",
+        "消炎抗痘精华 5ml"
+      ],
       "benefits": [
         "内含美白精华 10ml",
         "内含消炎抗痘精华 5ml",
@@ -97,6 +118,11 @@ const zh: ContentPack = {
       "tagline": "堵塞闭口肌的净化调理体验套装",
       "description": "专为堵塞、闭口肌打造的净化调理体验套装。套装内容在原始卡片上仅部分清晰可辨，需与 Grace 确认后再发布。",
       "keyIngredients": [],
+      "contents": [
+        "优越修复精华 10ml",
+        "毛孔净化精华 5ml",
+        "小分子玻尿酸精华 10ml"
+      ],
       "benefits": [
         "针对堵塞、闭口肌",
         "净化调理体验组合",
@@ -109,6 +135,11 @@ const zh: ContentPack = {
       "tagline": "日常基础护理入门三件套",
       "description": "日常基础护理入门三件套（旅行装）：温和洁面、深层洁净与修护屏障爽肤水。内含温和洁面乳 30ml、精华蜜状洁面凝胶 20ml、神经酰胺爽肤水 30ml。",
       "keyIngredients": [],
+      "contents": [
+        "温和洁面乳 30ml",
+        "精华蜜状洁面凝胶 20ml",
+        "神经酰胺爽肤水 30ml"
+      ],
       "benefits": [
         "内含温和洁面乳 30ml",
         "内含精华蜜状洁面凝胶 20ml",
@@ -474,6 +505,11 @@ const zh: ContentPack = {
       "tagline": "痘痘易爆痘肌的祛痘体验套装",
       "description": "专为痘痘、易爆痘肌打造的祛痘体验套装。内含优越修复精华 10ml、祛痘精华 5ml、小分子玻尿酸精华 10ml。",
       "keyIngredients": [],
+      "contents": [
+        "优越修复精华 10ml",
+        "祛痘精华 5ml",
+        "小分子玻尿酸精华 10ml"
+      ],
       "benefits": [
         "内含优越修复精华 10ml",
         "内含祛痘精华 5ml",
@@ -576,12 +612,35 @@ const zh: ContentPack = {
         "强效抗衰老，淡化皱纹"
       ]
     },
+    "repairing-hydrating-trial-set": {
+      "name": "修复补水体验套装",
+      "type": "套装",
+      "tagline": "敏感缺水肌的修复补水三件套",
+      "description": "专为敏感缺水肌打造的修复补水体验三件套。内含优越修复精华 10ml、小分子玻尿酸精华 10ml、大分子玻尿酸精华 10ml。",
+      "keyIngredients": [],
+      "contents": [
+        "优越修复精华 10ml",
+        "小分子玻尿酸精华 10ml",
+        "大分子玻尿酸精华 10ml"
+      ],
+      "benefits": [
+        "内含优越修复精华 10ml",
+        "内含小分子玻尿酸精华 10ml",
+        "内含大分子玻尿酸精华 10ml",
+        "体验装，修复并深层补水敏感肌"
+      ]
+    },
     "repairing-plus-hydrating-trial-set": {
       "name": "修复补水体验套装",
       "type": "套装",
       "tagline": "敏感缺水肌的修复补水三件套",
       "description": "专为敏感缺水肌打造的修复补水体验三件套。内含优越修复精华 10ml、小分子玻尿酸精华 10ml、大分子玻尿酸精华 10ml。",
       "keyIngredients": [],
+      "contents": [
+        "优越修复精华 10ml",
+        "小分子玻尿酸精华 10ml",
+        "大分子玻尿酸精华 10ml"
+      ],
       "benefits": [
         "内含优越修复精华 10ml",
         "内含小分子玻尿酸精华 10ml",
