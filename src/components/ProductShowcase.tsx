@@ -1,7 +1,10 @@
 import Image from "next/image";
+import PriceBlock from "./PriceBlock";
 
 type Labels = {
   priceLabel: string;
+  priceWest: string;
+  priceEast: string;
   size: string;
   overview: string;
   contents: string;
@@ -17,6 +20,7 @@ type Props = {
   type: string;
   categoryLabel?: string;
   priceRM: string;
+  priceRMEast?: string | null;
   size?: string;
   graphic: string;
   description: string;
@@ -35,6 +39,7 @@ export default function ProductShowcase({
   type,
   categoryLabel,
   priceRM,
+  priceRMEast,
   size,
   graphic,
   description,
@@ -79,11 +84,16 @@ export default function ProductShowcase({
             <p className="mt-2 text-lg italic text-bronze">{tagline}</p>
           )}
 
-          <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-3">
-            <div>
-              <p className="eyebrow mb-1">{L.priceLabel}</p>
-              <p className="font-serif text-2xl text-charcoal">{priceRM}</p>
-            </div>
+          <div className="mt-6 flex flex-wrap items-start gap-x-10 gap-y-3">
+            <PriceBlock
+              priceRM={priceRM}
+              priceRMEast={priceRMEast}
+              labels={{
+                priceLabel: L.priceLabel,
+                west: L.priceWest,
+                east: L.priceEast,
+              }}
+            />
             {size && (
               <div>
                 <p className="eyebrow mb-1">{L.size}</p>

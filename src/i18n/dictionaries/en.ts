@@ -182,6 +182,8 @@ const en = {
     clickForDetails: "Click for Details",
     hideDetails: "Hide Details",
     priceLabel: "Retail price",
+    priceWest: "West Malaysia",
+    priceEast: "East Malaysia",
     resultsTitle: "Before & after",
     resultsNote:
       "Clinical before-and-after imagery for this product is shared in the distributor kit — ask us for the full results deck.",

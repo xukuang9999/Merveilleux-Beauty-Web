@@ -173,6 +173,8 @@ const ms: Dictionary = {
     "clickForDetails": "Lihat Butiran",
     "hideDetails": "Sembunyikan Butiran",
     "priceLabel": "Harga runcit",
+    "priceWest": "Semenanjung Malaysia",
+    "priceEast": "Malaysia Timur",
     "resultsTitle": "Sebelum & selepas",
     "resultsNote": "Imej klinikal sebelum-dan-selepas untuk produk ini dikongsi dalam kit Pengedar — tanya kami untuk deck hasil yang penuh.",
     "allCategories": "Semua",

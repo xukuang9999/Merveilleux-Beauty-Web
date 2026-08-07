@@ -19,6 +19,9 @@ import { contentPack } from "@/i18n/content";
 
 export type ProductView = Omit<SeedProduct, "sortOrder"> & {
   category: string;
+  // Retail price for East Malaysia; null until one is set, in which case
+  // `priceRM` (West Malaysia) is shown on its own, unlabelled.
+  priceRMEast: string | null;
   // Extraction-pipeline columns. Absent for seed products (which get their
   // size / steps from the productDetails map in seed-data.ts instead), so the
   // detail page falls back to that map when these are null.
@@ -79,6 +82,7 @@ export async function getProducts(): Promise<ProductView[]> {
       keyIngredients: src.keyIngredients,
       benefits: src.benefits,
       priceRM: src.priceRM,
+      priceRMEast: edit?.priceRMEast || null,
       graphic: src.graphic,
       category: edit?.category ?? "",
       kind: edit?.kind ?? null,
@@ -104,6 +108,7 @@ export async function getProducts(): Promise<ProductView[]> {
       keyIngredients: r.keyIngredients,
       benefits: r.benefits,
       priceRM: r.priceRM,
+      priceRMEast: r.priceRMEast || null,
       graphic: r.graphic,
       category: r.category,
       kind: r.kind,

@@ -46,7 +46,13 @@ export const products = pgTable("products", {
   description: text("description").notNull(),
   keyIngredients: jsonb("key_ingredients").$type<string[]>().notNull(),
   benefits: jsonb("benefits").$type<string[]>().notNull(),
+  // Retail price for West Malaysia (the peninsula) — the canonical price every
+  // product has always carried.
   priceRM: text("price_rm").notNull(),
+  // Retail price for East Malaysia (Sabah / Sarawak / Labuan), which differs
+  // because of freight. Null / "" until a price is supplied, in which case the
+  // storefront shows the West Malaysia price alone and drops the region labels.
+  priceRMEast: text("price_rm_east"),
   graphic: text("graphic").notNull(),
   // Canonical category slug (see src/lib/categories.ts); "" = uncategorised.
   category: text("category").notNull().default(""),

@@ -60,6 +60,9 @@ export async function saveProduct(formData: FormData) {
     keyIngredients: toList(formData.get("keyIngredients")),
     benefits: toList(formData.get("benefits")),
     priceRM: String(formData.get("priceRM") || "").trim(),
+    // Blank stays null rather than "" so "no East Malaysia price yet" is a
+    // single state everywhere downstream.
+    priceRMEast: String(formData.get("priceRMEast") || "").trim() || null,
     graphic:
       String(formData.get("graphic") || "").trim() ||
       "/products/oxy-bright-serum.png",

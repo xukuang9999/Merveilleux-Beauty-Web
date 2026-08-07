@@ -63,6 +63,7 @@ export default async function ProductDetailPage({
             type={product.type}
             categoryLabel={categoryLabel}
             priceRM={product.priceRM}
+            priceRMEast={product.priceRMEast}
             size={size}
             graphic={product.graphic}
             description={product.description}
@@ -73,6 +74,8 @@ export default async function ProductDetailPage({
             whatsappHref={whatsappLink(enquiryMsg)}
             labels={{
               priceLabel: d.priceLabel,
+              priceWest: d.priceWest,
+              priceEast: d.priceEast,
               size: d.size,
               overview: d.overview,
               contents: d.contents,

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
+import PriceBlock from "@/components/PriceBlock";
 import { getProducts } from "@/lib/content";
 import { productDetails } from "@/lib/seed-data";
 import { productCategories } from "@/lib/categories";
@@ -11,7 +12,7 @@ import { getDict } from "@/i18n/server";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore the Merveilleux Beauty collection — OEM French-formulated serums, moisturiser, cleanser, essence, sunscreen, eye cream and masks.",
+    "Explore the Merveilleux Beauty collection — French-formulated serums, moisturiser, cleanser, essence, sunscreen, eye cream and masks.",
 };
 
 export default async function ProductsPage({
@@ -105,13 +106,16 @@ export default async function ProductsPage({
                   {p.name}
                 </h2>
 
-                <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-3">
-                  <div>
-                    <p className="eyebrow mb-1">{d.priceLabel}</p>
-                    <p className="font-serif text-2xl text-charcoal">
-                      {p.priceRM}
-                    </p>
-                  </div>
+                <div className="mt-6 flex flex-wrap items-start gap-x-10 gap-y-3">
+                  <PriceBlock
+                    priceRM={p.priceRM}
+                    priceRMEast={p.priceRMEast}
+                    labels={{
+                      priceLabel: d.priceLabel,
+                      west: d.priceWest,
+                      east: d.priceEast,
+                    }}
+                  />
                   {productDetails[p.slug]?.size && (
                     <div>
                       <p className="eyebrow mb-1">{d.size}</p>

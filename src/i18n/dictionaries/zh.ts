@@ -176,6 +176,8 @@ const zh: Dictionary = {
     "clickForDetails": "查看详情",
     "hideDetails": "收起详情",
     "priceLabel": "零售价",
+    "priceWest": "西马",
+    "priceEast": "东马",
     "resultsTitle": "前后效果对比",
     "resultsNote": "本产品的前后对比实证图收录于经销商资料包中 —— 欢迎向我们索取完整成效手册。",
     "allCategories": "全部",

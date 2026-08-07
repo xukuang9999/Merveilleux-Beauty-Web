@@ -43,7 +43,9 @@ export default async function AdminProductsPage() {
             <summary className="flex cursor-pointer items-center justify-between gap-3">
               <span className="font-medium text-charcoal">{p.name}</span>
               <span className="flex items-center gap-2 text-xs">
-                <span className="text-mid">{p.priceRM}</span>
+                <span className="text-mid">
+                  {p.priceRMEast ? `${p.priceRM} / ${p.priceRMEast}` : p.priceRM}
+                </span>
                 <span
                   className={`rounded-full px-2 py-0.5 font-semibold ${
                     p.published
@@ -110,8 +112,26 @@ function ProductForm({
           </select>
         </div>
         <div>
-          <label className={label}>Price (RM)</label>
-          <input name="priceRM" defaultValue={product?.priceRM} className={input} />
+          <label className={label}>Price — West Malaysia</label>
+          <input
+            name="priceRM"
+            defaultValue={product?.priceRM}
+            placeholder="RM168"
+            className={input}
+          />
+        </div>
+        <div>
+          <label className={label}>Price — East Malaysia</label>
+          <input
+            name="priceRMEast"
+            defaultValue={product?.priceRMEast ?? ""}
+            placeholder="Leave blank until confirmed"
+            className={input}
+          />
+          <p className="mt-1 text-xs text-mid">
+            Sabah / Sarawak / Labuan. While this is blank the storefront shows a
+            single price with no region labels.
+          </p>
         </div>
         <div>
           <label className={label}>Tagline</label>

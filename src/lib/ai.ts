@@ -20,10 +20,14 @@ export function aiConfigured(): boolean {
 async function productContext(): Promise<string> {
   const ps = await getProducts();
   return ps
-    .map(
-      (p) =>
-        `- ${p.name} — ${p.type} (${p.priceRM}). "${p.tagline}". ${p.description} Key ingredients: ${p.keyIngredients.join(", ")}. Benefits: ${p.benefits.join(", ")}.`,
-    )
+    .map((p) => {
+      // Quote both regions when East Malaysia is priced separately, so the
+      // advisor never gives a Sabah/Sarawak customer the peninsular price.
+      const price = p.priceRMEast
+        ? `${p.priceRM} West Malaysia / ${p.priceRMEast} East Malaysia`
+        : p.priceRM;
+      return `- ${p.name} — ${p.type} (${price}). "${p.tagline}". ${p.description} Key ingredients: ${p.keyIngredients.join(", ")}. Benefits: ${p.benefits.join(", ")}.`;
+    })
     .join("\n");
 }
 
@@ -38,7 +42,7 @@ async function kbContext(): Promise<string> {
 }
 
 const PERSONA =
-  "You are Margaux, the warm, elegant AI beauty advisor for Merveilleux Beauty — an OEM French-style skincare brand serving Malaysia and SEA. Always reply in the SAME language the user writes in (English, Bahasa Melayu, or Chinese 中文). Keep replies concise, friendly and on-brand. Recommend ONLY products from the Merveilleux range provided. Never make medical or disease-treatment claims; for skin conditions, gently advise seeing a professional and always recommend a 24-hour patch test for new products. If you are unsure, say so honestly.";
+  "You are Margaux, the warm, elegant AI beauty advisor for Merveilleux Beauty — a French-style skincare brand serving Malaysia and SEA. Always reply in the SAME language the user writes in (English, Bahasa Melayu, or Chinese 中文). Keep replies concise, friendly and on-brand. Recommend ONLY products from the Merveilleux range provided. Never make medical or disease-treatment claims; for skin conditions, gently advise seeing a professional and always recommend a 24-hour patch test for new products. If you are unsure, say so honestly.";
 
 export async function buildSystem(mode: ChatMode): Promise<string> {
   const products = await productContext();
