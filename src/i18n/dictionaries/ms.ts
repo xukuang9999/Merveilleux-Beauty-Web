@@ -107,7 +107,7 @@ const ms: Dictionary = {
     ],
     "valueProps": [
       {
-        "title": "Formula OEM yang tulen",
+        "title": "Formula tulen dari makmal",
         "body": "Dibangunkan mengikut piawaian kosmetik Perancis dengan bahan aktif teruji yang menyayangi kulit — tanpa harga mewah yang melampau."
       },
       {
@@ -153,7 +153,7 @@ const ms: Dictionary = {
   },
   "products": {
     "eyebrow": "Koleksi",
-    "title": "Formula Perancis OEM, dicipta untuk berkesan",
+    "title": "Formula makmal Perancis, dicipta untuk berkesan",
     "desc": "Setiap produk dibangunkan mengikut piawaian kosmetik Perancis menggunakan bahan aktif yang tulen dan berkesan — sebuah rutin lengkap yang ditala untuk iklim tropika.",
     "keyIngredients": "Bahan Utama",
     "benefits": "Manfaat",
@@ -202,11 +202,11 @@ const ms: Dictionary = {
   "about": {
     "eyebrow": "Kisah Kami",
     "title": "Penjagaan kulit berinspirasi Perancis, untuk kulit sebenar",
-    "intro": "Merveilleux ialah jenama kecantikan Bellesenze Group Sdn Bhd — rangkaian penjagaan kulit OEM bertaraf Perancis, dicipta di Malaysia pada 2014 untuk cara kulit moden benar-benar hidup.",
+    "intro": "Merveilleux ialah jenama kecantikan Bellesenze Group Sdn Bhd — rangkaian penjagaan kulit bertaraf Perancis, dicipta di Malaysia pada 2014 untuk cara kulit moden benar-benar hidup.",
     "storyTitle": "Mengapa kami wujud",
     "story": [
-      "Merveilleux bermaksud “menakjubkan” dalam bahasa Perancis — dan perkataan itu menetapkan piawaian yang kami pegang untuk setiap formula. Kami bekerjasama dengan makmal OEM bertaraf Perancis yang mantap untuk membangunkan penjagaan kulit yang tulen dan berkesan, kemudian mengeluarkannya pada harga yang jujur, tanpa harga premium jenama mewah.",
-      "Diasaskan pada 2014 dan berpangkalan di Batu Caves, Selangor, kami melayani salon kecantikan, klinik estetik dan pengguna yang mementingkan kulit di seluruh Malaysia — bersama rangkaian pengedar yang semakin berkembang, yang berkongsi keyakinan kami bahawa penjagaan kulit yang hebat seharusnya boleh dipercayai, berkesan dan mampu dimiliki."
+      "Merveilleux bermaksud “menakjubkan” dalam bahasa Perancis — dan perkataan itu menetapkan piawaian yang kami pegang untuk setiap formula. Kami bekerjasama dengan makmal kosmetik bertaraf Perancis yang mantap untuk membangunkan penjagaan kulit yang tulen dan berkesan, kemudian mengeluarkannya pada harga yang jujur, tanpa harga premium jenama mewah.",
+      "Diasaskan pada 2014 dan berpangkalan di Dataran Sunway, Kota Damansara, Petaling Jaya, kami melayani salon kecantikan, klinik estetik dan pengguna yang mementingkan kulit di seluruh Malaysia — bersama rangkaian pengedar yang semakin berkembang, yang berkongsi keyakinan kami bahawa penjagaan kulit yang hebat seharusnya boleh dipercayai, berkesan dan mampu dimiliki."
     ],
     "valuesTitle": "Apa yang kami perjuangkan",
     "values": [
@@ -226,7 +226,7 @@ const ms: Dictionary = {
     "statsTitle": "Merveilleux sepintas lalu",
     "stats": [
       { "value": "2014", "label": "Ditubuhkan" },
-      { "value": "OEM", "label": "Taraf Perancis" },
+      { "value": "Tulen", "label": "Formula bertaraf Perancis" },
       { "value": "45+", "label": "Produk" },
       { "value": "10", "label": "Kategori" }
     ],
@@ -259,7 +259,7 @@ const ms: Dictionary = {
     ],
     "whyTitle": "Mengapa bekerjasama dengan kami",
     "why": [
-      "Produk OEM bertaraf Perancis yang menjual dirinya sendiri sebaik dicuba",
+      "Formulasi bertaraf Perancis yang menjual dirinya sendiri sebaik dicuba",
       "Latihan dalam talian tersusun dan pensijilan sebelum anda bermula",
       "Aset pemasaran sedia guna, deck produk dan harga",
       "Pangkalan pengetahuan berterusan serta bimbingan jualan & penjagaan kulit AI"

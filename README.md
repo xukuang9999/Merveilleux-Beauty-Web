@@ -1,7 +1,7 @@
 # Merveilleux Beauty — Full digital ecosystem
 
 The website, distributor (经销商) training LMS, knowledge base, AI advisor and admin
-console for **Merveilleux Beauty**, an OEM French beauty house. This implements all five
+console for **Merveilleux Beauty**, a French beauty house. This implements all five
 workstreams from the [system planning document](docs/system-planning.html):
 
 - **B · Website** — marketing site with an 8-product catalogue and a hero AI advisor

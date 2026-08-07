@@ -8,7 +8,7 @@ import { getDict } from "@/i18n/server";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The story behind Merveilleux — an OEM French-standard skincare house by Bellesenze Group, made in Malaysia since 2014.",
+    "The story behind Merveilleux — a French-standard skincare house by Bellesenze Group, made in Malaysia since 2014.",
 };
 
 export default async function AboutPage() {

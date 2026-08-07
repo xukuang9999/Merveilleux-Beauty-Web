@@ -26,11 +26,11 @@ export const site = {
   whatsapp: "60192837239",
 
   address: {
-    line: "No. 23A, Jalan SG 3/10, Sri Gombak",
-    city: "68100 Batu Caves",
+    line: "No 39-1 & 39-2, Jalan PJU 5/11, Dataran Sunway, Kota Damansara",
+    city: "47810 Petaling Jaya",
     state: "Selangor",
     country: "Malaysia",
-    full: "No. 23A, Jalan SG 3/10, Sri Gombak, 68100 Batu Caves, Selangor, Malaysia",
+    full: "No 39-1 & 39-2, Jalan PJU 5/11, Dataran Sunway, Kota Damansara, 47810 Petaling Jaya, Selangor, Malaysia",
   },
 
   // Social profiles.

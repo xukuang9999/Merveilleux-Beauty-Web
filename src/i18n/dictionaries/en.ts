@@ -111,7 +111,7 @@ const en = {
     ],
     valueProps: [
       {
-        title: "Clean OEM formulas",
+        title: "Clean, laboratory-crafted formulas",
         body: "Developed to French cosmetic standards with proven, skin-loving actives — no luxury markup.",
       },
       {
@@ -161,7 +161,7 @@ const en = {
   },
   products: {
     eyebrow: "The Collection",
-    title: "OEM French formulas, made to perform",
+    title: "French laboratory formulas, made to perform",
     desc: "Every product is developed to French cosmetic standards using clean, effective actives — a complete routine tuned for a tropical climate.",
     keyIngredients: "Key Ingredients",
     benefits: "Benefits",
@@ -213,11 +213,11 @@ const en = {
     eyebrow: "Our Story",
     title: "French-inspired skincare, made for real skin",
     intro:
-      "Merveilleux is the beauty house of Bellesenze Group Sdn Bhd — an OEM French-standard skincare line, created in Malaysia in 2014 for the way modern skin really lives.",
+      "Merveilleux is the beauty house of Bellesenze Group Sdn Bhd — a French-standard skincare line, created in Malaysia in 2014 for the way modern skin really lives.",
     storyTitle: "Why we exist",
     story: [
-      "Merveilleux means “marvellous” in French — and that word sets the standard we hold every formula to. We partner with established French-standard OEM laboratories to develop clean, effective skincare, then release it honestly priced, without the luxury-brand markup.",
-      "Founded in 2014 and based in Batu Caves, Selangor, we serve beauty salons, aesthetic clinics and skin-conscious consumers across Malaysia — together with a growing network of distributors who share our belief that great skincare should be trustworthy, effective and within reach.",
+      "Merveilleux means “marvellous” in French — and that word sets the standard we hold every formula to. We partner with established French-standard cosmetic laboratories to develop clean, effective skincare, then release it honestly priced, without the luxury-brand markup.",
+      "Founded in 2014 and based at Dataran Sunway, Kota Damansara in Petaling Jaya, we serve beauty salons, aesthetic clinics and skin-conscious consumers across Malaysia — together with a growing network of distributors who share our belief that great skincare should be trustworthy, effective and within reach.",
     ],
     valuesTitle: "What we stand for",
     values: [
@@ -237,7 +237,7 @@ const en = {
     statsTitle: "Merveilleux at a glance",
     stats: [
       { value: "2014", label: "Established" },
-      { value: "OEM", label: "French-standard" },
+      { value: "Clean", label: "French-standard formulas" },
       { value: "45+", label: "Products" },
       { value: "10", label: "Categories" },
     ],
@@ -272,7 +272,7 @@ const en = {
     ],
     whyTitle: "Why partner with us",
     why: [
-      "French-standard OEM products that sell themselves once tried",
+      "French-standard formulations that sell themselves once tried",
       "Structured online training and certification before you start",
       "Ready-made marketing assets, product decks and pricing",
       "An ongoing knowledge base and AI sales & skincare coaching",
