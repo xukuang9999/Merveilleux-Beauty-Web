@@ -90,13 +90,11 @@ const zh: Dictionary = {
     "statsModules": "个培训模块",
     "statsLanguages": "种服务语言",
     "flagshipEyebrow": "旗舰体验",
-    "flagshipTitle": "Bellesenze @ Dataran Sunway",
-    "flagshipBody": "走进我们位于八打灵再也的旗舰体验中心 —— 暖象牙与天然石纹大理石包裹的私密护理室、光环灯下的产品陈列廊，以及见证伙伴成长的培训剧场。",
+    "flagshipBody": "走进我们位于 Dataran Sunway 的旗舰体验中心 —— 暖象牙与天然石纹大理石包裹的专属护理室、光环灯下的产品陈列廊，以及见证伙伴成长的培训剧场。",
     "flagshipCta": "预约到访",
-    "flagshipLocation": "Dataran Sunway · Kota Damansara · 八打灵再也",
     "flagshipPoints": [
       {
-        "title": "私密护理室",
+        "title": "专属护理室",
         "body": "灰褐亚麻帘幕与大理石饰面的独立护理间，让每一次护理从容不迫。"
       },
       {
@@ -318,7 +316,7 @@ const zh: Dictionary = {
       "lounge": "接待休息区",
       "waterWall": "水景墙",
       "corridor": "护理走廊",
-      "suites": "私密护理室",
+      "suites": "专属护理室",
       "vanity": "梳妆盥洗区",
       "staircase": "大理石楼梯",
       "counter": "接待前台",

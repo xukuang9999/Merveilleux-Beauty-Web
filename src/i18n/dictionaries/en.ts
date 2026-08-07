@@ -90,11 +90,9 @@ const en = {
     statsModules: "Training modules",
     statsLanguages: "Languages served",
     flagshipEyebrow: "The Flagship Experience",
-    flagshipTitle: "Bellesenze @ Dataran Sunway",
     flagshipBody:
-      "Step inside our flagship experience centre in Petaling Jaya — private treatment suites wrapped in warm ivory and veined marble, a product atelier glowing under halo light, and a training theatre where our community grows.",
+      "Step inside our flagship experience centre at Dataran Sunway — private treatment suites wrapped in warm ivory and veined marble, a product atelier glowing under halo light, and a training theatre where our community grows.",
     flagshipCta: "Plan your visit",
-    flagshipLocation: "Dataran Sunway · Kota Damansara · Petaling Jaya",
     flagshipPoints: [
       {
         title: "Private treatment suites",

@@ -184,7 +184,6 @@ export default async function Home() {
           <Reveal variant="left">
             <SectionHeading
               eyebrow={d.flagshipEyebrow}
-              title={d.flagshipTitle}
               description={d.flagshipBody}
             />
             <ul className="mt-8 space-y-5">
@@ -204,10 +203,7 @@ export default async function Home() {
                 </li>
               ))}
             </ul>
-            <p className="mt-7 text-[11px] font-medium uppercase tracking-[0.24em] text-gold">
-              {d.flagshipLocation}
-            </p>
-            <div className="mt-6">
+            <div className="mt-8">
               <Button href="/contact" variant="outline">
                 {d.flagshipCta}
               </Button>
@@ -217,13 +213,19 @@ export default async function Home() {
           {/* The real Dataran Sunway facade render + interior views */}
           <Reveal variant="right">
             <div className="mx-auto grid w-full max-w-md grid-cols-[1.15fr_1fr] items-end gap-4">
-              <div className="arch-frame relative aspect-[570/1100] overflow-hidden border border-gold/40 shadow-[0_36px_70px_-38px_rgba(69,61,49,0.6)]">
+              {/* The arch crown is a semicircle of radius = half the frame width,
+                  so anything in the top ~115px gets cut on both sides. The
+                  MÉRVÉILLÉUX fascia sits right there, hence the champagne
+                  backing plus a 10% nudge down: that drops the sign clear of the
+                  curve (and ken-burns is off here — its 1.09 zoom re-cropped the
+                  very edges we're trying to keep). */}
+              <div className="arch-frame relative aspect-[570/1100] overflow-hidden border border-gold/40 bg-champagne shadow-[0_36px_70px_-38px_rgba(69,61,49,0.6)]">
                 <Image
                   src="/renders/facade.jpg"
                   alt="Bellesenze @ Dataran Sunway — flagship facade"
                   fill
                   sizes="(max-width: 1024px) 50vw, 22vw"
-                  className="ken-burns object-cover"
+                  className="translate-y-[10%] object-cover object-top"
                 />
               </div>
               <div className="flex flex-col gap-4">

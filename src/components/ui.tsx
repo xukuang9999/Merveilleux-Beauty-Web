@@ -22,7 +22,8 @@ export function SectionHeading({
   center = false,
 }: {
   eyebrow?: string;
-  title: ReactNode;
+  /** Omit for sections that lead with the eyebrow alone (e.g. the flagship block). */
+  title?: ReactNode;
   description?: string;
   center?: boolean;
 }) {
@@ -39,9 +40,11 @@ export function SectionHeading({
           {center && <span aria-hidden className="h-px w-8 bg-gold/60" />}
         </p>
       )}
-      <h2 className="font-serif text-3xl font-light leading-tight text-charcoal sm:text-4xl">
-        {title}
-      </h2>
+      {title && (
+        <h2 className="font-serif text-3xl font-light leading-tight text-charcoal sm:text-4xl">
+          {title}
+        </h2>
+      )}
       {description && (
         <p className="mt-4 text-base leading-relaxed text-mid">{description}</p>
       )}

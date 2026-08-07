@@ -87,10 +87,8 @@ const ms: Dictionary = {
     "statsModules": "Modul latihan",
     "statsLanguages": "Bahasa perkhidmatan",
     "flagshipEyebrow": "Pengalaman Flagship",
-    "flagshipTitle": "Bellesenze @ Dataran Sunway",
-    "flagshipBody": "Langkah ke pusat pengalaman flagship kami di Petaling Jaya — suite rawatan privasi berbalut gading hangat dan marmar berurat, atelier produk bersinar di bawah cahaya halo, serta teater latihan tempat komuniti kami berkembang.",
+    "flagshipBody": "Langkah ke pusat pengalaman flagship kami di Dataran Sunway — suite rawatan privasi berbalut gading hangat dan marmar berurat, atelier produk bersinar di bawah cahaya halo, serta teater latihan tempat komuniti kami berkembang.",
     "flagshipCta": "Rancang lawatan anda",
-    "flagshipLocation": "Dataran Sunway · Kota Damansara · Petaling Jaya",
     "flagshipPoints": [
       {
         "title": "Suite rawatan privasi",
