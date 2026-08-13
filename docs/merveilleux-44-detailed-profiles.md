@@ -1,0 +1,1568 @@
+# Merveilleux 44 个产品逐项详细档案
+
+整理日期：2026-08-13
+定位：研究与文案底稿；未确认资料不补猜，最终以品牌批准稿、包装背标及2026正式价表为准。
+
+## 01. Advance White Professional Treatment｜钻石水光美白护理疗程
+
+- **类型 / 状态：** treatment / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 亮、滑、紧、透
+- **English positioning:** Bright, smooth, firm and translucent — no injections
+- **中文概述：** 专为干性、中性及老化性肌肤研发的高端水光美白护理疗程，采用多重天然酵素与植萃复合配方，温和分解老废角质、激活细胞更新、抑制黑色素，让肌肤在一次护理中呈现白皙透亮、紧致细腻的钻石光泽。不建议用于痘痘、发炎或敏感肌肤。
+- **English overview:** A high-end salon "diamond glow" whitening treatment developed for dry, normal and mature skin — no injections. Multi-enzyme and botanical complexes gently dissolve dead cells, activate cell renewal and suppress melanin to instantly reveal a bright, translucent, firm, diamond-like radiance. Not recommended for acne, inflamed or sensitive skin.
+- **已知关键成分 / 套装组成：**
+  - AW Caviar Lime Enzyme
+  - AW Active Complex
+  - AW Treatment Serum
+  - Hydrating Ampoule
+  - AW Treatment Silk Mask
+- **中文功效摘要：**
+  - 一次护理 = 美白 + 紧致 + 透亮
+  - 无需打针即享水光肌效果
+  - 温和无刺激，适合干性、中性、老化肌
+  - 效果立竿见影，复购率高
+  - 肤色提亮 1–2 度，毛孔细致
+- **English benefit summary:**
+  - One session delivers whitening, firming and translucency
+  - Water-glow radiance without injections
+  - Gentle and non-irritating for dry, normal and mature skin
+  - Visible results with a high repeat rate
+  - Brightens skin tone by 1–2 shades and refines pores
+- **中文用法：**
+  - 双层洁脸 → Caviar Lime Enzyme → 挤压 → Active Complex
+  - Treatment Serum 精华导入 + Hydrating Amp 导入
+  - 按摩 + Treatment Silk Mask 敷20-30分钟
+- **English directions:**
+  - Double cleanse, then AW Caviar Lime Enzyme, followed by extraction and AW Active Complex
+  - Device-infuse the AW Treatment Serum, then the Hydrating Ampoule
+  - Facial massage, then apply the AW Treatment Silk Masque for 20–30 minutes
+- **需审查的宣传措辞：**
+  - 抑制黑色素
+  - 水光美白淡斑护理
+  - 抑制酪氨酸酶与氧化反应，有效阻断黑色素生成链
+  - 定期疗程后可淡化斑点、均匀肤色
+  - 不建议用于痘痘、发炎或敏感肌肤
+  - REVIEW: claims to inhibit tyrosinase and 'block the melanin synthesis chain' — strong whitening/cosmeceutical efficacy claim, verify substantiation before publishing
+  - REVIEW: 'fades spots and evens skin tone with regular treatment' — anti-pigmentation efficacy claim needs substantiation
+- **内部原始来源编号：** hq-91, hq-92, hq-93, hq-104, hq-105, hq-107, hq-109, hq-110, hq-112, hq-113, hq-114, hq-115, hq-118
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_19@21-10-2025_05-05-31.jpg; ChatExport_2026-07-13/photos/photo_23@21-10-2025_23-34-54.jpg
+- **Studio图：** ../output/merveilleux-studio-44/01-*.png
+
+## 02. Aqua-Concentrate Mask｜深层保湿面膜
+
+- **类型 / 状态：** product / available
+- **规格：** 50 ml
+- **内部参考价：** RM128
+- **中文定位：** 密集补水 · 锁水保湿 · 柔嫩透亮
+- **English positioning:** Intensive hydration that locks in moisture for soft, luminous skin
+- **中文概述：** 含有丰富的各种植物精华和水分子玻尿酸，能更好地渗透肌肤，为肌肤提供持久保湿，最终达到肤色平衡。
+- **English overview:** Rich in assorted plant essences and hyaluronic water molecules that penetrate deep into the skin for lasting hydration and a balanced, even complexion.
+- **已知关键成分 / 套装组成：**
+  - Sodium Hyaluronate
+  - Aloe Barbadensis Leaf Extract
+  - Propylene Glycol
+- **中文功效摘要：**
+  - 密集补水改善干燥
+  - 锁住水分，防止流失
+  - 舒缓干燥带来的紧绷
+  - 肌肤更柔嫩、细致、有光泽
+  - 建议连续7天密集补水护理
+- **English benefit summary:**
+  - Replenishes moisture
+  - Locks in hydration and prevents water loss
+  - Soothes tightness from dryness
+  - Leaves skin softer, finer and more radiant
+  - Recommended as a 7-day intensive hydration course
+- **中文用法：**
+  - 建议连续使用7天作为密集补水护理
+- **English directions:**
+  - Use for 7 consecutive days as an intensive hydration course.
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** hq-381, hq-382
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_163@13-07-2026_01-05-36.jpg
+- **Studio图：** ../output/merveilleux-studio-44/02-*.png
+
+## 03. Brightening + Hydrating Trial Set｜亮白补水体验套装
+
+- **类型 / 状态：** bundle / available
+- **规格：** 3 items
+- **内部参考价：** RM288
+- **中文定位：** 暗沉堵塞肌的亮白补水三件套
+- **English positioning:** A brightening-and-hydrating trio for dull, congested skin
+- **中文概述：** 专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。
+- **English overview:** A brightening-and-hydrating trial trio for dull, congested skin. Includes Oxy-Bright Sérum 10 ml and Pore Refining Sérum 5 ml; the third item is to be confirmed with Grace.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 内含美白精华 10ml
+  - 内含消炎抗痘精华 5ml
+  - 第三件产品待与 Grace 确认
+  - 体验装，提亮暗沉、补水调理堵塞肌
+- **English benefit summary:**
+  - Includes Oxy-Bright Sérum 10 ml
+  - Includes Pore Refining Sérum 5 ml
+  - Third item to be confirmed with Grace
+  - Trial sizes to brighten dullness and hydrate congested skin
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - REVIEW: bundle contents incomplete — third item unverified, confirm with Grace before publishing
+- **内部原始来源编号：** manifest
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/03-*.png
+
+## 04. Cell Repair Treatment Cream｜修复屏障乳霜
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM228
+- **中文定位：** 锁水保湿 · 屏障修复 · 清爽细腻
+- **English positioning:** Moisture-locking barrier repair with a light, refined feel
+- **中文概述：** 添加麦角硫因和肌肤保湿成分，珍贵成分修护肌肤脂质，保护与修复皮肤细胞；多肽及多种植物精华深入滋润肌肤，缓解肌肤干燥，扫除肌肤黄气，令肌肤水润弹滑。
+- **English overview:** Enriched with Ergothioneine and skin-moisturising actives that repair skin lipids and protect skin cells; peptides and plant extracts deeply nourish the skin, relieve dryness and dispel dullness for a supple, radiant complexion.
+- **已知关键成分 / 套装组成：**
+  - Ergothioneine
+  - Sodium Hyaluronate
+  - Niacinamide (Vitamin B3)
+  - Rosa Rugosa Flower Water
+  - Chamomilla Recutita (Matricaria) Flower Extract
+- **中文功效摘要：**
+  - 重建皮肤屏障系统
+  - 缓解皮肤干燥，补水锁水锁营养
+  - 极度修复皮肤脂质
+- **English benefit summary:**
+  - Rebuilds the skin barrier system
+  - Relieves dryness while replenishing and locking in moisture and nutrition
+  - Intensely repairs skin lipids
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - Overview claims protection and repair of skin cells against DNA damage from infrared light — strong efficacy claim, verify before publishing.
+- **内部原始来源编号：** dm-116, dm-117, dm-118
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_36@14-07-2026_03-26-51.jpg; ChatExport_2026-07-14/photos/photo_37@14-07-2026_03-27-12.jpg
+- **Studio图：** ../output/merveilleux-studio-44/04-*.png
+
+## 05. Ceramide Ice-Essence Toner｜神经酰胺爽肤水
+
+- **类型 / 状态：** product / available
+- **规格：** 150 ml
+- **内部参考价：** RM178
+- **中文定位：** 清爽质地 · 冰凉舒适 · 幼细毛孔
+- **English positioning:** Ceramide toner that repairs and fortifies the barrier
+- **中文概述：** 含神经酰胺强效补充修复皮肤皮脂膜，能够抵御外界过敏性刺激，抵御细菌病毒的植入，减少水分蒸发和流失，强韧肌肤屏障。
+- **English overview:** A ceramide-rich toner that replenishes and repairs the skin's sebum membrane, defends against external allergens and bacteria, curbs moisture loss and strengthens the skin barrier.
+- **已知关键成分 / 套装组成：**
+  - Ceramide NS
+  - Sodium Hyaluronate
+  - Maris Aqua
+  - Trehalose
+  - Crocus Sativus Flower Extract
+- **中文功效摘要：**
+  - 适合所有肌肤
+  - 促进新陈代谢与营养输送
+  - 肌肤更平滑、细致、饱满，减少细纹
+  - 敏感肌可见效果
+- **English benefit summary:**
+  - Suitable for all skin types
+  - Improves metabolism and nutrient delivery
+  - Smoother, finer, plumper, less-lined skin
+  - Visible results on sensitive skin
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 有效预防因外部刺激引起的肌肤过敏，同时抵御细菌侵害
+  - Overview claims defence against bacteria and viruses — verify substantiation before publishing
+- **内部原始来源编号：** dm-78, dm-79, dm-80
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_11@14-07-2026_01-22-20.jpg; ChatExport_2026-07-14/photos/photo_12@14-07-2026_01-22-46.jpg
+- **Studio图：** ../output/merveilleux-studio-44/05-*.png
+
+## 06. Congested Set｜净化调理体验套装
+
+- **类型 / 状态：** bundle / available
+- **规格：** 3 items
+- **内部参考价：** RM260
+- **中文定位：** 堵塞闭口肌的净化调理体验套装
+- **English positioning:** A purifying trial set for congested, clogged-pore skin
+- **中文概述：** 专为堵塞、闭口肌打造的净化调理体验套装。套装内容在原始卡片上仅部分清晰可辨，需与 Grace 确认后再发布。
+- **English overview:** A trial set targeting congested, clogged-pore skin. The set contents are only partially legible on the source card and need to be verified with Grace before publishing.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 针对堵塞、闭口肌
+  - 净化调理体验组合
+  - 套装完整内容待与 Grace 确认
+- **English benefit summary:**
+  - Targets congested, clogged-pore skin
+  - Purifying and balancing trial routine
+  - Full set contents to be confirmed with Grace
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - REVIEW: bundle contents partially legible on the source card — verify the full item list with Grace before publishing
+- **内部原始来源编号：** manifest
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/06-*.png
+
+## 07. Daily Care Trial Set｜日常护理体验套装
+
+- **类型 / 状态：** bundle / available
+- **规格：** 3 items
+- **内部参考价：** RM168
+- **中文定位：** 日常基础护理入门三件套
+- **English positioning:** A travel-size trio for everyday basic care
+- **中文概述：** 日常基础护理入门三件套（旅行装）：温和洁面、深层洁净与修护屏障爽肤水。内含温和洁面乳 30ml、精华蜜状洁面凝胶 20ml、神经酰胺爽肤水 30ml。
+- **English overview:** A starter trio for daily basic care — gentle cleanse, deep cleanse and a barrier-repairing toner in travel sizes. Includes Gentle Cleansing Milk 30 ml, Ultrafine Cleansing Gel 20 ml and Ceramide Ice-Essence Toner 30 ml.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 内含温和洁面乳 30ml
+  - 内含精华蜜状洁面凝胶 20ml
+  - 内含神经酰胺爽肤水 30ml
+  - 旅行装尺寸，轻松体验日常基础护理
+- **English benefit summary:**
+  - Includes Gentle Cleansing Milk 30 ml
+  - Includes Ultrafine Cleansing Gel 20 ml
+  - Includes Ceramide Ice-Essence Toner 30 ml
+  - Travel-friendly sizes to trial the daily basic-care routine
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** manifest
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/07-*.png
+
+## 08. Essential Lotion (Toner)｜玫瑰爽肤水
+
+- **类型 / 状态：** product / available
+- **规格：** 150 ml
+- **内部参考价：** RM178
+- **中文定位：** 玫瑰精华露 · 具有三合一用法 · 平衡酸碱性
+- **English positioning:** Rose toner that hydrates, refines and calms
+- **中文概述：** 天然玫瑰提取物，芦荟和维他命B5有很好的补水与修复功效，提供肌肤湿润与抗氧化，帮助紧致缩小毛孔，保护肌肤免受自由基侵袭并具抗敏效果。
+- **English overview:** Natural rose extract, aloe vera and Vitamin B5 deliver hydrating and repairing benefits, provide moisture and antioxidant protection, help refine and reduce the look of pores, shield skin from free-radical damage and calm sensitivity.
+- **已知关键成分 / 套装组成：**
+  - Rose Essence
+  - Aloe Vera
+  - Vitamin B5
+  - Rose Extract
+  - Oat Polypeptide
+  - Deionised Water
+  - Sodium Hyaluronate
+  - Betula Alba Leaf Extract
+- **中文功效摘要：**
+  - 补水修复
+  - 抗氧化保护
+  - 细致毛孔
+  - 抵御自由基侵袭
+  - 抗敏舒缓
+- **English benefit summary:**
+  - Hydrates and repairs
+  - Antioxidant protection
+  - Refines pores
+  - Defends against free radicals
+  - Anti-sensitive and calming
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-75, dm-76, dm-77
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_9@14-07-2026_01-21-05.jpg; ChatExport_2026-07-14/photos/photo_10@14-07-2026_01-21-28.jpg
+- **Studio图：** ../output/merveilleux-studio-44/08-*.png
+
+## 09. Eye EGF Serum｜EGF 眼部修护精华
+
+- **类型 / 状态：** product / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 高效抗老精华 · 焕亮年轻眼周
+- **English positioning:** Firms and revives youthful, brighter eyes
+- **中文概述：** 眼部EGF精华，用于爽肤水后、眼霜前，润泽滋养娇嫩眼周，抚平老化痕迹、焕亮暗沉、紧致眼周，短短10天即可拥有年轻有活力的双眼。
+- **English overview:** An eye sérum step (used after toner, before eye crème) that firms, nourishes and revitalises the delicate eye area — smoothing signs of ageing, brightening dullness and firming for youthful, resilient eyes in as little as 10 days.
+- **已知关键成分 / 套装组成：**
+  - sh-Oligopeptide-1 (EGF)
+  - Palmitoyl Tripeptide-1 & -5
+  - Squalane
+  - Tocopherol (Vitamin E)
+- **中文功效摘要：**
+  - 润泽滋养眼周
+  - 紧致平滑，抚平老化痕迹
+  - 焕亮暗沉眼周
+  - 约10天可见眼周更紧致
+- **English benefit summary:**
+  - Nourishes & hydrates the eye area
+  - Firms & smooths signs of ageing
+  - Brightens dark, dull skin
+  - Visibly firmer eyes in ~10 days
+- **中文用法：**
+  - 爽肤水后使用（护肤第二步），眼霜之前
+- **English directions:**
+  - Apply after toner as the second step of your routine, before eye crème.
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** hq-314, hq-316, hq-317
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_124@29-04-2026_20-59-28.jpg; ChatExport_2026-07-13/photos/photo_125@29-04-2026_20-59-28.jpg
+- **Studio图：** ../output/merveilleux-studio-44/09-*.png
+
+## 10. Gentle Cleansing Milk｜温和洁面乳
+
+- **类型 / 状态：** product / available
+- **规格：** 200 ml
+- **内部参考价：** RM168
+- **中文定位：** 微细小分子 · 舒缓保湿 · 温和洁面
+- **English positioning:** Micro-molecule milk that cleanses deeply yet gently
+- **中文概述：** 小分子洗面奶，可更深层渗入肌底乳化油脂，温和洁面；有效彻底深层清洁整个皮肤与毛孔，去除杂质，疏通营养输送通道，防止皮肤脱水，令肌肤细嫩白皙润泽。
+- **English overview:** A gentle micro-molecule cleansing milk that emulsifies deep-seated oil to cleanse thoroughly yet mildly, sweeping away impurities from skin and pores while moisturising and soothing so skin feels clean, soft and refined.
+- **已知关键成分 / 套装组成：**
+  - Chamomilla Recutita Extract
+  - Anthemis Nobilis Flower Extract
+  - Magnesium Chloride
+  - Magnesium Nitrate
+- **中文功效摘要：**
+  - 深层清洁毛孔
+  - 预防毛孔堵塞
+  - 提升后续护肤品吸收
+  - 防止皮肤脱水
+  - 保湿柔嫩肌肤
+  - 适合所有肌肤
+- **English benefit summary:**
+  - Deep-pore cleansing
+  - Prevents clogged pores
+  - Boosts absorption of later steps
+  - Prevents dehydration
+  - Keeps skin moisturised and soft
+  - Suitable for all skin types
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 洗后会感觉皮肤细嫩白皙
+- **内部原始来源编号：** dm-63, dm-64, dm-65, hq-287, hq-288, hq-312
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_1@14-07-2026_01-14-41.jpg; ChatExport_2026-07-14/photos/photo_2@14-07-2026_01-15-15.jpg; ChatExport_2026-07-13/photos/photo_116@25-01-2026_16-38-31.jpg
+- **Studio图：** ../output/merveilleux-studio-44/10-*.png
+
+## 11. Hyaluronate Moisturiser｜玻尿酸保湿乳霜
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM188
+- **中文定位：** 高效保湿 · 深层滋养 · 弹润修复
+- **English positioning:** High-concentration hyaluronic acid for deep, lasting hydration
+- **中文概述：** 含高浓度玻尿酸，帮助肌肤强效保湿滋润，减缓老化过程，维持肌肤弹性与柔韧。
+- **English overview:** High-concentration hyaluronic acid that penetrates easily to intensely hydrate and lock in moisture, prevents dehydration and boosts skin elasticity and suppleness while slowing signs of ageing.
+- **已知关键成分 / 套装组成：**
+  - Sodium Hyaluronate
+  - Tamarindus Indica Extract
+  - Aloe Vera Extract
+  - Hydrogenated Sweet Almond Oil
+- **中文功效摘要：**
+  - 提升保湿与弹性
+  - 减少细纹与皱纹
+  - 适合缺水与敏感肌
+  - 促进胶原合成与更新
+- **English benefit summary:**
+  - Enhances hydration and elasticity
+  - Reduces fine lines and wrinkles
+  - Suited to dehydrated and sensitive skin
+  - Supports collagen synthesis and renewal
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-119, dm-120, dm-121
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_38@14-07-2026_03-28-13.jpg; ChatExport_2026-07-14/photos/photo_39@14-07-2026_03-28-35.jpg
+- **Studio图：** ../output/merveilleux-studio-44/11-*.png
+
+## 12. Hydro-Moist Sérum｜大分子玻尿酸精华
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM228
+- **中文定位：** 增强肌肤锁水能力 · 形成保护膜 · 水润弹滑
+- **English positioning:** Locks in moisture, forms a protective film, keeps skin supple
+- **中文概述：** 含北美金缕梅水、透明质酸钠和神经酰胺保湿成分，内源补水锁水，修护肌肤脂质，形成保护膜，减少敏感与细纹。
+- **English overview:** Contains Witch Hazel (Hamamelis virginiana) water, Sodium Hyaluronate and Ceramide to boost the skin's moisture-holding capacity, form a protective film, repair skin lipids, calm inflammation and support the skin's natural immunity.
+- **已知关键成分 / 套装组成：**
+  - Ceramide 3
+  - Hamamelis Virginiana (Witch Hazel) Water
+  - Sodium Hyaluronate
+  - Niacinamide
+  - Glycyrrhiza Inflata Root Extract
+  - Tremella Fuciformis Polysaccharide
+- **中文功效摘要：**
+  - 形成保护膜，舒缓炎症
+  - 防止脱水，减少敏感
+  - 激活细胞焕新，平衡水分
+  - 深层补水，提升光泽
+  - 肌肤更柔滑弹润，减少细纹
+- **English benefit summary:**
+  - Forms a protective film and calms inflammation
+  - Prevents dehydration and sensitivity
+  - Stimulates cell rejuvenation for balanced moisture
+  - Delivers deep hydration and luminosity
+  - Leaves skin softer, smoother and more elastic with fewer fine lines
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-90, dm-91, dm-92
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_19@14-07-2026_01-36-43.jpg; ChatExport_2026-07-14/photos/photo_20@14-07-2026_01-36-57.jpg
+- **Studio图：** ../output/merveilleux-studio-44/12-*.png
+
+## 13. Hydro-Sensi Concentré｜小分子玻尿酸精华
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM218
+- **中文定位：** 补水BOOSTER · 小分子高渗透 · 细腻嫩滑
+- **English positioning:** A micro-molecule hydration booster for calm, silky skin
+- **中文概述：** 含天然植物提取物，包括海藻、玻尿酸、洋甘菊、金缕梅提取物，采用小于500道尔顿小分子玻尿酸，深层补水并舒缓干燥、瘙痒与皮肤炎症。
+- **English overview:** Formulated with natural actives — Marine Algae, Hyaluronic Acid, Chamomile and Witch Hazel (Hamamelis) — to soothe dryness, itching and skin discomfort, with deep hydration, barrier repair, brightening and smoother texture.
+- **已知关键成分 / 套装组成：**
+  - Sodium Hyaluronate
+  - Aloe Vera
+  - Chamomile
+  - Hamamelis Extract
+  - Citric Acid
+  - Marine Algae
+- **中文功效摘要：**
+  - 深层补水保湿
+  - 修复肌肤屏障
+  - 舒缓干燥、瘙痒与炎症
+  - 提亮肤色，改善肤质
+- **English benefit summary:**
+  - Delivers deep hydration
+  - Repairs the skin barrier
+  - Relieves dryness, itch and inflammation
+  - Brightens and smooths skin texture
+- **中文用法：**
+  - 护肤第一步，于洁面后使用，帮助打开吸收通道
+- **English directions:**
+  - As the first care step, apply after cleansing to help open the skin's absorption channels.
+- **需审查的宣传措辞：**
+  - Overview/benefit claims to relieve or treat skin itching and inflammation — verify against cosmetic advertising rules before publishing.
+- **内部原始来源编号：** dm-87, dm-88, dm-89, hq-322
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_17@14-07-2026_01-32-48.jpg; ChatExport_2026-07-14/photos/photo_18@14-07-2026_01-33-38.jpg
+- **Studio图：** ../output/merveilleux-studio-44/13-*.png
+
+## 14. Intense Lift Eye Treatment Crème｜紧致提拉眼部护理霜
+
+- **类型 / 状态：** product / available
+- **规格：** 20 ml
+- **内部参考价：** RM228
+- **中文定位：** 淡化黑眼圈 · 紧致、提亮 · 丝滑清爽
+- **English positioning:** Firms, brightens and softens dark circles
+- **中文概述：** 小分子高渗透，强效焕活细胞新生，抗氧化，小分子多肽与多种有效成分快速显著减少皱纹与眼袋。
+- **English overview:** Formulated with White Truffle and coffee extract to activate cell renewal and new cell growth; micro-molecule peptides and actives visibly reduce wrinkles and eye bags.
+- **已知关键成分 / 套装组成：**
+  - Tuber Magnatum (White Truffle) Extract
+  - Palmitoyl Tripeptide-1 / -8
+  - Acetyl Heptapeptide-4
+  - Coffea Arabica Seed Extract
+  - Sodium Hyaluronate + Ectoin
+- **中文功效摘要：**
+  - 减少细纹与眼袋
+  - 紧致眼周肌肤
+  - 促进微循环
+  - 淡化黑眼圈
+- **English benefit summary:**
+  - Reduces fine lines & puffiness
+  - Firms the eye area
+  - Improves microcirculation
+  - Fades dark circles
+- **中文用法：**
+  - 眼部护理最后一步，取适量点涂眼周
+- **English directions:**
+  - As the final step of eye care, gently dab a small amount around the eye area.
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** hq-314, hq-315, hq-318
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_123@29-04-2026_20-59-28.jpg; ChatExport_2026-07-13/photos/photo_126@29-04-2026_21-27-22.jpg
+- **Studio图：** ../output/merveilleux-studio-44/14-*.png
+
+## 15. Intensive Hydro-Treatment Silk Mask｜深层补水蚕丝面膜
+
+- **类型 / 状态：** product / available
+- **规格：** 5 pcs
+- **内部参考价：** RM168
+- **中文定位：** 深层补水 · 光泽焕新
+- **English positioning:** Deep hydration, renewed radiance
+- **中文概述：** 专注于肌肤深层水循环与光泽管理的蚕丝面膜，从根源改善干燥、粗糙与疲倦肤况，长效锁水并提亮肤色。
+- **English overview:** A silk sheet mask focused on the skin's deep water circulation and radiance, improving dryness, roughness and tired-looking skin at the source while locking in lasting moisture.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 深层补水，重建肌肤含水系统
+  - 长效锁水，维持持久水润状态
+  - 提亮肤色，改善暗沉与疲态
+  - 促进细胞更新，延缓肌肤老化
+  - 提升弹性与细致度，肌肤水润透亮柔嫩
+- **English benefit summary:**
+  - Deep hydration rebuilds the skin's water system
+  - Long-lasting moisture lock
+  - Brightens dullness and tired-looking skin
+  - Promotes cell renewal to slow ageing
+  - Boosts elasticity and refinement for dewy, translucent, supple skin
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** hq-303, manifest
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/15-*.png
+
+## 16. Intensive Medic-Cell Treatment｜细胞医学炎症调理护理疗程
+
+- **类型 / 状态：** treatment / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 重建平衡，修复根源
+- **English positioning:** Rebuild balance, repair at the source
+- **中文概述：** 专为问题肌肤研发的专业细胞医学调理护理系统，从源头稳定炎症、重建肌肤健康基础；重建微生态平衡、抑制炎症因子、激活细胞修复、重建屏障，并带来抗老与色素淡化功效。仅需 1–3 次专业护理即可见明显改善。
+- **English overview:** A professional medical-grade cell-therapy system for problem skin that stabilises inflammation at the source and rebuilds a healthy skin foundation — restoring microbiome balance, suppressing inflammatory factors, activating cell repair, rebuilding the barrier and delivering anti-ageing and pigment-fading benefits. Visible improvement in 1–3 sessions.
+- **已知关键成分 / 套装组成：**
+  - Medic Cell Powder
+  - Stem Cell Lyophilised Powder
+  - Soothing Gel Mask
+  - Amino Acid Powder
+  - Nano Mist
+- **中文功效摘要：**
+  - 重建微生态平衡
+  - 精准靶向并抑制炎症
+  - 激活细胞修复与再生
+  - 重建屏障结构
+  - 抗老与色素管理，肌肤更干净、透亮、稳定
+- **English benefit summary:**
+  - Rebuilds microbiome balance
+  - Targets and suppresses inflammation
+  - Activates cell repair and regeneration
+  - Rebuilds barrier structure
+  - Anti-ageing and pigment management for cleaner, clearer, calmer skin
+- **中文用法：**
+  - 双层洁脸 + peeling gel + 挤压
+  - Soothing gel mask + 氨基酸粉 + nano mist
+  - 冻干粉逆向毛孔刷 + Stem cell mask 敷20分钟 + 防晒
+- **English directions:**
+  - Double cleanse, apply peeling gel, then extraction
+  - Soothing gel mask, then amino-acid powder with Nano Mist
+  - Brush the restoration powder against the pores, apply the Stem Cell mask for 20 minutes, then finish with sunscreen
+- **需审查的宣传措辞：**
+  - 医学级抗炎护理系统
+  - 炎症因子抑制：精准靶向炎症介质
+  - 色素管理…有效分解和淡化色素沉淀
+  - 仅需1-3次专业操作即可见效
+  - 痤疮医学强化治疗
+  - REVIEW: 'medical-grade' / 'medic-cell' and 'acne medical intensive treatment' language implies a therapeutic or medical procedure — verify regulatory compliance before publishing
+  - REVIEW: claims to suppress inflammatory factors and break down/fade pigmentation — drug-like efficacy claims needing substantiation
+- **内部原始来源编号：** hq-124, hq-125, hq-126, hq-127, hq-129, hq-131, hq-133, hq-134, hq-135, hq-153, hq-258, hq-259, hq-260, hq-261
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_34@31-10-2025_03-52-53.jpg; ChatExport_2026-07-13/photos/photo_101@06-01-2026_01-48-25.jpg
+- **Studio图：** ../output/merveilleux-studio-44/16-*.png
+
+## 17. Intensive Restoration Powder｜冻干粉
+
+- **类型 / 状态：** product / available
+- **规格：** 10 g
+- **内部参考价：** RM328
+- **中文定位：** 专业修复粉 · 医美术后/创伤后修复期 · 抗炎抗敏
+- **English positioning:** Medical-grade peptide repair powder for compromised, sensitive skin
+- **中文概述：** 医学级小分子活性肽修复粉，修复能力超强，帮助受损细胞再生；以保养方式彻底滤去造成过敏与红血丝的残留“致敏致红”因子，巩固肌肤复原基础。
+- **English overview:** A medical-grade small-molecule peptide repair powder with strong repair power that regenerates damaged cells and filters out the last of the sensitisation and redness factors behind allergy and broken capillaries, laying a foundation for recovery.
+- **已知关键成分 / 套装组成：**
+  - Dipotassium Glycyrrhizate
+  - Opuntia Streptacantha Stem Extract
+  - Trehalose
+  - Glycerin
+  - Niacinamide
+- **中文功效摘要：**
+  - 帮助受损细胞再生
+  - 天然抗氧化，抑制疤痕纤维母细胞增生
+  - 淡化痘印痘疤
+  - 滋润干燥粗糙肌肤
+  - 舒缓泛红与敏感
+- **English benefit summary:**
+  - Regenerates damaged cells
+  - Natural antioxidants help curb scar-tissue fibroblasts
+  - Fades acne scarring
+  - Hydrates dry, rough skin
+  - Calms redness & sensitivity
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 医学级小分子活性肽修复系统
+  - 抗炎抗敏 · 医美术后/创伤后修复期
+  - 抑制炎性丘疹与痘印形成
+  - 激素依赖性皮炎、术后伤口修复
+  - 连婴儿敏感的红疹肌肤都能得到显著改善
+  - REVIEW: 'medical-grade', post-surgical / wound-repair and baby-eczema efficacy claims are strong therapeutic claims — admin to verify before publishing.
+- **内部原始来源编号：** dm-81, dm-82, dm-83, hq-156, hq-157, hq-159, hq-162, hq-163, hq-164, hq-165, hq-168, hq-173, hq-174
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_13@14-07-2026_01-28-56.jpg; ChatExport_2026-07-14/photos/photo_14@14-07-2026_01-29-16.jpg; ChatExport_2026-07-13/photos/photo_49@31-10-2025_12-36-10.jpg; ChatExport_2026-07-13/photos/photo_58@08-11-2025_01-03-00.jpg
+- **Studio图：** ../output/merveilleux-studio-44/17-*.png
+
+## 18. Intensive Restoration Sérum｜优越修复精华
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM298
+- **中文定位：** 抗敏感、消炎 · 增强皮肤免疫系统 · 重整及修复受损皮肤
+- **English positioning:** Calms sensitivity, strengthens skin immunity, restructures and repairs damaged skin
+- **中文概述：** 专为敏感肌设计，补充免疫球蛋白，富含抗氧化、抗过敏与镇静成分，减轻泛红、降低敏感度，重整并修复受损细胞。
+- **English overview:** Concentrates powerful repair actives for sensitive skin and over-thin cuticle; its antioxidant, anti-allergic action instantly reduces redness and sensitivity, soothes and calms, restructures and repairs damaged cells and strengthens the skin's immune system.
+- **已知关键成分 / 套装组成：**
+  - Dipotassium Glycyrrhizate
+  - Allantoin
+  - Serine
+  - Asparagine
+  - Tocopherol (Vitamin E)
+- **中文功效摘要：**
+  - 即时减少泛红与敏感
+  - 舒缓镇静
+  - 重整并修复受损肌肤
+  - 抗刺激、抗炎
+  - 增强肌肤免疫力
+- **English benefit summary:**
+  - Instantly reduces redness and sensitivity
+  - Soothes and calms
+  - Restructures and repairs damaged skin
+  - Anti-irritant and anti-inflammatory
+  - Strengthens the skin's immunity
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 抗敏感、消炎
+  - 改善痘痘炎症，减少泛红
+  - 快速镇静并改善皮肤炎、红血丝等问题
+  - Benefits claim anti-inflammatory action and strengthening the skin's immune system — verify against cosmetic advertising rules before publishing.
+- **内部原始来源编号：** dm-84, dm-85, dm-86, hq-66, hq-68, hq-72
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_15@14-07-2026_01-30-59.jpg; ChatExport_2026-07-14/photos/photo_16@14-07-2026_01-31-31.jpg; ChatExport_2026-07-13/photos/photo_13@18-10-2025_13-08-23.jpg
+- **Studio图：** ../output/merveilleux-studio-44/18-*.png
+
+## 19. Intensive Restoration Treatment Silk Masque｜深层修复蚕丝面膜
+
+- **类型 / 状态：** product / available
+- **规格：** 5 pcs
+- **内部参考价：** RM178
+- **中文定位：** 屏障修复 · 炎症调理 · 稳定舒适
+- **English positioning:** Barrier repair for calm, balanced skin
+- **中文概述：** 专为敏感与受损肌肤而设的蚕丝面膜，从屏障修复 × 炎症调理双重机制入手：强效抗氧化、舒缓泛红炎症、形成肌肤保护屏障、深层修复细胞，恢复肌肤平衡状态。
+- **English overview:** A silk sheet mask designed for sensitive and damaged skin. Working through a dual barrier-repair and inflammation-calming mechanism, it forms a protective film, delivers powerful antioxidant defence and precisely repairs the skin barrier to restore balance.
+- **已知关键成分 / 套装组成：**
+  - Dipotassium Glycyrrhizate
+- **中文功效摘要：**
+  - 强效抗氧化，降低外界刺激
+  - 舒缓泛红、炎症与不适
+  - 形成肌肤保护屏障，强化防御力
+  - 深层修复细胞，提升自我修复力
+  - 恢复肌肤平衡，稳定舒适健康
+- **English benefit summary:**
+  - Powerful antioxidant defence
+  - Soothes redness, inflammation and discomfort
+  - Forms a protective barrier and strengthens defence
+  - Deeply repairs cells and boosts self-repair
+  - Restores balance for stable, comfortable, healthy skin
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 舒缓泛红、炎症与不适反应
+  - 适用于：敏感肌｜炎症肌｜屏障受损肌
+- **内部原始来源编号：** hq-303, manifest
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/19-*.png
+
+## 20. Medic ICE Hydro-Soothing Mask｜医用冰镇保湿退红舒缓面膜
+
+- **类型 / 状态：** product / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 医用冰镇 · 保湿退红 · 舒缓修护
+- **English positioning:** Iced calm for red, sun-stressed skin
+- **中文概述：** 全新升级冰感修护面膜，蕴含高浓度双重修复精华（尿囊素 × 维生素原B5 × 透明质酸）；20分钟冰感护理，快速退红、深层舒缓保湿，晒后即时降温安抚。
+- **English overview:** An upgraded cooling sheet mask carrying a high-concentration dual repair essence (Allantoin, Provitamin B5 and Hyaluronic Acid). Twenty minutes of icy care rapidly reduces redness, deeply soothes and hydrates, and gives instant post-sun relief.
+- **已知关键成分 / 套装组成：**
+  - Allantoin
+  - Panthenol (Provitamin B5)
+  - Sodium Hyaluronate
+  - Glycerin
+  - Scutellaria Baicalensis Extract
+  - Glycyrrhiza Glabra Root Extract
+  - Rosmarinus Officinalis Leaf Extract
+- **中文功效摘要：**
+  - 快速舒缓退红
+  - 深层舒缓保湿
+  - 晒后即时降温安抚
+  - 抗炎镇静（尿囊素 + 黄芩）
+  - 抗氧防护（光果甘草根 + 迷迭香叶）
+- **English benefit summary:**
+  - Rapidly calms redness
+  - Deep soothing hydration
+  - Instant post-sun cooling
+  - Anti-inflammatory (Allantoin and Scutellaria)
+  - Antioxidant defence (licorice root and rosemary leaf)
+- **中文用法：**
+  - 洁面后敷贴于脸部，静敷20分钟享受冰感降温护理，取下后轻拍至精华吸收。
+- **English directions:**
+  - Apply to clean skin and leave on for a 20-minute icy cooling treatment, then pat in the remaining essence.
+- **需审查的宣传措辞：**
+  - 医用冰镇保湿退红舒缓面膜
+  - 抗炎镇静：尿囊素 + 黄芩提取物，减轻红肿不适
+  - Name uses 医用 / 'Medic' (medical) — verify medical-device or therapeutic positioning before publishing.
+- **内部原始来源编号：** hq-231, hq-232, hq-233, hq-235, hq-372, hq-373, hq-374, hq-376
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_88@03-01-2026_02-15-24.jpg; ChatExport_2026-07-13/photos/photo_91@03-01-2026_02-16-02.jpg; ChatExport_2026-07-13/photos/photo_159@07-07-2026_12-10-22.jpg
+- **Studio图：** ../output/merveilleux-studio-44/20-*.png
+
+## 21. Medic-Restore Gel｜医学修复凝胶
+
+- **类型 / 状态：** product / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 消炎 × 修复 × 稳定
+- **English positioning:** Soothe inflammation, repair and stabilise reactive skin
+- **中文概述：** 医学级修复凝胶，专为缓解炎症、抗菌止痒、抗氧化、抑制过敏反应及修护脆弱肌肤屏障而研制；蕴含苦参碱、蒲公英、夏枯草与蔓生百部等植物精萃，结合烟酰胺强化肌肤防御力，适用于医美术后、敏感或痘痘肌。
+- **English overview:** A medical-grade restorative formula developed to relieve inflammation, provide antibacterial and anti-itch benefits, deliver antioxidant protection, suppress allergic reactions and repair weakened skin barriers; infused with Matrine, Taraxacum, Prunella Vulgaris and Stemona botanical extracts plus Niacinamide.
+- **已知关键成分 / 套装组成：**
+  - Aqua
+  - Bifida Ferment Lysate
+  - Glycerin
+  - Daucus Carota Sativa (Carrot) Root Extract
+  - Centella Asiatica Extract
+  - Portulaca Oleracea Extract
+  - Lophatherum Gracile Leaf/Stem Extract
+  - Cnidium Monnieri Fruit Extract
+  - Diatomaceous Earth
+  - Kochia Scoparia Fruit Extract
+  - Andrographis Paniculata Extract
+  - Kaolin
+  - Ethylhexylglycerin
+- **中文功效摘要：**
+  - 舒缓炎症、泛红与不适
+  - 抗菌止痒
+  - 抗氧化、抗过敏
+  - 强化肌肤防御力，促进修复再生
+  - 适合医美术后与敏感/痘痘肌
+- **English benefit summary:**
+  - Calms inflammation, redness & discomfort
+  - Antibacterial & anti-itch
+  - Antioxidant & anti-allergic
+  - Strengthens skin defence & promotes regeneration
+  - Suited to post-procedure and sensitive / acne skin
+- **中文用法：**
+  - 局部点涂于发炎、痘痘、堵塞、脓包、红肿区域
+  - 白天局部点涂5–6次
+  - 晚上睡前厚敷在发炎位置
+- **English directions:**
+  - Dab on inflamed areas, pimples, congestion, pustules and redness
+  - By day, spot-apply 5–6 times
+  - At night, apply a thick layer over inflamed areas before bed
+- **需审查的宣传措辞：**
+  - 医学级修复配方，专为缓解炎症、抗菌止痒、抗氧化、抑制过敏反应
+  - 适用于医美术后、敏感或痘痘肌
+  - 强效消炎，深层修复，加速皮肤疗愈
+  - 治疗痘痘脸
+  - REVIEW: 'medical-grade', antibacterial, post-aesthetic recovery and acne-treatment claims are strong therapeutic claims — admin to verify before publishing.
+- **内部原始来源编号：** hq-295, hq-296, hq-297, hq-300, hq-307, hq-308, hq-309, hq-310, hq-311, hq-333, hq-334, hq-335, hq-336, hq-337
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_118@23-03-2026_04-11-46.jpg; ChatExport_2026-07-13/photos/photo_120@06-04-2026_11-35-38.jpg; ChatExport_2026-07-13/photos/photo_130@27-05-2026_19-41-38.jpg
+- **Studio图：** ../output/merveilleux-studio-44/21-*.png
+
+## 22. Micellaire Solution｜净颜卸妆水
+
+- **类型 / 状态：** product / available
+- **规格：** 100 ml
+- **内部参考价：** RM128
+- **中文定位：** 温和、不刺激卸妆 · 细护肤 · 深养护
+- **English positioning:** Oil-free micellar water that lifts make-up gently
+- **中文概述：** 内含玫瑰花提取物，迅速彻底卸妆的同时保湿肌肤，清爽无油直达肌底带走彩妆污垢，温和呵护并注入天然养分。
+- **English overview:** A refreshing, oil-free micellar water with rose flower extract that reaches deep to lift away make-up and grime while delivering delicate, moisturising care and natural nutrients.
+- **已知关键成分 / 套装组成：**
+  - Rosa Rugosa Flower Extract
+  - PEG-6 Caprylic/Capric Glycerides
+- **中文功效摘要：**
+  - 快速彻底卸妆
+  - 温和护肤，注入天然养分
+  - 深层补水锁水
+- **English benefit summary:**
+  - Quick, thorough make-up removal
+  - Delicate skincare with natural nutrients
+  - Deep hydration with moisture-locking factors
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-69, dm-70, dm-71
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_5@14-07-2026_01-17-58.jpg; ChatExport_2026-07-14/photos/photo_6@14-07-2026_01-18-11.jpg
+- **Studio图：** ../output/merveilleux-studio-44/22-*.png
+
+## 23. Micro Nano Mist｜细胞能量微小纳米喷雾
+
+- **类型 / 状态：** product / available
+- **规格：** 100 ml
+- **内部参考价：** RM138
+- **中文定位：** 细胞微小纳米水 · 小分子团水 · 帮助细胞充盈
+- **English positioning:** Nano-water technology for deep-cell hydration
+- **中文概述：** 凭借纳米分子科技将水分子微米化至3–5个分子，直达肌底实现“超渗水”深层补给，唤醒疲惫肌肤、注入能量，促进角质层修复、平衡微生态、维持屏障稳定。
+- **English overview:** A hydrating concentrate using micro-nano water technology to drive nano-sized water molecules (3–5 molecule clusters) deep into skin cells, repairing the cuticle, balancing the microbiome and stabilising the skin barrier.
+- **已知关键成分 / 套装组成：**
+  - Aqua
+  - Hamamelis Virginiana (Witch Hazel) Water
+  - Glycyrrhiza Glabra (Licorice) Root Water
+- **中文功效摘要：**
+  - 修复并强化肌肤屏障
+  - 细致毛孔、改善肤质
+  - 唤醒暗沉肌、促进吸收
+  - 舒缓敏感、镇静刺激
+  - 缓解干燥、紧绷、脱皮
+  - 平衡水油与pH值
+- **English benefit summary:**
+  - Repairs and strengthens the barrier
+  - Refines pores and improves texture
+  - Wakes dull skin and boosts absorption
+  - Soothes and calms sensitivity
+  - Relieves dryness, tightness and flaking
+  - Balances oil, water and pH
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-72, dm-73, dm-74, hq-180, hq-181, hq-183, hq-184, hq-185, hq-216, hq-326
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_7@14-07-2026_01-19-38.jpg; ChatExport_2026-07-14/photos/photo_8@14-07-2026_01-19-49.jpg; ChatExport_2026-07-13/photos/photo_62@21-11-2025_03-11-31.jpg; ChatExport_2026-07-13/photos/photo_64@22-11-2025_19-55-04.jpg
+- **Studio图：** ../output/merveilleux-studio-44/23-*.png
+
+## 24. O₂ Clear Bubble Mask｜O₂ 净化泡泡面膜
+
+- **类型 / 状态：** product / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 自动起泡 · 毛孔深净 · 舒缓疗愈
+- **English positioning:** Self-foaming deep-cleanse that purifies pores and soothes
+- **中文概述：** 蕴含天然活性成分，自动起泡深层净化毛孔、吸附多余油脂，温和溶解毛孔内堆积物；快速镇静泛红、改善炎症，修护敏感肌屏障，同时淡化暗沉与疲倦感，令肌肤细嫩透亮。
+- **English overview:** Natural actives purify pores, absorb excess oil and provide antibacterial, anti-inflammatory care; a self-foaming, oil-dissolving mask that gently melts pore build-up, calms redness, repairs the sensitive barrier and brightens dull, tired skin.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 起泡深洁，净化毛孔垃圾
+  - 舒缓镇定炎症肌肤
+  - 焕亮暗沉、改善粗糙
+  - 强韧屏障，防御敏感刺激
+  - 提升后续保养渗透力
+- **English benefit summary:**
+  - Foaming deep-clean of pore debris
+  - Soothes & calms inflamed skin
+  - Brightens dullness & roughness
+  - Strengthens the barrier against sensitivity
+  - Preps skin so later steps absorb better
+- **中文用法：**
+  - 深层净化后建议搭配舒缓或保湿型面膜使用
+- **English directions:**
+  - After deep-cleansing, follow with a soothing or hydrating mask.
+- **需审查的宣传措辞：**
+  - 具净化毛孔、吸附油脂、抗菌消炎的功效
+  - 可针对毛囊初期角化症
+  - 淡化肌肤暗沉与疲倦感，肌肤由内而外焕发自然细嫩白皙
+  - REVIEW: antibacterial / anti-inflammatory and follicular-keratosis (毛囊角化症) claims are therapeutic — admin to verify before publishing.
+- **内部原始来源编号：** hq-292
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/24-*.png
+
+## 25. Oxy-Bright Sérum｜美白精华
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM308
+- **中文定位：** 净白、光亮 · 强效抗氧化 · 密集含氧和活性成分
+- **English positioning:** Intensive oxygenation for a long-lasting brighter tone
+- **中文概述：** 理想的持久美白效果，促进新陈代谢，密集含氧，以卡姆果提取物等活性成分激发肌肤赋活机能。
+- **English overview:** Delivers a long-lasting brightening effect, boosting skin metabolism with intensive oxygenation and revitalising skin with actives such as Camu Camu extract.
+- **已知关键成分 / 套装组成：**
+  - Camu Camu Extract
+  - Beet Root
+  - Honey
+  - White Mulberry
+  - Chamomile
+  - Vitamin A Acetate
+  - Vitamin E Acetate
+  - Provitamin B5
+  - Coenzyme Q10
+  - Olive Oil
+- **中文功效摘要：**
+  - 改善肤质
+  - 减少暗沉与粗糙
+  - 均匀肤色
+  - 增强细胞免疫力
+  - 抗衰老抗氧化
+- **English benefit summary:**
+  - Improves texture
+  - Reduces dullness & roughness
+  - Evens skin tone
+  - Strengthens cell immunity
+  - Anti-ageing & antioxidant
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 净白、光亮
+  - 有助于增强皮肤细胞的免疫力、抗衰老、抗氧化和抗菌
+  - Benefit 'strengthens cell immunity' / antibacterial claim is therapeutic — verify and tone down before publishing.
+- **内部原始来源编号：** dm-96, dm-97, dm-98
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_23@14-07-2026_02-08-56.jpg; ChatExport_2026-07-14/photos/photo_24@14-07-2026_02-10-25.jpg
+- **Studio图：** ../output/merveilleux-studio-44/25-*.png
+
+## 26. Pimples Trial Set｜祛痘体验套装
+
+- **类型 / 状态：** bundle / available
+- **规格：** 3 items
+- **内部参考价：** RM260
+- **中文定位：** 痘痘易爆痘肌的祛痘体验套装
+- **English positioning:** A trial set for acne-prone, breakout skin
+- **中文概述：** 专为痘痘、易爆痘肌打造的祛痘体验套装。内含优越修复精华 10ml、祛痘精华 5ml、小分子玻尿酸精华 10ml。
+- **English overview:** A trial set for acne-prone, breakout skin. Includes Intensive Restoration Sérum 10 ml, Blemish Serum 5 ml and Hydro-Sensi Concentré 10 ml.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 内含优越修复精华 10ml
+  - 内含祛痘精华 5ml
+  - 内含小分子玻尿酸精华 10ml
+  - 体验装，适合痘痘、易爆痘肌
+- **English benefit summary:**
+  - Includes Intensive Restoration Sérum 10 ml
+  - Includes Blemish Serum 5 ml
+  - Includes Hydro-Sensi Concentré 10 ml
+  - Trial sizes for acne-prone, breakout skin
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** manifest
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/26-*.png
+
+## 27. PlantCell Salon Treatment｜PlantCell 双安瓶沙龙护理
+
+- **类型 / 状态：** treatment / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 美白 + 补水双安瓶护理
+- **English positioning:** A double-ampoule salon facial for brighter, dewier skin
+- **中文概述：** PlantCell 沙龙专业双安瓶护理（美白安瓶 + 补水安瓶）搭配医用冰膜，明显改善色素不均、平滑肤质、提升光泽——护理前后可见肌肤更白皙、细腻、透亮。
+- **English overview:** A professional double-ampoule salon facial (whitening ampoule + hydrating ampoule) paired with a Medic Ice mask that visibly evens pigmentation, smooths texture and boosts radiance — before-and-after shows brighter, finer, more luminous skin.
+- **已知关键成分 / 套装组成：**
+  - Whitening Ampoules
+  - Hydrating Ampoules
+  - Medic Ice Mask
+- **中文功效摘要：**
+  - 提亮肤色，改善色素不均
+  - 平滑细致肤质
+  - 深层补水
+  - 提升光泽感
+  - 专业双安瓶护理程序
+- **English benefit summary:**
+  - Brightens and evens pigmentation
+  - Smooths and refines texture
+  - Deeply hydrates
+  - Boosts luminosity
+  - Professional double-ampoule protocol
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 护理后色素明显改善
+  - REVIEW: 'visibly improves and evens pigmentation' — anti-pigmentation efficacy claim needs substantiation
+- **内部原始来源编号：** hq-179, hq-341, hq-342, hq-361, hq-362, hq-363
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_133@07-07-2026_11-02-10.jpg; ChatExport_2026-07-13/photos/photo_151@07-07-2026_12-06-31.jpg
+- **Studio图：** ../output/merveilleux-studio-44/27-*.png
+
+## 28. Pore Refining Sérum｜消炎抗痘精华
+
+- **类型 / 状态：** product / available
+- **规格：** 15 ml
+- **内部参考价：** RM168
+- **中文定位：** 疏通毛孔 · 净化毛孔 · 软化顽固堵塞型痘痘
+- **English positioning:** Unclogs pores and calms stubborn blemishes
+- **中文概述：** 专为痘痘与油性肌研发，蕴含收敛活性成分，软化消炎顽固堵塞型痘痘，收敛毛孔、去除黑白头，平衡油脂、抑制细菌，并促进再生修护受损肌肤。
+- **English overview:** An ideal pick for acne and oily-prone skin, rich in astringent actives that reduce congested pores, remove blackheads and whiteheads, calm inflammation and restore damaged skin by stimulating regeneration and pore refinement.
+- **已知关键成分 / 套装组成：**
+  - Sophora Angustifolia Root Extract
+  - Phellodendron Amurense Bark Extract
+  - Azadirachta Indica Leaf Extract
+  - Centella Asiatica Root Extract
+  - Rehmannia Chinensis Root Extract
+- **中文功效摘要：**
+  - 疏通毛孔，清除黑白头
+  - 消炎抗菌，抑制痘痘滋生
+  - 加速代谢，细致毛孔
+  - 平衡油脂分泌
+  - 修护受损肌肤
+- **English benefit summary:**
+  - Clears clogged pores, blackheads & whiteheads
+  - Anti-inflammatory, curbs acne bacteria
+  - Speeds metabolism & refines pore texture
+  - Balances sebum
+  - Repairs damaged tissue
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 消炎抗菌，减少细菌滋生
+  - 消除闭口粉刺、黑头、白头
+  - 预防暗疮与痘痘生成
+  - REVIEW: benefits assert anti-inflammatory / anti-bacterial acne action — confirm permissible cosmetic wording before publishing.
+- **内部原始来源编号：** dm-93, dm-94, dm-95
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_21@14-07-2026_01-43-55.jpg; ChatExport_2026-07-14/photos/photo_22@14-07-2026_01-44-12.jpg
+- **Studio图：** ../output/merveilleux-studio-44/28-*.png
+
+## 29. Refined HA UV Shield SPF 35｜肤色保湿防晒
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM188
+- **中文定位：** 外防晒内补水 · 自然粉肤色 · 清爽自然光感
+- **English positioning:** Broad-spectrum SPF 35 with all-day hydration
+- **中文概述：** 富含北美金缕梅水和透明质酸的日常防晒，保护肌肤免受有害紫外线（UVA & UVB）伤害，质地清爽不油腻、轻盈。
+- **English overview:** A daily broad-spectrum sunscreen rich in Witch Hazel water and hyaluronic acid that protects against harmful UVA and UVB rays, with a non-greasy, lightweight feel.
+- **已知关键成分 / 套装组成：**
+  - Aqua
+  - Sodium Hyaluronate
+  - Hamamelis Virginiana (Witch Hazel) Water
+  - Glycerin
+  - Trioctyldodecyl Citrate
+  - Dicaprylyl Carbonate
+  - Dimethicone Crosspolymer
+  - Neopentyl Glycol
+  - Sodium Chloride
+  - Titanium Dioxide
+- **中文功效摘要：**
+  - 广谱防护UVA/UVB
+  - 防止水分流失，长达12小时保湿
+  - 预防色素沉淀与皱纹
+  - 肌肤平滑，呈现年轻光感
+- **English benefit summary:**
+  - Broad-spectrum UVA/UVB protection
+  - Prevents dehydration, up to 12h moisture
+  - Prevents pigmentation and wrinkles
+  - Smooth, youthful finish
+- **中文用法：**
+  - 于爽肤水与乳霜后，均匀涂抹于脸部与颈部至吸收。
+  - 每天早上出门前20分钟使用。
+  - 每2–3小时补涂一次。
+- **English directions:**
+  - After toner and moisturiser, apply evenly to face and neck until absorbed.
+  - Use every morning, 20 minutes before outdoor activity.
+  - Reapply every 2–3 hours.
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-125, dm-126, dm-127
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_42@14-07-2026_03-30-20.jpg; ChatExport_2026-07-14/photos/photo_43@14-07-2026_03-32-54.jpg
+- **Studio图：** ../output/merveilleux-studio-44/29-*.png
+
+## 30. Refined Hydro-Care｜舒缓镇静乳霜
+
+- **类型 / 状态：** product / available
+- **规格：** 50 ml
+- **内部参考价：** RM248
+- **中文定位：** 温和补水 · 清爽不油腻
+- **English positioning:** Gentle plant-peptide cream that soothes and repairs
+- **中文概述：** 含天然植物提取物、燕麦胜肽与玻尿酸，帮助修复肌肤细胞；温和适合任何肤质，提供舒缓、镇静、修复受损肌肤，深层渗透至肌底层，保持水分，预防脱水。
+- **English overview:** Contains natural plant extracts, oat peptides and hyaluronic acid that support skin-cell repair; gentle and suitable for all skin types, it soothes, calms and rebuilds damaged skin while maintaining moisture.
+- **已知关键成分 / 套装组成：**
+  - Aqua
+  - Sodium Hyaluronate
+  - Aloe Barbadensis Extract
+  - Cucumis Sativus (Cucumber) Extract
+- **中文功效摘要：**
+  - 重建并修复肌肤细胞
+  - 降低敏感度
+  - 缓解干燥、瘙痒与炎症
+- **English benefit summary:**
+  - Rebuilds and repairs skin cells
+  - Reduces sensitivity
+  - Relieves dryness, itchiness and inflammation
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-110, dm-111, dm-112
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_32@14-07-2026_03-24-21.jpg; ChatExport_2026-07-14/photos/photo_33@14-07-2026_03-24-40.jpg
+- **Studio图：** ../output/merveilleux-studio-44/30-*.png
+
+## 31. Repair Treatment Oil｜修复精华油
+
+- **类型 / 状态：** product / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 抗敏抗炎 · 保湿润肤 · 抗衰老
+- **English positioning:** Deep-sea lipid oil that repairs, nourishes and firms
+- **中文概述：** 以深海鱼乳蛋油为核心，快速修复未愈合肌肤、抗敏抗炎，深层保湿润肤、增加弹性；质地细腻亮泽、渗透力高，补充肌肤胆固醇，显著淡化皱纹、紧致熟龄肌。
+- **English overview:** A deep-sea fish-roe lipid oil that rapidly repairs unhealed skin, calms allergy and inflammation, moisturises and firms; its rich texture and high penetration leave a breathable moisturising film, replenishing skin cholesterol to visibly smooth wrinkles and firm mature skin.
+- **已知关键成分 / 套装组成：**
+  - Deep-Sea Fish Roe Lipid Oil
+- **中文功效摘要：**
+  - 快速修复受损、未愈合肌肤
+  - 抗敏抗炎
+  - 深层保湿润肤
+  - 提升弹性与紧致度
+  - 强效抗衰老，淡化皱纹
+- **English benefit summary:**
+  - Speeds repair of damaged, unhealed skin
+  - Anti-allergy & anti-inflammatory
+  - Deeply moisturises & softens
+  - Boosts elasticity & firmness
+  - Powerful anti-ageing, smooths wrinkles
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 快速修复皮肤未愈合伤口、抗敏抗炎
+  - 强效抗衰老
+  - 抗皱效果非常显著
+  - REVIEW: 'rapidly repairs unhealed wounds' and anti-inflammatory claims are strong therapeutic claims — admin to verify before publishing.
+- **内部原始来源编号：** hq-262, hq-263
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_104@08-01-2026_02-15-33.jpg
+- **Studio图：** ../output/merveilleux-studio-44/31-*.png
+
+## 32. Repairing + Hydrating Trial Set｜修复补水体验套装
+
+- **类型 / 状态：** bundle / available
+- **规格：** 3 items
+- **内部参考价：** RM288
+- **中文定位：** 敏感缺水肌的修复补水三件套
+- **English positioning:** A repair-and-hydrate trio for sensitive, dehydrated skin
+- **中文概述：** 专为敏感缺水肌打造的修复补水体验三件套。内含优越修复精华 10ml、小分子玻尿酸精华 10ml、大分子玻尿酸精华 10ml。
+- **English overview:** A repair-and-hydrate trial trio for sensitive, dehydrated skin. Includes Intensive Restoration Sérum 10 ml, Hydro-Sensi Concentré 10 ml and Hydro-Moist Sérum 10 ml.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 内含优越修复精华 10ml
+  - 内含小分子玻尿酸精华 10ml
+  - 内含大分子玻尿酸精华 10ml
+  - 体验装，修复并深层补水敏感肌
+- **English benefit summary:**
+  - Includes Intensive Restoration Sérum 10 ml
+  - Includes Hydro-Sensi Concentré 10 ml
+  - Includes Hydro-Moist Sérum 10 ml
+  - Trial sizes to repair and deeply hydrate sensitive skin
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** manifest
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/32-*.png
+
+## 33. Revitalise Anti-Oxidant Crème｜抗老修复面霜
+
+- **类型 / 状态：** product / available
+- **规格：** 30 g
+- **内部参考价：** RM278
+- **中文定位：** 锁水保湿 · 饱满丰润 · 质地细腻不厚重
+- **English positioning:** Locks in moisture for plump, firm, radiant skin
+- **中文概述：** 内含六胜肽-8，补充肌肤流失的胶原蛋白，修复断裂老化的弹力纤维网，填补局部塌陷，改善松弛。
+- **English overview:** Enriched with Hexapeptide-8 to restore lost collagen, repair the aged elastin network and support the collagen and elastin levels that lift sagging skin.
+- **已知关键成分 / 套装组成：**
+  - Astaxanthin
+  - Hexapeptide-8
+  - Haematococcus Pluvialis Extract
+  - Sodium Hyaluronate
+  - Yeast Beta-Glucan
+- **中文功效摘要：**
+  - 强效保湿防护
+  - 抗衰老，紧致饱满丰润
+  - 质地细腻不厚重，润而不油
+  - 提亮肤色
+- **English benefit summary:**
+  - High moisture retention
+  - Anti-ageing, plumps & firms
+  - Lightweight, non-greasy, fast-absorbing
+  - Brightens tone
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-107, dm-108, dm-109, hq-322
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_30@14-07-2026_03-23-08.jpg; ChatExport_2026-07-14/photos/photo_31@14-07-2026_03-23-21.jpg
+- **Studio图：** ../output/merveilleux-studio-44/33-*.png
+
+## 34. Revitalise Anti-Oxidant Essence｜抗氧化精华
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM258
+- **中文定位：** 增加皮肤饱满度 · 保湿&自然光泽 · 质地细腻柔滑
+- **English positioning:** Plumps, hydrates and restores a natural glow
+- **中文概述：** 内含六胜肽-8，补充肌肤流失的胶原蛋白，修复断裂老化的弹力纤维网，避免松弛与弹性流失，改善衰老，驻颜新生。
+- **English overview:** Enriched with Hexapeptide-8 to replenish collagen, repair the aged elastin network and prevent sagging and elastosis, addressing visible signs of ageing for a revived, radiant look.
+- **已知关键成分 / 套装组成：**
+  - Astaxanthin
+  - Hexapeptide-8
+  - Dipotassium Glycyrrhizate
+  - Sodium Hyaluronate
+  - Haematococcus Pluvialis Extract
+- **中文功效摘要：**
+  - 补充流失胶原蛋白
+  - 防止松弛与弹性流失
+  - 改善衰老迹象
+  - 驻颜焕发光泽
+- **English benefit summary:**
+  - Replenishes collagen
+  - Prevents sagging & elastosis
+  - Addresses signs of ageing
+  - Restores radiance
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-101, dm-102, dm-103, hq-322
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_26@14-07-2026_02-18-38.jpg; ChatExport_2026-07-14/photos/photo_27@14-07-2026_02-19-01.jpg
+- **Studio图：** ../output/merveilleux-studio-44/34-*.png
+
+## 35. Revitalise Anti-Oxidant Sérum｜抗老化精华
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM258
+- **中文定位：** 促进弹性纤维网 · 增强紧致度 · 改善松弛垮脸
+- **English positioning:** Restructures collagen, firms skin and softens sagging
+- **中文概述：** 内含六胜肽-8，快速打开肌肤水通道，重新组织胶原弹力，增加弹力蛋白活性，补充胶原蛋白，深层保湿，抗皱紧致抗老。
+- **English overview:** A high-concentration antioxidant sérum with Hexapeptide-8 that quickly penetrates the epidermis, restructures collagen and elastin, boosts elastin activity and deeply moisturises to firm and renew.
+- **已知关键成分 / 套装组成：**
+  - Astaxanthin
+  - Hexapeptide-8
+  - Dipotassium Glycyrrhizate
+  - Sodium Hyaluronate
+  - Jojoba Esters
+- **中文功效摘要：**
+  - 注入并重组胶原弹力
+  - 紧致平滑，淡化皱纹
+  - 深层保湿
+  - 焕发新生光泽
+- **English benefit summary:**
+  - Infuses & restructures collagen
+  - Firms & smooths wrinkles
+  - Deeply hydrates
+  - Revives radiance
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-104, dm-105, dm-106, hq-322
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_28@14-07-2026_02-44-43.jpg; ChatExport_2026-07-14/photos/photo_29@14-07-2026_02-45-05.jpg
+- **Studio图：** ../output/merveilleux-studio-44/35-*.png
+
+## 36. Essence Oil — Rose + Rosemary Leaf｜玫瑰迷迭香精油
+
+- **类型 / 状态：** product / available
+- **规格：** 20 ml
+- **内部参考价：** RM218
+- **中文定位：** 轻盈不油腻 · 抑制AGS形成 · 光滑弹润细腻
+- **English positioning:** Lightweight anti-glycation oil for smooth, supple skin
+- **中文概述：** 精油帮助锁住营养，加强滋润与柔嫩，令肌肤更有光泽；双重天然强效抗氧化剂，抑制AGEs形成，抗糖祛黄，改善粗糙，细嫩肌肤。
+- **English overview:** A luxurious blend of plant oils that locks in nutrients and boosts nourishment and softness for a radiant glow; a dual natural antioxidant that inhibits AGEs formation (anti-glycation), dispels sallowness and refines rough skin.
+- **已知关键成分 / 套装组成：**
+  - Olea Europaea (Olive) Fruit Oil
+  - Rosa Rugosa Flower Oil
+  - Rosmarinus Officinalis (Rosemary) Leaf Oil
+  - Tocopheryl Acetate
+- **中文功效摘要：**
+  - 锁住营养与水分
+  - 抗糖化抗氧化
+  - 祛除暗黄
+  - 软化粗糙肌肤
+  - 增添光泽
+- **English benefit summary:**
+  - Locks in nutrients & moisture
+  - Anti-glycation antioxidant
+  - Dispels sallowness
+  - Softens rough skin
+  - Adds radiance
+- **中文用法：**
+  - 护理最后一步，帮助锁住营养与滋润
+- **English directions:**
+  - As the final step of your routine, apply to lock in nutrients and moisture.
+- **需审查的宣传措辞：**
+  - 提供抗糖化，同时加强皮肤屏障，减少皮肤发炎的机会
+- **内部原始来源编号：** dm-99, dm-100, hq-322
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_25@14-07-2026_02-16-31.jpg
+- **Studio图：** ../output/merveilleux-studio-44/36-*.png
+
+## 37. Soothing Gel Mask｜舒缓修复凝胶膜
+
+- **类型 / 状态：** product / available
+- **规格：** 50 ml
+- **内部参考价：** RM158
+- **中文定位：** 降温舒缓 · 镇定补水 · 稳定肤况
+- **English positioning:** Cooling gel mask that calms, hydrates and steadies skin
+- **中文概述：** 融合黄瓜、海藻与芦荟等植萃的升级配方，快速为肌肤降温、舒缓与补水；特别适合敏感、发炎、易堵塞与不稳定肌肤，先让皮肤稳定下来，后续精华修复品才能更好渗透，效果加倍。
+- **English overview:** An improved formula of cucumber, algae and aloe vera extracts that delivers multi-layer hydration and soothing; it rapidly cools, calms and hydrates — ideal for sensitive, inflamed, congestion-prone and unstable skin.
+- **已知关键成分 / 套装组成：**
+  - Cucumber Extract
+  - Algae Extract
+  - Glycerin
+  - Aloe Vera Extract
+  - Deionised Water
+  - Butylene Glycol
+- **中文功效摘要：**
+  - 快速降温镇定
+  - 多层次补水
+  - 舒缓炎症、细致肤质
+  - 均匀提亮肤色
+  - 稳定肌肤，提升后续吸收
+- **English benefit summary:**
+  - Rapidly cools & calms
+  - Multi-layer hydration
+  - Relieves inflammation & refines texture
+  - Evens & brightens tone
+  - Preps skin so later steps absorb better
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 特别适合敏感、发炎、容易堵塞和不稳定的皮肤
+  - 对于有炎症、痘印的顾客，也能更快地淡化
+- **内部原始来源编号：** hq-326, hq-328, hq-329
+- **原始照片记录：** ChatExport_2026-07-13/photos/photo_129@22-05-2026_01-16-50.jpg
+- **Studio图：** ../output/merveilleux-studio-44/37-*.png
+
+## 38. Ultrafine Cleansing Gel｜精华蜜状洁面凝胶
+
+- **类型 / 状态：** product / available
+- **规格：** 150 ml
+- **内部参考价：** RM158
+- **中文定位：** 细密小分子泡沫 · 双重氨基酸 · 保护皮脂膜
+- **English positioning:** Honey-soft foam that cleanses without stripping
+- **中文概述：** 精华蜜状洁面，绵密细腻泡沫，轻松深入毛孔，带走油脂污垢；洗后干净清爽，不拔干不紧绷，肌肤舒缓水润。
+- **English overview:** A mild, gentle honey-textured cleansing gel with dense, soft foam that penetrates pores to lift dirt without over-cleansing, leaving skin soothed, hydrated and never tight or dry.
+- **已知关键成分 / 套装组成：**
+  - Amino Acids (dual complex)
+  - Glycyrrhiza Glabra (Licorice) Root Extract
+  - Scutellaria Baicalensis Root Extract
+  - Polygonum Cuspidatum Root Extract
+  - Chamomilla Recutita (Matricaria) Flower Extract
+- **中文功效摘要：**
+  - 维持肌肤天然pH值并减少多余皮脂
+  - 防止皮肤干燥脱水
+  - 修护受损肌肤屏障
+  - 肌肤柔软丝滑
+- **English benefit summary:**
+  - Maintains natural pH and reduces sebum
+  - Prevents dryness while moisturising
+  - Protects and repairs the skin barrier
+  - Leaves skin supple and silky
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 多种天然成分…具有抗氧化、抗菌、抗炎的效果
+- **内部原始来源编号：** dm-66, dm-67, dm-68
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_3@14-07-2026_01-16-18.jpg; ChatExport_2026-07-14/photos/photo_4@14-07-2026_01-16-33.jpg
+- **Studio图：** ../output/merveilleux-studio-44/38-*.png
+
+## 39. UV Protection SPF35/PA+++｜轻盈保湿防晒
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM178
+- **中文定位：** 素颜乳效果 · 清爽透气 · 透嫩白皙
+- **English positioning:** Weightless dry-touch daily UV defence
+- **中文概述：** 采用干触技术（Dry Touch）配制，质地不油腻、超轻盈；有效保护肌肤免受紫外线与氧化压力损伤，同时促进细胞生长与更新。
+- **English overview:** An ultra-lightweight, non-greasy sunscreen with dry-touch technology that shields skin from harmful UVA and UVB radiation and oxidative stress while promoting cell growth and renewal.
+- **已知关键成分 / 套装组成：**
+  - Aqua
+  - Hyaluronic Acid
+  - Microcrystalline Silica
+  - Cyclopentasiloxane
+  - Micro Titanium Dioxide
+  - Sodium Chloride
+- **中文功效摘要：**
+  - 广谱防护UVA/UVB
+  - 抵御氧化压力损伤
+  - 促进细胞更新
+  - 干触轻盈，清爽不油腻
+- **English benefit summary:**
+  - Broad-spectrum UVA/UVB defence
+  - Guards against oxidative stress
+  - Promotes cell renewal
+  - Weightless, dry-touch and non-greasy
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 透嫩白皙
+- **内部原始来源编号：** dm-122, dm-123, dm-124
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_40@14-07-2026_03-29-18.jpg; ChatExport_2026-07-14/photos/photo_41@14-07-2026_03-29-27.jpg
+- **Studio图：** ../output/merveilleux-studio-44/39-*.png
+
+## 40. Vital Perfect UV SPF30｜完美保湿防晒 SPF30
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM188
+- **中文定位：** 防晒 · 保湿 · 自然修饰肤色
+- **English positioning:** Moisturising daily UV defence
+- **中文概述：** 质地如清爽粉底液般顺滑的多效防晒，轻盈易推开，含透明质酸防止水分流失、持续为肌肤补水，同时抵御紫外线伤害。
+- **English overview:** A moisturising daily sunscreen that shields skin from UV damage while keeping it hydrated and comfortable, with a smooth, lightweight foundation-like glide.
+- **已知关键成分 / 套装组成：**
+  - Sodium Hyaluronate
+  - Microcrystalline Silica
+  - Cyclopentasiloxane
+  - Micro Titanium Dioxide
+  - Sodium Chloride
+- **中文功效摘要：**
+  - 广谱UV防护
+  - 保湿舒适不干燥
+  - 自然修饰肤色
+  - 清爽轻盈不厚重
+- **English benefit summary:**
+  - Broad-spectrum UV protection
+  - Keeps skin hydrated and comfortable
+  - Naturally perfects skin tone
+  - Lightweight, non-greasy finish
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 待品牌方/包装背标确认
+- **内部原始来源编号：** dm-128, dm-129, dm-130
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_44@14-07-2026_03-33-41.jpg; ChatExport_2026-07-14/photos/photo_45@14-07-2026_03-34-03.jpg
+- **Studio图：** ../output/merveilleux-studio-44/40-*.png
+
+## 41. Whitening Stem Cell｜亮白干细胞精华
+
+- **类型 / 状态：** product / available
+- **规格：** 待确认
+- **内部参考价：** 待确认
+- **中文定位：** 夜间使用 · 亮白 · 淡化色斑
+- **English positioning:** Night serum that brightens and fades dark spots
+- **中文概述：** 夜间专用的亮白干细胞精华，趁肌肤黄金修复期活化皮肤干细胞、提升再生能力，强效分解黑色素，美白细嫩、淡化色斑，令肤质细腻光滑。
+- **English overview:** A night serum that activates the skin's own stem cells to raise regenerative power, powerfully breaks down melanin and whitens for a fine, smooth, even complexion with fewer dark spots. For night use only.
+- **已知关键成分 / 套装组成：**
+  - 待品牌方/包装背标确认
+- **中文功效摘要：**
+  - 活化皮肤干细胞，提升再生力
+  - 强效分解黑色素
+  - 美白淡斑
+  - 细腻光滑肤质
+  - 夜间使用
+- **English benefit summary:**
+  - Activates skin stem cells & renewal
+  - Powerfully breaks down melanin
+  - Whitens & fades dark spots
+  - Refines & smooths skin texture
+  - For night use
+- **中文用法：**
+  - 夜间使用，护肤第二步（爽肤/补水之后）
+- **English directions:**
+  - Use at night, as the second step after toner / hydrating essence.
+- **需审查的宣传措辞：**
+  - 强效分解黑色素，美白细嫩，淡化色斑
+  - REVIEW: 'activates skin stem cells' plus melanin-breakdown / whitening claims may need substantiation before publishing.
+- **内部原始来源编号：** hq-322
+- **原始照片记录：** 缺独立包装原图
+- **Studio图：** ../output/merveilleux-studio-44/41-*.png
+
+## 42. Youth-HA Moisturiser｜美白锁水乳霜
+
+- **类型 / 状态：** product / available
+- **规格：** 30 ml
+- **内部参考价：** RM188
+- **中文定位：** 美白光泽、细腻 · 锁水保湿 · 质地干爽、不油腻
+- **English positioning:** Brightening, moisture-locking care with a dry-touch, non-greasy finish
+- **中文概述：** 含光果甘草与多种植物萃取，有效帮助皮肤美白锁水保湿，改善皮肤缺水与暗沉偏黄。
+- **English overview:** Contains a variety of active ingredients — Licorice (Glabridin) and plant extracts — that improve dryness caused by dehydration, collagen loss or ageing, whitening and locking in moisture for lasting, radiant skin.
+- **已知关键成分 / 套装组成：**
+  - Sodium Hyaluronate
+  - Niacinamide (Vitamin B3)
+  - Rosa Rugosa Flower Water
+  - Chamomilla Recutita (Matricaria) Flower Extract
+- **中文功效摘要：**
+  - 美白提亮
+  - 恢复水分平衡
+  - 促进胶原合成与弹性
+  - 淡化色素沉淀
+  - 促进肌肤更新
+- **English benefit summary:**
+  - Whitens and brightens
+  - Restores moisture balance
+  - Supports collagen synthesis and elasticity
+  - Fades pigmentation
+  - Stimulates skin renewal
+- **中文用法：**
+  - 待品牌方/包装背标确认
+- **English directions:**
+  - 待品牌方/包装背标确认
+- **需审查的宣传措辞：**
+  - 美白光泽
+  - 有效提亮肤色…改善肌肤偏黄与暗沉问题
+- **内部原始来源编号：** dm-113, dm-114, dm-115
+- **原始照片记录：** ChatExport_2026-07-14/photos/photo_34@14-07-2026_03-26-00.jpg; ChatExport_2026-07-14/photos/photo_35@14-07-2026_03-26-09.jpg
+- **Studio图：** ../output/merveilleux-studio-44/42-*.png
+
+## 43. Blemish Serum｜祛痘修复精华
+
+- **类型 / 状态：** 净痘调理产品 / 公开零售可见
+- **规格：** 15 ml；Pimples Trial Set 内有 5 ml 小样
+- **公开参考价：** RM138
+- **定位：** 针对痘痘、瑕疵与炎症肌；公开包装/零售资料描述抗炎、抗菌与修护受损肌肤等诉求。
+- **已知成分：** 新生成的Studio排版依据公开图使用 Niacinamide、Chamomile Extract，但完整 INCI 仍须包装背标确认。
+- **用法：** 现有资料不足，须品牌方提供正式说明。
+- **宣传审查：** “抗菌、抗炎、修复痘疤”等措辞需要品牌法规与证据审核。
+- **来源：** Wonderful Beauty Purifying Care 公开目录、项目套装切图、Pimples Trial Set 资料。
+- **Studio图：** ../output/merveilleux-studio-44/43-blemish-serum.png
+
+## 44. Advanced Bio Peptide Treatment｜深海胜肽胶原蛋白护理
+
+- **类型 / 状态：** 专业护理 / 内部清单有记录
+- **规格 / 价格：** 待确认
+- **定位：** 宣传资料称用于改善弹性、细纹、干燥、暗沉与粗糙观感。
+- **已知成分：** 只可确认宣传层面的深海胶原蛋白/胜肽概念；完整成分、组件和步骤均待确认。
+- **用法：** 待品牌方提供专业疗程SOP。
+- **宣传审查：** “胶原增生、细胞再生”等高强度表达不得在缺乏证据时直接发布。
+- **来源：** sku-manifest.csv 与 Merveilleux HQ / Bellesenze Beauty 公开宣传镜像。
+- **Studio图：** ../output/merveilleux-studio-44/44-advanced-bio-peptide-treatment-CONCEPT.png
