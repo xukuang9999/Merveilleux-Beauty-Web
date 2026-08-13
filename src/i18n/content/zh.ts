@@ -41,23 +41,6 @@ const zh: ContentPack = {
         "建议连续7天密集补水护理"
       ]
     },
-    "brightening-hydrating-trial-set": {
-      "name": "亮白补水体验套装",
-      "type": "套装",
-      "tagline": "暗沉堵塞肌的亮白补水三件套",
-      "description": "专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。",
-      "keyIngredients": [],
-      "contents": [
-        "美白精华 10ml",
-        "消炎抗痘精华 5ml"
-      ],
-      "benefits": [
-        "内含美白精华 10ml",
-        "内含消炎抗痘精华 5ml",
-        "第三件产品待与 Grace 确认",
-        "体验装，提亮暗沉、补水调理堵塞肌"
-      ]
-    },
     "brightening-plus-hydrating-trial-set": {
       "name": "亮白补水体验套装",
       "type": "套装",
@@ -612,24 +595,6 @@ const zh: ContentPack = {
         "强效抗衰老，淡化皱纹"
       ]
     },
-    "repairing-hydrating-trial-set": {
-      "name": "修复补水体验套装",
-      "type": "套装",
-      "tagline": "敏感缺水肌的修复补水三件套",
-      "description": "专为敏感缺水肌打造的修复补水体验三件套。内含优越修复精华 10ml、小分子玻尿酸精华 10ml、大分子玻尿酸精华 10ml。",
-      "keyIngredients": [],
-      "contents": [
-        "优越修复精华 10ml",
-        "小分子玻尿酸精华 10ml",
-        "大分子玻尿酸精华 10ml"
-      ],
-      "benefits": [
-        "内含优越修复精华 10ml",
-        "内含小分子玻尿酸精华 10ml",
-        "内含大分子玻尿酸精华 10ml",
-        "体验装，修复并深层补水敏感肌"
-      ]
-    },
     "repairing-plus-hydrating-trial-set": {
       "name": "修复补水体验套装",
       "type": "套装",
@@ -840,7 +805,7 @@ const zh: ContentPack = {
       "name": "祛痘修复精华",
       "type": "净痘调理产品",
       "tagline": "针对痘痘与瑕疵的局部护理",
-      "description": "针对活跃痘痘、瑕疵与阻塞部位的局部精华，帮助舒缓可见泛红，并支持肌肤恢复清透平稳的观感。",
+      "description": "针对活跃痘痘、瑕疵及毛孔堵塞部位的局部精华，帮助舒缓泛红，使肌肤恢复清透、稳定的状态。",
       "keyIngredients": [
         "烟酰胺",
         "洋甘菊萃取"
@@ -858,7 +823,7 @@ const zh: ContentPack = {
     "advanced-bio-peptide-treatment": {
       "name": "深海胜肽胶原蛋白护理",
       "type": "专业护理疗程",
-      "tagline": "为肌肤补水并改善紧致与细纹观感",
+      "tagline": "专业胜肽护理，改善肌肤平滑度与紧致观感",
       "description": "以胜肽与海洋胶原概念为核心的专业护理，重点改善肌肤干燥、弹性与细纹观感。实际组件、规格与沙龙操作流程仍需品牌方最终确认。",
       "keyIngredients": [
         "生物胜肽复合物",
