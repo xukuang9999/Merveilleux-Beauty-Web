@@ -116,11 +116,11 @@ export default async function ProductsPage({
                       east: d.priceEast,
                     }}
                   />
-                  {productDetails[p.slug]?.size && (
+                  {(p.sizeLabel || productDetails[p.slug]?.size) && (
                     <div>
                       <p className="eyebrow mb-1">{d.size}</p>
                       <p className="text-charcoal">
-                        {productDetails[p.slug]!.size}
+                        {p.sizeLabel || productDetails[p.slug]!.size}
                       </p>
                     </div>
                   )}

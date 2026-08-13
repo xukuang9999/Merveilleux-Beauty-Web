@@ -2,7 +2,7 @@
 // data if the database isn't reachable, and overlays the active locale's
 // translations (English is the canonical source).
 import { asc, eq } from "drizzle-orm";
-import { db } from "@/db";
+import { db, hasRemoteDb } from "@/db";
 import { products, testimonials, faqs, promotions } from "@/db/schema";
 import {
   seedProducts,
@@ -18,17 +18,9 @@ import type { Locale } from "@/i18n/config";
 import { contentPack } from "@/i18n/content";
 
 export type ProductView = Omit<SeedProduct, "sortOrder"> & {
-  category: string;
   // Retail price for East Malaysia; null until one is set, in which case
   // `priceRM` (West Malaysia) is shown on its own, unlabelled.
   priceRMEast: string | null;
-  // Extraction-pipeline columns. Absent for seed products (which get their
-  // size / steps from the productDetails map in seed-data.ts instead), so the
-  // detail page falls back to that map when these are null.
-  kind: "product" | "treatment" | "bundle" | null;
-  sizeLabel: string | null;
-  contents: string[] | null;
-  howToUse: string[] | null;
 };
 export type ArticleView = {
   slug: string;
@@ -52,8 +44,8 @@ export async function getProducts(): Promise<ProductView[]> {
   // The storefront is the seed catalogue PLUS explicitly-published DB-only
   // products, additively:
   //   1. seed-data.ts is the canonical base — every seed product has a valid
-  //      image under /products/*.jpg. A DB row with a matching slug overlays it
-  //      (admin edits win; unpublishing hides that seed product).
+  //      studio image under /products/studio/*.png. A DB row with a matching slug overlays it
+  //      (published admin edits win; unpublished drafts are ignored).
   //   2. DB rows whose slug is NOT in the seed catalogue appear only when
   //      explicitly published (published defaults to false). Unpublished /
   //      orphaned overlay rows (e.g. old SKUs removed from the seed) are
@@ -61,34 +53,35 @@ export async function getProducts(): Promise<ProductView[]> {
   const base = [...seedProducts].sort((a, b) => a.sortOrder - b.sortOrder);
 
   const edits = new Map<string, typeof products.$inferSelect>();
-  try {
-    const db_rows = await db.select().from(products);
-    for (const r of db_rows) edits.set(r.slug, r);
-  } catch {
-    // DB unreachable — render the curated catalogue as-is.
+  if (hasRemoteDb) {
+    try {
+      const db_rows = await db.select().from(products);
+      for (const r of db_rows) edits.set(r.slug, r);
+    } catch {
+      // DB unreachable — render the curated catalogue as-is.
+    }
   }
 
   const rows: ProductView[] = [];
   for (const p of base) {
-    const edit = edits.get(p.slug);
-    if (edit && !edit.published) continue; // admin hid this product
-    const src = edit ?? p;
+    const candidate = edits.get(p.slug);
+    const edit = candidate?.published ? candidate : undefined;
     rows.push({
       slug: p.slug,
-      name: src.name,
-      type: src.type,
-      tagline: src.tagline,
-      description: src.description,
-      keyIngredients: src.keyIngredients,
-      benefits: src.benefits,
-      priceRM: src.priceRM,
+      name: edit?.name || p.name,
+      type: edit?.type || p.type,
+      tagline: edit?.tagline || p.tagline,
+      description: edit?.description || p.description,
+      keyIngredients: edit?.keyIngredients ?? p.keyIngredients,
+      benefits: edit?.benefits ?? p.benefits,
+      priceRM: edit?.priceRM || p.priceRM,
       priceRMEast: edit?.priceRMEast || null,
-      graphic: src.graphic,
-      category: edit?.category ?? "",
-      kind: edit?.kind ?? null,
-      sizeLabel: edit?.sizeLabel ?? null,
-      contents: edit?.contents ?? null,
-      howToUse: edit?.howToUse ?? null,
+      graphic: edit?.graphic || p.graphic,
+      category: edit?.category || p.category,
+      kind: edit?.kind ?? p.kind,
+      sizeLabel: edit?.sizeLabel ?? p.sizeLabel,
+      contents: edit?.contents ?? p.contents,
+      howToUse: edit?.howToUse ?? p.howToUse,
     });
   }
 

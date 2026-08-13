@@ -18,13 +18,19 @@ export type SeedProduct = {
   benefits: string[];
   priceRM: string;
   graphic: string;
+  category: string;
   sortOrder: number;
+  kind: "product" | "treatment" | "bundle" | null;
+  sizeLabel: string | null;
+  contents: string[] | null;
+  howToUse: string[] | null;
 };
 
-// Demo/placeholder catalogue removed — the storefront now shows only the
-// real, admin-managed products (published DB rows). Kept as an empty base so
-// getProducts() still resolves; see src/lib/content.ts.
-export const seedProducts: SeedProduct[] = [];
+// The production-safe base catalogue is generated from the 42 extracted cards
+// plus the two manifest-only products. Published DB rows may overlay these
+// records, but a missing database or unpublished drafts can never blank the
+// public storefront.
+export { catalogueProducts as seedProducts } from "./catalogue-products";
 
 export type SeedTestimonial = {
   quote: string;
