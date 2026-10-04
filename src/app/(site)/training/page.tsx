@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Button, Container, SectionHeading, Divider } from "@/components/ui";
 import Reveal from "@/components/Reveal";
@@ -7,11 +8,9 @@ import { getCurrentUser } from "@/lib/auth";
 import { getLocale, getDict, fmt } from "@/i18n/server";
 import { localizeModule } from "@/i18n/content";
 
-export const metadata: Metadata = {
-  title: "Distributor Training Programme",
-  description:
-    "The Merveilleux Beauty distributor training programme — structured modules on brand, products, policy and SOP, each ending with a quiz, plus an AI training coach.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("training");
+}
 
 export default async function TrainingPage() {
   const [user, locale, dict] = await Promise.all([

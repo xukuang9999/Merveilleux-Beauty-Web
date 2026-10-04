@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isFeatureEnabled } from "@/lib/settings";
@@ -6,11 +7,9 @@ import Reveal from "@/components/Reveal";
 import { getTestimonials } from "@/lib/content";
 import { getDict } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Testimonials",
-  description:
-    "Real stories from Merveilleux Beauty customers and distributors across Malaysia.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("testimonials");
+}
 
 export default async function TestimonialsPage() {
   if (!(await isFeatureEnabled("testimonials"))) notFound();

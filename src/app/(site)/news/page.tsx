@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isFeatureEnabled } from "@/lib/settings";
@@ -8,11 +9,9 @@ import { getNews } from "@/lib/content";
 import { getDict, getLocale } from "@/i18n/server";
 import { site } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "News",
-  description:
-    "Skin science, new launches and real results from Mérvéilléux — straight from our Instagram @merveilleuxskincare_sbn.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("news");
+}
 
 export default async function NewsPage() {
   if (!(await isFeatureEnabled("news"))) notFound();

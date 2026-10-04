@@ -1,3 +1,4 @@
+import ConceptImageNotice from "@/components/ConceptImageNotice";
 import Link from "next/link";
 import Image from "next/image";
 import { requireUser } from "@/lib/auth";
@@ -68,6 +69,7 @@ export default async function AccountPage() {
                   className="h-auto w-full"
                 />
               </div>
+              <ConceptImageNotice graphic={p.graphic} label={dict.products.conceptImage} />
               <p className="mt-2 text-sm font-medium text-charcoal">{p.name}</p>
               <p className="text-xs text-mid">{p.priceRM}</p>
             </Link>

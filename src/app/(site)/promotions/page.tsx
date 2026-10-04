@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -8,11 +9,9 @@ import { getProducts, getPromotions } from "@/lib/content";
 import { whatsappLink } from "@/lib/data";
 import { getDict, fmt } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Promotions & Bundles",
-  description:
-    "Save with curated Merveilleux skincare sets — brightening, hydration and complete-routine bundles.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("promotions");
+}
 
 export default async function PromotionsPage() {
   if (!(await isFeatureEnabled("promotions"))) notFound();

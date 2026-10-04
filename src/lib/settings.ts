@@ -3,7 +3,7 @@
 // DB) falls back to the coded default so the public site never breaks.
 import { cache } from "react";
 import { eq } from "drizzle-orm";
-import { db } from "@/db";
+import { db, hasRemoteDb, withDbDeadline } from "@/db";
 import { featureFlags, siteSettings, siteCopy } from "@/db/schema";
 import { getLocale } from "@/i18n/server";
 
@@ -53,12 +53,12 @@ function isFeatureKey(k: string): k is FeatureKey {
   return (FEATURE_KEYS as readonly string[]).includes(k);
 }
 
-/** Resolved flags for this request (cached). DB overrides the defaults;
- *  an empty or unreachable DB yields the all-on defaults. */
+/** Resolved flags for this request (cached). DB overrides the coded defaults. */
 export const getFeatureFlags = cache(async (): Promise<FeatureFlags> => {
   const flags: FeatureFlags = { ...DEFAULTS };
+  if (!hasRemoteDb) return flags;
   try {
-    const rows = await db.select().from(featureFlags);
+    const rows = await withDbDeadline(db.select().from(featureFlags));
     for (const r of rows) {
       if (isFeatureKey(r.key)) flags[r.key] = r.enabled;
     }
@@ -131,12 +131,13 @@ export const APPEARANCE_KEY = "appearance";
  *  unreachable DB) falls back to the coded brand default. */
 export const getAppearance = cache(async (): Promise<Appearance> => {
   const base = defaultAppearance();
+  if (!hasRemoteDb) return base;
   try {
-    const [row] = await db
+    const [row] = await withDbDeadline(db
       .select()
       .from(siteSettings)
       .where(eq(siteSettings.key, APPEARANCE_KEY))
-      .limit(1);
+      .limit(1));
     const stored = (row?.value ?? null) as Partial<Appearance> | null;
     if (!stored) return base;
 
@@ -166,11 +167,12 @@ export const getAppearance = cache(async (): Promise<Appearance> => {
 export const getCopyOverrides = cache(
   async (locale: string): Promise<Map<string, string>> => {
     const map = new Map<string, string>();
+    if (!hasRemoteDb) return map;
     try {
-      const rows = await db
+      const rows = await withDbDeadline(db
         .select()
         .from(siteCopy)
-        .where(eq(siteCopy.locale, locale));
+        .where(eq(siteCopy.locale, locale)));
       for (const r of rows) map.set(r.key, r.value);
     } catch {
       // DB unavailable — no overrides, callers use their dictionary defaults.

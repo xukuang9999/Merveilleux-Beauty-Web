@@ -10,7 +10,7 @@ export async function subscribeNewsletter(input: {
   locale?: string;
 }): Promise<{ ok: boolean }> {
   const email = input.email?.trim().toLowerCase() || "";
-  if (!EMAIL_RE.test(email)) return { ok: false };
+  if (!process.env.DATABASE_URL?.trim() || !EMAIL_RE.test(email) || email.length > 200) return { ok: false };
   try {
     await db
       .insert(subscribers)
@@ -18,8 +18,6 @@ export async function subscribeNewsletter(input: {
       .onConflictDoNothing();
     return { ok: true };
   } catch {
-    // DB not configured / table not migrated yet — treat as best-effort so the
-    // signup UX still confirms. Run `npm run db:push` to persist subscribers.
-    return { ok: true };
+    return { ok: false };
   }
 }

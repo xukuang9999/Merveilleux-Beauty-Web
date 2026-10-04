@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Button, Container, SectionHeading, Divider } from "@/components/ui";
@@ -5,11 +6,9 @@ import Reveal from "@/components/Reveal";
 import { getCopy } from "@/lib/settings";
 import { getDict } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "The story behind Merveilleux — a French-standard skincare house by Bellesenze Group, made in Malaysia since 2014.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("about");
+}
 
 export default async function AboutPage() {
   const [dict, copy] = await Promise.all([getDict(), getCopy()]);

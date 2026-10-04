@@ -74,7 +74,7 @@ const ms: Dictionary = {
         },
         {
           "title": "Aktif yang benar-benar berkesan",
-          "body": "Vitamin C, asid hialuronik, ceramide, SPF50+ — serum, krim dan mask untuk mencerahkan, melembap dan membaiki lapisan pelindung.",
+          "body": "Vitamin C, asid hialuronik, ceramide, SPF30 / SPF35 — serum, krim dan mask untuk mencerahkan, melembap dan membaiki lapisan pelindung.",
         },
         {
           "title": "Kulit yang terasa merveilleux",
@@ -175,18 +175,20 @@ const ms: Dictionary = {
     "priceEast": "Malaysia Timur",
     "resultsTitle": "Sebelum & selepas",
     "resultsNote": "Imej klinikal sebelum-dan-selepas untuk produk ini dikongsi dalam kit Pengedar — tanya kami untuk deck hasil yang penuh.",
+    "conceptImage": "Imej konsep",
+    "conceptImageNote": "Konsep pembungkusan untuk ilustrasi. Sila tanya penasihat tentang pembungkusan produk semasa.",
     "allCategories": "Semua",
     "categories": {
-      "cleanser-mist-lotion": "Cleanser, Mist & Lotion",
-      "soothing-repairing-care": "Soothing & Repairing Care",
-      "hydrating-moisture-care": "Hydrating & Moisture Care",
-      "antioxidant-firming": "Anti-oxidant & Firming Series",
-      "whitening": "Whitening Series",
-      "eye-care": "Intensive Eye Care",
-      "soft-exfoliator": "Soft Exfoliator",
-      "purifying-care": "Purifying Care",
-      "sun-defence": "Sun Defence",
-      "trial-sets": "Trial Sets"
+      "cleanser-mist-lotion": "Pencuci, Semburan & Losen",
+      "soothing-repairing-care": "Penjagaan Menenangkan & Pembaikan",
+      "hydrating-moisture-care": "Penjagaan Hidrasi & Kelembapan",
+      "antioxidant-firming": "Siri Antioksidan & Penegangan",
+      "whitening": "Siri Pencerahan",
+      "eye-care": "Penjagaan Mata Intensif",
+      "soft-exfoliator": "Pengelupas Lembut",
+      "purifying-care": "Penjagaan Pemurnian",
+      "sun-defence": "Perlindungan Matahari",
+      "trial-sets": "Set Percubaan"
     },
     "skinTypeLabels": {
       "all": "Semua jenis kulit",
@@ -522,6 +524,7 @@ const ms: Dictionary = {
     "roleMasterAdmin": "Admin Utama"
   },
   "admin": {
+    "promotionProductsInvalid": "Pilih sekurang-kurangnya satu produk yang diterbitkan. Setiap slug produk mesti wujud dan tidak boleh berulang.",
     "eyebrowDashboard": "Admin",
     "dashboardTitle": "Pusat kawalan",
     "dashboardSub": "Urus produk, kandungan, pengedar dan pertanyaan.",

@@ -2,7 +2,7 @@ import "./src/db/load-env";
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
-  schema: "./src/db/schema.ts",
+  schema: ["./src/db/schema.ts", "./src/db/rate-limit-schema.ts"],
   out: "./drizzle",
   dialect: "postgresql",
   dbCredentials: {

@@ -77,7 +77,7 @@ const zh: Dictionary = {
         },
         {
           "title": "真正见效的活性成分",
-          "body": "维他命 C、玻尿酸、神经酰胺、SPF50+ —— 精华、乳霜与面膜，焕亮肤色、深层补水、修护屏障。",
+          "body": "维他命 C、玻尿酸、神经酰胺、SPF30 / SPF35 —— 精华、乳霜与面膜，焕亮肤色、深层补水、修护屏障。",
         },
         {
           "title": "肌肤，从此焕然生光",
@@ -178,6 +178,8 @@ const zh: Dictionary = {
     "priceEast": "东马",
     "resultsTitle": "前后效果对比",
     "resultsNote": "本产品的前后对比实证图收录于经销商资料包中 —— 欢迎向我们索取完整成效手册。",
+    "conceptImage": "概念示意图",
+    "conceptImageNote": "此图为包装概念示意。当前实际包装请向顾问确认。",
     "allCategories": "全部",
     "categories": {
       "cleanser-mist-lotion": "洁面 · 喷雾 · 化妆水",
@@ -525,6 +527,7 @@ const zh: Dictionary = {
     "roleMasterAdmin": "超级管理员"
   },
   "admin": {
+    "promotionProductsInvalid": "请选择至少一个已发布产品。每个产品标识必须存在且不能重复。",
     "eyebrowDashboard": "管理后台",
     "dashboardTitle": "控制中心",
     "dashboardSub": "管理产品、内容、经销商与咨询。",

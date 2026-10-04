@@ -1,3 +1,4 @@
+import { localizedMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -16,7 +17,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = await getProduct(slug);
   if (!p) return { title: "Product" };
-  return { title: p.name, description: p.tagline };
+  return localizedMetadata({ locale: await getLocale(), title: p.name, description: p.tagline, path: `/products/${p.slug}`, image: p.graphic });
 }
 
 export default async function ProductDetailPage({
@@ -83,6 +84,8 @@ export default async function ProductDetailPage({
               benefits: d.benefits,
               howToUse: d.howToUse,
               enquireNow: d.enquireNow,
+              conceptImage: d.conceptImage,
+              conceptImageNote: d.conceptImageNote,
             }}
           />
         </div>

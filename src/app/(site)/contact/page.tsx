@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui";
@@ -5,16 +6,14 @@ import EnquiryForm from "@/components/EnquiryForm";
 import MapEmbed from "@/components/MapEmbed";
 import { site, whatsappLink, mapsLink } from "@/lib/data";
 import { getCopy } from "@/lib/settings";
-import { getDict } from "@/i18n/server";
+import { getDict, getLocale } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Contact & Join",
-  description:
-    "Get in touch with Merveilleux Beauty — product enquiries, wholesale, or apply to become a distributor.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("contact");
+}
 
 export default async function ContactPage() {
-  const [dict, copy] = await Promise.all([getDict(), getCopy()]);
+  const [dict, copy, locale] = await Promise.all([getDict(), getCopy(), getLocale()]);
   const d = dict.contact;
 
   return (
@@ -137,7 +136,7 @@ export default async function ContactPage() {
         <div className="rounded-[2px] border border-line bg-porcelain/70 p-7 sm:p-9">
           <h2 className="font-serif text-2xl text-charcoal">{d.sendEnquiry}</h2>
           <p className="mt-1 mb-6 text-sm text-mid">{d.sendEnquirySub}</p>
-          <EnquiryForm dict={d} />
+          <EnquiryForm locale={locale} dict={d} />
         </div>
       </Container>
     </section>

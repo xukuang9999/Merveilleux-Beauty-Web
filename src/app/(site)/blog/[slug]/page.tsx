@@ -1,3 +1,4 @@
+import { localizedMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import Markdown from "@/components/Markdown";
 import { getArticle, getArticles } from "@/lib/content";
 import { isFeatureEnabled } from "@/lib/settings";
-import { getDict } from "@/i18n/server";
+import { getLocale, getDict } from "@/i18n/server";
 
 export async function generateMetadata({
   params,
@@ -16,7 +17,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const art = await getArticle(slug);
   if (!art) return { title: "Skincare Tips" };
-  return { title: art.title, description: art.excerpt };
+  return localizedMetadata({ locale: await getLocale(), title: art.title, description: art.excerpt, path: `/blog/${art.slug}`, article: true });
 }
 
 export default async function BlogArticlePage({

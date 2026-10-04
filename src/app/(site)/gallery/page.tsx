@@ -1,18 +1,18 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isFeatureEnabled } from "@/lib/settings";
 import Image from "next/image";
+import ConceptImageNotice from "@/components/ConceptImageNotice";
 import Link from "next/link";
 import { Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getProducts } from "@/lib/content";
 import { getDict } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Gallery",
-  description:
-    "A visual look at the Merveilleux collection — clean formulas and considered design.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("gallery");
+}
 
 export default async function GalleryPage() {
   if (!(await isFeatureEnabled("gallery"))) notFound();
@@ -110,6 +110,7 @@ export default async function GalleryPage() {
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <ConceptImageNotice graphic={p.graphic} label={dict.products.conceptImage} className="absolute bottom-2 left-2 right-2" />
                 </div>
                 <div className="p-4">
                   <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-gold">

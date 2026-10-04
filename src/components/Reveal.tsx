@@ -34,16 +34,17 @@ export default function Reveal({
 
     // Fallback: if IntersectionObserver is unavailable, just show content.
     if (typeof IntersectionObserver === "undefined") {
-      setInView(true);
-      return;
+      const raf = requestAnimationFrame(() => setInView(true));
+      return () => cancelAnimationFrame(raf);
     }
 
     // Reveal immediately if already within (most of) the viewport at mount —
     // deterministic, and doesn't depend on the observer's initial callback.
+    let raf = 0;
     const r = el.getBoundingClientRect();
     if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
-      setInView(true);
-      if (once) return;
+      raf = requestAnimationFrame(() => setInView(true));
+      if (once) return () => cancelAnimationFrame(raf);
     }
 
     const obs = new IntersectionObserver(
@@ -60,7 +61,7 @@ export default function Reveal({
       { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => { cancelAnimationFrame(raf); obs.disconnect(); };
   }, [once]);
 
   return (

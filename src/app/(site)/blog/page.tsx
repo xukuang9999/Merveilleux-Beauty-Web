@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -7,11 +8,9 @@ import Reveal from "@/components/Reveal";
 import { getArticles } from "@/lib/content";
 import { getDict } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Skincare Tips",
-  description:
-    "Practical skincare tips, routines and ingredient guides from the Merveilleux team.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("blog");
+}
 
 export default async function BlogPage() {
   if (!(await isFeatureEnabled("blog"))) notFound();

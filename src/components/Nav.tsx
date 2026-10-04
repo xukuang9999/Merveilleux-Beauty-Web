@@ -1,5 +1,6 @@
 "use client";
 
+import { uiCopy } from "@/i18n/ui-copy";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -63,7 +64,7 @@ export default function Nav({
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-cream/85 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3.5 sm:px-8">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5"
@@ -74,8 +75,8 @@ export default function Nav({
             alt={site.name}
             width={1200}
             height={222}
-            priority
-            className="h-8 w-auto sm:h-9"
+            preload
+            className="h-auto w-[clamp(100px,32vw,173px)] sm:w-[195px]"
           />
         </Link>
 
@@ -128,16 +129,17 @@ export default function Nav({
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex items-center gap-2 xl:hidden">
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
           <LanguageSwitcher
             current={locale}
             options={switcherLocales(flags.bahasaMelayu)}
           />
           <button
-            aria-label="Toggle menu"
+            aria-label={uiCopy(locale).toggleMenu}
+            aria-controls="site-navigation-mobile"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-md text-charcoal"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-charcoal"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
               {open ? (
@@ -152,7 +154,7 @@ export default function Nav({
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-line bg-cream px-5 pb-5 pt-2 xl:hidden">
+        <div id="site-navigation-mobile" className="border-t border-line bg-cream px-5 pb-5 pt-2 xl:hidden">
           {links.map((l) => (
             <Link
               key={l.href}

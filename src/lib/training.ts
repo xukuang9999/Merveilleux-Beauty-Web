@@ -1,5 +1,5 @@
 import { asc, eq } from "drizzle-orm";
-import { db } from "@/db";
+import { db, hasRemoteDb, withDbDeadline } from "@/db";
 import {
   trainingModules,
   quizQuestions,
@@ -9,14 +9,16 @@ import {
 } from "@/db/schema";
 import { getLocale } from "@/i18n/server";
 import { contentPack } from "@/i18n/content";
+import { localizeQuiz } from "@/i18n/content/quiz";
 
 export type ModuleWithQuiz = TrainingModule & { quiz: QuizQuestion[] };
 
 export async function getModules(): Promise<TrainingModule[]> {
-  const rows = await db
+  if (!hasRemoteDb) return [];
+  const rows = await withDbDeadline(db
     .select()
     .from(trainingModules)
-    .orderBy(asc(trainingModules.ord));
+    .orderBy(asc(trainingModules.ord), asc(trainingModules.id)));
   const pack = contentPack(await getLocale());
   if (!pack) return rows;
   return rows.map((m) => {
@@ -29,13 +31,15 @@ export async function getModules(): Promise<TrainingModule[]> {
 
 export async function getModulesWithQuiz(): Promise<ModuleWithQuiz[]> {
   const mods = await getModules();
+  const locale = await getLocale();
   const out: ModuleWithQuiz[] = [];
   for (const m of mods) {
-    const quiz = await db
+    const quiz = await withDbDeadline(db
       .select()
       .from(quizQuestions)
-      .where(eq(quizQuestions.moduleId, m.id));
-    out.push({ ...m, quiz });
+      .where(eq(quizQuestions.moduleId, m.id))
+      .orderBy(asc(quizQuestions.id)));
+    out.push({ ...m, quiz: localizeQuiz(m.ord, quiz, locale) });
   }
   return out;
 }
@@ -43,8 +47,9 @@ export async function getModulesWithQuiz(): Promise<ModuleWithQuiz[]> {
 export type ProgressRow = typeof trainingProgress.$inferSelect;
 
 export async function getUserProgress(userId: string): Promise<ProgressRow[]> {
-  return db
+  if (!hasRemoteDb) return [];
+  return withDbDeadline(db
     .select()
     .from(trainingProgress)
-    .where(eq(trainingProgress.userId, userId));
+    .where(eq(trainingProgress.userId, userId)));
 }

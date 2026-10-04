@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import { Button, Container, SectionHeading, Stars, Divider } from "@/components/ui";
 import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Reveal from "@/components/Reveal";
@@ -18,7 +19,7 @@ const ingredients = [
   "Centella Asiatica",
   "Squalane",
   "Panthenol B5",
-  "SPF50+ PA++++",
+  "SPF30 / SPF35",
   "Polyglutamic Acid",
 ];
 
@@ -294,3 +295,5 @@ export default async function Home() {
     </>
   );
 }
+
+export async function generateMetadata() { return localizedPageMetadata("home"); }

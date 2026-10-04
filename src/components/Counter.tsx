@@ -39,14 +39,11 @@ export default function Counter({
 
   useEffect(() => {
     if (!started) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setN(value);
-      return;
-    }
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf = 0;
     const start = performance.now();
     const tick = (t: number) => {
-      const p = Math.min(1, (t - start) / duration);
+      const p = reducedMotion || duration <= 0 ? 1 : Math.min(1, (t - start) / duration);
       setN(Math.round(easeOut(p) * value));
       if (p < 1) raf = requestAnimationFrame(tick);
     };

@@ -1,10 +1,11 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/data";
 import Analytics from "@/components/Analytics";
 import { getAppearance, appearanceVars } from "@/lib/settings";
-import { getLocale } from "@/i18n/server";
+import { getDict, getLocale } from "@/i18n/server";
 import { localeHtmlLang } from "@/i18n/config";
 
 const cormorant = Cormorant_Garamond({
@@ -20,35 +21,14 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://merveilleuxbeauty.com"),
-  title: {
-    default: "Mérvéilléux Premium — The Art of French Beauty",
-    template: "%s · Mérvéilléux Premium",
-  },
-  description: site.description,
-  keywords: [
-    "Merveilleux Premium",
-    "Bellesenze",
-    "French beauty",
-    "premium skincare Malaysia",
-    "distributor",
-    "serum",
-    "moisturiser",
-  ],
-  openGraph: {
-    title: "Mérvéilléux Premium — The Art of French Beauty",
-    description: site.description,
-    type: "website",
-    locale: "en_MY",
-    siteName: site.name,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mérvéilléux Premium",
-    description: site.description,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const [home, dict] = await Promise.all([localizedPageMetadata("home"), getDict()]);
+  return {
+    ...home,
+    metadataBase: new URL("https://merveilleuxbeauty.com"),
+    title: { default: `${site.name} — ${dict.home.heroEyebrow}`, template: `%s · ${site.name}` },
+  };
+}
 
 export default async function RootLayout({
   children,

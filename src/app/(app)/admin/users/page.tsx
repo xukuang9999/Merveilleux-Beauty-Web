@@ -4,7 +4,8 @@ import { db } from "@/db";
 import { users } from "@/db/schema";
 import { setUserRole } from "@/lib/admin-actions";
 import { DashHeading, Panel } from "@/components/dash";
-import { getDict } from "@/i18n/server";
+import { uiCopy } from "@/i18n/ui-copy";
+import { getDict, getLocale } from "@/i18n/server";
 
 const ROLES = ["customer", "distributor", "admin", "master_admin"] as const;
 
@@ -15,6 +16,7 @@ export default async function AdminUsersPage() {
     getDict(),
   ]);
   const d = dict.admin;
+  const copy = uiCopy(await getLocale());
 
   return (
     <>
@@ -48,6 +50,7 @@ export default async function AdminUsersPage() {
                 <input type="hidden" name="id" value={u.id} />
                 <select
                   name="role"
+                  aria-label={`${u.name} — ${copy.role}`}
                   defaultValue={u.role}
                   className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm outline-none focus:border-bronze"
                 >

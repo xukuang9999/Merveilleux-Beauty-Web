@@ -22,6 +22,8 @@ const INTERESTS = [
 export async function submitEnquiry(
   input: EnquiryInput,
 ): Promise<{ ok: boolean }> {
+  // Reject before connecting when persistence is unavailable.
+  if (!process.env.DATABASE_URL?.trim()) return { ok: false };
   // Validation
   if (!input.name?.trim() || !input.message?.trim()) return { ok: false };
   if (!EMAIL_RE.test(input.email?.trim() || "")) return { ok: false };
@@ -36,7 +38,7 @@ export async function submitEnquiry(
     });
     return { ok: true };
   } catch {
-    // DB not configured (e.g. before Turso) — the WhatsApp handoff still works.
+    // The client offers a direct WhatsApp handoff when persistence fails.
     return { ok: false };
   }
 }

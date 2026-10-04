@@ -1,7 +1,9 @@
-// Auto-generated content translation overlay.
+// Content translations keyed by the current catalogue slug.
 import { type ContentPack } from "./types";
+import { quizPacks } from "./quiz";
 
 const zh: ContentPack = {
+  quizzes: quizPacks.zh,
   "products": {
     "advance-white-professional-treatment": {
       "name": "钻石水光美白护理疗程",
@@ -21,6 +23,11 @@ const zh: ContentPack = {
         "温和无刺激，适合干性、中性、老化肌",
         "效果立竿见影，复购率高",
         "肤色提亮 1–2 度，毛孔细致"
+      ],
+      "howToUse": [
+        "双重洁面后使用 AW Caviar Lime Enzyme，清理毛孔后使用 AW Active Complex。",
+        "用仪器导入 AW Treatment Serum，再导入 Hydrating Ampoule。",
+        "面部按摩后敷 AW Treatment Silk Masque 20–30 分钟。"
       ]
     },
     "aqua-concentrate-mask": {
@@ -39,23 +46,21 @@ const zh: ContentPack = {
         "舒缓干燥带来的紧绷",
         "肌肤更柔嫩、细致、有光泽",
         "建议连续7天密集补水护理"
+      ],
+      "howToUse": [
+        "连续使用 7 天，作为密集补水护理。"
       ]
     },
     "brightening-plus-hydrating-trial-set": {
       "name": "亮白补水体验套装",
       "type": "套装",
-      "tagline": "暗沉堵塞肌的亮白补水三件套",
-      "description": "专为暗沉、堵塞肌打造的亮白补水体验三件套。内含美白精华 10ml、消炎抗痘精华 5ml；第三件产品待与 Grace 确认。",
+      "tagline": "暗沉堵塞肌的亮白补水体验套装",
+      "description": "针对暗沉、堵塞肌的亮白补水体验套装。订购前请向顾问确认当前套装内容。",
       "keyIngredients": [],
-      "contents": [
-        "美白精华 10ml",
-        "消炎抗痘精华 5ml"
-      ],
+      "contents": [],
       "benefits": [
-        "内含美白精华 10ml",
-        "内含消炎抗痘精华 5ml",
-        "第三件产品待与 Grace 确认",
-        "体验装，提亮暗沉、补水调理堵塞肌"
+        "体验装，提亮暗沉、补水调理堵塞肌",
+        "请向顾问了解当前套装内容"
       ]
     },
     "cell-repair-treatment-cream": {
@@ -99,17 +104,13 @@ const zh: ContentPack = {
       "name": "净化调理体验套装",
       "type": "套装",
       "tagline": "堵塞闭口肌的净化调理体验套装",
-      "description": "专为堵塞、闭口肌打造的净化调理体验套装。套装内容在原始卡片上仅部分清晰可辨，需与 Grace 确认后再发布。",
+      "description": "针对毛孔堵塞肌的净化调理体验套装。订购前请向顾问确认当前套装内容。",
       "keyIngredients": [],
-      "contents": [
-        "优越修复精华 10ml",
-        "毛孔净化精华 5ml",
-        "小分子玻尿酸精华 10ml"
-      ],
+      "contents": [],
       "benefits": [
-        "针对堵塞、闭口肌",
-        "净化调理体验组合",
-        "套装完整内容待与 Grace 确认"
+        "针对毛孔堵塞肌",
+        "净化与平衡的体验护理程序",
+        "请向顾问了解当前套装内容"
       ]
     },
     "daily-care-trial-set": {
@@ -169,6 +170,9 @@ const zh: ContentPack = {
         "紧致平滑，抚平老化痕迹",
         "焕亮暗沉眼周",
         "约10天可见眼周更紧致"
+      ],
+      "howToUse": [
+        "爽肤后作为护理第二步使用，随后涂抹眼霜。"
       ]
     },
     "gentle-cleansing-milk": {
@@ -248,6 +252,9 @@ const zh: ContentPack = {
         "修复肌肤屏障",
         "舒缓干燥、瘙痒与炎症",
         "提亮肤色，改善肤质"
+      ],
+      "howToUse": [
+        "洁面后作为第一步护理使用，帮助后续产品吸收。"
       ]
     },
     "intense-lift-eye-treatment-creme": {
@@ -267,6 +274,9 @@ const zh: ContentPack = {
         "紧致眼周肌肤",
         "促进微循环",
         "淡化黑眼圈"
+      ],
+      "howToUse": [
+        "作为眼部护理的最后一步，取少量轻点于眼周。"
       ]
     },
     "intensive-hydro-treatment-silk-mask": {
@@ -301,6 +311,11 @@ const zh: ContentPack = {
         "激活细胞修复与再生",
         "重建屏障结构",
         "抗老与色素管理，肌肤更干净、透亮、稳定"
+      ],
+      "howToUse": [
+        "双重洁面后使用去角质凝胶，再清理毛孔。",
+        "敷舒缓凝胶面膜，再将氨基酸粉搭配 Nano Mist 使用。",
+        "逆毛孔方向涂刷修复粉，敷 Stem Cell 面膜 20 分钟，最后使用防晒。"
       ]
     },
     "intensive-restoration-powder": {
@@ -379,6 +394,9 @@ const zh: ContentPack = {
         "晒后即时降温安抚",
         "抗炎镇静（尿囊素 + 黄芩）",
         "抗氧防护（光果甘草根 + 迷迭香叶）"
+      ],
+      "howToUse": [
+        "敷于洁净肌肤，进行 20 分钟冰镇舒缓护理，再轻拍吸收剩余精华。"
       ]
     },
     "medic-restore-gel": {
@@ -407,6 +425,11 @@ const zh: ContentPack = {
         "抗氧化、抗过敏",
         "强化肌肤防御力，促进修复再生",
         "适合医美术后与敏感/痘痘肌"
+      ],
+      "howToUse": [
+        "点涂于发炎、痘痘、毛孔堵塞、脓疱与泛红部位。",
+        "日间局部点涂 5–6 次。",
+        "夜间睡前在发炎部位厚敷一层。"
       ]
     },
     "micellaire-solution": {
@@ -455,6 +478,9 @@ const zh: ContentPack = {
         "焕亮暗沉、改善粗糙",
         "强韧屏障，防御敏感刺激",
         "提升后续保养渗透力"
+      ],
+      "howToUse": [
+        "深层清洁后，搭配舒缓或补水面膜。"
       ]
     },
     "oxy-bright-serum": {
@@ -560,6 +586,11 @@ const zh: ContentPack = {
         "防止水分流失，长达12小时保湿",
         "预防色素沉淀与皱纹",
         "肌肤平滑，呈现年轻光感"
+      ],
+      "howToUse": [
+        "爽肤与保湿后，均匀涂于面部和颈部至吸收。",
+        "每天早上使用，户外活动前 20 分钟涂抹。",
+        "每 2–3 小时补涂。"
       ]
     },
     "refined-hydro-care": {
@@ -687,6 +718,9 @@ const zh: ContentPack = {
         "祛除暗黄",
         "软化粗糙肌肤",
         "增添光泽"
+      ],
+      "howToUse": [
+        "作为护理的最后一步使用，锁住养分与水分。"
       ]
     },
     "soothing-gel-mask": {
@@ -780,6 +814,9 @@ const zh: ContentPack = {
         "美白淡斑",
         "细腻光滑肤质",
         "夜间使用"
+      ],
+      "howToUse": [
+        "仅限夜间使用，爽肤水或保湿精华后作为第二步护理。"
       ]
     },
     "youth-ha-moisturizer": {
@@ -824,11 +861,8 @@ const zh: ContentPack = {
       "name": "深海胜肽胶原蛋白护理",
       "type": "专业护理疗程",
       "tagline": "专业胜肽护理，改善肌肤平滑度与紧致观感",
-      "description": "以胜肽与海洋胶原概念为核心的专业护理，重点改善肌肤干燥、弹性与细纹观感。实际组件、规格与沙龙操作流程仍需品牌方最终确认。",
-      "keyIngredients": [
-        "生物胜肽复合物",
-        "海洋胶原概念"
-      ],
+      "description": "专业护理疗程，重点改善肌肤水分、弹性与细纹观感。请向顾问了解疗程组件与沙龙护理流程。",
+      "keyIngredients": [],
       "benefits": [
         "支持更紧致的肌肤观感",
         "改善细纹外观",

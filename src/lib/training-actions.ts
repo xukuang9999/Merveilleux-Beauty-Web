@@ -1,6 +1,6 @@
 "use server";
 
-import { and, eq, sql } from "drizzle-orm";
+import { asc, eq, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { requireRole } from "./auth";
 import { db } from "@/db";
@@ -17,8 +17,11 @@ export async function submitQuiz(
   const qs = await db
     .select()
     .from(quizQuestions)
-    .where(eq(quizQuestions.moduleId, moduleId));
-  if (!qs.length) return { score: 0, passed: false };
+    .where(eq(quizQuestions.moduleId, moduleId))
+    .orderBy(asc(quizQuestions.id));
+  if (!Number.isInteger(moduleId) || !qs.length || !Array.isArray(answers) || answers.length !== qs.length || answers.some((answer, i) => !Number.isInteger(answer) || answer < 0 || answer >= qs[i].options.length)) {
+    throw new Error("Invalid quiz submission");
+  }
 
   let correct = 0;
   qs.forEach((q, i) => {

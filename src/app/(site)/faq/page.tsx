@@ -1,14 +1,13 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
 import { getFaqs } from "@/lib/content";
 import { getDict } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Q&A",
-  description:
-    "Answers to common questions about Merveilleux Beauty products, skincare routines and becoming a distributor.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("faq");
+}
 
 export default async function FaqPage() {
   const [faqs, dict] = await Promise.all([getFaqs(), getDict()]);

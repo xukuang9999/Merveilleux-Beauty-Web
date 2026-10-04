@@ -1,5 +1,6 @@
 "use client";
 
+import { uiCopy } from "@/i18n/ui-copy";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { setLocale } from "@/i18n/actions";
@@ -29,7 +30,8 @@ export default function LanguageSwitcher({
 
   return (
     <div
-      aria-label="Language"
+      role="group"
+      aria-label={uiCopy(current).language}
       className={`inline-flex items-center gap-0.5 rounded-full border border-line bg-white/70 p-0.5 ${className}`}
     >
       {options.map((l) => (
@@ -38,7 +40,7 @@ export default function LanguageSwitcher({
           onClick={() => pick(l)}
           disabled={pending}
           aria-pressed={l === current}
-          className={`rounded-full px-2.5 py-1 text-[11px] font-medium transition-colors ${
+          className={`shrink-0 whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-medium transition-colors ${
             l === current
               ? "bg-charcoal text-cream"
               : "text-mid hover:text-charcoal"

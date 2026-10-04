@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { uiCopy } from "@/i18n/ui-copy";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { submitQuiz } from "@/lib/training-actions";
 import { fmt } from "@/i18n/format";
@@ -25,10 +26,12 @@ export default function PortalTraining({
   modules,
   progress,
   dict,
+  locale,
 }: {
   modules: Module[];
   progress: Progress[];
   dict: T;
+  locale: string;
 }) {
   const [active, setActive] = useState<Module | null>(null);
   const progressMap = useMemo(() => {
@@ -98,7 +101,7 @@ export default function PortalTraining({
       })}
 
       {active && (
-        <QuizModal module={active} dict={dict} onClose={() => setActive(null)} />
+        <QuizModal module={active} dict={dict} locale={locale} onClose={() => setActive(null)} />
       )}
     </div>
   );
@@ -107,13 +110,25 @@ export default function PortalTraining({
 function QuizModal({
   module,
   dict,
+  locale,
   onClose,
 }: {
   module: Module;
   dict: T;
+  locale: string;
   onClose: () => void;
 }) {
   const router = useRouter();
+  const copy = uiCopy(locale);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const [error, setError] = useState("");
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    const trigger = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    dialog?.showModal();
+    return () => { dialog?.close(); trigger?.focus(); };
+  }, []);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [result, setResult] = useState<{ score: number; passed: boolean } | null>(
     null,
@@ -123,6 +138,8 @@ function QuizModal({
   const allAnswered = Object.keys(answers).length === module.quiz.length;
 
   async function handleSubmit() {
+    if (submitting) return;
+    setError("");
     setSubmitting(true);
     const ordered = module.quiz.map((_, i) => answers[i] ?? -1);
     try {
@@ -130,16 +147,20 @@ function QuizModal({
       setResult(r);
       if (r.passed) router.refresh();
     } catch {
-      setResult({ score: 0, passed: false });
+      setError(copy.quizFailed);
     } finally {
       setSubmitting(false);
     }
   }
 
   return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-charcoal/50 p-4 backdrop-blur-sm"
-      onClick={onClose}
+    <dialog
+      ref={dialogRef}
+      aria-labelledby={titleId}
+      aria-busy={submitting}
+      onCancel={onClose}
+      onClick={(e) => { if (e.target === e.currentTarget) { const r = e.currentTarget.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) onClose(); } }}
+      className="m-auto max-h-[88vh] w-[calc(100%_-_2rem)] max-w-lg overflow-y-auto rounded-3xl bg-cream p-0 text-charcoal backdrop:bg-charcoal/50 backdrop:backdrop-blur-sm"
     >
       <div
         className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-3xl bg-cream p-7 sm:p-8"
@@ -150,7 +171,7 @@ function QuizModal({
             <p className="eyebrow">
               {fmt(dict.module, { n: module.ord })} · {dict.quizTitle}
             </p>
-            <h3 className="mt-1 font-serif text-2xl text-charcoal">
+            <h3 id={titleId} className="mt-1 font-serif text-2xl text-charcoal">
               {module.title}
             </h3>
           </div>
@@ -199,6 +220,7 @@ function QuizModal({
                 </fieldset>
               ))}
             </div>
+            {error && <p role="alert" className="mt-4 text-sm text-bronze">{error}</p>}
             <button
               disabled={!allAnswered || submitting}
               onClick={handleSubmit}
@@ -213,7 +235,7 @@ function QuizModal({
             </button>
           </>
         ) : (
-          <div className="mt-6 text-center">
+          <div role="status" className="mt-6 text-center">
             <div
               className={`mx-auto flex h-20 w-20 items-center justify-center rounded-full text-3xl ${
                 result.passed
@@ -258,6 +280,6 @@ function QuizModal({
           </div>
         )}
       </div>
-    </div>
+    </dialog>
   );
 }
