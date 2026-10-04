@@ -48,6 +48,7 @@ export default function KbBrowser({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={dict.searchPlaceholder}
+          aria-label={dict.searchPlaceholder}
           className="w-full rounded-full border border-line bg-white px-4 py-2.5 text-sm text-charcoal outline-none focus:border-bronze sm:max-w-xs"
         />
         <div className="flex flex-wrap gap-2">

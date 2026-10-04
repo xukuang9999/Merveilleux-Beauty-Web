@@ -2,7 +2,7 @@ import { requireRole } from "@/lib/auth";
 import { getModulesWithQuiz, getUserProgress } from "@/lib/training";
 import { DashHeading } from "@/components/dash";
 import PortalTraining from "@/components/PortalTraining";
-import { getDict, fmt } from "@/i18n/server";
+import { getLocale, getDict, fmt } from "@/i18n/server";
 
 export default async function PortalTrainingPage() {
   const user = await requireRole(["distributor", "admin", "master_admin"]);
@@ -44,7 +44,7 @@ export default async function PortalTrainingPage() {
         title={d.title}
         subtitle={fmt(d.sub, { done: completed, total: modules.length })}
       />
-      <PortalTraining
+      <PortalTraining locale={await getLocale()}
         modules={clientModules}
         progress={clientProgress}
         dict={d}

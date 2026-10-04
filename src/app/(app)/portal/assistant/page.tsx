@@ -2,7 +2,7 @@ import { requireRole } from "@/lib/auth";
 import { aiConfigured } from "@/lib/ai";
 import { DashHeading } from "@/components/dash";
 import AssistantTabs from "@/components/AssistantTabs";
-import { getDict } from "@/i18n/server";
+import { getLocale, getDict } from "@/i18n/server";
 
 export default async function AssistantPage() {
   await requireRole(["distributor", "admin", "master_admin"]);
@@ -35,7 +35,7 @@ export default async function AssistantPage() {
         </div>
       )}
 
-      <AssistantTabs tabs={tabs} placeholder={dict.chat.placeholder} />
+      <AssistantTabs locale={await getLocale()} tabs={tabs} placeholder={dict.chat.placeholder} />
     </>
   );
 }

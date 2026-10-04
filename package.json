@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:push": "drizzle-kit push",
+    "db:push": "drizzle-kit push && tsx scripts/apply-rate-limit-policy.ts",
     "db:seed": "tsx src/db/seed.ts",
-    "db:reset": "drizzle-kit push && tsx src/db/seed.ts",
-    "db:import": "tsx src/db/import-extracted.ts"
+    "db:reset": "npm run db:push && tsx src/db/seed.ts",
+    "db:import": "tsx src/db/import-extracted.ts",
+    "test": "node --import tsx --test tests/*.test.ts scripts/tests/*.test.ts",
+    "test:content": "tsx scripts/check-content-locales.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.107.0",

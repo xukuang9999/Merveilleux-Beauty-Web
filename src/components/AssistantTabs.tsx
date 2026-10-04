@@ -12,9 +12,11 @@ type Tab = {
 
 export default function AssistantTabs({
   tabs,
+  locale,
   placeholder,
 }: {
   tabs: Tab[];
+  locale: string;
   placeholder: string;
 }) {
   const [tab, setTab] = useState<Tab["key"]>(tabs[0].key);
@@ -27,6 +29,7 @@ export default function AssistantTabs({
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
+            aria-pressed={tab === t.key}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               tab === t.key
                 ? "bg-charcoal text-cream"
@@ -41,6 +44,7 @@ export default function AssistantTabs({
       <ChatPanel
         key={active.key}
         mode={active.key}
+        locale={locale}
         heightClass="h-[520px]"
         greeting={active.greeting}
         suggestions={active.suggestions}

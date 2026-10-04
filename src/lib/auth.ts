@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { cache } from "react";
 import { randomUUID } from "crypto";
 import { eq } from "drizzle-orm";
-import { db } from "@/db";
+import { db, hasRemoteDb } from "@/db";
 import { users, sessions, type User } from "@/db/schema";
 import {
   hashPassword,
@@ -24,7 +24,7 @@ export { hashPassword, verifyPassword };
 
 // A fixed valid hash to compare against when an account doesn't exist, so login
 // takes ~constant time regardless of whether the email is registered.
-export const DUMMY_PASSWORD_HASH = hashPassword("merveilleux-dummy-password");
+export const DUMMY_PASSWORD_HASH = "00000000000000000000000000000000:62e8a1d8789973f0bc8eb214ae926771de1a5f3b18573bf104e5ea29cf5c3df99c8c7475bc7ef11f22b315286b1f9b149f420e40641cbdd5801f5732db8c15b4";
 
 export async function createUser(input: {
   email: string;
@@ -39,7 +39,7 @@ export async function createUser(input: {
       id: randomUUID(),
       email: input.email.toLowerCase().trim(),
       name: input.name.trim(),
-      passwordHash: hashPassword(input.password),
+      passwordHash: await hashPassword(input.password),
       role: input.role ?? "customer",
       status: input.status ?? "active",
     })
@@ -83,14 +83,18 @@ export async function createSession(userId: string): Promise<void> {
 export async function destroySession(): Promise<void> {
   const jar = await cookies();
   const token = jar.get(COOKIE)?.value;
-  if (token) {
-    await db.delete(sessions).where(eq(sessions.id, tokenToId(token)));
+  try {
+    if (token && hasRemoteDb) {
+      await db.delete(sessions).where(eq(sessions.id, tokenToId(token)));
+    }
+  } finally {
+    jar.delete(COOKIE);
   }
-  jar.delete(COOKIE);
 }
 
 /** Resolve the signed-in user for this request (cached), or null. */
 export const getCurrentUser = cache(async (): Promise<User | null> => {
+  if (!hasRemoteDb) return null;
   const jar = await cookies();
   const token = jar.get(COOKIE)?.value;
   if (!token) return null;

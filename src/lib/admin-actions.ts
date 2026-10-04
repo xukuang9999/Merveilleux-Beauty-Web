@@ -2,13 +2,14 @@
 
 import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import {
   requireAdmin,
   requireMasterAdmin,
   deleteUserSessions,
   type Role,
 } from "./auth";
-import { db } from "@/db";
+import { db, hasRemoteDb } from "@/db";
 import {
   products,
   users,
@@ -24,6 +25,8 @@ import { isMediaInUse } from "./media-usage";
 import { COPY_ITEMS } from "./copy-registry";
 import { getDictionary } from "@/i18n/server";
 import { locales } from "@/i18n/config";
+import { contentStateKey, type ManagedContent, validPromotionReferences } from "./content-state";
+import { getProducts } from "./content";
 import {
   FEATURE_KEYS,
   type FeatureKey,
@@ -46,8 +49,21 @@ function toList(v: FormDataEntryValue | null): string[] {
     .filter(Boolean);
 }
 
+async function markContentInitialized(
+  writer: Pick<typeof db, "insert">,
+  kind: ManagedContent,
+) {
+  await writer.insert(siteSettings)
+    .values({ key: contentStateKey(kind), value: true, updatedAt: new Date() })
+    .onConflictDoUpdate({
+      target: siteSettings.key,
+      set: { value: true, updatedAt: new Date() },
+    });
+}
+
 export async function saveProduct(formData: FormData) {
   await ensureAdmin();
+  if (!hasRemoteDb) throw new Error("The database is unavailable.");
   const idRaw = formData.get("id");
   const id = idRaw ? Number(idRaw) : null;
   const values = {
@@ -70,34 +86,51 @@ export async function saveProduct(formData: FormData) {
     published: formData.get("published") === "on",
   };
   if (!values.slug || !values.name) return;
-  if (id) {
-    await db.update(products).set(values).where(eq(products.id, id));
-  } else {
-    await db.insert(products).values(values);
-  }
+  await db.transaction(async (tx) => {
+    await markContentInitialized(tx, "products");
+    if (id) await tx.update(products).set(values).where(eq(products.id, id));
+    else await tx.insert(products).values(values);
+  });
   revalidatePath("/admin/products");
   revalidatePath("/products");
+  revalidatePath("/products/[slug]", "page");
+  revalidatePath("/promotions");
+  revalidatePath("/sitemap.xml");
   revalidatePath("/");
 }
 
 export async function deleteProduct(formData: FormData) {
   await ensureAdmin();
+  if (!hasRemoteDb) throw new Error("The database is unavailable.");
   const id = Number(formData.get("id"));
-  if (id) await db.delete(products).where(eq(products.id, id));
+  if (id) {
+    await db.transaction(async (tx) => {
+      await markContentInitialized(tx, "products");
+      await tx.delete(products).where(eq(products.id, id));
+    });
+  }
   revalidatePath("/admin/products");
   revalidatePath("/products");
+  revalidatePath("/products/[slug]", "page");
+  revalidatePath("/promotions");
+  revalidatePath("/sitemap.xml");
+  revalidatePath("/");
 }
 
 // Promotions are admin-tier (both admin and master). Localised title/desc/tag
 // are collected per-locale from the form and stored as JSON.
 export async function savePromotion(formData: FormData) {
   await ensureAdmin();
+  if (!hasRemoteDb) throw new Error("The database is unavailable.");
   const idRaw = formData.get("id");
   const id = idRaw ? Number(idRaw) : null;
 
   const perLocale = (prefix: string): Record<string, string> => {
     const o: Record<string, string> = {};
-    for (const l of locales) o[l] = String(formData.get(`${prefix}_${l}`) || "").trim();
+    for (const l of locales) {
+      const value = String(formData.get(`${prefix}_${l}`) || "").trim();
+      if (value) o[l] = value;
+    }
     return o;
   };
 
@@ -123,19 +156,32 @@ export async function savePromotion(formData: FormData) {
   };
   if (!values.slug || !title.en) return; // require slug + English title
 
-  if (id) {
-    await db.update(promotions).set(values).where(eq(promotions.id, id));
-  } else {
-    await db.insert(promotions).values(values);
+  if (values.published) {
+    const publishedSlugs = new Set((await getProducts()).map((p) => p.slug));
+    if (!validPromotionReferences(values.productSlugs, publishedSlugs)) {
+      redirect("/admin/promotions?error=invalid-products");
+    }
   }
+
+  await db.transaction(async (tx) => {
+    await markContentInitialized(tx, "promotions");
+    if (id) await tx.update(promotions).set(values).where(eq(promotions.id, id));
+    else await tx.insert(promotions).values(values);
+  });
   revalidatePath("/admin/promotions");
   revalidatePath("/promotions");
 }
 
 export async function deletePromotion(formData: FormData) {
   await ensureAdmin();
+  if (!hasRemoteDb) throw new Error("The database is unavailable.");
   const id = Number(formData.get("id"));
-  if (id) await db.delete(promotions).where(eq(promotions.id, id));
+  if (id) {
+    await db.transaction(async (tx) => {
+      await markContentInitialized(tx, "promotions");
+      await tx.delete(promotions).where(eq(promotions.id, id));
+    });
+  }
   revalidatePath("/admin/promotions");
   revalidatePath("/promotions");
 }
@@ -200,13 +246,15 @@ export async function setUserRole(formData: FormData) {
 
 export async function toggleKbPublished(formData: FormData) {
   await ensureAdmin();
+  if (!hasRemoteDb) throw new Error("The database is unavailable.");
   const id = Number(formData.get("id"));
   const current = formData.get("published") === "true";
-  await db
-    .update(kbArticles)
-    .set({ published: !current })
-    .where(eq(kbArticles.id, id));
+  await db.transaction(async (tx) => {
+    await markContentInitialized(tx, "kb");
+    await tx.update(kbArticles).set({ published: !current }).where(eq(kbArticles.id, id));
+  });
   revalidatePath("/admin/kb");
+  revalidatePath("/portal/knowledge", "layout");
 }
 
 // Feature flags are master-only. Toggling one revalidates the root layout so
@@ -227,6 +275,7 @@ export async function setFeatureFlag(formData: FormData) {
 
   revalidatePath("/", "layout");
   revalidatePath("/admin/features");
+  revalidatePath("/sitemap.xml");
 }
 
 // Appearance (brand colours + fonts) is master-only. Values are validated

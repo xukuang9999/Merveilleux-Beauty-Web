@@ -1,8 +1,8 @@
-// Public content access — reads from the DB, falls back to curated seed
-// data if the database isn't reachable, and overlays the active locale's
+// Public content access — reads the authoritative DB, uses curated seed
+// data before configuration/initialization, and overlays the active locale's
 // translations (English is the canonical source).
-import { asc, eq } from "drizzle-orm";
-import { db, hasRemoteDb } from "@/db";
+import { asc } from "drizzle-orm";
+import { db, hasRemoteDb, withDbDeadline } from "@/db";
 import { products, testimonials, faqs, promotions } from "@/db/schema";
 import {
   seedProducts,
@@ -16,6 +16,13 @@ import {
 import { getLocale, getDictionary } from "@/i18n/server";
 import type { Locale } from "@/i18n/config";
 import { contentPack } from "@/i18n/content";
+import { normalizeLegacyProductCopy, normalizeLegacyBundle } from "./catalogue-compat";
+import {
+  contentInitialized,
+  publishedContent,
+  pickContentLocale,
+  validPromotionReferences,
+} from "./content-state";
 
 export type ProductView = Omit<SeedProduct, "sortOrder"> & {
   // Retail price for East Malaysia; null until one is set, in which case
@@ -41,80 +48,48 @@ export type FaqView = { category: string; question: string; answer: string };
 export async function getProducts(): Promise<ProductView[]> {
   const pack = contentPack(await getLocale());
 
-  // The storefront is the seed catalogue PLUS explicitly-published DB-only
-  // products, additively:
-  //   1. seed-data.ts is the canonical base — every seed product has a valid
-  //      studio image under /products/studio/*.png. A DB row with a matching slug overlays it
-  //      (published admin edits win; unpublished drafts are ignored).
-  //   2. DB rows whose slug is NOT in the seed catalogue appear only when
-  //      explicitly published (published defaults to false). Unpublished /
-  //      orphaned overlay rows (e.g. old SKUs removed from the seed) are
-  //      ignored, so a deleted-seed product can never blank the storefront.
-  const base = [...seedProducts].sort((a, b) => a.sortOrder - b.sortOrder);
-
-  const edits = new Map<string, typeof products.$inferSelect>();
+  // No database: show the curated catalogue immediately. Once a database has
+  // content, its publication/deletion state is authoritative for the whole list.
+  const base = [...seedProducts]
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .map((p) => ({ ...p, priceRMEast: null }));
+  let source: Array<(typeof products.$inferSelect) | (typeof base)[number]> = base;
   if (hasRemoteDb) {
     try {
-      const db_rows = await db.select().from(products);
-      for (const r of db_rows) edits.set(r.slug, r);
+      const dbRows = await withDbDeadline(
+        db.select().from(products).orderBy(asc(products.sortOrder), asc(products.id)),
+      );
+      const initialized = dbRows.length > 0 || await contentInitialized("products");
+      source = publishedContent(dbRows, initialized, base);
     } catch {
-      // DB unreachable — render the curated catalogue as-is.
+      // A configured database outage must not resurrect withdrawn products.
+      source = [];
     }
   }
-
-  const rows: ProductView[] = [];
-  for (const p of base) {
-    const candidate = edits.get(p.slug);
-    const edit = candidate?.published ? candidate : undefined;
-    rows.push({
+  const rows: ProductView[] = source.map((p) => normalizeLegacyProductCopy({
       slug: p.slug,
-      name: edit?.name || p.name,
-      type: edit?.type || p.type,
-      tagline: edit?.tagline || p.tagline,
-      description: edit?.description || p.description,
-      keyIngredients: edit?.keyIngredients ?? p.keyIngredients,
-      benefits: edit?.benefits ?? p.benefits,
-      priceRM: edit?.priceRM || p.priceRM,
-      priceRMEast: edit?.priceRMEast || null,
-      graphic: edit?.graphic || p.graphic,
-      category: edit?.category || p.category,
-      kind: edit?.kind ?? p.kind,
-      sizeLabel: edit?.sizeLabel ?? p.sizeLabel,
-      contents: edit?.contents ?? p.contents,
-      howToUse: edit?.howToUse ?? p.howToUse,
-    });
-  }
-
-  // Products created in the admin (a slug not in the seed catalogue) are shown
-  // after the curated range when published. Legacy/unpublished orphans stay
-  // hidden, preserving the storefront-can-never-blank-out guarantee.
-  const seedSlugs = new Set(base.map((p) => p.slug));
-  const extra = [...edits.values()]
-    .filter((r) => !seedSlugs.has(r.slug) && r.published)
-    .sort((a, b) => a.sortOrder - b.sortOrder)
-    .map((r) => ({
-      slug: r.slug,
-      name: r.name,
-      type: r.type,
-      tagline: r.tagline,
-      description: r.description,
-      keyIngredients: r.keyIngredients,
-      benefits: r.benefits,
-      priceRM: r.priceRM,
-      priceRMEast: r.priceRMEast || null,
-      graphic: r.graphic,
-      category: r.category,
-      kind: r.kind,
-      sizeLabel: r.sizeLabel,
-      contents: r.contents,
-      howToUse: r.howToUse,
-    }));
-  rows.push(...extra);
+      name: p.name,
+      type: p.type,
+      tagline: p.tagline,
+      description: p.description,
+      keyIngredients: p.keyIngredients,
+      benefits: p.benefits,
+      priceRM: p.priceRM,
+      priceRMEast: p.priceRMEast || null,
+      graphic: p.graphic,
+      category: p.category,
+      kind: p.kind,
+      sizeLabel: p.sizeLabel,
+      contents: p.contents,
+      howToUse: p.howToUse,
+  }));
 
   if (!pack) return rows;
   return rows.map((p) => {
     const t = pack.products[p.slug];
-    return t ? { ...p, ...t } : p;
+    // Ingredient identities (INCI/proper names) come from the canonical source,
+    // including current admin edits, rather than a potentially older locale pack.
+    return t ? { ...p, ...t, keyIngredients: p.keyIngredients } : p;
   });
 }
 
@@ -125,16 +100,16 @@ export async function getProduct(slug: string): Promise<ProductView | null> {
 
 export async function getTestimonials(): Promise<TestimonialView[]> {
   const pack = contentPack(await getLocale());
-  let rows: TestimonialView[];
-  try {
-    const db_rows = await db
-      .select()
-      .from(testimonials)
-      .where(eq(testimonials.published, true))
-      .orderBy(asc(testimonials.sortOrder));
-    rows = db_rows.length ? db_rows : seedTestimonials;
-  } catch {
-    rows = seedTestimonials;
+  let rows: TestimonialView[] = seedTestimonials;
+  if (hasRemoteDb) {
+    try {
+      const dbRows = await withDbDeadline(
+        db.select().from(testimonials).orderBy(asc(testimonials.sortOrder)),
+      );
+      rows = dbRows.length ? dbRows.filter((row) => row.published) : seedTestimonials;
+    } catch {
+      rows = [];
+    }
   }
   if (!pack) return rows;
   return rows.map((t) => {
@@ -214,16 +189,8 @@ export type PromotionView = {
   productSlugs: string[];
 };
 
-function pickLocale(
-  map: Record<string, string> | null | undefined,
-  locale: string,
-): string {
-  if (!map) return "";
-  return map[locale] ?? map.en ?? Object.values(map)[0] ?? "";
-}
-
 // Fallback projection from the curated seed bundles + dictionary copy, used
-// when the promotions table is empty (unseeded) or the DB is unreachable.
+// when no database is configured or the table has never been initialized.
 function seedPromotionViews(locale: Locale): PromotionView[] {
   const bundles = getDictionary(locale).promotions.bundles;
   return seedBundles.map((b, i) => {
@@ -242,52 +209,49 @@ function seedPromotionViews(locale: Locale): PromotionView[] {
   });
 }
 
-/** Published promotions for the public page, localised. The DB is the source
- *  of truth once it holds any rows (so unpublishing all yields an empty list);
- *  an empty/unseeded table or an unreachable DB falls back to the seed bundles. */
+/** Database publishing is authoritative; references must resolve to available products. */
 export async function getPromotions(): Promise<PromotionView[]> {
   const locale = await getLocale();
-  try {
-    const rows = await db.select().from(promotions);
-    if (rows.length) {
-      return rows
-        .filter((r) => r.published)
-        .sort((a, b) => a.sortOrder - b.sortOrder)
-        .map((r) => ({
+  let result = seedPromotionViews(locale);
+  if (hasRemoteDb) {
+    try {
+      const rows = await withDbDeadline(
+        db.select().from(promotions).orderBy(asc(promotions.sortOrder), asc(promotions.id)),
+      );
+      const initialized = rows.length > 0 || await contentInitialized("promotions");
+      result = publishedContent(rows, initialized, []).map((r) => ({
           slug: r.slug,
-          title: pickLocale(r.title, locale),
-          description: pickLocale(r.description, locale),
-          tag: r.tag ? pickLocale(r.tag, locale) || null : null,
+          title: pickContentLocale(r.title, locale),
+          description: pickContentLocale(r.description, locale),
+          tag: r.tag ? pickContentLocale(r.tag, locale) || null : null,
           priceRM: r.priceRM,
           wasRM: r.wasRM,
           saveRM: r.saveRM,
           graphic: r.graphic,
           productSlugs: r.productSlugs,
-        }));
+      }));
+      if (!rows.length && !initialized) result = seedPromotionViews(locale);
+    } catch {
+      return [];
     }
-  } catch {
-    // fall through to the curated seed bundles
   }
-  return seedPromotionViews(locale);
+  const slugs = new Set((await getProducts()).map((p) => p.slug));
+  return result.map(normalizeLegacyBundle)
+    .filter((p) => validPromotionReferences(p.productSlugs, slugs));
 }
 
 export async function getFaqs(): Promise<FaqView[]> {
   const pack = contentPack(await getLocale());
-  let base: FaqView[];
-  try {
-    const rows = await db.select().from(faqs).orderBy(asc(faqs.sortOrder));
-    base = (rows.length ? rows : seedFaqs).map((f) => ({
-      category: f.category,
-      question: f.question,
-      answer: f.answer,
-    }));
-  } catch {
-    base = seedFaqs.map((f) => ({
-      category: f.category,
-      question: f.question,
-      answer: f.answer,
-    }));
+  let source: FaqView[] = seedFaqs;
+  if (hasRemoteDb) {
+    try {
+      const rows = await withDbDeadline(db.select().from(faqs).orderBy(asc(faqs.sortOrder)));
+      source = rows.length ? rows : seedFaqs;
+    } catch {
+      source = [];
+    }
   }
+  const base = source.map((f) => ({ category: f.category, question: f.question, answer: f.answer }));
   if (!pack) return base;
   return base.map((f, i) => pack.faqs[i] ?? f);
 }

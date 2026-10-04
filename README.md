@@ -1,94 +1,62 @@
-# Merveilleux Beauty — Full digital ecosystem
+# Merveilleux Beauty
 
-The website, distributor (经销商) training LMS, knowledge base, AI advisor and admin
-console for **Merveilleux Beauty**, a French beauty house. This implements all five
-workstreams from the [system planning document](docs/system-planning.html):
+Public skincare catalogue, distributor training, knowledge base, AI advisor and administration console. Built with Next.js 16.2.9, React 19, TypeScript, Tailwind CSS 4, Drizzle ORM and PostgreSQL.
 
-- **B · Website** — marketing site with an 8-product catalogue and a hero AI advisor
-- **A · Training LMS** — login-gated modules, quizzes (70% pass) and saved progress
-- **C · 知识库** — searchable skincare knowledge base with AI Q&A
-- **D · AI agents** — customer-service chat + a distributor training coach / consultant
-- **E · Virtual advisor** — "Margaux", a stylized AI avatar in the hero (consent-safe;
-  swappable for a real video clip later)
-
-> Built with Next.js 16 + Tailwind v4 + SQLite (libSQL/Turso) + Claude. Brand graphics
-> generated with the Codex CLI. Deployed on Vercel.
-
-## Routes
-
-| Area | Routes |
-| --- | --- |
-| Public | `/`, `/products`, `/testimonials`, `/faq`, `/contact`, `/training` |
-| Auth | `/login`, `/register` |
-| Customer | `/account`, `/account/consult` (AI skincare consult) |
-| 经销商 | `/portal`, `/portal/training`, `/portal/knowledge`, `/portal/assistant` |
-| Admin | `/admin` (+ products, kb, progress, users, enquiries) |
-| API | `/api/chat` (streaming Claude) |
-
-## Tech stack
-
-- **Next.js 16** (App Router) + **React 19** + **TypeScript**, **Tailwind CSS v4**
-- **Database:** SQLite via **Drizzle ORM** + **libSQL** — local file in dev, **Turso** in prod
-- **Auth:** dependency-free email/password with scrypt hashing + DB-backed sessions
-  (Lucia-style), three roles: `customer`, `distributor`, `admin`
-- **AI:** **Claude** (`@anthropic-ai/sdk`) streaming chat with RAG context (products + FAQ + KB)
-- Brand SVGs generated via **Codex CLI** ([`public/graphics/`](public/graphics))
-
-## Project structure
-
-```
-src/
-  app/
-    (site)/        # public marketing pages + chat widget
-    (auth)/        # login / register
-    (app)/         # authenticated dashboards (account / portal / admin)
-    api/chat/      # streaming Claude endpoint
-  components/      # Nav, HeroAvatar, ChatPanel/Widget, PortalTraining, DashboardShell, …
-  db/             # Drizzle schema, client, seed
-  lib/            # auth, ai, content, kb, training, server actions
-public/graphics/   # Codex-generated brand SVGs
-docs/              # original system-planning document
-```
-
-## Local development
+## Development
 
 ```bash
-npm install
-npm run db:reset   # create local.db schema + seed content & demo users
-npm run dev        # http://localhost:3000
+npm ci
+cp .env.example .env.local
+# Set DATABASE_URL to your own PostgreSQL database.
+npm run db:push
+# Optional: set BOOTSTRAP_ADMIN_EMAIL/PASSWORD to create the first site owner.
+npm run db:seed
+npm run dev
 ```
 
-**Demo accounts** (from the seed):
+Public pages also work without DATABASE_URL using the curated 44-product catalogue. Accounts, saved enquiries/subscriptions and training progress require PostgreSQL. A configured database is authoritative: hiding or deleting all managed content leaves it empty. Database outages do not republish hidden catalogue or knowledge-base entries.
 
-| Role | Email | Password |
-| --- | --- | --- |
-| Admin | admin@merveilleux.test | admin1234 |
-| 经销商 | distributor@merveilleux.test | dist1234 |
-| Customer | customer@merveilleux.test | cust1234 |
+`db:seed` adds missing initial content without deleting accounts, sessions or overwriting admin edits. It respects initialized managed catalogues. It creates no demo users by default. `SEED_DEMO_USERS=1` is accepted only against a loopback database outside production. Demo credentials are not displayed on the website and are rejected for production sign-in. An existing owner is never reset by bootstrap variables.
 
-## Production setup (Vercel)
+## Checks
 
-The public site works immediately (it falls back to seeded content). To enable
-accounts, training, the knowledge base and the AI advisor, set three env vars:
+```bash
+npm run lint
+npm test
+npm run test:content
+npm run build
+```
 
-1. **Database — Turso (libSQL):**
-   ```bash
-   turso auth login
-   turso db create merveilleux
-   turso db show merveilleux --url           # → TURSO_DATABASE_URL
-   turso db tokens create merveilleux        # → TURSO_AUTH_TOKEN
-   # then push schema + seed against it:
-   TURSO_DATABASE_URL=... TURSO_AUTH_TOKEN=... npm run db:reset
-   ```
-2. **AI — Anthropic:** create a key at <https://console.anthropic.com> → `ANTHROPIC_API_KEY`
-3. Add all three to **Vercel → Project → Settings → Environment Variables**, then redeploy.
+`npm test` runs the data and security checks. The PostgreSQL concurrency test is opt-in via `SECURITY_TEST_DATABASE_URL`; it only permits the isolated loopback fixture `127.0.0.1:55441/merc_audit`. A normal application DATABASE_URL does not enable fixture mutations. `test:content` checks catalogue/quiz translation coverage, current bundle arithmetic and legacy compatibility.
 
-See [`.env.example`](.env.example). Every push to `main` auto-deploys.
+Next.js APIs must be checked against the installed guides in `node_modules/next/dist/docs/` before changing the application.
 
-## Notes
+## Routes and access
 
-- The hero "digital human" is a **stylized brand avatar**, not a real person — no likeness
-  consent issues. Swap `public/graphics/avatar.svg` (or wire a `<video>`) for a real clip later.
-- ⚠️ **Trademark:** research found a pre-existing Malaysian skincare line "Merveilleux –
-  France HQ" plus other "Merveilleux" entities. Consider a trademark/name check before launch.
-- Update brand contact details (WhatsApp, email, Instagram) in [`src/lib/data.ts`](src/lib/data.ts).
+| Audience | Routes |
+| --- | --- |
+| Public | `/`, `/about`, `/products`, `/products/[slug]`, `/gallery`, `/testimonials`, `/faq`, `/contact`, `/join`, `/training` |
+| Optional public features | `/promotions`, `/news`, `/blog`, `/blog/[slug]` |
+| Sign-in | `/login`, `/register` |
+| Customer | `/account`, `/account/consult` |
+| Distributor and administrators | `/portal`, `/portal/training`, `/portal/knowledge`, `/portal/assistant` |
+| Administrators | `/admin` and products, promotions, knowledge base, enquiries and progress pages |
+| Site owner | User roles, media, appearance, feature settings, copy overrides and master-only actions |
+
+Optional features and Bahasa Melayu are controlled in admin settings. The sitemap follows enabled features and publication status. Page translations use the `mb_lang` cookie (English, Simplified Chinese, Bahasa Melayu).
+
+## Database and deployment
+
+Set DATABASE_URL for the application. For Supabase transaction pooling, use port 6543 with prepared statements disabled (already configured); set DIRECT_DATABASE_URL to the direct/session connection for `db:push`. Standalone database tools load `.env.local` or an explicit `ENV_FILE`.
+
+Apply `npm run db:push` before running the changed application. This includes `src/db/rate-limit-schema.ts`, the shared PostgreSQL quota table used by sign-in, registration and chat, and automatically applies its backend-only policy (RLS plus client grant revocation). For an existing database, the equivalent additive SQL is in `src/db/migrations/20261004_rate_limit_buckets.sql`. Rate-limit storage failures disable guarded operations. Authentication uses asynchronous scrypt and database sessions. Chat uses server-generated visitor/session keys and shared global budgets; forwarded-IP headers are not trusted as limiter identities.
+
+For a new database, supply BOOTSTRAP_ADMIN_EMAIL and a unique 12–128-character BOOTSTRAP_ADMIN_PASSWORD for the seed run, then remove the bootstrap password from the deployment environment. Existing installations must rotate or remove legacy default demo credentials and revoke old sessions before enabling their accounts. Production sign-in refuses the original demo email/password combinations.
+
+Set ANTHROPIC_API_KEY to enable Claude responses. Set BLOB_READ_WRITE_TOKEN for persistent image uploads on Vercel; without it, uploads write locally for development. Build and start with `npm run build` and `npm start`. Local build success does not deploy the website or apply a remote database migration.
+
+## Content
+
+Canonical product data lives in `src/lib/catalogue-products.ts`; localized overlays are in `src/i18n/content/`. Admin-managed data lives in PostgreSQL. Concept packaging images are labeled publicly; unverified product facts are not invented. Contact links are configured in `src/lib/data.ts`. Brand-owned social links must point to confirmed profiles.
+
+The audit and repair coverage register is in [docs/audit-2026-10-04.md](docs/audit-2026-10-04.md).

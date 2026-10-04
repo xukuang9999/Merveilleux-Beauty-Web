@@ -77,7 +77,7 @@ const en = {
         },
         {
           title: "Actives that truly perform",
-          body: "Vitamin C, hyaluronic acid, ceramides, SPF50+ — serums, creams and masks for brightening, hydration and barrier repair.",
+          body: "Vitamin C, hyaluronic acid, ceramides, SPF30 / SPF35 — serums, creams and masks for brightening, hydration and barrier repair.",
         },
         {
           title: "Skin that feels merveilleux",
@@ -185,6 +185,8 @@ const en = {
     resultsTitle: "Before & after",
     resultsNote:
       "Clinical before-and-after imagery for this product is shared in the distributor kit — ask us for the full results deck.",
+    "conceptImage": "Concept image",
+    "conceptImageNote": "Illustrative packaging concept. Ask our advisor for the current product packaging.",
     allCategories: "All",
     categories: {
       "cleanser-mist-lotion": "Cleanser, Mist & Lotion",
@@ -555,6 +557,7 @@ const en = {
     roleMasterAdmin: "Master Admin",
   },
   admin: {
+    "promotionProductsInvalid": "Choose at least one published product. Each product slug must exist and appear only once.",
     eyebrowDashboard: "Admin",
     dashboardTitle: "Control centre",
     dashboardSub: "Manage products, content, distributors and enquiries.",

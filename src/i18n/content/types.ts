@@ -14,6 +14,7 @@ export type ProductT = {
 export type TestimonialT = { quote: string; role: string };
 export type FaqT = { category: string; question: string; answer: string };
 export type ModuleT = { title: string; summary: string; lessons: string[] };
+export type QuizT = { sourceQuestion: string; sourceOptions: string[]; question: string; options: string[] };
 export type KbT = { title: string; category: string; excerpt: string; body: string };
 
 export type ContentPack = {
@@ -21,6 +22,7 @@ export type ContentPack = {
   testimonials: Record<string, TestimonialT>; // by name
   faqs: Record<number, FaqT>; // by 0-based position in sorted list
   modules: Record<number, ModuleT>; // by module `ord`
+  quizzes: Record<number, QuizT[]>; // module ord + original question/options identity
   kb: Record<string, KbT>; // by slug
 };
 
@@ -29,5 +31,6 @@ export const emptyPack: ContentPack = {
   testimonials: {},
   faqs: {},
   modules: {},
+  quizzes: {},
   kb: {},
 };

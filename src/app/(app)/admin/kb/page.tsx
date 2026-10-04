@@ -35,7 +35,7 @@ export default async function AdminKbPage() {
               </div>
               <div className="flex items-center gap-3">
                 <Link
-                  href={`/portal/knowledge/${a.slug}`}
+                  href={`/portal/knowledge/${a.slug}?preview=1`}
                   className="text-xs font-medium text-bronze hover:underline"
                 >
                   {d.view}

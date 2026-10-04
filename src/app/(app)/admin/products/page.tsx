@@ -1,16 +1,11 @@
 import { asc } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
 import { db } from "@/db";
-import { products, type Product } from "@/db/schema";
-import { saveProduct, deleteProduct } from "@/lib/admin-actions";
-import { productCategories } from "@/lib/categories";
+import { products } from "@/db/schema";
+import { deleteProduct } from "@/lib/admin-actions";
 import { DashHeading } from "@/components/dash";
-import ImageUploadField from "@/components/ImageUploadField";
-import { getDict } from "@/i18n/server";
-
-const input =
-  "w-full rounded-lg border border-line bg-white px-3 py-2 text-sm outline-none focus:border-bronze";
-const label = "mb-1 block text-[11px] font-semibold uppercase tracking-wide text-mid";
+import ProductEditorForm from "@/components/ProductEditorForm";
+import { getDict, getLocale } from "@/i18n/server";
 
 export default async function AdminProductsPage() {
   await requireAdmin();
@@ -19,6 +14,7 @@ export default async function AdminProductsPage() {
     getDict(),
   ]);
   const d = dict.admin;
+  const locale = await getLocale();
 
   return (
     <>
@@ -33,7 +29,7 @@ export default async function AdminProductsPage() {
           {d.addProduct}
         </summary>
         <div className="mt-4">
-          <ProductForm saveLabel={d.createProduct} />
+          <ProductEditorForm locale={locale} categories={dict.products.categories} saveLabel={d.createProduct} />
         </div>
       </details>
 
@@ -58,7 +54,7 @@ export default async function AdminProductsPage() {
               </span>
             </summary>
             <div className="mt-4">
-              <ProductForm product={p} saveLabel={d.saveChanges} />
+              <ProductEditorForm locale={locale} categories={dict.products.categories} product={p} saveLabel={d.saveChanges} />
               <form action={deleteProduct} className="mt-3">
                 <input type="hidden" name="id" value={p.id} />
                 <button className="text-xs font-medium text-bronze hover:underline">
@@ -70,131 +66,5 @@ export default async function AdminProductsPage() {
         ))}
       </div>
     </>
-  );
-}
-
-function ProductForm({
-  product,
-  saveLabel,
-}: {
-  product?: Product;
-  saveLabel: string;
-}) {
-  return (
-    <form action={saveProduct} className="space-y-3">
-      {product && <input type="hidden" name="id" value={product.id} />}
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div>
-          <label className={label}>Name</label>
-          <input name="name" defaultValue={product?.name} required className={input} />
-        </div>
-        <div>
-          <label className={label}>Slug</label>
-          <input name="slug" defaultValue={product?.slug} required className={input} />
-        </div>
-        <div>
-          <label className={label}>Type</label>
-          <input name="type" defaultValue={product?.type} className={input} />
-        </div>
-        <div>
-          <label className={label}>Category</label>
-          <select
-            name="category"
-            defaultValue={product?.category ?? ""}
-            className={input}
-          >
-            <option value="">— Uncategorised —</option>
-            {productCategories.map((c) => (
-              <option key={c.slug} value={c.slug}>
-                {c.en}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label className={label}>Price — West Malaysia</label>
-          <input
-            name="priceRM"
-            defaultValue={product?.priceRM}
-            placeholder="RM168"
-            className={input}
-          />
-        </div>
-        <div>
-          <label className={label}>Price — East Malaysia</label>
-          <input
-            name="priceRMEast"
-            defaultValue={product?.priceRMEast ?? ""}
-            placeholder="Leave blank until confirmed"
-            className={input}
-          />
-          <p className="mt-1 text-xs text-mid">
-            Sabah / Sarawak / Labuan. While this is blank the storefront shows a
-            single price with no region labels.
-          </p>
-        </div>
-        <div>
-          <label className={label}>Tagline</label>
-          <input name="tagline" defaultValue={product?.tagline} className={input} />
-        </div>
-        <div className="sm:col-span-2">
-          <ImageUploadField
-            name="graphic"
-            defaultValue={product?.graphic ?? ""}
-            label="Product image"
-          />
-        </div>
-        <div>
-          <label className={label}>Sort order</label>
-          <input
-            name="sortOrder"
-            type="number"
-            defaultValue={product?.sortOrder ?? 0}
-            className={input}
-          />
-        </div>
-        <label className="flex items-end gap-2 pb-2 text-sm text-charcoal">
-          <input
-            type="checkbox"
-            name="published"
-            defaultChecked={product?.published ?? false}
-            className="accent-bronze"
-          />
-          Published
-        </label>
-      </div>
-      <div>
-        <label className={label}>Description</label>
-        <textarea
-          name="description"
-          defaultValue={product?.description}
-          rows={3}
-          className={input}
-        />
-      </div>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div>
-          <label className={label}>Key ingredients (one per line)</label>
-          <textarea
-            name="keyIngredients"
-            defaultValue={product?.keyIngredients.join("\n")}
-            rows={3}
-            className={input}
-          />
-        </div>
-        <div>
-          <label className={label}>Benefits (one per line)</label>
-          <textarea
-            name="benefits"
-            defaultValue={product?.benefits.join("\n")}
-            rows={3}
-            className={input}
-          />
-        </div>
-      </div>
-      <button className="rounded-full bg-charcoal px-5 py-2.5 text-sm font-medium text-cream hover:bg-umber">
-        {saveLabel}
-      </button>
-    </form>
   );
 }

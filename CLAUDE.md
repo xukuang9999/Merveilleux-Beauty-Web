@@ -20,8 +20,8 @@ npm run dev        # dev server on :3000 (Turbopack)
 npm run build      # production build
 npm run lint       # eslint (flat config, eslint.config.mjs)
 
-npm run db:push    # apply src/db/schema.ts to the DB (drizzle-kit, no migration files)
-npm run db:seed    # run src/db/seed.ts — seeds content + 4 demo users
+npm run db:push    # apply schema.ts + rate-limit-schema.ts to PostgreSQL
+npm run db:seed    # additive initial content; explicit owner bootstrap; demo users opt-in
 npm run db:reset   # db:push + db:seed — the usual first-run / post-pull setup
 npm run db:import  # tsx src/db/import-extracted.ts — import extracted product cards as
                    # UNPUBLISHED drafts (dry-run by default; pass --commit to write)
@@ -32,11 +32,7 @@ don't, so `src/db/load-env.ts` loads it). To target a specific DB, prefix with a
 `ENV_FILE=.env.supabase npm run db:push` (assembles the Supabase pooler URLs from a password so
 only the password is pasted). **Never point local dev at production Supabase.**
 
-No test runner is configured. Verify changes by driving the app. Demo logins after seeding:
-`master@merveilleux.test / master1234` (master admin), `admin@merveilleux.test / admin1234`
-(admin), `distributor@… / dist1234`, `customer@… / cust1234`.
-
-## Environment / data resolution
+Run `npm test`, `npm run lint` and `npm run build`. Browser checks should use an isolated local PostgreSQL fixture. Demo users require `SEED_DEMO_USERS=1`, a loopback database and non-production mode; default demo credentials cannot sign in in production. Use explicit owner bootstrap for a fresh real database.
 
 **Database is Postgres** (migrated off Turso/SQLite — Turso vars may linger in Vercel as unused
 rollback safety, ignore them). The connection is built in `src/db/index.ts` from `DATABASE_URL`:
@@ -49,7 +45,7 @@ rollback safety, ignore them). The connection is built in `src/db/index.ts` from
   transaction pooler isn't suited to DDL. `drizzle.config.ts` and `load-env.ts` handle the split.
 - **DB unset / unreachable** → `src/db/index.ts` points at an unreachable local address with a short
   `connect_timeout`, so queries **reject fast instead of hanging** (critical: a hang would stall
-  Next's static generation). Reads in `content.ts` are try/caught and fall back to the curated seed,
+  Next's static generation). Managed content reads in `content.ts` are bounded and fail closed for configured database outages,
   so the public site still renders; **accounts / training / admin stay inert** until a DB is set.
 
 `hasRemoteDb` (exported from `src/db`, = `Boolean(DATABASE_URL)`) gates features needing real
@@ -62,24 +58,9 @@ never commit credentials; all `.env*` files are gitignored.
 
 `src/lib/content.ts` is the single read layer, and **the three content types resolve differently**:
 
-- **Products** — additive over a seed base, but **`seedProducts` is intentionally empty** (it's
-  compiled into the bundle; when it held demo data, fake SKUs leaked onto the live storefront —
-  commit 815aa37). So in practice the storefront = DB rows that are **explicitly published**
-  (`products.published` defaults to `false`; unpublished/orphan rows are ignored, so it can never
-  blank out). The overlay machinery in `getProducts()` still works if `seedProducts` is ever
-  repopulated (a matching slug's DB edit wins; unpublishing hides it). Local-dev product fixtures
-  live in `src/db/dev-products.ts` (restored by `db:seed`), **not** in `seedProducts`. Products are
-  created/edited in the admin; photos are set by **upload** (see the admin console section), not by
-  hand-editing paths.
-  - **Catalogue-extraction pipeline**: `src/db/import-extracted.ts` (`npm run db:import`) imports
-    product cards from `content/extracted/zh/*.json` into `products` as **unpublished drafts** —
-    additive, re-runnable, and it skips existing slugs (never overwrites/unpublishes). These rows
-    carry extra columns beyond the seed shape (`kind`, `status`, `collection`, `sizeLabel`,
-    `contents`, `howToUse`, `claimsFlagged`, `sourceMsgIds`, `photos` — see `schema.ts`). Category
-    slugs are the canonical storefront filters in `src/lib/categories.ts`.
-- **Promotions** — DB-backed and admin-managed (`promotions` table, per-locale JSON copy).
-  `getPromotions()` is the source of truth once the table holds rows, falling back to the seed
-  bundles (`seedBundles` + dict copy) when empty/unreachable.
+- **Products** — the current curated 44-product catalogue is `seedProducts` (from `catalogue-products.ts`). Without a configured DB, it is available for public previews. A populated or initialized database is authoritative: only published rows appear. Hide/delete writes an initialization marker so an intentionally empty catalogue remains empty. Configured-DB read failures fail closed instead of resurrecting seed products.
+- **Promotions** — admin-managed per-locale JSON copy; blank translations fall back to English. Product references must resolve to published products. Initialized empty data stays empty. Configured-DB failures fail closed.
+- **Knowledge base** — follows the same managed-content policy; hidden drafts are available only through authorized preview links.
 - **Testimonials & FAQs** — DB-first, `seed*` arrays as fallback when the DB is empty/unreachable.
 - **News** — seed-only: `seedNews` in `seed-data.ts` is a static Instagram feed (permalinks),
   no DB table. Rendered at `/news` via `NewsCard`.
@@ -97,7 +78,7 @@ Everything read here is then overlaid with the active locale's translation (see 
   (distributor / 经销商: `/training`, `/knowledge`, `/assistant`), `admin`. Guards live in the
   layouts.
 - API routes (mutations are otherwise server actions): `api/chat/route.ts` (streaming Claude,
-  Node runtime, in-instance rate limit) and `api/admin/media/route.ts` (admin-tier image upload).
+  Node runtime, shared PostgreSQL rate limits) and `api/admin/media/route.ts` (admin-tier image upload).
 
 **Mutations are React Server Actions**, not API routes — files named `*-actions.ts` in `src/lib/`
 (`auth-actions`, `admin-actions`, `enquiry-actions`, `newsletter-actions`, `training-actions`).

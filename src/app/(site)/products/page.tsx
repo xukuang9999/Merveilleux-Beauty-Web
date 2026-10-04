@@ -1,5 +1,7 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
+import ConceptImageNotice from "@/components/ConceptImageNotice";
 import Link from "next/link";
 import { Button, Container, SectionHeading } from "@/components/ui";
 import Reveal from "@/components/Reveal";
@@ -9,11 +11,9 @@ import { productDetails } from "@/lib/seed-data";
 import { productCategories } from "@/lib/categories";
 import { getDict } from "@/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Products",
-  description:
-    "Explore the Merveilleux Beauty collection — French-formulated serums, moisturiser, cleanser, essence, sunscreen, eye cream and masks.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("products");
+}
 
 export default async function ProductsPage({
   searchParams,
@@ -95,6 +95,7 @@ export default async function ProductsPage({
                     sizes="(max-width: 1024px) 90vw, 40vw"
                     className="object-contain"
                   />
+                  <ConceptImageNotice graphic={p.graphic} label={d.conceptImage} className="absolute bottom-2 left-2 right-2" />
                 </div>
               </div>
 

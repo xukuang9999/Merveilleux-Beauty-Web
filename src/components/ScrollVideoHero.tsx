@@ -159,6 +159,8 @@ export default function ScrollVideoHero({
         el.style.opacity = o.toFixed(3);
         el.style.transform = `translate3d(0, ${((0.5 - localT) * 34).toFixed(1)}px, 0)`;
         el.style.pointerEvents = o > 0.5 ? "auto" : "none";
+        el.inert = o <= 0.5;
+        el.setAttribute("aria-hidden", String(o <= 0.5));
       }
 
       if (barRef.current) barRef.current.style.width = `${(p * 100).toFixed(2)}%`;
@@ -187,10 +189,6 @@ export default function ScrollVideoHero({
     };
   }, []);
 
-  const setLayer = (i: number) => (el: HTMLDivElement | null) => {
-    layers.current[i] = el;
-  };
-
   return (
     <section
       ref={trackRef}
@@ -217,7 +215,9 @@ export default function ScrollVideoHero({
         />
         {/* 01 · Reception — the brand hero */}
         <div
-          ref={setLayer(0)}
+          ref={(element) => {
+            layers.current[0] = element;
+          }}
           className="absolute inset-0 flex items-end"
           style={{ willChange: "opacity, transform" }}
         >
@@ -237,7 +237,11 @@ export default function ScrollVideoHero({
           return (
             <div
               key={i}
-              ref={setLayer(i + 1)}
+              ref={(element) => {
+                layers.current[i + 1] = element;
+              }}
+              inert
+              aria-hidden="true"
               className="absolute inset-0 flex items-center opacity-0"
               style={{ willChange: "opacity, transform" }}
             >

@@ -9,6 +9,7 @@ import { LINK_FLAG } from "@/lib/feature-links";
 export default async function Footer({ flags }: { flags: FeatureFlags }) {
   const [dict, locale] = await Promise.all([getDict(), getLocale()]);
   const f = dict.footer;
+  const whatsappNumber = site.whatsapp.replace(/^60(\d{2})(\d{3})(\d{4})$/, "+60 $1-$2 $3");
   const links = [
     { href: "/about", label: dict.nav.about },
     { href: "/products", label: dict.nav.products },
@@ -28,7 +29,9 @@ export default async function Footer({ flags }: { flags: FeatureFlags }) {
   const socials = [
     { href: site.instagram, label: f.instagram },
     { href: site.facebook, label: f.facebook },
-    { href: site.xiaohongshu, label: f.xiaohongshu },
+    ...(site.xiaohongshu && !/^https:\/\/(?:www\.)?xiaohongshu\.com\/?$/.test(site.xiaohongshu)
+      ? [{ href: site.xiaohongshu, label: f.xiaohongshu }]
+      : []),
   ];
 
   return (
@@ -102,7 +105,7 @@ export default async function Footer({ flags }: { flags: FeatureFlags }) {
                   rel="noopener noreferrer"
                   className="text-cream/70 transition-colors hover:text-gold"
                 >
-                  {f.whatsapp} · {site.phone}
+                  {f.whatsapp} · {whatsappNumber}
                 </a>
               </li>
               <li className="text-cream/60">WeChat: {site.wechat}</li>

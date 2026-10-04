@@ -27,7 +27,9 @@ export default function AuthForm({
   const isRegister = mode === "register";
 
   return (
-    <form action={formAction} className="space-y-4">
+    <>
+    <p role="status" className="sr-only">{pending ? isRegister ? dict.creating : dict.signingIn : ""}</p>
+    <form action={formAction} className="space-y-4" aria-busy={pending}>
       {isRegister && (
         <>
           <input type="hidden" name="role" defaultValue={defaultRole} />
@@ -35,7 +37,7 @@ export default function AuthForm({
             <label htmlFor="name" className={label}>
               {dict.fullName}
             </label>
-            <input id="name" name="name" required placeholder={dict.yourName} className={field} />
+            <input id="name" autoComplete="name" name="name" required placeholder={dict.yourName} className={field} />
           </div>
         </>
       )}
@@ -47,6 +49,7 @@ export default function AuthForm({
         <input
           id="email"
           name="email"
+          autoComplete="email"
           type="email"
           required
           placeholder="you@email.com"
@@ -61,6 +64,7 @@ export default function AuthForm({
         <input
           id="password"
           name="password"
+          autoComplete={isRegister ? "new-password" : "current-password"}
           type="password"
           required
           minLength={8}
@@ -70,7 +74,7 @@ export default function AuthForm({
       </div>
 
       {state?.error && (
-        <p className="rounded-lg bg-champagne/60 px-3 py-2 text-sm text-bronze">
+        <p role="alert" className="rounded-lg bg-champagne/60 px-3 py-2 text-sm text-bronze">
           {state.error}
         </p>
       )}
@@ -107,5 +111,6 @@ export default function AuthForm({
         )}
       </p>
     </form>
+    </>
   );
 }

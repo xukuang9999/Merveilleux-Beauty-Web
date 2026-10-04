@@ -2,7 +2,7 @@ import { requireUser } from "@/lib/auth";
 import { aiConfigured } from "@/lib/ai";
 import ChatPanel from "@/components/ChatPanel";
 import { DashHeading } from "@/components/dash";
-import { getDict } from "@/i18n/server";
+import { getLocale, getDict } from "@/i18n/server";
 
 export default async function ConsultPage() {
   await requireUser();
@@ -25,7 +25,7 @@ export default async function ConsultPage() {
       )}
 
       <div className="max-w-2xl">
-        <ChatPanel
+        <ChatPanel locale={await getLocale()}
           mode="consult"
           heightClass="h-[520px]"
           greeting={dict.chat.consultGreeting}

@@ -8,7 +8,7 @@ import * as schema from "./schema";
 //   quickly instead of hanging. Public content then falls back to the curated
 //   seed (see src/lib/content.ts) and the app never hard-crashes on boot.
 //   Accounts / training / admin stay inert until a DB is configured.
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.DATABASE_URL?.trim() || undefined;
 
 const globalForDb = globalThis as unknown as {
   __pg?: ReturnType<typeof postgres>;
@@ -19,6 +19,9 @@ function makeClient() {
     // Required for Supabase's transaction-mode pooler (PgBouncer, port 6543):
     // it doesn't support prepared statements. Harmless on a direct/local conn.
     prepare: false,
+    // The driver's exponential reconnect delay starts before connect_timeout.
+    // Keep queued reads bounded during outages as well as on a fresh socket.
+    backoff: () => 0,
     // Fail FAST on an unreachable/misconfigured DB. Our reads are wrapped in
     // try/catch and fall back to the curated seed — but a try/catch only catches
     // an *error*, not a *hang*. A short connect timeout (well under Next's 60s
@@ -44,3 +47,21 @@ export { schema };
 
 /** True when a real Postgres connection is configured (vs the no-DB fallback). */
 export const hasRemoteDb = Boolean(connectionString);
+
+/** Bound the whole read, including pool queues and connection establishment. */
+export async function withDbDeadline<T>(
+  query: PromiseLike<T>,
+  timeoutMs = 3_000,
+): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      Promise.resolve(query),
+      new Promise<never>((_, reject) => {
+        timer = setTimeout(() => reject(new Error("Database read timed out")), timeoutMs);
+      }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}

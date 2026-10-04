@@ -14,7 +14,23 @@ export default function Marquee({
   durationSec?: number;
   className?: string;
 }) {
-  const Group = () => (
+
+
+  return (
+    <div className={`overflow-hidden ${className}`} style={maskStyle}>
+      <div
+        className="flex w-max animate-marquee"
+        style={{ ["--marquee-duration" as string]: `${durationSec}s` }}
+      >
+        <MarqueeGroup items={items} />
+        <MarqueeGroup items={items} />
+      </div>
+    </div>
+  );
+}
+
+function MarqueeGroup({ items }: { items: string[] }) {
+  return (
     <ul
       aria-hidden
       className="flex shrink-0 items-center gap-10 pr-10"
@@ -28,17 +44,5 @@ export default function Marquee({
         </li>
       ))}
     </ul>
-  );
-
-  return (
-    <div className={`overflow-hidden ${className}`} style={maskStyle}>
-      <div
-        className="flex w-max animate-marquee"
-        style={{ ["--marquee-duration" as string]: `${durationSec}s` }}
-      >
-        <Group />
-        <Group />
-      </div>
-    </div>
   );
 }

@@ -1,10 +1,13 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import AuthForm from "@/components/AuthForm";
 import { getCurrentUser, roleHome } from "@/lib/auth";
 import { getDict } from "@/i18n/server";
 
-export const metadata: Metadata = { title: "Create account" };
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("register");
+}
 
 export default async function RegisterPage({
   searchParams,

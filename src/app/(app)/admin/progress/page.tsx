@@ -15,7 +15,7 @@ export default async function AdminProgressPage() {
   const d = dict.admin;
   const total = modules.length;
   const distributors = allUsers.filter(
-    (u) => u.role === "distributor" || u.role === "admin",
+    (u) => u.role === "distributor" || u.role === "admin" || u.role === "master_admin",
   );
 
   return (

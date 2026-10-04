@@ -34,7 +34,7 @@ export default async function SiteLayout({
       />
       <main className="flex-1">{children}</main>
       <Footer flags={flags} />
-      {flags.aiChat && <ChatWidget dict={dict.chat} />}
+      {flags.aiChat && <ChatWidget dict={dict.chat} locale={locale} />}
     </>
   );
 }

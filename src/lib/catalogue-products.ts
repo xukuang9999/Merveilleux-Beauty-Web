@@ -69,25 +69,20 @@ export const catalogueProducts: SeedProduct[] = [
     "slug": "brightening-plus-hydrating-trial-set",
     "name": "Brightening + Hydrating Trial Set",
     "type": "Trial Set",
-    "tagline": "A brightening-and-hydrating trio for dull, congested skin",
-    "description": "A brightening-and-hydrating trial trio for dull, congested skin. Includes Oxy-Bright Sérum 10 ml and Pore Refining Sérum 5 ml; the third item is to be confirmed with Grace.",
+    "tagline": "A brightening-and-hydrating trial set for dull, congested skin",
+    "description": "A brightening-and-hydrating trial set for dull, congested skin. Ask our advisor to confirm the current set contents before ordering.",
     "keyIngredients": [],
     "benefits": [
-      "Includes Oxy-Bright Sérum 10 ml",
-      "Includes Pore Refining Sérum 5 ml",
-      "Third item to be confirmed with Grace",
-      "Trial sizes to brighten dullness and hydrate congested skin"
+      "Trial sizes to brighten dullness and hydrate congested skin",
+      "Ask our advisor about the current set contents"
     ],
     "priceRM": "RM288",
     "graphic": "/products/studio/03-brightening-hydrating-trial-set.png",
     "category": "trial-sets",
     "sortOrder": 3,
     "kind": "bundle",
-    "sizeLabel": "3 items",
-    "contents": [
-      "Oxy-Bright Sérum 10 ml",
-      "Pore Refining Sérum 5 ml"
-    ],
+    "sizeLabel": null,
+    "contents": null,
     "howToUse": null
   },
   {
@@ -150,19 +145,19 @@ export const catalogueProducts: SeedProduct[] = [
     "name": "Congested Set",
     "type": "Trial Set",
     "tagline": "A purifying trial set for congested, clogged-pore skin",
-    "description": "A trial set targeting congested, clogged-pore skin. The set contents are only partially legible on the source card and need to be verified with Grace before publishing.",
+    "description": "A trial set targeting congested, clogged-pore skin. Ask our advisor to confirm the current set contents before ordering.",
     "keyIngredients": [],
     "benefits": [
       "Targets congested, clogged-pore skin",
       "Purifying and balancing trial routine",
-      "Full set contents to be confirmed with Grace"
+      "Ask our advisor about the current set contents"
     ],
     "priceRM": "RM260",
     "graphic": "/products/studio/06-congested-set.png",
     "category": "trial-sets",
     "sortOrder": 6,
     "kind": "bundle",
-    "sizeLabel": "3 items",
+    "sizeLabel": null,
     "contents": null,
     "howToUse": null
   },
@@ -1234,11 +1229,8 @@ export const catalogueProducts: SeedProduct[] = [
     "name": "Advanced Bio Peptide Treatment",
     "type": "Professional Treatment",
     "tagline": "Professional peptide care for a smoother, firmer-looking complexion",
-    "description": "A professional treatment concept focused on hydration, elasticity and the visible appearance of fine lines. Final components and salon protocol remain subject to brand confirmation.",
-    "keyIngredients": [
-      "Bio Peptide Complex",
-      "Marine Collagen Concept"
-    ],
+    "description": "A professional treatment focused on hydration, elasticity and the visible appearance of fine lines. Speak with our advisor about the treatment components and salon protocol.",
+    "keyIngredients": [],
     "benefits": [
       "Supports a firmer-looking complexion",
       "Improves the appearance of fine lines",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PriceBlock from "./PriceBlock";
+import ConceptImageNotice from "./ConceptImageNotice";
 
 type Labels = {
   priceLabel: string;
@@ -12,6 +13,8 @@ type Labels = {
   benefits: string;
   howToUse: string;
   enquireNow: string;
+  conceptImage: string;
+  conceptImageNote: string;
 };
 
 type Props = {
@@ -54,15 +57,18 @@ export default function ProductShowcase({
     <div>
       {/* ---- Summary: photo + name / price / size ---- */}
       <div className="grid items-center gap-10 lg:grid-cols-2">
-        <div className="relative mx-auto aspect-[5/6] w-full max-w-sm">
-          <Image
-            src={graphic}
-            alt={name}
-            fill
-            sizes="(max-width: 1024px) 90vw, 40vw"
-            className="object-contain"
-            priority
-          />
+        <div className="mx-auto w-full max-w-sm">
+          <div className="relative aspect-[5/6]">
+            <Image
+              src={graphic}
+              alt={name}
+              fill
+              sizes="(max-width: 1024px) 90vw, 40vw"
+              className="object-contain"
+              preload
+            />
+          </div>
+          <ConceptImageNotice graphic={graphic} label={L.conceptImage} note={L.conceptImageNote} className="mt-3" />
         </div>
 
         <div>

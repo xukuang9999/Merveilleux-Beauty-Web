@@ -6,7 +6,7 @@ import { deleteMediaAsset } from "@/lib/admin-actions";
 import { getInUseMediaUrls } from "@/lib/media-usage";
 import { DashHeading, Panel } from "@/components/dash";
 import MediaUploadButton from "@/components/MediaUploadButton";
-import { getDict } from "@/i18n/server";
+import { getDict, getLocale } from "@/i18n/server";
 
 export default async function AdminMediaPage() {
   const user = await requireAdmin();
@@ -23,7 +23,7 @@ export default async function AdminMediaPage() {
       <DashHeading eyebrow={m.eyebrow} title={m.title} subtitle={m.sub} />
 
       <div className="mb-6">
-        <MediaUploadButton label={m.upload} />
+        <MediaUploadButton label={m.upload} locale={await getLocale()} />
       </div>
 
       {assets.length === 0 ? (

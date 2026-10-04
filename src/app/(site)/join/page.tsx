@@ -1,3 +1,4 @@
+import { localizedPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Button, Container, SectionHeading } from "@/components/ui";
@@ -10,11 +11,9 @@ import { seedModules } from "@/lib/seed-data";
 import { getDict, getLocale, fmt } from "@/i18n/server";
 import { localizeModule } from "@/i18n/content";
 
-export const metadata: Metadata = {
-  title: "Join Us — Become a Distributor",
-  description:
-    "Partner with Merveilleux. Submit an enquiry, request the product catalogue, book a discovery call, or reach us on WhatsApp.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return localizedPageMetadata("join");
+}
 
 const actionIcons = ["✉️", "📖", "📞", "💬"];
 
@@ -191,7 +190,7 @@ export default async function JoinPage() {
             <div className="rounded-[2px] border border-line bg-porcelain p-7 sm:p-9">
               <h2 className="font-serif text-2xl text-charcoal">{j.formTitle}</h2>
               <p className="mb-6 mt-1 text-sm text-mid">{j.formSub}</p>
-              <EnquiryForm dict={dict.contact} />
+              <EnquiryForm locale={locale} dict={dict.contact} />
             </div>
           </Reveal>
         </Container>
